@@ -502,21 +502,21 @@ h2.active {
 
 /*start for offer.tpl*/
 #main .content { margin:0 10px;}
-#main .content .left { float:left; width:20%; }
-#main .content .left .item{ float:left; width:95%; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif; cursor:pointer;}
-#main .content .left .itemS { background-color:#CFEBFF; float:left; width:95%; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
+#main .content .left { float:left;}
+#main .content .left .item{ float:left; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif; cursor:pointer;}
+#main .content .left .itemS { background-color:#CFEBFF; float:left; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
 #main .content .left .item strong{ color:#006;}
 #main .content .left .itemS strong{ color:#600;}
-#main .content .right {float:left; width:78%; padding-left:10px; border:1px #ccc solid;}
+#main .content .right {float:left; padding-left:10px;}
 #main .content .right ul{margin:10px 0 0 5px; padding:0px;list-style:none; }
 #main .content .right ul li{ margin:5px auto;}
-#main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid; float:left; width:100%;}
+#main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid; float:left;}
 
 
-#main .content  .right .con .pic { float:left; width:14%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
-#main .content  .right .con .t { float:left; width:83%; padding-left:10px; display:inline;}
-#main .content  .right .con .picR { float:left; margin-left:5%; width:14%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
-#main .content  .right .con .tR { float:left; width:77%; padding-left:10px; display:inline;}
+#main .content  .right .con .pic { float:left; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
+#main .content  .right .con .t { float:left; padding-left:10px; display:inline;}
+#main .content  .right .con .picR { float:left; margin-left:5%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
+#main .content  .right .con .tR { float:left; padding-left:10px; display:inline;}
 
 
 
@@ -561,8 +561,6 @@ h2.active {
 
 /*event*/
 #main .content { padding:5px; margin:0 10px;}
-#main .content .left { float:left; width:72%; _width:71%; padding-right:10px;}
-#main .content .right {float:left; width:25.5%; margin-left:10px; _overflow:hidden;}
 #main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid; float:left; width:100%;}
 
 ul.navigation {    list-style: none;    margin: 0;    padding: 0;    padding-bottom: 9px;}
