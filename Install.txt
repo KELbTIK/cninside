@@ -1,0 +1,21 @@
+Meeplace installation file
+
+Requirements
+Php 5.2 or above
+GD Library 2.0.l or above
+MySQL 5 or above
+Zend Optimizer - activation and install require zend optimizer. 
+
+Install instructions
+Unzip all files
+Create a new database in your cPanel
+Upload all files into your root folder
+Point to http://www.yourdomain.com/
+Follow install instructions
+
+Set daily cron for StarBiz feature. This cron will deactivate expired StarBiz listings and send reminder email to listings' owners.
+Please use ONE of the following commands. Make sure to update the url with your domain.
+
+    1. wget -O --q http://www.example.com/cron_daily.php
+    2. get http://www.example.com/cron_daily.php > /dev/null
+    3. lynx --dump http://www.example.com/cron_daily.php 2>&1 > /dev/null

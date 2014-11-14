@@ -1,0 +1,286 @@
+=============================
+     What's New for Meeplace
+=============================
+ 
+Dec 24, 2010    Meeplace V2.96
+1. New - Admin can reset admin panel password.
+2. New - Duplicated selected category real-time check when submitting business.
+3. New - New multi-table search feature. Admin can determine to turn it on to search for business name, category, subcategory, description, and even reviews.
+4. New - Now allow all registered users able to compliment non friends & friends
+5. New - Footer copyright auto display site name instead of your-site.com
+6. New - Secure code for admin reset password and user reset password
+7. New - Added two variables Domain! and Sitename! for mail templates
+8. New - Added Search function for special offers page
+9. New - Implemented new style jQuery gallery for user gallery and business gallery.
+10. New - Add friend approval on profile. Invitee can approve friend request from links in Email or Profile page.
+11. New - Category names work with multi-language system now. Including Business, Special Offers, Classified, Event and Chatter categories and subcategories.
+12. New - New Visual Language Editor for you to edit translations even without program skill.
+13. New - New Map Generator in admin panel for you to generate maps for business in batch. Also you can determine if the result generator give is right.
+14. New - Ability to Turn off Google maps in admin panel.
+15. New - New Event Edit page in admin panel.
+16. New - Now change password have been an individual page.
+17. New - Now visitors can click the button under Google map to get directions to the business.
+18. New - Notify business owners when a review has been written about their listing, also a new new mail template for this feature.
+19. New - Admin can upload site logo from admin panel directly.
+20. New - A new setting for admin to determine if the reviews need to be approved before which can be displayed.
+21. New - Category and search url SEO.
+22. New - Category List links in search page SEO improved depends on whether there's keyword searching.
+23. New - "Narrow by Category" is taken place by "Browse by Category" if there's no keyword searching.
+24. New - A new list page for business owners to edit all special offers of his business.
+25. New - When a user is deleted by admin, it now deletes all his reviews, bookmarks, etc.
+26. New - Now require two 2 characters at least before giving city suggestions to reduce server workload and avoid long suggestion list.
+27. New - If business is deleted it now delete all its reviews and bookmarks, etc.
+28. New - A new settings for weather display in admin panel.
+29. New - Address to map marker feature for Event Create.
+30. New - "Related Business" will auto set event's city in Create Event.
+31. New - Address to map auto generator in Create Event.
+32. Update - Event reply with special chars fixed.
+33. Update - Event site url and description with special chars fixed.
+34. Update - Both "Browse Photos" and "Add Photos" links for business detail page.
+35. Update - Improved security when searching business
+36. Update - Empty subcategory will not be allowed for businesses.
+37. Update - Special characters will be totally hidden in business permalink.
+38. Update - & now changes to "and" in permalink creation.
+39. Update - Change 'Nickname' to 'Username'.
+40. Update - Special chars in business reviews fixed.
+41. Update - Locations is alphabetical order
+42. Update - Fixed URL included in Special Offers not redirecting user to correct website.
+43. Update - Rename link from "Write a Review" to "Page Bottom" in Chatter zone.
+44. Update - Change name of "claim listing" to "Own this Business?"
+45. Update - When user is creating an account, passwords and birthdate are lost upon user submitting form with 'email already in use' fixed.
+46. Update - User need to re-type passwords and birthday again when signing up bug fixed.
+47. Update - Remove brithdate from password reset, and now make optional when signing up and Edit Profile page.
+48. Update - "Business Father Folder" changed name to "Business Parent Folder" and moved to SEO settings.
+49. Update - Hide all Main categories on Post a Classified page that don't have sub categories.
+50. Update - Username(Nickname) now don't allow duplicates
+51. Update - When a review is deleted it is still being counted fixed.
+52. Update - Changed font size of nav bar to 13px and added "Home" link to nav bar.
+53. Update - Search on classifieds works now.
+54. Update - When uploading a photo to a business without a image, the images later uploaded don't default to main cover fixed.
+55. Update - Now cities auto-suggestion drop-down is able to process special chars.
+56. Update - List images broken in homepage fixed.
+57. Update - Now 1 star is the minimum for business review. Rating is required.
+58. Update - Fixed search on classifieds
+59. Update - Fixed issue with " ' characters in event name, event reviews and business reviews.
+60. Update - '&' mark works in business category SEO url.
+61. Update - Classifieds detail page direct link fixed.
+62. Update - Event name with special chars fixed.
+63. Update - Fixed video popup window for MAC browsers.
+64. Update - Event maps auto create map pin location.
+65. Update - Member search now can be searched by city
+66. Update - Event end and start date system updated.
+67. Developer - Default theme folder has static directory path in 7 files fixed.
+
+
+Aug 30, 2010    Meeplace V2.9
+1. New - New Language Pack: Spanish (es-bo)
+2. New - Able to switch off multi-language feature and set a fixed language.
+3. New - Able to set a language as default when the language of visitor's browser cannot be recognized.
+4. New - Token available for user login.
+5. New - Sales & Special Offers
+6. New - Visual uploader for uploading pictures for business
+7. New - Friend request. Now visitors can see a user's basic info without login or without being friends. "Add as friend" need to be approved.
+8. New - "Top reviewers" and "New users list"
+9. New - Category SEO
+10. New - City auto-suggest for header search.
+11. New - Business owner can apply StarBiz from business detail page.
+12. New - Allow a user to attach a photo with his classified.
+13. New - Related Business for Event: Allow a user to pick a related business to fill address when making a event.
+14. New - Special Offers: Business owner can post special offers for their business.
+15. New - When creating a category user can enter keywords and description.
+16. New - Regular Hours and Custom Hours for business hours.
+17. Update - On business thumbnails, now it's clickable and directed to business detail or category.
+18. Update - Admin Notification for Contact us feedback
+19. Update - Have cities and states to be set alphabetical.
+20. Update - Non logged in pop up for visitor tried to review an event.
+21. Update - Event translated.
+22. Update - Member search updated.
+23. Update - Changed the name ÔDeals' to ÔClassified'.
+24. Update - Text button instead of image button.
+25. Update - Compatible with PHP 5.3+.
+26. Update - Fixed No-Business error when adding business caused by special character in some environments.
+27. New - Categories are now alphabetical
+
+May 22, 2010    Meeplace V2.8
+1. New - Multi Language feature.
+2. New - New Language Packages: English, Chinese Simplified (zh-cn)
+3. New - More business fields are available to edit by owner, including adjust map, delete photos.
+4. New - A rating tips when writing a review or posting a business.
+5. New - Business Photo list in admin panel.
+6. New - Able to change business folder to another name from /business
+7. New - Star Business: Allow business to be a special one which distinguishes the other businesses from features.
+8. New - AJAX User Gallery.
+9. New - Auto Address to Map feature when adding a business.
+10. New - Add "Find My Position" and "Address to Map" for default map settings in admin panel.
+11. New - Add "Send Email Newsletter" and "Send PM Newsletter" in admin panel.
+12. New - New notifications: 'Business submit' to admin, 
+13. New - New notifications: 'Business approved' to submitter, 
+14. New - New notifications: 'Business claim' to admin, 
+15. New - New notifications: 'Result of business claim' to requester.
+16. New - New notifications: 'Event submit' to admin, 
+17. New - New notifications: 'Event approved' to submitter, 
+18. New - Allow editing of permalink in admin.
+19. New - Allow claimed user to edit permalink.
+20. New - New AD Position manage allow admin to add unlimited ad position.
+21. New - FB connect users need to complete email and nickname after first login.
+22. New - FB connect users can also set a nickname to hide the true name now.
+23. New - Support grab video URL from YouTube video page URL when adding business.
+24. New - Able to custom time format.
+25. Fix - Added NA option for price range when adding or editing business.
+26. Fix - Be able to submit header login form when press Enter.
+27. Fix - Review order fixed for the first page static reviews.
+28. Fix - New rating rule for star picture adjusted.(Score more than 4.75 will be 5 stars)
+29. Fix - Up to 100 items per page for Business List in admin panel.
+30. Fix - Because of the adjustment of Facebook's API , Facebook Connect script modified.
+31. Fix - Remove the display of a person's last name if they didn't enter it in during sign up
+32. Fix - Now allow ' in categories and cities name.
+33. Fix - Fixed if event doesn't have a end date, it displays itself in the Today section.
+34. Fix - Fixed permalink bug when adding business.
+35. Fix - Business Review pagination fixed.
+36. Developer - Kernel functions like turn_date(), utf_substr() etc upgraded. Eastern languages fully supported.
+36. Developer - New kernel files re-coded to be OOP classes.
+
+=============================================
+
+Mar 22, 2010    Meeplace V2.78
+1. New Feature - Ad Campaigns.
+2. New Feature - Facebook connect: Ability to login with FB when user posts a review, new business, etc.
+3. Improve - Duplication of biz name supported. Custom Permalink supported.
+4. Improve - Satellite / Hybrid view supported on map.
+5. Improve - Business reviews now are static for the first page, which will be friendlier to searching engines.
+6. Improve - Optimized the inappropriate flag component
+7. Improve - Tool Tips on Price Range
+8. Improve - Users are allowed to create businesses with the following char: " ' . & $ #
+9. Improve - Use default ICON when adding business category if admin do not upload an ICON
+10. Fix - Business reviews IE6/7 bug fixed.
+11. Fix - Fixed multi-select bug in IE.
+12. Fix - Friend list of send private messages fixed.
+13. Developer - Moved function get_biz_cat_list() out from kernel.
+
+=============================================
+
+Mar 3, 2010    Meeplace V2.7
+1. New Feature - Owner, Name, Email and Phone fields for claim business.
+2. New Feature - Owners can reply to reviews.
+3. New Feature - Multi items selectable/deletable in admin panel.
+4. New Feature - Multi thumbnails can be regenerated in admin panel.
+5. New Feature - On business reviews people can click if the review was Useful, Funny, Lame.
+6. New Feature - Admins are able to delete uploaded photos or set one to be the cover image of business.
+7. Improve - When editing business. There'll be a drop down of premade categories / city instead of having to write down the ID.
+8. Modify - Rename in admin link "State & City Settings" to "Location Settings".
+
+=============================================
+
+Feb 16, 2010    Meeplace V2.61
+1. Improve - When business is created, it still needs to be claimed.
+2. Improve - State is now displayed on business detail page.
+3. Improve - New fields displayed when users "add new business" and also when admin edits a business.
+
+=============================================
+
+Feb 13, 2010    Meeplace V2.6
+1. Optional enable CAPTCHA on "Sign up" and "New Business" sections.
+2. Highlight unapproved business and events in admin panel.
+3. Added unapproved business and events number in "Site Statistical Summary" of admin panel.
+4. CAPTCHA switcher and style settings are available.
+5. Users can claim business.
+6. Business owners can edit their business detail data.
+7. Business and events thumbnails regeneration are available in admin panel.
+8. Description and Keywords Meta tags now are available to setup in admin panel.
+9. Google-Analytics code auto insert is available.
+10. Developers now can enable Debug Mode in admin panel, which will show Smarty debug window and PHP errors.
+11. Add description text, price range, business hour, weeks.
+
+=============================================
+
+Feb 4, 2010    Meeplace V2.5
+1. Multi-style business permalink supported. (SEO)
+2. Multi admin account supported.
+3. Business submitting approval supported.
+4. Events submitting approval supported.
+5. Operation Prompt.
+6. Enabled inner dialog in admin panel (FancyBox).
+7. It will redirect to where you come from instead of "My Profile" after logging in.
+8. International language encoding supported.
+9. Business detail, review UI optimized.
+10. Enable category icon upload in admin panel.
+11. Removed the popups in admin panel on every operation, AJAX instead.
+12. Picture compressed to different sizes when uploading for a better loading speed.
+13. Activation bug fixed.
+
+=============================================
+
+Jan 24, 2010    Meeplace V2.4
+1. State-City mode released. Your review site can be a national one today.
+2. Site Statistical Summary in admin panel.
+3. Record user last login time.
+4. Record business submitting time.
+5. Record event submitting time.
+6. New license system.
+7. Altered some database table fields
+8. New upgrade system now will recognize your current version, so you can upgrade from any old versions from now on with it. So auto-upgrade is on the way.
+9. Search Business by its name instead of id in Admin Panel.
+10. Move "Flag" alone from Dashboard as a new section in Admin Panel.
+
+=============================================
+
+Jan 21, 2010    Meeplace V2.3
+1. Able to modify where Google map starts when adding new business or event.
+2. Admin panel theme changed.
+3. Default theme changed.
+4. Installation improved.
+5. Script Open Source! (Except for some core file, such as activation, installation)
+
+Change brand name to Meeplace!
+
+=============================================
+
+Jan 10, 2010    MeeClones V2.2
+1. Newly built database info storage method to prevent re-installation or info missing after upgrade.
+2. Time Zone customizable.
+3. Able to modify Google map API key via admin panel.
+4. Able to modify site name via admin panel.
+5. Able to modify mail info via admin panel.
+6. Installation improved.
+
+=============================================
+
+Jan 8, 2010    MeeClones V2.1.5
+1. Able to modify mail info via admin panel.
+2. New default theme.
+3. New installation, improved and safer installation.
+
+Change brand name to MeeClones!
+
+=============================================
+
+Jan 1, 2010    YelpClone V2.1.3
+1. It does not return to the first page when change category when searching business fixed.
+2. Alignment of "Best Of" adjusted in default theme.
+3. Header sent error fixed.
+4. SMTP class rebuilt.
+5. Allow people to input zip code which starts as '0'
+
+=============================================
+
+Dec 30, 2009  YelpClone V2.1.2
+1. Fix - City info missing when searching a biz.
+
+=============================================
+
+Dec 28, 2009  YelpClone V2.1.1
+1. Fixed the city choice error.
+2. Fixed the user info link in business review.
+3. Fixed the More Hot Local Picks empty in homepage.
+
+=============================================
+
+Dec 27, 2009  YelpClone V2.1 
+1. Homepage "Line-207" error fixed.
+2. Multi-template pre-supported.
+3. Improved installation
+
+=============================================
+
+Dec 10, 2009 YelpClone V2.0
+1. A template system is available for people to make theme for the site.

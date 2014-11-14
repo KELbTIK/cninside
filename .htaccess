@@ -1,0 +1,30 @@
+RewriteEngine on
+<Ifmodule mod_php5.c>
+php_value upload_max_filesize "10M"
+php_value post_max_size "10M"
+php_value default_charset "utf-8"
+php_value magic_quotes_gpc "on"
+php_value allow_url_fopen "on"
+php_value register_globals "off"
+</Ifmodule>
+#Biz Begin
+RewriteCond %{REQUEST_URI} ^/business
+RewriteRule ^business/$ /biz/index.php  [L]
+RewriteRule ^business/(.+)(\..*)$ /biz/$1$2  [L]
+RewriteRule ^business/([^\.|/]+)$ /biz/detail.php?name=$1  [L]
+RewriteRule ^business/(.*/)*([^\.|/]+)$ /biz/detail.php?name=$2  [L]
+#Biz End
+
+RewriteCond %{REQUEST_URI} ^/category
+RewriteRule ^category/([^/]+)/$ /biz/search.php?catname=$1  [L]
+RewriteRule ^category/([^/]+)/([^/]+)/$ /biz/search.php?catname=$1&subcatname=$2  [L]
+
+RewriteCond %{REQUEST_URI} ^/search
+RewriteRule ^search$ /biz/search.php [L]
+RewriteRule ^search?(.*) /biz/search.php?$1  [L]
+
+RewriteCond %{REQUEST_URI} ^/install
+RewriteRule ^install/$ /install/start.php  [L]
+
+RewriteCond %{REQUEST_URI} ^/content
+RewriteRule ^content/([^/]+)/?$ /page.php?page=$1  [L]

@@ -1,0 +1,49 @@
+[22-Feb-2011 17:14:14] PHP Parse error:  syntax error, unexpected T_STRING, expecting ']' in /home/meeplace/public_html/dev1/languages/zh-cn/text.php on line 978
+[02-Dec-2011 15:07:53] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home/meeplace/public_html/dev1/languages/es-bo/text.php on line 710
+[02-Dec-2011 15:07:53] PHP Parse error:  syntax error, unexpected T_STRING in /home/meeplace/public_html/dev1/languages/es-bo/text.php on line 710
+[18-Aug-2014 05:05:52] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Too many connections in /home/meeplace/public_html/dev1/inc/func/dbconnect.php on line 1
+[18-Aug-2014 05:05:53] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'meeplace'@'localhost' (using password: NO) in /home/meeplace/public_html/dev1/inc/func/dbconnect.php on line 1
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/meeplace/public_html/dev1/inc/func/dbconnect.php on line 1
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'meeplace'@'localhost' (using password: NO) in /home/meeplace/public_html/dev1/inc/func/dbconnect.php on line 1
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/meeplace/public_html/dev1/inc/func/dbconnect.php on line 1
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'meeplace'@'localhost' (using password: NO) in /home/meeplace/public_html/dev1/inc/func/get_sth.php on line 101
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/meeplace/public_html/dev1/inc/func/get_sth.php on line 101
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/inc/func/get_sth.php on line 103
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'meeplace'@'localhost' (using password: NO) in /home/meeplace/public_html/dev1/inc/func/secure.class.php on line 41
+[18-Aug-2014 05:05:54] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/meeplace/public_html/dev1/inc/func/secure.class.php on line 41
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:06 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:11:16 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:12:17 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20090626/imagick.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158
+[09-Nov-2014 14:19:23 America/Denver] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cninsider/public_html/inc/func/header.php on line 158

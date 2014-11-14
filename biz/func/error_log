@@ -1,0 +1,47 @@
+[29-Nov-2011 21:14:07] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 21:20:57] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 21:27:15] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 21:28:29] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 22:47:45] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 22:50:01] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 22:50:42] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 22:51:11] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 22:51:47] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 22:54:18] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:00:58] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:04:37] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:13:24] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:17:27] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:19:13] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:20:18] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:21:01] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:21:36] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:22:04] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:24:37] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107
+[29-Nov-2011 23:52:39] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 125
+[29-Nov-2011 23:56:04] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 128
+[29-Nov-2011 23:57:35] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 129
+[29-Nov-2011 23:58:32] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 129
+[29-Nov-2011 23:59:02] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 129
+[29-Nov-2011 23:59:16] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 129
+[30-Nov-2011 00:01:44] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 129
+[30-Nov-2011 00:05:01] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 133
+[30-Nov-2011 00:06:42] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 133
+[30-Nov-2011 00:11:19] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 133
+[30-Nov-2011 00:12:41] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 128
+[30-Nov-2011 00:13:27] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 128
+[30-Nov-2011 00:48:40] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 241
+[30-Nov-2011 00:48:40] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 241
+[30-Nov-2011 00:50:54] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 00:50:54] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 00:50:54] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 00:53:46] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 00:53:46] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 00:53:46] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 00:53:46] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 242
+[30-Nov-2011 01:07:09] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 247
+[30-Nov-2011 01:08:57] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 247
+[30-Nov-2011 01:08:57] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 247
+[30-Nov-2011 16:34:29] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 131
+[30-Nov-2011 16:51:14] PHP Warning:  Division by zero in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 133
+[30-Nov-2011 16:53:03] PHP Warning:  Invalid argument supplied for foreach() in /home/meeplace/public_html/dev1/biz/func/getreview.php on line 107

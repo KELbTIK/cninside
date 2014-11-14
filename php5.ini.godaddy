@@ -1,0 +1,15 @@
+cgi.fix_pathinfo=1
+doc_root=
+upload_max_filesize=10M
+post_max_size=10M
+default_charset=utf-8
+magic_quotes_gpc=on
+allow_url_fopen=on
+register_globals=off
+
+[Zend]
+zend_optimizer.optimization_level=15
+zend_extension_manager.optimizer=/usr/local/Zend/lib/Optimizer-3.3.3
+zend_extension_manager.optimizer_ts=/usr/local/Zend/lib/Optimizer_TS-3.3.3
+zend_extension=/usr/local/Zend/lib/Optimizer-3.3.3/ZendExtensionManager.so
+zend_extension_ts=/usr/local/Zend/lib/Optimizer_TS-3.3.3/ZendExtensionManager_TS.so
