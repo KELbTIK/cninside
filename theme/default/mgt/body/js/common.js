@@ -3,15 +3,15 @@ function select_item_all(whochecked,allitem,childitem)
 {
 	if(whochecked==true)
 	{
-		$('.'+allitem).attr('checked',true);	
-		$('.'+childitem).attr('checked',true);	
-		$('.itemtr').addClass('trselected');	
+		$('.'+allitem).attr('checked',true);
+		$('.'+childitem).attr('checked',true);
+		$('.itemtr').addClass('trselected');
 	}
 	else
 	{
-		$('.'+allitem).attr('checked',false);	
-		$('.'+childitem).attr('checked',false);	
-		$('.itemtr').removeClass('trselected');	
+		$('.'+allitem).attr('checked',false);
+		$('.'+childitem).attr('checked',false);
+		$('.itemtr').removeClass('trselected');
 	}
 }
 
@@ -19,11 +19,11 @@ function delselected(sheet,where,childitem)
 {
 
    var selected_ids='';
-   var obj=$("input:checked[class='"+childitem+"']");       
-    $.each(obj, function(i,item){           
+   var obj=$("input:checked[class='"+childitem+"']");
+    $.each(obj, function(i,item){
        selected_ids+= $(item).val() +',';
-     });   
-	
+     });
+
 if(selected_ids)
 {
 	var a=confirm("CAUTION! You are going to delete a quantity of items.\n\rThese items will never be restored after deleted.\n\rSure to delete these items?");
@@ -34,8 +34,8 @@ else
 	alert('You have not selected any item.');
 	return;
 }
-	
-	
+
+
 $.post("/mgt/func/delete.php?"+Math.random(), {
 sheet:sheet,
 where:where,
@@ -60,7 +60,7 @@ function menu_toggle(who, father)
 
 
 function nav() {
-	
+
 $('#sr').css({"opacity":0.2, "cursor":"wait"});
 
 var url=$('#url').val();
@@ -77,7 +77,7 @@ $.get(url+'?page='+page+'&f='+f+'&q='+q+'&rand='+Math.random(),
 				 $('#wait').hide();
 				 fancybox();
 				 }
-				 );		
+				 );
 }
 
 function ChangeValue(target,value) // for upload pic
@@ -85,7 +85,7 @@ function ChangeValue(target,value) // for upload pic
 	$('#'+target).val(value);
 	$('#uploadbtn').hide();
 	$('#uploaded').show();
-	
+
 	$('#fancy_outer').hide();
 	$('#fancy_overlay').hide();
 }
@@ -95,8 +95,8 @@ function hole_auto_generate(biz_id)
 	var hole_to=$('#hole_to').val();
 	if(hole_from==''||hole_to==''){alert('Please input number');return;}
 	else if(hole_from>hole_to){alert('Invalid Number');return;}
-	  
-	
+
+
 	for(var i=hole_from; i<=hole_to; i++)
 	$.post("func/add.php?"+Math.random(), {
 								   sheet:'business_hole',
@@ -159,23 +159,23 @@ function tips(content)
     		  _clientheight= Math.max(document.body.clientHeight , document.documentElement.clientHeight);
         var _clientwidth= document.documentElement.clientWidth || document.body.clientWidth;
         var _pageheight =  Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
-   
+
 		var msgtop = (scrolltop+(_clientheight)/2)-250+"px";
 		var msgleft = ((_clientwidth-650)/2)+"px";
 
 		$('#tips').css('top', msgtop);
 		$('#tips').css('left',  msgleft);
 
-	
+
 	setTimeout("$('#tips').hide()",2200);
-	
+
 }
 
 function del(sheet,where,equal)
 {
 	var a=confirm("Sure to delete this item?");
 	if(a==0) return ;
-	
+
 	$.post("/mgt/func/delete.php?"+Math.random(), {
 	sheet:sheet,
 	where:where,
@@ -187,7 +187,7 @@ function del_event(sheet,where,equal)
 {
     var a=confirm("Sure to delete this item?");
     if(a==0) return ;
-    
+
     $.post("/mgt/func/delete.php?"+Math.random(), {
     sheet:sheet,
     where:where,
@@ -219,7 +219,7 @@ var editor;
 
 function create_editor()
 	{
-	var html = $('#maskeditor').html(); 
+	var html = $('#maskeditor').html();
 	// Create a new editor inside the <div id="editor">
 	//$('#maskeditor').hide();
 		if ( editor )
@@ -227,7 +227,7 @@ function create_editor()
 	editor = CKEDITOR.appendTo( 'editor' );
 	editor.setData( html );
 }
-	
+
 function destory_editor()
 {
 	if ( !editor )
@@ -243,5 +243,5 @@ function icon_dropdown(id)
 {
 	$('.icon_dropdown').hide();
 	$('#icon_dropdown_'+id).slideDown('fast');
-	
+
 }

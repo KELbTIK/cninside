@@ -17,17 +17,17 @@
 							<a href="../my/?id={$i.userid}">{$i.username}</a></td>
 						<td width="504" class="narrowTitle">
 							<a href="javascript:;" onclick="get({$i.topicid},1,2)">{$i.topicname}</a></td>
-						
+
 					  <td width="76" class="nonwrapping aligncent"><a href="javascript:;" onclick="sele_item('',{$i.catid});">{$i.catname}</a></td>
 						<td width="41" class="nonwrapping aligncent">{$i.replynum}</td>
 						<td width="113" class="nonwrapping aligncent">{$i.replytime}</td>
-					</tr>       
+					</tr>
 {/foreach}
-<!--/loop--> 
+<!--/loop-->
 
                      </table>
                      </div>
-                
+
         {if !$var_lists.found}
         <br id="clear"/><br/><br><br><center>{l t='No result found'}.</center><br><br><br>
         {else}

@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 	fancybox();
- 	scrollpage(); 
+ 	scrollpage();
  	if(weatherWidgetEnabled=='1')
  		weatherinit();
 	if(googleMapEnabled=='1' && cat_map_enabled=='1')
@@ -10,8 +10,8 @@ $(document).ready(function() {
 
 
 
-	
-  
+
+
 function scrollpage()
 {
    jQuery(function( $ ){
@@ -23,13 +23,13 @@ function scrollpage()
 				else var s = p/(2*Math.PI) * Math.asin (c/a);
 				return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
 				};
-		
-				
+
+
 				$('#replyBtn').click(function(){
 					$.scrollTo( '#replyTitle', 800  );
 					return false;
 				});
-				
+
 				  $('#replyBtn2').click(function(){
 					$.scrollTo( '#replyTitle', 800  );
 					return false;
@@ -47,7 +47,7 @@ function scrollpage()
 }
 //////
  function fancybox()
- { 
+ {
  $(".iframe").fancybox({
   'overlayShow'    : true,
   'zoomSpeedIn'    : 600,
@@ -74,10 +74,10 @@ function scrollpage()
   'hideOnOverlayClick':false,
   'hideOnContentClick':false
   });
-  
+
   }
-  
-  
+
+
 function showreply(reviewid)
 {
 	$('#ownerreplytext_'+reviewid).show();
@@ -89,7 +89,7 @@ function submitreply(id,reviewid)
 {
 	 	  var replytext=$('#ownerreplytext_'+reviewid).val();
 		  replytext=replytext.replace(/\n/g,"[br]");
-		  if(!replytext) 
+		  if(!replytext)
 		  {
 			  alert("Please input your reply!");
 			  return;
@@ -110,7 +110,7 @@ function submitreply(id,reviewid)
 
 function check_login(who)
 {
-    if(!temp) 
+    if(!temp)
     {
 		alert(t_loginfirst);
     		who.blur();
@@ -123,8 +123,8 @@ function owner(who)
         alert(t_owner);
             who.blur();
 }
-  
- 
+
+
 function get(id,pg,changepage) {
 /*
 $('#sr').hide();
@@ -134,7 +134,7 @@ $('#wait').show();
   {
 		  var comment=$('#review').val();
 		  comment=comment.replace(/\n/g,"[br]");
-		  if(!comment) 
+		  if(!comment)
 		  {
 			  alert("Please input your review!");
 			  return;
@@ -148,21 +148,21 @@ $('#wait').show();
                         alert("Please rate!");
                         has_ratings = 0;
                         return;
-                    }else{   
+                    }else{
                         rating[field.name] = field.value;
                     }
                 }
-           });     
+           });
 
 
           rating=$.param(rating);
-		  if(!temp) 
+		  if(!temp)
 			{
 				alert("Please Login!");
 				return;
 			}
 			if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-			$('#reviewTitle').ScrollTo(30); 
+			$('#reviewTitle').ScrollTo(30);
 			$('#sr').css('opacity',0.3);
 			$('#review').val('');
 			if (has_ratings == 1){
@@ -174,37 +174,37 @@ $('#wait').show();
 			    rating:rating
 			    },function(data){
 				    nav(data);
-				    tips(t_reviewsubmitted);	
+				    tips(t_reviewsubmitted);
 			     });
             }
-             
+
  }else if(changepage=="review"){       // comments with single rating
- 
+
         var comment=$('#review').val();
           comment=comment.replace(/\n/g,"[br]");
-          if(!comment) 
+          if(!comment)
           {
               alert("Please input your review!");
               return;
            }
           var rating=$('#rating').val();
-          if(!rating) 
+          if(!rating)
           {
               alert("Please rate!");
               return;
            }
-          
-          
-          if(!temp) 
+
+
+          if(!temp)
             {
                 alert("Please Login!");
                 return;
             }
             if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-            $('#reviewTitle').ScrollTo(30); 
+            $('#reviewTitle').ScrollTo(30);
             $('#sr').css('opacity',0.3);
             $('#review').val('');
-            
+
             $.post("/biz/func/getreview.php?"+Math.random(), {
             id:id,
             page:'1',
@@ -213,9 +213,9 @@ $('#wait').show();
             rating:rating
             },function(data){
                 nav(data);
-                tips(t_reviewsubmitted);    
+                tips(t_reviewsubmitted);
              });
- 
+
  }else //not review
   {
 	  if (!( $.browser.msie && parseInt($.browser.version)==6 ))
@@ -241,9 +241,9 @@ function nav(data)
 	$('#sr').css('opacity',1);
 	/*
 	$('#sr').show();
-	
+
 	$('#wait').hide();
-	*/	
+	*/
 	fancybox();
 }
 
@@ -270,10 +270,10 @@ document.getElementById('flagform').style.display='';
 
 
 function code2img(code){
-     return "http://l.yimg.com/us.yimg.com/i/us/we/52/"+code+".gif";  
+     return "http://l.yimg.com/us.yimg.com/i/us/we/52/"+code+".gif";
   }
 
-function weather2html(weather,cat,alt){  //cat =1 now   2 tomorrow ... 
+function weather2html(weather,cat,alt){  //cat =1 now   2 tomorrow ...
 var imgurl = code2img(weather.code);
 var text = weather.text;
 var _temp = weather.temp;
@@ -320,7 +320,7 @@ else {
 
 function weatherinit()
 {
-	
+
 // Weather Forecast Init.
 var zipcode=biz_zip;
 var url ="http://pipes.yahoo.com/pipes/pipe.run?_id=2eb187fcae6192aee203f670109a40f7&_render=json&u=f&p="+zipcode+"&_callback=?";
@@ -329,14 +329,14 @@ var url ="http://pipes.yahoo.com/pipes/pipe.run?_id=2eb187fcae6192aee203f670109a
     var _item = data.value.items[0];
     var alt=_item['y:title'];
   var y_id=_item['y:id']['value'];
-  if(y_id!=null){    
+  if(y_id!=null){
        weather2html(_item["yweather:condition"],'1',alt);
        weather2html(_item["yweather:forecast"][0],'2','');
        weather2html(_item["yweather:forecast"][1],'3','');
        $('.weather').slideDown('slow');
   }
     });
-	
+
 }
 
 
@@ -347,7 +347,7 @@ if(zoom==0)
   document.getElementById("map_canvas").innerHTML="<br /><br /><br /><br /><br /><center>No Map</center>";
 }
 else
-{      
+{
 $('#map_direction_btn').show();
 
     var myLatlng = new google.maps.LatLng(y,x);
@@ -357,21 +357,21 @@ $('#map_direction_btn').show();
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    
+
     var marker = new google.maps.Marker({
-        position: myLatlng, 
+        position: myLatlng,
         map: map,
         title:"Map"
     });
 
 }}
 
- 
+
 var tipsTimer;
  function tips(content)
 {
 	$('#tips').html(content);
-	
+
 		var scrolltop = window.pageYOffset  || document.documentElement.scrollTop  || document.body.scrollTop || 0;
 		var _clientheight=0;
   			  _clientheight = Math.min(document.body.clientHeight , document.documentElement.clientHeight);
@@ -379,13 +379,13 @@ var tipsTimer;
     		  _clientheight= Math.max(document.body.clientHeight , document.documentElement.clientHeight);
         var _clientwidth= document.documentElement.clientWidth || document.body.clientWidth;
         var _pageheight =  Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
-   
+
 		var msgtop = (scrolltop+(_clientheight)/2)-250+"px";
 		var msgleft = ((_clientwidth-650)/2)+"px";
 
 		$('#tips').css('top', msgtop);
 		$('#tips').css('left',  msgleft);
-		
+
 		setTimeout("$('#tips').show()",200);
 		clearTimeout(tipsTimer);
 		tipsTimer=setTimeout("$('#tips').hide()",2800);
@@ -451,8 +451,8 @@ function offerUpdate(offerId,businessId)
 		alert('Please input description');
 		return;
 	}
-	
-	
+
+
 	$.post("/offer/func.ajax.php?"+Math.random(), {
 			type:'update',
 			businessId:businessId,
@@ -480,13 +480,13 @@ function offerInsert(businessId)
 	var offerDescription=$('#offer_insert_desc').val();
 	var offerUrl=$('#offer_insert_url').val();
 	var offerPhone=$('#offer_insert_phone').val();
-    var offerTitle=$('#offer_insert_title').val(); 
+    var offerTitle=$('#offer_insert_title').val();
 	if(!offerDescription)
 	{
 		alert('Please input description');
 		return;
 	}
-	
+
 	$.post("/offer/func.ajax.php?"+Math.random(), {
 			type:'insert',
 			businessId:businessId,
@@ -527,8 +527,8 @@ function offerLoad(businessId)
 					$('#offer_update_desc').val(data.offer_descriptionNoTag);
 					$('#offer_update_url').val(data.offer_url);
 					$('#offer_update_phone').val(data.offer_phone);
-                    $('#offer_update_title').val(data.title); 
-					
+                    $('#offer_update_title').val(data.title);
+
 				}
 				else
 					tips(data.S);

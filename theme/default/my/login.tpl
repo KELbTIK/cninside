@@ -6,7 +6,7 @@
 <!--Main Start-->
 
 <div id="main">
-    <div class="content container-fluid">
+    <div class="content container">
         <div class="row">
             <div class="left col-md-7 col-sm-7 col-xs-12" >
                 <div class="con box" style=" width:100%; margin-bottom:10px;" id="login_regdiv">

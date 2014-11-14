@@ -1,5 +1,5 @@
  <!--Footer Start-->
- <div id="footer">
+<div id="footer" class="container">
 <p>&copy; {$smarty.now|date_format:"%Y"} {$smarty.const._SITENAME_} - <a href="/page.php?page=privacy" target="_blank">{l t='Privacy Policy'}</a> - <a href="/page.php?page=terms" target="_blank">{l t='Terms of Service'}</a> - <a href="/contact/">{l t='Contact'}</a>
 
 

@@ -11,7 +11,7 @@
 
  <div id="main">
 
-    <div class="content">
+    <div class="content container">
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-12">
                 <div id="slider" class="con box change" style=" padding:5px;">

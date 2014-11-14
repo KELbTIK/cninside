@@ -49,156 +49,161 @@ background-image:url({$smarty.const._LOGO_URL_});
 {/if}
 
 <div id="container" class="container">
+    <div class="row">
+        <div id="searchcity_div" class="searchbarlist"></div>
 
-<div id="searchcity_div" class="searchbarlist"></div>
+        <!--Heaer Start-->
+        <div id="header" class="header">
+            <h1 class="pull-left col-md-6 col-sm-4 col-xs-12"><a href="/" id="headerlogolink">{$page_title}</a></h1>
 
-<!--Heaer Start-->
-<div id="header" class="header">
-    <h1 class="pull-left col-md-6 col-sm-4 col-xs-12"><a href="/" id="headerlogolink">{$page_title}</a></h1>
+            {if !($smarty.const._MULTILANGUAGE_HIDE_MENU_ == 1  || $smarty.const._MULTILANGUAGE_ENABLE_==2 ) }
+                <ul class="language_selector" onmouseover="show_language_bar()" onmouseout="hide_language_bar()">
+                    <li>{$current_language}</li>
+                    {foreach from=$var_language item=i}
+                    <li> <img src="/languages/flags/{$i.image}" border="0" /><a href="/languages/set_lang.php?lang={$i.lang}">{$i.name}</a></li>
+                    {/foreach}
+                </ul>
+            {/if}
+            <div class="col-md-6 col-sm-8 col-xs-12 header-menu">
+                <div class="row">
+                    <!-- Nav tabs -->
+                    <div class="col-md-2 col-sm-2 col-xs-4 pull-right">
+                        <ul class="nav nav-pills nav-stacked" role="tablist">
+                            <li role="presentation" class="active"><a href="#sign_in" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-sign-in"></i></a></li>
+                            <li role="presentation"><a href="#search" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-search"></i></a></li>
+                        </ul>
 
-    {if !($smarty.const._MULTILANGUAGE_HIDE_MENU_ == 1  || $smarty.const._MULTILANGUAGE_ENABLE_==2 ) }
-        <ul class="language_selector" onmouseover="show_language_bar()" onmouseout="hide_language_bar()">
-            <li>{$current_language}</li>
-            {foreach from=$var_language item=i}
-            <li> <img src="/languages/flags/{$i.image}" border="0" /><a href="/languages/set_lang.php?lang={$i.lang}">{$i.name}</a></li>
-            {/foreach}
-        </ul>
-    {/if}
-    <div class="pull-right pull-right col-md-6 col-sm-8 col-xs-12 header-menu">
-        <!-- Nav tabs -->
-        <div class="col-md-2 col-sm-2 col-xs-4 pull-right">
-            <ul class="nav nav-pills nav-stacked" role="tablist">
-                <li role="presentation" class="active"><a href="#sign_in" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-sign-in"></i></a></li>
-                <li role="presentation"><a href="#search" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-search"></i></a></li>
-            </ul>
+                    </div>
 
-        </div>
-
-        <!-- Tab panes -->
-        <div class="col-md-10 col-sm-10 col-xs-8">
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="sign_in">
-                    {if !$info.logged}
-                        <div class="logtext">
-                            <div class="row">
-                                <form action="/my/login.php?f=login&referer={$referer}" method="post" name="header_login">
-                                    <div>
-                                        <div class="col-md-1 visible-md">&nbsp;</div>
-                                        <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <div class="form-group">
-                                                <input class="form-control" id="header_email" type="text" name="email" value="Email" onfocus="if(this.value=='Email') this.value=''" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <div class="form-group">
-                                                <input class="form-control" id="header_password" type="password"  name="password" value="1234" onfocus="if(this.value=='1234') this.value=''" onKeyDown="if (event.keyCode==13) header_login.submit()" />
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-4 col-xs-12">
-                                            <div class="form-group">
-                                                <a  id="login_btn" class="btn btn-block button-grey" onclick="header_login.submit()" href="javascript:void(0)">{l t='Sign in'}</a>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-md-1 visible-md"></div>
-                                        <div class="col-md-11 col-sm-12 col-xs-12">
-                                            <ol class="breadcrumb">
-                                                <li>
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox" name="remember" id="remember"/> {l t='Remember me'}
-                                                        </label>
+                    <!-- Tab panes -->
+                    <div class="col-md-10 col-sm-10 col-xs-8">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="sign_in">
+                                {if !$info.logged}
+                                    <div class="logtext">
+                                        <div class="row">
+                                            <form action="/my/login.php?f=login&referer={$referer}" method="post" name="header_login">
+                                                <div>
+                                                    <div class="col-md-1 visible-md">&nbsp;</div>
+                                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="header_email" type="text" name="email" value="Email" onfocus="if(this.value=='Email') this.value=''" />
+                                                        </div>
                                                     </div>
-                                                </li>
-                                                <li><a href="/my/login.php">{l t='Create new account'}</a></li>
-                                                <li><a href="/my/resetpsw.php">{l t='Lost password'}?</a></li>
-                                                {if $smarty.const._FB_ENABLE_}
-                                                    <a href="/my/loginfb.php"><img src="/theme/{$get_theme}/images/fb_connect_small.gif" alt="Connect with Facebook" style="vertical-align:middle; margin-right:5px;" border="0" /></a>
-                                                {/if}
-                                            </ol>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
+                                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="header_password" type="password"  name="password" value="1234" onfocus="if(this.value=='1234') this.value=''" onKeyDown="if (event.keyCode==13) header_login.submit()" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-4 col-xs-12">
+                                                        <div class="form-group">
+                                                            <a  id="login_btn" class="btn btn-block button-grey" onclick="header_login.submit()" href="javascript:void(0)">{l t='Sign in'}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
 
-                                </form>
+                                                <div class="form-group">
+                                                    <div class="col-md-1 visible-md"></div>
+                                                    <div class="col-md-11 col-sm-12 col-xs-12">
+                                                        <ol class="breadcrumb">
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" name="remember" id="remember"/> {l t='Remember me'}
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li><a href="/my/login.php">{l t='Create new account'}</a></li>
+                                                            <li><a href="/my/resetpsw.php">{l t='Lost password'}?</a></li>
+                                                            {if $smarty.const._FB_ENABLE_}
+                                                                <a href="/my/loginfb.php"><img src="/theme/{$get_theme}/images/fb_connect_small.gif" alt="Connect with Facebook" style="vertical-align:middle; margin-right:5px;" border="0" /></a>
+                                                            {/if}
+                                                        </ol>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                {else}
+                                    <div class="logtext">{$info.logas}<br />{if $is_admin}<a href="/mgt/">{l t='Admin Area'}</a> | {/if}<a href="/my/membersearch.php">{l t='Member Search'}</a> {$info.logtext}</div>
+                                {/if}
                             </div>
-                        </div>
-                    {else}
-                        <div class="logtext">{$info.logas}<br />{if $is_admin}<a href="/mgt/">{l t='Admin Area'}</a> | {/if}<a href="/my/membersearch.php">{l t='Member Search'}</a> {$info.logtext}</div>
-                    {/if}
-                </div>
-                <div role="tabpanel" class="tab-pane" id="search">
-                    <div class="search">
-                        <div class="row">
-                            <div class="form-group">
-                                <form action="/biz/searchbiz.php" method="get" name="header_search">
-                                    <input class="form-control" name="page" type="hidden" id="page" value="1" />
-                                    <input class="form-control" type="hidden" name="sort_by" id="_sort_by" value="1" />
-                                    <div class="col-md-1 visible-md"></div>
-                                    <div class="col-md-4 col-xs-12 col-sm-4">
-                                        <label>
-                                            {if $smarty.const._MULTI_SEARCH_ENABLE_}
-                                                {l t='Search'}
-                                            {else}
-                                                {l t='Search Business'}
-                                            {/if}
-                                        </label>
+                            <div role="tabpanel" class="tab-pane" id="search">
+                                <div class="search">
+                                    <div class="row">
                                         <div class="form-group">
-                                            <input class="form-control" name="srm" type="text" id="srm" />
+                                            <form action="/biz/searchbiz.php" method="get" name="header_search">
+                                                <input class="form-control" name="page" type="hidden" id="page" value="1" />
+                                                <input class="form-control" type="hidden" name="sort_by" id="_sort_by" value="1" />
+                                                <div class="col-md-1 visible-md"></div>
+                                                <div class="col-md-4 col-xs-12 col-sm-4">
+                                                    <label>
+                                                        {if $smarty.const._MULTI_SEARCH_ENABLE_}
+                                                            {l t='Search'}
+                                                        {else}
+                                                            {l t='Search Business'}
+                                                        {/if}
+                                                    </label>
+                                                    <div class="form-group">
+                                                        <input class="form-control" name="srm" type="text" id="srm" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-xs-12 col-sm-4">
+                                                    <label>
+                                                        {l t='City'}
+                                                    </label>
+                                                    <div class="form-group">
+                                                        <input name="city" class="form-control" type="text" id="Hsearchcity" autocomplete="off" placeholder="{l t='All Cities'}" class="commentColor cityname" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-xs-12 col-sm-4">
+                                                    <label class="hidden-xs">&nbsp;</label>
+                                                    <div class="form-group">
+                                                        <a class="btn btn-block button-blue" onclick="header_search.submit()" href="javascript:void(0)">{l t='Search'}</a>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-xs-12 col-sm-4">
-                                        <label>
-                                            {l t='City'}
-                                        </label>
-                                        <div class="form-group">
-                                            <input name="city" class="form-control" type="text" id="Hsearchcity" autocomplete="off" placeholder="{l t='All Cities'}" class="commentColor cityname" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-xs-12 col-sm-4">
-                                        <label class="hidden-xs">&nbsp;</label>
-                                        <div class="form-group">
-                                            <a class="btn btn-block button-blue" onclick="header_search.submit()" href="javascript:void(0)">{l t='Search'}</a>
-                                        </div>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+
+
+         </div>
+        <div class="col-xs-12">
+            <nav class="main-menu navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            {$menu}
+                        </div><!-- /.navbar-collapse -->
+                    </div>
+                </div><!-- /.container-fluid -->
+            </nav>
+
         </div>
-
-
+        <div class="clearfix"></div>
     </div>
 
 
- 
- </div>
-<div class="col-xs-12">
-    <nav class="main-menu navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    {$menu}
-                </div><!-- /.navbar-collapse -->
-            </div>
-        </div><!-- /.container-fluid -->
-    </nav>
-
 </div>
-<div class="clearfix"></div>

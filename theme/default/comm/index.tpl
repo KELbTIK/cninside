@@ -27,7 +27,7 @@ ajax_list_url='"chatter/getlist.php?cat="+cat+"&page="+pg+"&st="+searchtext';
 ajax_sublist_url=ajax_list_url;
 ajax_article_url='"chatter/detail.php?id="+artid+"&page="+pg';
 ajax_comment_url='"chatter/detail.php?id="+artid+"&page=1&comment="+comment';
-new_button="<a href='chatter/new.php' class='Bbtn'>{l t='Start Conversation'}</a>";
+new_button="<a href='chatter/new.php' class='btn button-blue'>{l t='Start Conversation'}</a>";
 
 {elseif $zone_name=="Classified"}
 ajax_menu_url='"classified/getmenu.php?cat="+cat';
@@ -35,7 +35,7 @@ ajax_list_url='"classified/getlist.php?cat="+cat+"&page="+pg+"&st="+searchtext';
 ajax_sublist_url='"classified/getlist.php?subcat="+cat+"&page="+pg+"&st="+searchtext';
 ajax_article_url='"classified/detail.php?id="+artid+"&page="+pg';
 ajax_comment_url='"classified/detail.php?id="+artid+"&page=1&comment="+comment';
-new_button="<a href='classified/new.php' class='Bbtn'>{l t='Post a classified'}</a>";
+new_button="<a href='classified/new.php' class='btn button-blue'>{l t='Post a classified'}</a>";
 
 {/if}
 </script>
@@ -58,10 +58,9 @@ function get(wr,page,who) {  // cat , page , 0    OR   cat , subcat , 1
   var searchtext=document.getElementById('searchcomm').value;
 			if(searchtext)
 			{
-				document.getElementById('MenuTitle').innerHTML="<h4>"+t_keyword+": <span style=\"color:#22A\">"+searchtext+"</span></h4><h2>"+t_narrowbycategory+":</h2>";
-				document.getElementById('MenuTitle').style.backgroundColor='#FDF';
+				document.getElementById('MenuTitle').innerHTML="<div class=\"alert alert-danger\">"+t_keyword+": <span style=\"color:#22A\">"+searchtext+"</span></div><h2>"+t_narrowbycategory+":</h2>";
 			}else{
-				document.getElementById('MenuTitle').innerHTML="<h2>"+t_zonename+" "+t_categories+"</h2>";
+				document.getElementById('MenuTitle').innerHTML="<h2><label>"+t_zonename+" "+t_categories+"</label></h2>";
 				document.getElementById('MenuTitle').style.backgroundColor='#FFF';
 			}
   var div_name=ajax_list_div_name;
@@ -128,12 +127,12 @@ function get(wr,page,who) {  // cat , page , 0    OR   cat , subcat , 1
 </script>
 <script type="text/javascript" language="javascript">
 function sele_item(a,catid){
-	for(var i=0;i<document.getElementsByTagName("div").length;i++){
-		if(document.getElementsByTagName("div")[i].id=="itemid"){
-			document.getElementsByTagName("div")[i].className='item';
+	for(var i=0;i<document.getElementsByTagName("a").length;i++){
+		if(document.getElementsByTagName("a")[i].id=="itemid"){
+            document.getElementsByTagName("a")[i].parentNode.className='item';
 		}
 	}
-	a.className='itemS';
+    a.parentNode.className='active';
 	get(catid,1,0);
 }
 
@@ -166,38 +165,6 @@ var tempval=document.getElementById(theField);
 
 
 </script>
-<style type="text/css">
-<!--
-#main .content { margin:0 10px;}
-#main .content .left { float:left; width:20%; }
-#main .content .left .item{ float:left; width:95%; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif; cursor:pointer;}
-#main .content .left .itemS { background-color:#CFEBFF; float:left; width:95%; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
-#main .content .left .item strong{ color:#006;}
-#main .content .left .itemS strong{ color:#600;}
-#main .content .right {float:left; width:78%; padding-left:10px; border:1px #ccc solid;}
-#main .content .right ul{margin:10px 0 0 5px; padding:0px;list-style:none; }
-#main .content .right ul li{ margin:5px auto;}
-#main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid; float:left; width:100%;}
-
-
-#main .content  .right .con .pic { float:left; width:14%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
-#main .content  .right .con .t { float:left; width:83%; padding-left:10px; display:inline;}
-#main .content  .right .con .picR { float:left; margin-left:5%; width:14%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
-#main .content  .right .con .tR { float:left; width:77%; padding-left:10px; display:inline;}
-
-
-
-#main .left td{font-size:11px;}
-#pv{ color:#000; font-size:11px; overflow:hidden;}
-
-
-
-.nonwrapping { font-size:11px; font-family:Arial, Helvetica, sans-serif;}
-.aligncent{ text-align:center;}
-.narrowTitle{font-family:Arial, Helvetica, sans-serif;}
-#main .left td{font-size:11px;}
--->
- </style>
 
 <script>
 function fancybox()
@@ -229,57 +196,59 @@ get(0,0,1);
 
 {/literal}
  <!--Main Start-->
- <div id="main">
-		<div class="content">
-        	<div>
-        	  <div style="float:left"><form action="javascript:;" method="post"><a name="top"></a><table width="415" border="0">
-                <tr>
-                  <td colspan="2">{l t='Search'}</td>
-                  </tr>
-                <tr>
-                  <td width="63%"><input name="searchcomm" type="text" id="searchcomm" size="40"  style="border:1px #ccc solid;"/></td>
-                                                <td width="37%">
-                                                <input type="button" name="button" id="button" value="{l t='Search'} &raquo;" onclick="get(0,1,0);get(0,0,1);" />&nbsp;<input type="button" name="button" id="button" value="X" style="width:30px;" onclick="document.getElementById('searchcomm').value='';get(0,1,0);get(0,0,1);" /></td>
-                </tr>
-                                            </table>
-                                            </form>
+<div id="main">
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <form action="javascript:;" method="post"><a name="top"></a>
+                    <h2><label for="searchtextOffer">{l t='Search'}</label></h2>
+                    <div class="input-group">
+
+                        <input name="searchcomm" class="form-control" type="text" id="searchcomm" size="40" value=""/>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-info" id="button" onclick="get(0,1,0);get(0,0,1);">
+                                &nbsp;<span class="glyphicon glyphicon-search"  ></span>&nbsp;
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="document.getElementById('searchcomm').value='';get(0,1,0);get(0,0,1);">
+                                &nbsp;<span class="glyphicon glyphicon-remove"></span>&nbsp;
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div style="padding-top:10px;" >
+                    <div id="MenuTitle">
+                        {l t=$zone_name} {l t='Categories'}
+                    </div>
+                    <div id="sr_menu">Loading...</div>
+                    <div style="color:white;"><p>.</p>
+                        <p align="center">
+                            {$ads->getAdCode(7)}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div style="float:right; margin-right:10px; margin-top:10px;"><script>document.write(new_button)</script></div>
-          </div>
-          <div id="clear" style=" margin-bottom:10px; margin-top:10px;"></div>
-              <div class="left" style="padding-top:10px;" >
-                                <div style="border-bottom:1px dashed #ccc;" id="MenuTitle"><h2>{l t=$zone_name} {l t='Categories'}
-                                </h2>
+            <div class="col-md-9 col-sm-8 col-xs-12 text-right pull-right" style="margin-top:10px;"><script>document.write(new_button)</script></div>
+            <div class="col-md-9 col-sm-8 col-xs-12" style="margin-top:10px;">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="sr">
+                        Loading...
+                    </div>
+                    <script type="text/javascript" language="javascript">
+                        {php}
+                        if(!empty($_GET[aid])){
+                            echo "get(".$_GET[aid].",1,2);";
+                        }else{
+                            echo "get(0,1,0);";
+                        }
+                        {/php}
+                    </script>
                 </div>
-                <div id="sr_menu">Loading...</div>
-                <div style="color:white;"><p>.</p>
+
+            </div>
+        </div>
 
 
-                <p align="center">
-{$ads->getAdCode(7)}
-</p>
-
-
-                </div>
-
-          </div>
-
-             <div class="right" style="margin-bottom:10px; position:relative">
-             <span class="coner c1"></span>
-        <span class="coner c2"></span>
-        <span class="coner c3"></span>
-        <span class="coner c4"></span>
-             <div id="sr">Loading...</div><script type="text/javascript" language="javascript">
-{php}
-if(!empty($_GET[aid])){
-echo "get(".$_GET[aid].",1,2);";
-}else{
-echo "get(0,1,0);";
-}
-{/php}
-</script>     </div>
-
-		</div>
- </div>
+    </div>
+</div>
  <!--Main End-->
  {include file="footer.tpl"}

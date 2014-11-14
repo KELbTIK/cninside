@@ -4,7 +4,7 @@
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script> 
  <!--Main Start-->
 <div id="main">
-    <div class="content container-fluid">
+    <div class="content container">
         <div class="row">
             <div class="con_left col-md-8 col-sm-8 col-xs-12">
             <div class="hot_business">

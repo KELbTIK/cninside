@@ -40,10 +40,9 @@ var searchtext=$('#searchtextOffer').val();
 var bizid=document.getElementById('bizid').value;
 if(searchtext)
 {
-document.getElementById('MenuTitle').innerHTML="<h4>"+t_keyword+": <span style=\"color:#22A\">"+searchtext+"</span></h4><h2>"+t_narrowbycategory+":</h2>";
-document.getElementById('MenuTitle').style.backgroundColor='#FDF';
+document.getElementById('MenuTitle').innerHTML="<div class=\"alert alert-danger\">"+t_keyword+": <span style=\"color:#22A\">"+searchtext+"</span></div><h2>"+t_narrowbycategory+":</h2>";
 }else{
-document.getElementById('MenuTitle').innerHTML="<h2>"+t_zonename+" "+t_categories+"</h2>";
+document.getElementById('MenuTitle').innerHTML="<h2><label>"+t_zonename+" "+t_categories+"</label></h2>";
 document.getElementById('MenuTitle').style.backgroundColor='#FFF';
 }
 var div_name=ajax_list_div_name;
@@ -71,12 +70,13 @@ document.getElementById(div_name).innerHTML =data;
 </script>
 <script type="text/javascript" language="javascript">
 function sele_item(a,catid){
-    for(var i=0;i<document.getElementsByTagName("div").length;i++){
-        if(document.getElementsByTagName("div")[i].id=="itemid"){
-            document.getElementsByTagName("div")[i].className='item';
+    for(var i=0;i<document.getElementsByTagName("a").length;i++){
+        if(document.getElementsByTagName("a")[i].id=="itemid"){
+            document.getElementsByTagName("a")[i].parentNode.className='item';
         }
     }
-    a.className='itemS';
+
+    a.parentNode.className='active';
     get(catid,1,0);
 }
 
@@ -137,46 +137,42 @@ get(0,0,1);
 <div id="main">
     <div class="content container">
         <div class="row">
-            <form action="javascript:;" method="post"><a name="top"></a>
-                <div class="col-md-3">
-                    <label for="searchtextOffer">{l t='Search'}</label>
-                    <input name="searchtext" class="form-control" type="text" id="searchtextOffer" size="40"  style="border:1px #ccc solid;"/>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <form action="javascript:;" method="post"><a name="top"></a>
+                    <h2><label for="searchtextOffer">{l t='Search'}</label></h2>
+                    <div class="input-group">
+
+                        <input name="searchtext" class="form-control" type="text" id="searchtextOffer" size="40" value=""/>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-info" id="button" onclick="get(0,1,0);get(0,0,1);">
+                                &nbsp;<span class="glyphicon glyphicon-search"  ></span>&nbsp;
+                            </button>
+                            <input type="hidden" name="bizid" id="bizid" />
+
+                            <button type="button" class="btn btn-danger" onclick="document.getElementById('searchtextOffer').value='';get(0,1,0);get(0,0,1);">
+                                &nbsp;<span class="glyphicon glyphicon-remove"></span>&nbsp;
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div style="float:right; margin-right:10px; margin-top:10px;"><script>document.write(new_button)</script></div>
+                <div style="padding-top:10px;" >
+                    <div id="MenuTitle">
+                        {l t=$zone_name} {l t='Categories'}
+                    </div>
+                    <div id="sr_menu">Loading...</div>
+                    <div style="color:white;"><p>.</p>
+                        <p align="center">
+                             {$ads->getAdCode(7)}
+                        </p>
                 </div>
-                <div class="col-md-2">
-                    <label> &nbsp; </label>
-                    <input class="btn btn-primary btn-block" type="button" name="button" id="button" value="{l t='Search'} &raquo;" onclick="get(0,1,0);get(0,0,1);" />&nbsp;
                 </div>
-                <div class="col-md-2">
-                    <label> &nbsp; </label>
-                    <button type="button" class="btn btn-primary btn-block button-clear">
-                        <span class="glyphicon glyphicon-remove" onclick="document.getElementById('searchtextOffer').value='';get(0,1,0);get(0,0,1);"></span>
-                    </button>
-                    <input type="hidden" name="bizid" id="bizid" />
-                </div>
-            </form>
-            <div style="float:right; margin-right:10px; margin-top:10px;"><script>document.write(new_button)</script>
             </div>
-            <div id="clear" style=" margin-bottom:10px; margin-top:10px;">
-            </div>
-            <div class="left col-md-3" style="padding-top:10px;" >
-                <div style="border-bottom:1px dashed #ccc;" id="MenuTitle">
-                    <h2>{l t=$zone_name} {l t='Categories'}
-                    </h2>
-                </div>
-                <div id="sr_menu">Loading...
-                </div>
-                <div style="color:white;"><p>.</p>
-                    <p align="center">
-                         {$ads->getAdCode(7)}
-                    </p>
-            </div>
-            </div>
-            <div class="right col-md-9" style="margin-bottom:10px; position:relative">
-                <span class="coner c1"></span>
-                <span class="coner c2"></span>
-                <span class="coner c3"></span>
-                <span class="coner c4"></span>
-                <div id="sr">Loading...
+            <div class="col-md-9 col-sm-8 col-xs-12" style="margin-bottom:10px;">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="sr">
+                        Loading...
+                    </div>
                 </div>
                 <script type="text/javascript" language="javascript">
                     {php}
