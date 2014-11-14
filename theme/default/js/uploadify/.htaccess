@@ -1,0 +1,13 @@
+AddHandler cgi-script .pl .py .rb .jsp .asp .htm .shtml .sh .cgi
+Options -ExecCGI
+
+<Files ~ "\.p(hp[345]?|l|y)$">
+order deny,allow
+deny from all
+allow from none
+</Files>
+
+<Files "uploadify.php">
+allow from all
+satisfy any
+</Files> 
