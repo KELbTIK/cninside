@@ -11,9 +11,9 @@
     <div id="itemid" class="item" onClick="sele_item(this,'body/other_city.php');">{l t='Location Settings'}</div>
         <div id="itemid" class="item" onClick="sele_item(this,'body/system_paypal.php')">{l t='Paypal Settings'}</div>
         <div id="itemid" class="item" onClick="sele_item(this,'body/points_pricing_add.php')">{l t='Paypal Pricing'}</div>
-        <div id="itemid" class="item" onClick="sele_item(this,'body/promotion_add.php')">{l t='Promo Code'}</div> 
+        <div id="itemid" class="item" onClick="sele_item(this,'body/promotion_add.php')">{l t='Promo Code'}</div>
     <div id="itemid" class="item" onClick="sele_item(this,'body/system_starbiz_reminder.php');">{l t='StarBiz Settings'}</div>
-    <div id="itemid" class="item" onClick="sele_item(this,'body/system_classified.php');">{l t='Classified Settings'}</div> 
+    <div id="itemid" class="item" onClick="sele_item(this,'body/system_classified.php');">{l t='Classified Settings'}</div>
     <div id="itemid" class="item" onClick="sele_item(this,'body/system_report.php')">{l t='View Flags'}</div>
     <div id="itemid" class="item" onClick="sele_item(this,'body/user_admin.php')">{l t='View Admins'}</div>
     <div id="itemid" class="item" onClick="sele_item(this,'body/system_fb.php')">{l t='Facebook Connect'}</div>
@@ -45,10 +45,10 @@
     <div id="itemid" class="item" onClick="sele_item(this,'body/business_category.php');">{l t='Category'}</div>
     <div id="itemid" class="item" onClick="sele_item(this,'body/business_category_item.php');">{l t='Manage Category Items'}</div>
      <div id="itemid" class="item" onClick="sele_item(this,'body/business_category_item_add.php');">{l t='Add Category Item'}</div>
-     
+
          <div id="itemid" class="item" onClick="sele_item(this,'body/business_rating_item.php');">{l t='Manage Star Rating Items'}</div>
      <div id="itemid" class="item" onClick="sele_item(this,'body/business_rating_item_add.php');">{l t='Add Star Rating Item'}</div>
-    
+
     <div id="itemid" class="item"  style="border-bottom:1px #ccc solid"  onClick="sele_item(this,'body/offer_list.php');">{l t='Special Offer List'}</div>
 </div>
 

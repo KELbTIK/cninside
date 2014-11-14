@@ -1,9 +1,9 @@
  {include file="header.tpl"}
- 
- 
+
+
  <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script>   
+<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script>
 <link rel="stylesheet" href="/theme/{$get_theme}/js/fancy/jquery.fancybox.css" media="screen" type="text/css" />
 <script>
 //===========common
@@ -49,7 +49,7 @@ var WCurSubcat=0;
 </script>
 <script type="text/javascript" language="javascript">
 
-  
+
 function get(wr,page,who) {  // cat , page , 0    OR   cat , subcat , 1
 
   if(who==0){ // list $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -111,7 +111,7 @@ function get(wr,page,who) {  // cat , page , 0    OR   cat , subcat , 1
   var comment=document.reply.review.value;
   comment=comment.replace(/\n/g,"[br]");
   var div_name=ajax_list_div_name;
-  if(!temp) 
+  if(!temp)
   {alert(t_plslogin);
   return;
   //location='../my/login.php';
@@ -122,7 +122,7 @@ function get(wr,page,who) {  // cat , page , 0    OR   cat , subcat , 1
 				 fancybox();
 				 });
 }
-     
+
 
 }
 </script>
@@ -138,7 +138,7 @@ function sele_item(a,catid){
 }
 
 
-</script> 
+</script>
 <script type="text/javascript" language="javascript">
 function determinCatOrSub(){
 if(WCurCat<0) return WCurSubcat;
@@ -147,10 +147,10 @@ else return WCurCat;}
 //Applies only to IE 4+
 //0=no, 1=yes
 var copytoclip=1;
-function copyToClipboard(theField) {	
+function copyToClipboard(theField) {
 var tempval=document.getElementById(theField);
 	if (navigator.appVersion.match(/\bMSIE\b/)){
-		tempval.select();		
+		tempval.select();
 		if (copytoclip==1){
 		therange=tempval.createTextRange();
 		document.execCommand('Copy');
@@ -159,7 +159,7 @@ var tempval=document.getElementById(theField);
 		return;
 	}else{
 		alert("Your browse cannot support this function, Please press Ctrl+C to copy to clipboard.");
-		tempval.select();		
+		tempval.select();
 	}
 }
 
@@ -201,7 +201,7 @@ var tempval=document.getElementById(theField);
 
 <script>
 function fancybox()
-{ 
+{
 	$(".iframe").fancybox({
 	 'overlayShow'    : true,
 	 'zoomSpeedIn'    : 600,
@@ -228,7 +228,7 @@ get(0,0,1);
 </script>
 
 {/literal}
- <!--Main Start-->  
+ <!--Main Start-->
  <div id="main">
 		<div class="content">
         	<div>
@@ -253,13 +253,13 @@ get(0,0,1);
                 </div>
                 <div id="sr_menu">Loading...</div>
                 <div style="color:white;"><p>.</p>
-                
-                
+
+
                 <p align="center">
 {$ads->getAdCode(7)}
 </p>
 
-                
+
                 </div>
 
           </div>
@@ -278,8 +278,8 @@ echo "get(0,1,0);";
 }
 {/php}
 </script>     </div>
-          
-		</div>               
+
+		</div>
  </div>
  <!--Main End-->
  {include file="footer.tpl"}

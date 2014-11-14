@@ -135,68 +135,63 @@ get(0,0,1);
 {/literal}
 <!--Main Start-->
 <div id="main">
-    <div class="content">
-        <div>
-            <div style="float:left">
-                <form action="javascript:;" method="post"><a name="top"></a>
-                    <table width="415" border="0">
-                        <tr>
-                            <td colspan="2">{l t='Search'}</td>
-                        </tr>
-
-                        <tr>
-                            <td width="63%">
-                                <div class="col-md-8">
-                                    <input name="searchtext" class="form-control" type="text" id="searchtextOffer" size="40"  style="border:1px #ccc solid;"/>
-                                </div>
-                            </td>
-                            <td width="37%">
-                                <input class="btn btn-primary" type="button" name="button" id="button" value="{l t='Search'} &raquo;" onclick="get(0,1,0);get(0,0,1);" />&nbsp;
-                                <input class="btn btn-primary" type="button" name="button" id="button" value="X"  onclick="document.getElementById('searchtextOffer').value='';get(0,1,0);get(0,0,1);" />
-                                <input type="hidden" name="bizid" id="bizid" />
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
+    <div class="content container">
+        <div class="row">
+            <form action="javascript:;" method="post"><a name="top"></a>
+                <div class="col-md-3">
+                    <label for="searchtextOffer">{l t='Search'}</label>
+                    <input name="searchtext" class="form-control" type="text" id="searchtextOffer" size="40"  style="border:1px #ccc solid;"/>
+                </div>
+                <div class="col-md-2">
+                    <label> &nbsp; </label>
+                    <input class="btn btn-primary btn-block" type="button" name="button" id="button" value="{l t='Search'} &raquo;" onclick="get(0,1,0);get(0,0,1);" />&nbsp;
+                </div>
+                <div class="col-md-2">
+                    <label> &nbsp; </label>
+                    <button type="button" class="btn btn-primary btn-block button-clear">
+                        <span class="glyphicon glyphicon-remove" onclick="document.getElementById('searchtextOffer').value='';get(0,1,0);get(0,0,1);"></span>
+                    </button>
+                    <input type="hidden" name="bizid" id="bizid" />
+                </div>
+            </form>
             <div style="float:right; margin-right:10px; margin-top:10px;"><script>document.write(new_button)</script>
             </div>
-        </div>
-        <div id="clear" style=" margin-bottom:10px; margin-top:10px;">
-        </div>
-        <div class="left" style="padding-top:10px;" >
-            <div style="border-bottom:1px dashed #ccc;" id="MenuTitle">
-                <h2>{l t=$zone_name} {l t='Categories'}
-                </h2>
+            <div id="clear" style=" margin-bottom:10px; margin-top:10px;">
             </div>
-            <div id="sr_menu">Loading...
+            <div class="left col-md-3" style="padding-top:10px;" >
+                <div style="border-bottom:1px dashed #ccc;" id="MenuTitle">
+                    <h2>{l t=$zone_name} {l t='Categories'}
+                    </h2>
+                </div>
+                <div id="sr_menu">Loading...
+                </div>
+                <div style="color:white;"><p>.</p>
+                    <p align="center">
+                         {$ads->getAdCode(7)}
+                    </p>
             </div>
-            <div style="color:white;"><p>.</p>
-                <p align="center">
-                     {$ads->getAdCode(7)}
-                </p>
-        </div>
-        </div>
-        <div class="right" style="margin-bottom:10px; position:relative">
-            <span class="coner c1"></span>
-            <span class="coner c2"></span>
-            <span class="coner c3"></span>
-            <span class="coner c4"></span>
-            <div id="sr">Loading...
             </div>
-            <script type="text/javascript" language="javascript">
-                {php}
-                    if(!empty($_GET[aid])){
-                        echo "get(".$_GET[aid].",1,2);";
-                    }
-                    else{
-                        echo "get(0,1,0);";
-                    }
-                {/php}
-            </script>
+            <div class="right col-md-9" style="margin-bottom:10px; position:relative">
+                <span class="coner c1"></span>
+                <span class="coner c2"></span>
+                <span class="coner c3"></span>
+                <span class="coner c4"></span>
+                <div id="sr">Loading...
+                </div>
+                <script type="text/javascript" language="javascript">
+                    {php}
+                        if(!empty($_GET[aid])){
+                            echo "get(".$_GET[aid].",1,2);";
+                        }
+                        else{
+                            echo "get(0,1,0);";
+                        }
+                    {/php}
+                </script>
+            </div>
         </div>
-
     </div>
+    <div class="clearfix"></div>
 </div>
 <!--Main End-->
 {include file="footer.tpl"}

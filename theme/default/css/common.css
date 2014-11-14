@@ -105,7 +105,6 @@ input.Bbtn{ border:0; height:22px; }
 #slide ul{list-style:none; padding: 0px; margin: 0px; clear:both;}
 #slide ul li{ float:left; padding:0 10px; width:120px; height:20px}
 /*===============================================================*/
-#main .content {margin:10px 0; }
 
 #main .content .pic { float:left; width:30%; text-align:center; padding-top:10px;}
 /*#main .content .t { float:left; width:70%;}*/
@@ -501,10 +500,8 @@ h2.active {
 
 
 /*start for offer.tpl*/
-#main .content { margin:0 10px;}
-#main .content .left { float:left;}
-#main .content .left .item{ float:left; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif; cursor:pointer;}
-#main .content .left .itemS { background-color:#CFEBFF; float:left; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
+#main .content .left .item{ clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif; cursor:pointer;}
+#main .content .left .itemS { background-color:#CFEBFF; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
 #main .content .left .item strong{ color:#006;}
 #main .content .left .itemS strong{ color:#600;}
 #main .content .right {float:left; padding-left:10px;}
@@ -560,7 +557,6 @@ h2.active {
 /*end for offer.tpl*/
 
 /*event*/
-#main .content { padding:5px; margin:0 10px;}
 #main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid; float:left; width:100%;}
 
 ul.navigation {    list-style: none;    margin: 0;    padding: 0;    padding-bottom: 9px;}
