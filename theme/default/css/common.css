@@ -106,13 +106,13 @@ input.Bbtn{ border:0; height:22px; }
 #slide ul li{ float:left; padding:0 10px; width:120px; height:20px}
 /*===============================================================*/
 
-#main .content .pic { float:left; width:30%; text-align:center; padding-top:10px;}
+/*#main .content .pic { float:left; width:30%; text-align:center; padding-top:10px;}*/
 /*#main .content .t { float:left; width:70%;}*/
 
 .starbiz{vertical-align:text-bottom}
 
-.photoBox { float:left;}
-DIV.photoBox img{ border:1px solid #ccc; background-color:#fff; margin:0px; display:block;}
+.photoBox .img-thumbnail{margin-top: 5px; margin-bottom: 5px}
+/*DIV.photoBox img{ border:1px solid #ccc; background-color:#fff; margin:0px; display:block;}*/
 TABLE.listing1 TD {
 	border-bottom: 1px dotted #ccc;
 	padding: 10px;
