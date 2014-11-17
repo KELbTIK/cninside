@@ -17,19 +17,30 @@
                     <form action="?f=submit" method="post">
                         <h4>{l t='To reset your password, please fill the blanks below:'}</h4>
                         <br>
-                        <label for="email" class="col-sm-5 control-label">{l t='Email Address'}:</label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" name="email" id="email" />
-                            <br>
+                        <div class="form-group">
+                            <label for="email" class="col-md-5 col-sm-5 col-xs-6   control-label">{l t='Email Address'}:</label>
+                            <div class="col-md-7 col-sm-7 col-xs-12 ">
+                                <input type="text" class="form-control" name="email" id="email" />
+                                <br>
+                            </div>
                         </div>
 
-                        <label for="r" class="col-sm-5 control-label">{l t='Secure Code'}:</label>
-                        <div class="col-sm-5">
-                            <input name="r" id="r" class="form-control" type="text" />
+                        <div class="form-group">
+                        <label for="r" class="col-md-5 col-sm-5 col-xs-12  control-label">{l t='Secure Code'}:</label>
+                            <div class="col-md-5 col-sm-5 col-xs-6 ">
+                                <input name="r" id="r" class="form-control" type="text" />
+                            </div>
+                            <img src="/inc/func/auth_img.php" class="img-responsive col-xs-6 col-sm-2 pull-right" />
+                            <div class="clearfix"></div>
                         </div>
-                        <img src="/inc/func/auth_img.php" class="img-responsive col-sm-2 pull-right" />
 
-                        <button type="submit " name="button" id="button" class="btn btn-default col-sm-2 col-md-offset-6" value="   {l t='Send'} &gt;&gt;   " onclick="this.disabled=true; form.submit()" />Send</button>
+
+                        <div class="col-md-5 col-sm-5"></div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-4">
+                                <button type="submit " name="button" id="button" class="btn btn-default btn-block button-blue" value="   {l t='Send'} &gt;&gt;   " onclick="this.disabled=true; form.submit()" />Send</button>
+                            </div>
+                        </div>
 
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr style="display:none;">
