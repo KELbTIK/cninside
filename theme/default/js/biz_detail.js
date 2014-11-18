@@ -250,14 +250,14 @@ function nav(data)
 
 
 function sele_item(a,orderby){
-for(var i=0;i<document.getElementsByTagName("span").length;i++){
-if(document.getElementsByTagName("span")[i].id=="itemid"){
-document.getElementsByTagName("span")[i].className='Sitem';
-document.getElementById("sortby").value=orderby;
-}
-}
-a.className='SitemS';
-get(biz_id,1);
+    for(var i=0;i<document.getElementsByTagName("button").length;i++){
+        if(document.getElementsByTagName("button")[i].id=="itemid"){
+            document.getElementsByTagName("button")[i].className='btn btn-default';
+            document.getElementById("sortby").value=orderby;
+        }
+    }
+    a.className='btn btn-default active';
+    get(biz_id,1);
 }
 
 function showflag(topicid,replyid,zone){

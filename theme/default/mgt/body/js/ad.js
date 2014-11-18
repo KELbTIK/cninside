@@ -64,7 +64,7 @@ sheet:'ad',
 field:'ad_code,ad_name,ad_date_start,ad_date_end,ad_total_views,ad_total_clicks,ad_position',
 value:ad_code+","+ad_name+","+ad_date_start+","+ad_date_end+","+ad_total_views+","+ad_total_clicks+","+ad_position
 },function(data){tips('New campaign created.');nav()});
-//setTimeout("nav()",5000)	
+//setTimeout("nav()",5000)
 }
 
 function todecade(value)
@@ -87,6 +87,6 @@ function ad_position_url(id)
 	if(id==9) $('#positionurl').text('event/search.php');
 	if(id==10) $('#positionurl').text('contact/');
 	*/
-	
+
 	$('#smartycode').text(id);
 }

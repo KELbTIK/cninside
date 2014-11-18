@@ -63,7 +63,7 @@ display:none;
 }
 
 
-#biz_description{ position:relative; margin: 0 10px 25px 12px; padding-bottom:5px; border-bottom:1px #CFECFE solid; }
+#biz_description{ position:relative; border-bottom:1px #CFECFE solid; margin-bottom: 40px;}
 #biz_description_text{ display:none;}
 #biz_description_more, #biz_description_hide{ cursor:pointer; display:block; background:#CFECFE; position:absolute; bottom:-19px; left:20px; padding:2px 8px; width:200px; font-size:11px;}
 #biz_description_more:hover, #biz_description_hide:hover{ background:#E0FAFF;}
@@ -84,7 +84,7 @@ th{ font-weight:bold; text-align:center; padding-right:20px;}
 
 .rating{ font-size:14px; color:#C00;}
 
-.rateScore{ font-size:16px; display:none; clear:both}
+.rateScore{ display:none; clear:both}
 
 #rate5 { color:#008709}
 #rate4 { color:#497F00}
