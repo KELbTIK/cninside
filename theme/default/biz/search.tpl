@@ -102,7 +102,7 @@ function nav()
                     {foreach from=$var_list item=i}
                         <li class="list-group-item">
                             <div class="photoBox pull-left">
-                                <a href="/{$smarty.const._BIZ_DIR_}/{$i.bizurl}"><img src="http://cninsider.com/images/business/{$i.picurl}_80x80" /></a>
+                                <a href="/{$smarty.const._BIZ_DIR_}/{$i.bizurl}"><img src="/images/business/{$i.picurl}_80x80" /></a>
                             </div>
                             <div>
                                 <div>
@@ -111,12 +111,13 @@ function nav()
                                         {$i.starbiz}
                                     </h3>
                                 </div>
-                                <div>
+                                <div class="pull-right">
                                     <h5><em>{l t='Rating'}:</em>
                                         <span style="color:red; font-size:14px; font-weight:bold;">{$i.rating}</span>
                                         &nbsp; <img src="/theme/{$get_theme}/images/star/stars_{$i.ratingmod}.gif" width="74" height="15" />
                                     </h5>
                                 </div>
+                                <div class="pull-right clear-right"><h5>{l t='Click'}: {$i.click} &nbsp;  {l t='Reviews'}: {$i.reviewnum}</h5></div>
                                 <div>
                                     <div>
                                         {l t='Category'}: <a href="/{$smarty.const._CAT_DIR_}/{$i.catpermalink}/">{$i.catname}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$i.catpermalink}/{$i.subcatpermalink}/">{$i.subcatname}</a><br />
@@ -131,7 +132,6 @@ function nav()
                                             {$i.location},  {$i.state} {$i.zip}  {if $admin_type}<a href="javascript:del_business('{$i.id}')"><img src="/theme/{$get_theme}/images/b_del.png" border="0" /></a>{/if}
                                         </address>
                                     </div>
-                                    <div><h5>{l t='Click'}: {$i.click} &nbsp;  {l t='Reviews'}: {$i.reviewnum}</h5></div>
                                     {if $i.type==2 && $i.extra}
                                         <div>
                                             <img src="/images/photos/p_{$i.submitter_photo}_16x16" />

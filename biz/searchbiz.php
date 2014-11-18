@@ -62,25 +62,25 @@ $url_sort_by = $_SERVER['PHP_SELF'] . '?' . $_SERVER['QUERY_STRING'];
 $sort_by_section = "<h2> Sort By </h2>";
 
 if ($sort_by == '1'){
-    $sort_by_section .="<input type=\"radio\" checked=\"checked\" name=\"sort_by\" value=\"1\" />Best Match<br />";
+    $sort_by_section .="<div class=\"radio\"><label><input type=\"radio\" checked=\"checked\" name=\"sort_by\" value=\"1\" />Best Match<br /></label></div>";
 }else{
     $url_sort_by = preg_replace('/(sort_by=)(\d+)/i','${1}1', $url_sort_by);
-    $sort_by_section .="<input type=\"radio\" name=\"sort_by\" value=\"1\" onClick=\"window.location='$url_sort_by'; return true;\" />Best Match<br />";
+    $sort_by_section .="<div class=\"radio\"><label><input type=\"radio\" name=\"sort_by\" value=\"1\" onClick=\"window.location='$url_sort_by'; return true;\" />Best Match<br /></label></div>";
 }
 
 if ($sort_by == '2'){
-    $sort_by_section .= "<input type=\"radio\" checked=\"checked\" name=\"sort_by\" value=\"2\" />Highest Rated<br />";
+    $sort_by_section .= "<div class=\"radio\"><label><input type=\"radio\" checked=\"checked\" name=\"sort_by\" value=\"2\" />Highest Rated<br /></label></div>";
 }else{
     $url_sort_by = preg_replace('/(sort_by=)(\d+)/i','${1}2', $url_sort_by);
-    $sort_by_section .= "<input type=\"radio\" name=\"sort_by\" value=\"2\" onClick=\"window.location='$url_sort_by'; return true;\" />Highest Rated<br />";
+    $sort_by_section .= "<div class=\"radio\"><label><input type=\"radio\" name=\"sort_by\" value=\"2\" onClick=\"window.location='$url_sort_by'; return true;\" />Highest Rated<br /></label></div>";
 }
 
 if ($sort_by == '3'){
 
-    $sort_by_section .= "<input type=\"radio\" checked=\"checked\" name=\"sort_by\" value=\"3\" />Most Reviewed<br />";
+    $sort_by_section .= "<div class=\"radio\"><label><input type=\"radio\" checked=\"checked\" name=\"sort_by\" value=\"3\" />Most Reviewed<br /></label></div>";
 }else{
     $url_sort_by = preg_replace('/(sort_by=)(\d+)/i','${1}3', $url_sort_by);
-    $sort_by_section .= "<input type=\"radio\" name=\"sort_by\" value=\"3\" onClick=\"window.location='$url_sort_by'; return true;\" />Most Reviewed<br />";
+    $sort_by_section .= "<div class=\"radio\"><label><input type=\"radio\" name=\"sort_by\" value=\"3\" onClick=\"window.location='$url_sort_by'; return true;\" />Most Reviewed<br /></label></div>";
 }
 
 
@@ -340,7 +340,7 @@ function get_biz_cat_list_checkbox($cat_list_array, $keyword)
             }
             //reset page to 1  whenever a category is select to get paging work correctly
             $url = preg_replace('/(page=)(\d+)/i','${1}1', $url);
-            $t.= "<input type=\"checkbox\" $checked id=\"maincat_$cat_id\" name=\"maincat_$cat_id\" onClick=\"window.location='$url'; return true;\" />$displayName<br />";
+            $t.= "<div class=\"checkbox\"><label><input type=\"checkbox\" $checked id=\"maincat_$cat_id\" name=\"maincat_$cat_id\" onClick=\"window.location='$url'; return true;\" />$displayName<br /></label></div>";
 
         }
         return $t;
@@ -438,7 +438,7 @@ function get_item_list_checkbox($cat_list,$item_list_array, $keyword)
                     $url = modify_url_radio(array("$query_key"=>urlencode($item_value)));
                     //reset page to 1  whenever a feature is select to get paging work correctly
                     $url = preg_replace('/(page=)(\d+)/i','${1}1', $url);
-                    $t.= "<input type=\"radio\" $checked id=\"$item_id\" name=\"$item_id\" value=\"$v\" onClick=\"window.location='$url'; return true;\" />$item_value_lan<br />";
+                    $t.= "<div class=\"radio\"><label><input type=\"radio\" $checked id=\"$item_id\" name=\"$item_id\" value=\"$v\" onClick=\"window.location='$url'; return true;\" />$item_value_lan<br /></label></div>";
 
                 }
 
@@ -606,7 +606,7 @@ if($keyword =='' && !$city){
 
     if ($cat_list_checkbox){
 
-        $reset = "<center><input class=\"Bbtn\" type=\"button\" value=\"".l('Reset Filter')."\" name=\"Submit\"  onClick=\"window.location='$querystring_reset'; return true;\" /></center>";
+        $reset = "<center><input class=\"btn button-blue\" type=\"button\" value=\"".l('Reset Filter')."\" name=\"Submit\"  onClick=\"window.location='$querystring_reset'; return true;\" /></center>";
 
         $categories .= $cat_list_checkbox;
     }

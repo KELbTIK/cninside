@@ -592,4 +592,10 @@ ul.navigation li {	font-family:Arial, Helvetica, sans-serif;    display: inline;
 .biz .page_number{
     margin-top: 8px;
 }
+.biz .clear-right{
+    clear: right;
+}
+.biz .radio label,.biz .checkbox label{
+    font-size: 16px;
+}
 /*end search.tpl*/
