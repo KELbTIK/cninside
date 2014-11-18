@@ -82,8 +82,8 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
 <option value="0" selected="selected">{l t='ALL'}</option>
         {$get_getcitylist}
         </select></td>
-       
-       
+
+
 <td width="308"><span id="sele_cat_text"><strong><span style="color:#900">{$var_search.catname}</span></strong> <a href="javascript:;" onclick="openCat()">{l t='Change'} &dArr;</a></span></td>
                                         <td width="97" align="center"><em>
                                           <input type="submit" onclick="nav()" value="{l t='Search'}" name="Submit" />
@@ -98,13 +98,13 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
                                 </form>
             <div  class="nb sele" id="sele_cat" style="background:#FFC; float:left; width:95%; border:1px solid #ccc; overflow:hidden; padding-top:5px; padding-left:5px; margin-left:10px;">
             <ul>
-                            {l t='Category'}:<br /> 
+                            {l t='Category'}:<br />
    			  <li style="font-weight:bold; color:#600" onclick="this.className='SitemS';set('cat','0')" class="Sitem">{l t='ALL'}</li>
                          {$var_search.catlistli}
               </ul>
           </div></div>
           <script type="text/javascript" language="javascript">
-		  document.getElementById('sele_cat').style.display='none';		  
+		  document.getElementById('sele_cat').style.display='none';
 		  </script>
             <div class="con nb" style="padding-bottom:0; border-bottom:0;">
                         <ul>
@@ -123,7 +123,7 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
                           <li class="{if $var_search.fsort=='recentlyadded'}SitemS{else}Sitem{/if}" onclick="this.className='SitemS';set('fsort','recentlyadded')">{l t='Recently Added'}</li>
                           <li class="{if $var_search.fsort=='free'}SitemS{else}Sitem{/if}" onclick="this.className='SitemS';set('fsort','free')">{l t='Free'}</li>
                         </ul>
-                        
+
                   </div>
                        <div class="con" style="border:0; padding-top:0;">
 
@@ -164,7 +164,7 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
         <span class="coner c2"></span>
         <span class="coner c3"></span>
         <span class="coner c4"></span>
-                  <a href="new.php" class="Bbtn">{l t='Add Event'}</a>             </div> 
+                  <a href="new.php" class="Bbtn">{l t='Add Event'}</a>             </div>
                   <div class="con box">
                   <span class="coner c1"></span>
         <span class="coner c2"></span>
@@ -180,15 +180,15 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
               </div>
 {/foreach}
 <!--/loop-->
-                        
+
                   </div>
                   <div class="con" style="text-align:center; border:0;">
-                  
+
                   <p align="center">
  	{$ads->getAdCode(9)}
 
 </p>
-                  
+
                   </div>
                   <div id="clear"></div>
           </div>
