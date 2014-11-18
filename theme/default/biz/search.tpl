@@ -25,14 +25,14 @@ function nav()
 	var urlCatname='';
 	var urlSubatname='';
 	var urlCityname='';
-	
+
 	if(page)  urlPage="page="+page;
 	else  urlPage="page=1";
 	if(searchtext)  urlSearchtext="&searchtext="+searchtext;
 	if(catname)  urlCatname="&catname="+catname;
 	if(subcatname)  urlSubatname="&subcatname="+subcatname;
 	if(cityname)  urlCityname="&cityname="+cityname;
-	
+
 	location='/search?'+urlPage+urlSearchtext+urlCatname+urlSubatname+urlCityname;
 
 }
@@ -40,8 +40,8 @@ function nav()
 </script>
 {/literal}
 
- <!--Main Start-->  
- 
+ <!--Main Start-->
+
 <div id="main">
     <div class="content container biz">
         <div class="row">

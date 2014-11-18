@@ -31,7 +31,7 @@
                                 <div class="col-md-5 col-sm-5 col-xs-6 ">
                                     <input name="r" id="r" class="form-control" type="text" />
                                 </div>
-                                <img src="/inc/func/auth_img.php" class="img-responsive col-xs-6 col-sm-2 pull-right" />
+                                <img src="/inc/func/auth_img.php" class="img-responsive col-xs-3 col-sm-2 pull-left" />
                                 <div class="clearfix"></div>
                             </div>
 
