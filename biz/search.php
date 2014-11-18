@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
  * MeePlace Business Search.
  * @package MeePlace
  * @subpackage Business
- 
+
 +------------------------------------------------------------------------+
 | MeePlace v3.0 ( www.proclones.com )
 +------------------------------------------------------------------------+
@@ -19,9 +19,9 @@
 | Copyright: (c) 2010 ProClones, LLC. All rights reserved.
 +------------------------------------------------------------------------+
  */
- 
+
 include_once(dirname(__FILE__)."/../inc/func/get_sth.php");
-include_once(_ABSPATH_.'/inc/func/header.php'); 
+include_once(_ABSPATH_.'/inc/func/header.php');
 
 
 
@@ -47,15 +47,15 @@ if(!empty($_GET['subcatname']))
     // fix typo case for url
     if (!$cat_id) $cat_id = 1000000000;
     if (!$subcat_id) $subcat_id = 1000000000;
-     
+
     $subcat_name = $row['b_subcat_name'];
-    $subcat_name_lan = l( $subcat_name); 
+    $subcat_name_lan = l( $subcat_name);
 	$_GET['cat']=$cat_id;
 	$_GET['subcat']=$subcat_id;
-	
+
 	$meta_keywords=$row['keywords'];
 	$meta_description=$row['description'];
-	
+
 }
 //===SEO Reqirement, So this subcatname is actually subcatPermalink===
 elseif(!empty($_GET['catname']))
@@ -73,7 +73,7 @@ elseif(!empty($_GET['catname']))
   $cat_permalink = $row['permalink'];
   $_GET['cat']=$cat_id;
   $_GET['subcat']='';
-  
+
 	$meta_keywords=$row['keywords'];
 	$meta_description=$row['description'];
 	//has no catname nor cat id, go to search
@@ -92,7 +92,7 @@ if(!empty($_GET['cityname']))
 
 //////////////////////get biz cat list//////
 function get_biz_cat_list($path)
-{ 
+{
 	$rc = mysql_query("select * from `business_category`  ORDER BY `cat_name` ASC");
 		while($row=mysql_fetch_array($rc))
 		{
@@ -101,15 +101,15 @@ function get_biz_cat_list($path)
             $urlCatename="catname=".$row['permalink'];
 			$urlCityname=$_GET['cityname']?("&cityname=".$_GET['cityname']):"";
 			$urlSearchtext=$_GET['searchtext']?("&searchtext=".$_GET['searchtext']):"";
-			
+
 			$displayName=l($row[cat_name]);
 			//no need   $urlSubcatname="&subcatname=".$_GET['subcatname'];
 			if($_GET['searchtext']||$_GET['cityname'])
-	 		$t.= "<li><img src='/theme/".get_theme()."/images/$row[cat_image]' /> <a href='/search?".$urlCatename.$urlCityname.$urlSearchtext."'>".l($displayName)."</a></li>";
+	 		$t.= "<li><i class=\"fa fa-".$row[cat_image]."\"></i> <a href='/search?".$urlCatename.$urlCityname.$urlSearchtext."'>".l($displayName)."</a></li>";
 			else
-			$t.= "<li><img src='/theme/".get_theme()."/images/$row[cat_image]' /> <a href='/"._CAT_DIR_."/".get_biz_cat_permalink($row[cat_id])."/'>".l($displayName)."</a></li>";	
+			$t.= "<li><i class=\"fa fa-".$row[cat_image]."\"></i> <a href='/"._CAT_DIR_."/".get_biz_cat_permalink($row[cat_id])."/'>".l($displayName)."</a></li>";
 		}
-		return $t; 
+		return $t;
 }
 
 
@@ -152,13 +152,13 @@ function get_subcat_list($catid)
 		$urlCityname=$_GET['cityname']?("&cityname=".$_GET['cityname']):"";
 		$urlSearchtext=$_GET['searchtext']?("&searchtext=".$_GET['searchtext']):"";
 		$catPermalink=get_biz_cat_permalink($catid);
-		
+
 		$displayName=l($row[b_subcat_name]);
 		if($_GET['searchtext']||$_GET['cityname'])
 	 		$t.= "<li><a href='/search?".$urlSubcatname.$urlCityname.$urlSearchtext."'>{$displayName}</a></li>";
 		else
-			$t.= "<li><a href='/"._CAT_DIR_."/$catPermalink/".$row[permalink]."/'>{$displayName}</a></li>";	
-		
+			$t.= "<li><a href='/"._CAT_DIR_."/$catPermalink/".$row[permalink]."/'>{$displayName}</a></li>";
+
 	}
 	return $t;
 }
@@ -175,7 +175,7 @@ $var_cat['subcatid']=$subcat;
 $var_cat['subcatname'] = $subcat_name_lan;
 $var_cat['subcatlist']=get_subcat_list($cat);
 
-$var_search['cityname']=stripslashes($_GET['cityname']); 
+$var_search['cityname']=stripslashes($_GET['cityname']);
 $var_search['subcatname']=$_GET['subcatname'];
 $var_search['catname']=$_GET['catname'];
 $var_search['page']=$_GET['page'];
@@ -202,10 +202,10 @@ $page_title_cat=_PAGE_TITLE_CAT_;
     $page_title_cat= str_replace("%CATEGORY%",$var_cat['catname'],$page_title_cat);
     $page_title_cat= str_replace("%SUBCATEGORY%",$var_cat['subcatname'],$page_title_cat);
     $page_title_cat=get_cleanpage_title($page_title_cat);
- 
+
 /**
  * Check dulplicated business array
- * 
+ *
  * @param $bid      business id who is checking for
  * @param $var_list  array needed to be checked
  * @param $extra
@@ -230,15 +230,15 @@ function check_dulplicated($bid, array &$var_list, $extra, $type)
 	return false;
 }
 //Output meta
-$smarty->assign("page_keywords",$meta_keywords); 
-$smarty->assign("page_description",$meta_description); 
-$smarty->assign("page_title_cat",$page_title_cat); 
+$smarty->assign("page_keywords",$meta_keywords);
+$smarty->assign("page_description",$meta_description);
+$smarty->assign("page_title_cat",$page_title_cat);
 
 
 $itemsPerPage=20;
 //redim searhtext without htmlspecialchars
 $searchtext=$_GET['searchtext'];
-/// search results 
+/// search results
 $rc="select b.business_id, business_name, business_add1, business_add2, business_phone, business_web, city_id, zip, b.cat_id, sub_cat_id, cat_id2, sub_cat_id2, cat_id3, sub_cat_id3, user_id, rating, click, reviews_num, photo_url, x, y, mapx, mapy, zoom, video_url, description, from_hour, to_hour, weeks, price_range, submit_date, approved, permalink, starbiz, submitter_id, open_hours, b.description as `extra`, '1' as `type` from business as b where 1=1 and `approved`=1 ";
 if($subcat) $rc.=" and (sub_cat_id='$subcat' OR sub_cat_id2='$subcat' OR sub_cat_id3='$subcat' ) ";
 elseif($cat!=0) $rc.=" and (cat_id='$cat' OR cat_id2='$cat' OR cat_id3='$cat') ";
@@ -250,14 +250,14 @@ if($searchtext)
 	{
 		$rc.=" union all select b.business_id, business_name, business_add1, business_add2, business_phone, business_web, b.city_id, zip, b.cat_id, sub_cat_id, cat_id2, sub_cat_id2, cat_id3, sub_cat_id3, b.user_id, b.rating, click, reviews_num, photo_url, x, y, mapx, mapy, zoom, video_url, b.description, from_hour, to_hour, weeks, price_range, submit_date, b.approved, b.permalink, starbiz, submitter_id, open_hours, cat_name as `extra`, '' as `type` from business as b, business_category as c where b.cat_id =c.cat_id and cat_name like '%{$searchtext}%'";
 		if($subcat) $rc.=" and (b.sub_cat_id='$subcat' OR b.sub_cat_id2='$subcat' OR b.sub_cat_id3='$subcat' ) ";
-		elseif($cat!=0) $rc.=" and (b.cat_id='$cat' OR b.cat_id2='$cat' OR b.cat_id3='$cat') ";	
+		elseif($cat!=0) $rc.=" and (b.cat_id='$cat' OR b.cat_id2='$cat' OR b.cat_id3='$cat') ";
 		if($city!=0) $rc.=" and b.city_id='$city' ";
-		
+
 		$rc.=" union all select b.business_id, business_name, business_add1, business_add2, business_phone, business_web, b.city_id, zip, b.cat_id, sub_cat_id, cat_id2, sub_cat_id2, cat_id3, sub_cat_id3, b.user_id, b.rating, click, reviews_num, photo_url, x, y, mapx, mapy, zoom, video_url, b.description, from_hour, to_hour, weeks, price_range, submit_date, b.approved, b.permalink, starbiz, submitter_id, open_hours, b_subcat_name as `extra`, '' as `type` from business as b, business_sub_category as s where b.sub_cat_id =s.b_sub_cat_id and b_subcat_name like '%{$searchtext}%'";
 		if($subcat) $rc.=" and (b.sub_cat_id='$subcat' OR b.sub_cat_id2='$subcat' OR b.sub_cat_id3='$subcat' ) ";
 		elseif($cat!=0) $rc.=" and (b.cat_id='$cat' OR b.cat_id2='$cat' OR b.cat_id3='$cat') ";
 		if($city!=0) $rc.=" and b.city_id='$city' ";
-		
+
 		$rc.=" union all select b.business_id, business_name, business_add1, business_add2, business_phone, business_web, b.city_id, zip, b.cat_id, sub_cat_id, cat_id2, sub_cat_id2, cat_id3, sub_cat_id3, b.user_id, b.rating, click, reviews_num, photo_url, x, y, mapx, mapy, zoom, video_url, b.description, from_hour, to_hour, weeks, price_range, submit_date, b.approved, b.permalink, starbiz, submitter_id, open_hours, review_desc as `extra`, '2' as `type` from business as b, business_reviews as r where b.business_id =r.business_id and review_desc like '%{$searchtext}%'";
 		if($subcat) $rc.=" and (b.sub_cat_id='$subcat' OR b.sub_cat_id2='$subcat' OR b.sub_cat_id3='$subcat' ) ";
 		elseif($cat!=0) $rc.=" and (b.cat_id='$cat' OR b.cat_id2='$cat' OR b.cat_id3='$cat') ";
@@ -281,16 +281,16 @@ $var_list=array();
 		while($row=mysql_fetch_array($rc))
 		{
 			if(check_dulplicated($row['business_id'],$var_list,$row['extra'],$row['type'])) continue;
-			
+
 			$var_lists['found']='yes';
-			
+
 			//Not desciption search then hide description
-			if($row['type']==1 && (!$searchtext || strpos($row['description'],$searchtext)===false)) 	
+			if($row['type']==1 && (!$searchtext || strpos($row['description'],$searchtext)===false))
 			{
 				//not found searchtext in description. Hide.
 				$row['extra']='';
 			}
-			
+
 			$var_list[$i]=$row;
 			$var_list[$i]['id']=$row['business_id'];
 			$var_list[$i]['bizname']=$row['business_name'];
@@ -309,11 +309,11 @@ $var_list=array();
 			$var_list[$i]['catid']=$row['cat_id'];
 			$var_list[$i]['catname']=get_biz_cat_translated($row['cat_id']);
 			$var_list[$i]['catpermalink']=get_biz_cat_permalink($row['cat_id']);
-			
+
 			$var_list[$i]['subcatid']=$row['sub_cat_id'];
 			$var_list[$i]['subcatname']=get_biz_subcat_translated($row['sub_cat_id']);
 			$var_list[$i]['subcatpermalink']=get_biz_subcat_permalink($row['sub_cat_id']);
-			
+
 			$var_list[$i]['catid2']=$row['cat_id2'];
 			$var_list[$i]['catname2']=get_biz_cat_translated($row['cat_id2']);
 			$var_list[$i]['cat2permalink']=get_biz_cat_permalink($row['cat_id2']);
@@ -321,40 +321,40 @@ $var_list=array();
 			$var_list[$i]['subcatid2']=$row['sub_cat_id2'];
 			$var_list[$i]['subcatname2']=get_biz_subcat_translated($row['sub_cat_id2']);
 			$var_list[$i]['subcat2permalink']=get_biz_subcat_permalink($row['sub_cat_id2']);
-			
+
 			$var_list[$i]['catid3']=$row['cat_id3'];
 			$var_list[$i]['catname3']=get_biz_cat_translated($row['cat_id3']);
 			$var_list[$i]['cat3permalink']=get_biz_cat_permalink($row['cat_id3']);
-			
+
 			$var_list[$i]['subcatid3']=$row['sub_cat_id3'];
 			$var_list[$i]['subcatname3']=get_biz_subcat_translated($row['sub_cat_id3']);
 			$var_list[$i]['subcat3permalink']=get_biz_subcat_permalink($row['sub_cat_id3']);
-			
+
 			$var_list[$i]['add1']=$row['business_add1'];
 			$var_list[$i]['add2']=$row['business_add2'];
 			$var_list[$i]['phone']=$row['business_phone'];
 			$var_list[$i]['location']=get_city_name($row[city_id]);
-            $var_list[$i]['state']=get_province_name($row[city_id]); 
+            $var_list[$i]['state']=get_province_name($row[city_id]);
 			$var_list[$i]['video_url']=$row['video_url'];
 			$var_list[$i]['web']=!empty($row[business_web])&&$row[business_web]!="http://"?"$row[business_web]":"";
 			$var_list[$i]['bizurl']=advanced_biz_name($row['business_id']);
-			
+
 			$var_list[$i]['submitter_photo']=get_user_data('photo_url',$row['submitter_id']);
-			
+
 			$i+=1;
 		}
 		$var_lists['pager']=get_page_list($_GET[page],$rows,$itemsPerPage);
 		$var_lists['limitfrom']=$limitfrom+1;
 		$var_lists['limitto']=$limitfrom+$limitto;
 		$var_lists['itemsnum']=$rows;
-		
+
 $admin_type = $_SESSION[admin_type];
-$smarty->assign("admin_type",$admin_type);    		
-$smarty->assign("var_search",$var_search); 
-$smarty->assign("var_cat",$var_cat); 
+$smarty->assign("admin_type",$admin_type);
+$smarty->assign("var_search",$var_search);
+$smarty->assign("var_cat",$var_cat);
 $smarty->assign("var_lists",$var_lists);
 $smarty->assign("var_list",$var_list);
 $smarty->assign("page_title",$page_title);
 $smarty->display('biz/search.tpl');
-		
+
 ?>

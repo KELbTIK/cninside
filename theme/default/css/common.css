@@ -54,7 +54,13 @@ a:link, a:visited {	color: #034D80;	text-decoration: none;}
 a:hover, a:active { text-decoration: underline;	color: #555;}
 form {margin:0px auto;padding:0;}
 h1 {font-size:16px; font-weight:bold;margin:5px 0px; color:#000000;}
-h2 {font-size: 14px; font-weight:bold; margin: 5px 0px;}
+h2 {
+    font-size: 14px;
+    font-weight:bold;
+    margin: 5px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 h3 {font-size: 12px; font-weight:bold; margin: 5px 0px;}
 h4 { font-size:12px; font-weight:normal; font-family:Arial; margin:5px 0;}
 h5 {font-size:11px; font-weight:normal; font-family:Arial; margin:5px 0;}
@@ -88,7 +94,7 @@ input.Bbtn{ border:0; height:22px; }
 #clear {clear:both;}
 
 /*Footer*/
-#footer { clear: both; text-align:center; position:relative; font-size:11px; margin:20px; min-height:20px;}
+#footer { clear: both; text-align:center; position:relative; font-size:11px; margin:20px 0 ; min-height:20px;}
 
 
 
@@ -576,3 +582,8 @@ ul.navigation li {	font-family:Arial, Helvetica, sans-serif;    display: inline;
 .eventTitleComment{ font-size:11px;}
 /*end event*/
 
+/*search.tpl*/
+.biz .photoBox{
+    padding-right: 10px;
+}
+/*end search.tpl*/
