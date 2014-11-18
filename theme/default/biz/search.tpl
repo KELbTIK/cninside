@@ -43,7 +43,7 @@ function nav()
  <!--Main Start-->
 
 <div id="main">
-    <div class="content container">
+    <div class="content container biz">
         <div class="row">
             <div class="col-md-9 col-sm-8 col-xs-12">
                 <div class="panel panel-default">
@@ -98,7 +98,7 @@ function nav()
                 {/if}
                 <!--loop-->
                 <div class="clearfix"></div>
-                <ul class="list-group biz">
+                <ul class="list-group">
                     {foreach from=$var_list item=i}
                         <li class="list-group-item">
                             <div class="photoBox pull-left">
@@ -150,16 +150,22 @@ function nav()
                 {if $var_lists.found==''}
                     <br/><br/><br><br>{l t='No result found'}.<br><br><br>
                 {else}
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        <div>{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                        {$var_lists.pager}
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="page_number">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="pull-right">
+                                {$var_lists.pager}
+                            </div>
+                        </div>
                     </div>
                 {/if}
-
-                <div class="box">
-                    <h2>{l t='The business you\'re looking for isn\'t here?'} <a href="/{$smarty.const._BIZ_DIR_}/new.php" class="btn button-blue">{l t='Add Business'}</a></h2>
+                <div class="clearfix"></div>
+                <div class="alert alert-warning" role="alert">
+                    <h2 class="pull-left">{l t='The business you\'re looking for isn\'t here?'}</h2>
+                    <div class="pull-right"><a href="/{$smarty.const._BIZ_DIR_}/new.php" class="btn button-blue">{l t='Add Business'}</a></div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">

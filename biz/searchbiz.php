@@ -483,10 +483,10 @@ if($TotalItem==0) return false;
 
 $totalpage=ceil($TotalItem/$PageSize);
 
-$prename="&laquo;";
-$headname="|&laquo;";
-$nextname="&raquo;";
-$lastname="&raquo;|";
+$prename="‹";
+$headname="&laquo;";
+$nextname="›";
+$lastname="&raquo;";
 
 if($totalpage>1)
 {

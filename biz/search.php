@@ -343,7 +343,154 @@ $var_list=array();
 
 			$i+=1;
 		}
-		$var_lists['pager']=get_page_list($_GET[page],$rows,$itemsPerPage);
+// pagination
+function get_page($CurPage,$TotalItem,$PageSize,$querrystring_page)
+{
+    if(empty($CurPage)) $CurPage=1;
+    if($TotalItem==0) return false;
+
+    $totalpage=ceil($TotalItem/$PageSize);
+
+    $prename="‹";
+    $headname="&laquo;";
+    $nextname="›";
+    $lastname="&raquo;";
+
+    if($totalpage>1)
+    {
+        if($CurPage==1)
+            $nextnum=$CurPage+1;
+        elseif($CurPage==$totalpage)
+            $prenum=$CurPage-1;
+        else
+        {
+            $prenum=$CurPage-1;
+            $nextnum=$CurPage+1;
+        }
+    }
+
+//////  $pre  $next
+    if(!empty($prenum)) {
+        $url="?page=$prenum&$querrystring_page";
+        $pre="<li><a href=\"javascript:;\" onClick=\"window.location='$url'; return true;\">$prename</a></li>";
+    }else{
+        $pre="<li class=\"disabled\"><span class=\"disabled\">$prename</span></li>";
+    }
+
+    if(!empty($nextnum)){
+        $url="?page=$nextnum&$querrystring_page";
+        $next="<li><a href=\"javascript:;\" onClick=\"window.location='$url'; return true;\">$nextname</a></li>";
+    }else{
+        $next="<li class=\"disabled\"><span class=\"disabled\">$nextname</span></li>";
+    }
+////$head  //last
+    if($CurPage==1) {
+        $head="<li class=\"disabled\"><span class=\"disabled\">$headname</span></li>";
+    }else{
+        $url="?page=1&$querrystring_page";
+        $head="<li><a href=\"javascript:;\" onClick=\"window.location='$url'; return true;\">$headname</a></li>";
+    }
+
+    if($CurPage==$totalpage) {
+        $last="<li class=\"disabled\"><span class=\"disabled\">$lastname</span></li>";
+    }else{
+        $url="?page=$totalpage&$querrystring_page";
+        $last="<li><a href=\"javascript:;\" onClick=\"window.location='$url'; return true;\">$lastname</a></li>";
+    }
+
+
+    if($totalpage-$CurPage>3&&$totalpage>7)
+    {
+        $ellipsis_r="...";
+    }
+
+    if($totalpage>7&&$CurPage>4)
+    {
+        $ellipsis_l="...";
+    }
+
+
+
+    if($totalpage<=7)
+    {
+        $ifrom=1;
+        $ito=$totalpage;
+    }
+    else // more than 7 pages
+    {
+        //CurPage
+        if($CurPage<=4)
+        {
+            $ifrom=1;
+            $ito=7;
+        }
+        //CupPage
+        elseif($totalpage-$CurPage<=3)
+        {
+            $ifrom=$CurPage-6+$totalpage-$CurPage;
+            $ito=$totalpage;
+        }
+        //CurPage
+        else
+        {
+            $ifrom=$CurPage-3;
+            $ito=$CurPage+3;
+        }
+    }
+////num
+    for($i=$ifrom; $i<=$ito; $i++)
+    {
+        if($i==$CurPage)
+        {
+            $num.="<li><span class=\"current\">$i</span></li>";
+        }
+        else
+        {
+            $url="?page=$i&$querrystring_page";
+            $num.="<li><a href=\"javascript:;\" onClick=\"window.location='$url'; return true;\">$i</a></li>";
+        }
+    }
+
+    $output="<ul class=\"pagination\" id=\"digg\">";
+    $output.=$head;
+    $output.=$pre;
+    $output.=$ellipsis_l;
+    $output.=$num;
+    $output.=$ellipsis_r;
+    $output.=$next;
+    $output.=$last;
+    $output.="</ul>";
+
+    return $output;
+}
+
+if($keyword =='' && !$city){
+    // not showing filters
+}else{
+    $cat_list_checkbox = get_biz_cat_list_checkbox($cat_list_array,$keyword);
+    $item_list_checkbox = get_item_list_checkbox($cat_list,$item_list_array,$keyword);
+    // to reset filter
+    $querystring_reset = "?page=1&sort_by=1&srm=$keyword&city=$city";
+
+    if ($cat_list_checkbox){
+
+        $reset = "<center><input class=\"Bbtn\" type=\"button\" value=\"".l('Reset Filter')."\" name=\"Submit\"  onClick=\"window.location='$querystring_reset'; return true;\" /></center>";
+
+        $categories .= $cat_list_checkbox;
+    }
+
+    if ($item_list_checkbox){
+
+        $features .= $item_list_checkbox;
+    }
+
+}
+
+$querystring_page = explode("&", $_SERVER['QUERY_STRING']);
+array_shift($querystring_page);
+$querystring_page = implode('&', $querystring_page);
+
+		$var_lists['pager']=get_page($_GET[page],$rows,$itemsPerPage, $querystring_page);
 		$var_lists['limitfrom']=$limitfrom+1;
 		$var_lists['limitto']=$limitfrom+$limitto;
 		$var_lists['itemsnum']=$rows;
