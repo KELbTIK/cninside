@@ -1,6 +1,3 @@
-#main .content { padding:5px; margin:0 10px;}
-#main .content .left { float:left; width:72%;  padding-right:10px; display: inline;}
-#main .content .right {float:left; width:25%; margin-left:10px;display: inline;}
 #main .content .con{  padding-top:10px; padding-bottom:10px; border-bottom:#ccc 1px solid; float:left; width:100%; }
 
 
