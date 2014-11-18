@@ -8,7 +8,7 @@
 <link href="/theme/{$get_theme}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/theme/{$get_theme}/css/index.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="/theme/{$get_theme}/js/fancy/jquery.fancybox.css" media="screen" type="text/css" />
-<link href="/theme/{$get_theme}/css/offer.css" rel="stylesheet" type="text/css" />
+<link href="/theme/{$get_theme}/css/style.css" rel="stylesheet" type="text/css" />
 <script src="/theme/{$get_theme}/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script src="/theme/{$get_theme}/js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
 <script src="/theme/{$get_theme}/js/jquery.localscroll-1.2.5.js" type="text/javascript" ></script>
