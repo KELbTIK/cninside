@@ -39,7 +39,7 @@ background-image:url({$smarty.const._LOGO_URL_});
 <title> {if $page_title_cat} {$page_title_cat} {else} {$page_title}{/if}</title>
 {literal}
 
- {/literal} 
+ {/literal}
 </head>
 
 <body>

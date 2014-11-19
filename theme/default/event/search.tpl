@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="panel-body">
                                 <form>
-                                    <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label for="searchtext">{l t='Keywords'}</label>
                                         <input type="text" name="searchtext" class="form-control" placeholder="Text input" id="searchtext" value="{$var_search.searchtext}">
                                         <input type="hidden" name="cat" id="cat" value="{$var_search.catid}" />
@@ -63,7 +63,7 @@
                                         <em>{l t='(e.g. Music Festival)'}</em>
                                     </div>
 
-                                    <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label for="city">{l t='Near'}</label>
                                         <select class="form-control" id="city" name="city">
                                             <option value="0" selected="selected">{l t='ALL'}</option>
@@ -72,9 +72,9 @@
                                         <br/>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-6 col-xs-12">
-                                        {l t='Category'}
-                                        <br/><br/>
+                                    <div class="col-md-10 col-sm-10 col-xs-12">
+                                        <label>{l t='Category'}:</label>
+                                        <br/>
                                     <span id="sele_cat_text">
                                         <strong>
                                             <span style="color:#900">{$var_search.catname}
@@ -82,22 +82,23 @@
                                         </strong>
                                         <a href="javascript:;" onclick="openCat()">{l t='Change'} &dArr;</a>
                                     </span>
+                                        <div  class="alert alert-info" id="sele_cat">
+                                            {l t='Category'}:<br>
+                                            <ul class="list-unstyled list-inline clearfix">
+                                                <li  onclick="this.className='SitemS';set('cat','0')" class="Sitem">{l t='ALL'}</li>
+                                                <li>{$var_search.catlistli}</li>
+                                            </ul>
+                                        </div>
                                     </div>
 
-                                    <div class="col-md-3 col-sm-6 col-xs-12 text-center">
-                                        <br/>
+
+                                    <div class="col-md-2 col-sm-2 col-xs-12 text-right">
                                         <input type="submit" class="btn button-blue" onclick="nav()" value="{l t='Search'}" name="Submit" /><br/>
                                     </div>
 
                                 </form>
 
-                                <div  class="nb sele" id="sele_cat" style="background:#FFC; float:left; width:95%; border:1px solid #ccc; overflow:hidden; padding-top:5px; padding-left:5px; margin-left:10px;">
-                                    <ul>
-                                        {l t='Category'}:<br />
-                                        <li style="font-weight:bold; color:#600" onclick="this.className='SitemS';set('cat','0')" class="Sitem">{l t='ALL'}</li>
-                                        {$var_search.catlistli}
-                                    </ul>
-                                </div>
+
                             </div>
                         </div>
                     </div>
