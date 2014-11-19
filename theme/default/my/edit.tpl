@@ -3,7 +3,6 @@
 <script src="/theme/{$get_theme}/js/link.js" type="text/javascript"></script>
 <script type="text/javascript" src="/theme/{$get_theme}/js/ajax.js"></script> 
 <script src="/theme/{$get_theme}/js/edit.js" type="text/javascript"></script>
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/5938.css" />
 
  <!--Main Start-->  
  

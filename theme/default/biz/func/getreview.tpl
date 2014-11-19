@@ -86,5 +86,7 @@
 {if $var_lists.found==''}
     <div class="con text-center">{l t='No review found'}.</div>
 {else}
-    {$var_lists.pager}
+    <div class="text-right">
+        {$var_lists.pager}
+    </div>
 {/if}
