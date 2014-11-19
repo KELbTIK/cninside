@@ -1,5 +1,4 @@
 {include file="header.tpl"}
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/5938.css" />
 {literal}
 <style type="text/css">
 .box{width:895px; margin:5px 15px; padding:5px;}
