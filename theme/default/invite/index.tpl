@@ -1,20 +1,4 @@
 {include file="header.tpl"}
-{literal}
-<style type="text/css">
-<!--
-.text_vision{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-#main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid;}
--->
- </style>
-
-{/literal}
-
-
 <div id="main">
     <div class="content container">
         <div class="row">
