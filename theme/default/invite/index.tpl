@@ -2,7 +2,11 @@
 {literal}
 <style type="text/css">
 <!--
-
+.text_vision{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 #main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid;}
 -->
@@ -27,11 +31,11 @@
                                     <div class="row col-md-6 col-sm-12 col-xs-12">
 
                                         <div class="col-md-6 col-sm-6 col-xs-6 form-group">
-                                            <label for="email_1">{l t='Email Address'}</label>
+                                            <label class="text_vision" for="email_1">{l t='Email Address'}</label>
                                             <input type="email" class="form-control" name="email_1" placeholder="Enter email">
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6 form-group">
-                                            <label for="fname_1">{l t='Full Name'} <em>{l t='(optional)'}</em></label>
+                                            <label class="text_vision" for="fname_1">{l t='Full Name'} <em>{l t='(optional)'}</em></label>
                                             <input type="text" class="form-control" name="fname_1" placeholder="Enter name">
                                         </div>
 
@@ -91,16 +95,13 @@
                                                     </p>
                                                     <div class="row">
                                                         <label for="subject">
-                                                            <textarea class="form-control" rows="8" name="subject" cols=70">
-                                                                {l t='Have you heard about %s? Check it out:' r=$smarty.const._SITENAME_}
-                                                                http://{$smarty.const._DOMAIN_}
-                                                                - {$var_me.name}
+                                                            <textarea class="form-control" rows="8" name="subject" cols=70">{l t='Have you heard about %s? Check it out:' r=$smarty.const._SITENAME_}http://{$smarty.const._DOMAIN_} - {$var_me.name}
                                                             </textarea>
                                                         </label>
                                                         <div class="row">
                                                             <label class="col-md-4 col-sm-3 col-xs-4">
                                                                 <br/>
-                                                                <input type="submit" class="form-control" value="{l t='Send Invite'}" onclick="this.disabled=true;form.submit();" />
+                                                                <input type="submit" class="btn button-blue" value="{l t='Send Invite'}" onclick="this.disabled=true;form.submit();" />
                                                             </label>
                                                         </div>
                                                     </div>
