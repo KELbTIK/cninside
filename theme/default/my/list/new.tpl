@@ -6,7 +6,7 @@ var t_listnamecannotbeempty='{l t='List name cannot be empty!'}';
 </script>
 
 {literal}
-    
+
  <script type="text/javascript" language="javascript">
 function fillform(n,s){
 var d=document.postform;
