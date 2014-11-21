@@ -15,10 +15,10 @@ var t_suredel='{l t='Sure to delete?'}';
      <div id="tabsB" >
         <ul class="nav nav-pills">
           <!-- CSS Tabs -->
-          <li role="presentation" class="active" id="{if $is.new}current{/if}"><a href="?f=new"><span>{l t='Compose'}</span></a></li>
-          <li role="presentation" id="{if $is.inbox}current{/if}"><a href="?f=inbox"><span>{l t='Inbox'} ({$var_num.notcheck})</span></a></li>
-          <li role="presentation" id="{if $is_sent}current{/if}"><a href="?f=sent"><span>{l t='Sent'}</span></a></li>
-          <li role="presentation" id="{if $is_read}current{/if}" style="display:{$var_readstat}"><a><span>{l t='Read Message'}</span></a></li>
+          <li role="presentation" class="{if $is.new}active{/if}" id="{if $is.new}current{/if}"><a href="?f=new"><span>{l t='Compose'}</span></a></li>
+          <li role="presentation" class="{if $is.inbox}active{/if}" id="{if $is.inbox}current{/if}"><a href="?f=inbox"><span>{l t='Inbox'} ({$var_num.notcheck})</span></a></li>
+          <li role="presentation" class="{if $is.sent}active{/if}" id="{if $is.sent}current{/if}"><a href="?f=sent"><span>{l t='Sent'}</span></a></li>
+          <li role="presentation" class="{if $is.read}active{/if}" id="{if $is.read}current{/if}" style="display:{$var_readstat}"><a><span>{l t='Read Message'}</span></a></li>
         </ul>
          <br/>
      </div>
@@ -144,7 +144,7 @@ var t_suredel='{l t='Sure to delete?'}';
                                                  <input name="to" type="text" onfocus="this.blur()" id="to" value="{$var_new.touser}" class="form-control" >
                                              {/if}
                                              <input name="id" type="hidden" id="id" value="{$var_new.touserid}" >
-                                             <label id="caution" class="alert alert-danger">{l t='Please Choose!'} =></label>
+                                             <div id="caution" class="alert alert-danger">{l t='Please Choose!'} =></div>
 
                                              <script type="text/javascript" language="javascript">
                                                  document.getElementById('caution').style.display='none';
