@@ -220,7 +220,7 @@ get(0,0,1);
                         {l t=$zone_name} {l t='Categories'}
                     </div>
                     <div id="sr_menu">Loading...</div>
-                    <div style="color:white;"><p>.</p>
+                    <div style="color:white;" class="hidden-xs"><p>.</p>
                         <p align="center">
                             {$ads->getAdCode(7)}
                         </p>

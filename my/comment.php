@@ -111,7 +111,7 @@ $found="yes";
     <a href="./?id=<?=$row[user_id]?>"><?=get_user_data(nameORemail,$row[user_id])?></a> <?=l('says')?>:
 </div>
 <div style="float:right; white-space: nowrap; font-size:10px"><?=turn_date($row[reply_date],ftimeordate)?></div>
-<br id="clear" />
+<div class="clearfix"></div>
 <div style="padding-left:15px; padding-bottom:5px; padding-top:5px; border-bottom:1px #ccc dashed;">
 <?=$row[comment]?></div>
 </div>
@@ -120,5 +120,5 @@ $found="yes";
 if($found)
 echo get_page_list($_GET[page],$rows,5,',\'cmt\''); //($CurPage,$TotalItem,$PageSize)
 else
-echo "<center><br/>".l("No Comment")."<br/>&nbsp;</center>";
+echo "<div class=\"text-center\"><br/>".l("No Comment")."<br/>&nbsp;</div>";
 ?>

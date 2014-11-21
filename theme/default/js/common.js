@@ -1,6 +1,32 @@
 var lang_height ;
 $(document).ready(function() {
-  
+//    pagination
+    if ($('#digg > span:first-child').text() == '|<'){
+        $('#digg > span:first-child').text('«');
+    }
+    if ($('#digg > span:nth-child(2)').text() == '<'){
+        $('#digg > span:nth-child(2)').text('‹');
+    }
+    if ($('#digg > a:first-child').text() == '|<'){
+        $('#digg > a:first-child').text('«');
+    }
+    if ($('#digg > a:nth-child(2)').text() == '<'){
+        $('#digg > a:nth-child(2)').text('‹');
+    }
+
+    if ($('#digg > span:last-child').text() == '>|'){
+        $('#digg > span:last-child').text('»');
+    }
+    if ($('#digg > a:last-child').text() == '>|'){
+        $('#digg > a:last-child').text('»');
+    }
+
+    if ($('#digg > span:nth-last-child(2)').text() == '>'){
+        $('#digg > span:nth-last-child(2)').text('›');
+    }
+    if ($('#digg > a:nth-last-child(2)').text() == '>'){
+        $('#digg > a:nth-last-child(2)').text('›');
+    }
 //language
 	lang_height = $('.language_selector').height(); 
 	$('.language_selector').css({'height':'12px','top':0}); 

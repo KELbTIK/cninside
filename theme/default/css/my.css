@@ -1,16 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 
-#main .info { border:1px #999 solid; padding:5px; height:20px; clear:both; background-color:#515151; margin:0 10px; color:#fff; font-size:16px; }
-#main .info .link a {font-size:11px;  color:#fff;}
-#main .content { padding:5px; margin:0 10px;}
-#main .content .left { float:left; width:227px;}
-#main .content .mid { height:auto;  margin-bottom:10px; margin-left:10px; padding-left:10px;float:left; width:70%;}
-#main .content .right {float:left; width:227px;}
-#main .content .con{  padding-top:10px; padding-bottom:10px; border-bottom:#ccc 1px solid;}
-
-.Sitem{ float:left; cursor:pointer; border-left:1px #ccc solid;padding:3px 10px;color:#009;}
- .SitemS { background-color:#CFEBFF; float:left; border-left:1px #ccc solid;  padding:3px 10px;cursor:pointer;color:#900;}
+/*.Sitem{ float:left; cursor:pointer; border-left:1px #ccc solid;padding:3px 10px;color:#009;}*/
+ /*.SitemS { background-color:#CFEBFF; float:left; border-left:1px #ccc solid;  padding:3px 10px;cursor:pointer;color:#900;}*/
 #cmt #digg { font-size:10px;}
 #cmt #digg  a{ margin:0; border:0; padding:4px;}
 #cmt #digg  a:hover{ border-bottom:1px blue solid;}

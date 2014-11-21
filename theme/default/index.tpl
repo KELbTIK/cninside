@@ -257,7 +257,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ads">{$ads->getAdCode(1)}</div>
+                <div class="ads hidden-xs">{$ads->getAdCode(1)}</div>
                 <div class="panel panel-default new_offer">
                     <div class="panel-heading">
                         <h3 class="panel-title">{l t='New Special Offers'}</h3>

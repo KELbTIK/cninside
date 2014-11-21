@@ -439,10 +439,8 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                 <form  action="javascript:get({$var_biz.id},1)" method="post">
                                     <div class="input-group">
                                         <input  onFocus="this.select()"  class="form-control"  onClick="if (this.value==t_defaultsearchtext) this.value=''" value="{l t='Search Reviews'}" id="searchreviewtext" />
-                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-search" id="imageField"></span>
-                                            {*<input type="image"  id="imageField" name="imageField"  src="/theme/{$get_theme}/images/search_icon.gif" />*}
-                                        </span>
+                                        <span class="input-group-btn"><button class="btn btn-primary" type="submit">&nbsp;<i class="fa fa-search"></i>&nbsp;</button></span>
+                                        {*<input type="image"  id="imageField" name="imageField"  src="/theme/{$get_theme}/images/search_icon.gif" />*}
                                     </div>
                                 </form>
                             </div>
