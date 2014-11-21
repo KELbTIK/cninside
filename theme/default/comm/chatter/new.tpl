@@ -53,7 +53,7 @@ return true;
 
                                 <label class="col-md-3 col-sm-3 control-label">{l t='Category'}</label>
                                 <div class="col-md-9 col-sm-9">
-                                    <ul class="list-unstyled">
+                                    <ul class="list-unstyled list-conversation">
                                         {$get_cat}
                                     </ul>
                                 </div>
