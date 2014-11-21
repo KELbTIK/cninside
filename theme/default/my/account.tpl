@@ -1,6 +1,5 @@
 {include file="header.tpl"}
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/7026.css" />
- <!--Main Start-->  
+ <!--Main Start-->
 <div id="main">
     <div class="content container">
         <div class="row">

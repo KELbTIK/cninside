@@ -670,7 +670,8 @@ ul.navigation li {	font-family:Arial, Helvetica, sans-serif;    display: inline;
 /*end profile*/
 
 /*start edit profile*/
-.edit-profile input[type="radio"]{
+.edit-profile input[type="radio"], .notifications input[type="checkbox"]{
     margin-top: 1px;
 }
+
 /*end edit profile*/
