@@ -32,7 +32,7 @@
         {$i.city_name}
         {/if}
     </div>
-    <div id="clear"></div>
+    <div class="clearfix"></div>
     
     
 
@@ -41,9 +41,10 @@
 <!--/loop--> 
 {/if}
                 
-        {if !$var_lists.found}
-        <br id="clear"/><br/><br><br><center>{l t='No result found'}.</center><br><br><br>
-        {else}
-        <div style="float:left; margin-top:20px;">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
-		    {$var_lists.pager}
-        {/if}
+{if !$var_lists.found}
+    <div class="clearfix"></div>
+    <div class="text-center">{l t='No result found'}.</div>
+{else}
+<div class="pull-left" style="margin-top:20px;">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
+    {$var_lists.pager}
+{/if}

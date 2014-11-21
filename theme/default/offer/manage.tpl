@@ -3,7 +3,6 @@
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
  
-<link rel="stylesheet" href="/theme/{$get_theme}/js/fancy/jquery.fancybox.css" media="screen" type="text/css" />
 <script>
 //===========common
 var biz_id="{$smarty.get.id}";
@@ -146,69 +145,6 @@ var tempval=document.getElementById(theField);
 
 
 </script>
-<style type="text/css">
-<!--
-#main .content { margin:0 10px;}
-#main .content .left { float:left; width:20%; }
-#main .content .left .item{ float:left; width:95%; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif; cursor:pointer;}
-#main .content .left .itemS { background-color:#CFEBFF; float:left; width:95%; clear:both; padding:5px; border-bottom:1px #ccc dashed; font-family:Arial, Helvetica, sans-serif;cursor:pointer;}
-#main .content .left .item strong{ color:#006;}
-#main .content .left .itemS strong{ color:#600;}
-#main .content .right {float:left; width:78%; padding-left:10px; border:1px #ccc solid;}
-#main .content .right ul{margin:10px 0 0 5px; padding:0px;list-style:none; }
-#main .content .right ul li{ margin:5px auto;}
-#main .content .con{  padding-top:10px; padding-bottom:10px;; border-bottom:#ccc 1px solid; float:left; width:100%;}
-
-
-#main .content  .right .con .pic { float:left; width:14%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
-#main .content  .right .con .t { float:left; width:83%; padding-left:10px; display:inline;}
-#main .content  .right .con .picR { float:left; margin-left:5%; width:14%; padding-top:3px; padding-left:10px; text-align:left; display:inline;}
-#main .content  .right .con .tR { float:left; width:77%; padding-left:10px; display:inline;}
-
-
-
-#main .left td{font-size:11px;}
-#pv{ color:#000; font-size:11px; overflow:hidden;}
-
-
-
-.nonwrapping { font-size:11px; font-family:Arial, Helvetica, sans-serif;}
-.aligncent{ text-align:center;}
-.narrowTitle{font-family:Arial, Helvetica, sans-serif;}
-#main .left td{font-size:11px;}
-
-
-
-
-
-
-.offer_item{
-width:96%;
-border-bottom:1px #ccc solid;
-padding:20px 10px;	
-}
-
-.business_info { float:left}
-
-.offer_item h2{ margin-bottom:10px; margin-top:0;}
-
-.offer_item em{ text-align:right; display:block;}
-
-.special_offer {
-float:left;
--moz-border-radius:10px;
--webkit-border-radius:10px; 
-border:1px solid #CCCCCC;
-padding:10px;
-width:260px;
-margin-right:20px;
-display:block;
-}
-
-
--->
- </style>
-
 <script>
 function fancybox()
 { 
@@ -232,45 +168,33 @@ get(0,0,1);
 
 {/literal}
  <!--Main Start-->  
- <div id="main">
-		<div class="content">
-        	<div>
-        	  <div style="float:left">
+<div id="main">
+    <div class="content container">
+        <div class="row">
+            <div class="pull-right"><script>document.write(new_button)</script></div>
+            <div class="clearfix"></div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div id="MenuTitle"> </div>
+                <div style="color:white;" class="hidden-xs">
+                    <p align="center">
+                    {$ads->getAdCode(7)}
+                    </p>
+                </div>
             </div>
-            <div style="float:right; margin-right:10px; margin-top:10px;"><script>document.write(new_button)</script></div>
-          </div>
-          <div id="clear" style=" margin-bottom:10px; margin-top:10px;"></div>
-              <div class="left" style="padding-top:10px;" >
-                                <div style="border-bottom:1px dashed #ccc;" id="MenuTitle">
-                </div>
-                <div style="color:white;">
-                
-                
-                <p align="center">
-{$ads->getAdCode(7)}
-</p>
-
-                
-                </div>
-
-          </div>
-
-             <div class="right" style="margin-bottom:10px; position:relative">
-             <span class="coner c1"></span>
-        <span class="coner c2"></span>
-        <span class="coner c3"></span>
-        <span class="coner c4"></span>
-             <div id="sr">Loading...</div><script type="text/javascript" language="javascript">
-{php}
-if(!empty($_GET[aid])){
-echo "get(".$_GET[aid].",1,2);";
-}else{
-echo "get(0,1,0);";
-}
-{/php}
-</script>     </div>
-          
-		</div>               
- </div>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div id="sr">Loading...</div>
+                    <script type="text/javascript" language="javascript">
+                {php}
+                if(!empty($_GET[aid])){
+                echo "get(".$_GET[aid].",1,2);";
+                }else{
+                echo "get(0,1,0);";
+                }
+                {/php}
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
  <!--Main End-->
- {include file="footer.tpl"}
+{include file="footer.tpl"}

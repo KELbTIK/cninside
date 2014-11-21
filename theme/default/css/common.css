@@ -668,3 +668,9 @@ ul.navigation li {	font-family:Arial, Helvetica, sans-serif;    display: inline;
     }
 }
 /*end profile*/
+
+/*start edit profile*/
+.edit-profile input[type="radio"]{
+    margin-top: 1px;
+}
+/*end edit profile*/

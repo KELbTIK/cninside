@@ -72,7 +72,7 @@ function validate_permalink(permalink)
 {/literal}
 <body style="background:none;">
 <div id="container">
- <!--Main Start-->  
+ <!--Main Start-->
   <div class="detail blue">
          <span class="coner c1b"></span>
         <span class="coner c2b"></span>
@@ -104,7 +104,7 @@ function validate_permalink(permalink)
 	                	<th width="30%">{l t='Business Name'}</th>
                         <td width="70%">{$var_biz.bizname}</td>
                     </tr>
-                    
+
                 	 <tr>
                                  <th width="30%">{l t='Permalink'}</th>
                                <td width="70%">
@@ -137,7 +137,7 @@ function validate_permalink(permalink)
                 	  <th>{l t='Category'} 2</th>
                 	  <td id="cattd2">
                       {if $var_biz.catid2==0}
-                      NA 
+                      NA
                       {else}
                       {$var_biz.catname2} / {$var_biz.subcatname2}
                       {/if}
@@ -157,7 +157,7 @@ function validate_permalink(permalink)
                 	  <th>{l t='Category'} 3</th>
                 	  <td id="cattd3">
                       {if $var_biz.catid3==0}
-                      NA 
+                      NA
                       {else}
                       {$var_biz.catname3} / {$var_biz.subcatname3}
                       {/if}
@@ -184,18 +184,18 @@ function validate_permalink(permalink)
                    {if $location_required}<tr id="location_city">{else}<tr id="location_city" style="display:none;">{/if}
                       <th>{l t='State'} / {l t='City'}</th>
                       <td><span  id="locationtd">{if $var_biz.c_name} {$var_biz.c_name} / {/if}  {if $var_biz.c_name != $var_biz.province}{$var_biz.province} / {/if}{$var_biz.city} &nbsp; &nbsp;<a href="javascript:void(0);" onclick="$('#locationtd').hide();$('#locationchange').show();">{l t='Change'}</a></span>
-                      
+
                       <span id="locationchange" style="display:none">
-                      
+
                        <select id="country" name="country" onChange="getCountry(this,'state')">
                                   <option value="{$var_biz.c_id}">=={$var_biz.c_name}==</option>
                                         {$var_country}
-                             </select> - 
+                             </select> -
                                  <select id="state" name="state" onChange="getState(this,'biz_city')">
                                   <option value="{$var_biz.provinceid}">=={$var_biz.province}==</option>
                                 </select> - <select name="biz_city" id="biz_city">
                                   <option value="{$var_biz.cityid}">=={$var_biz.city}==</option>
-                                </select> 
+                                </select>
                        </span>
                       </td>
                     </tr>
@@ -211,7 +211,7 @@ function validate_permalink(permalink)
                       <th>{l t='Website'}</th>
                       <td><input type="text" name="web" value="{$var_biz.web}" style="width:95%;"/></td>
                     </tr>
-                    
+
                     <tr>
                       <th>{l t='Video URL'}</th>
                       <td><input type="text" name="video" value="{$var_biz.video_url}" style="width:55%;"/>
@@ -221,14 +221,14 @@ function validate_permalink(permalink)
                     <th>{l t='Business Hours'}
                       <input type="hidden" name="openhours" id="openhours" value="{$var_biz.openhours}" /></th>
                     <td>
-                    
+
                      <table width="90%" border="0" cellpadding="0" cellspacing="0"><tr>
                                <td width="20%">
                                <label><input type="radio" {if $var_biz.regular_hours!='1' && $var_biz.custom_hours!='1' }checked="checked"{/if} name="openhoursradio" onchange="$('.hourstables').hide();$('#openhours').val('0')" /> {l t='NA'}</label></td>
                                <td width="40%"><label><input type="radio" name="openhoursradio" {if $var_biz.regular_hours=='1'}checked="checked"{/if} onchange="$('.hourstables').hide();$('#regularhourstable').show();$('#openhours').val('1')" /> {l t='Regular hours'}</label></td>
                                <td width="40%"><label><input type="radio" name="openhoursradio" {if $var_biz.custom_hours=='1' }checked="checked"{/if} onchange="$('.hourstables').hide();$('#customhourstable').show();$('#openhours').val('2')" /> {l t='Custom hours'}</label></td></tr></table>
-                    
-                    
+
+
                       <table width="100%" border="0" cellpadding="0" cellspacing="0"  class="hourstables" id="regularhourstable" style="{if $var_biz.regular_hours!='1'}display:none{/if}" bgcolor="#FFFFDD" >
                          <tr>
                            <td colspan="4" style="border:0"><input type="text" id="fromhour" name="fromhour" value="{$var_biz.from_hour}" style="width:70px;" />
@@ -253,51 +253,51 @@ function validate_permalink(permalink)
                         <label><input type="checkbox" name="week7" value="7" {if $var_biz.week7}checked="checked"{/if} /> {l t='Sunday'}</label></td>
                         <td style="border:0">&nbsp;</td>
                         </tr></table>
-                        
-                        
-                         
+
+
+
                       <table width="80%" bgcolor="#FFFFDD"  class="hourstables" id="customhourstable"  style="{if $var_biz.custom_hours!='1'}display:none{/if}" >
                                <tr>
                                  <td><label><input type="checkbox" name="wk1" value="1" {if $var_biz.wk1}checked="checked"{/if} tabindex="16" /> {l t='Monday'}</label>&nbsp; <input type="text" id="fromhour1" name="fromhour1" value="{if $var_biz.from_hour1}{$var_biz.from_hour1}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour1" name="tohour1" value="{if $var_biz.to_hour1}{$var_biz.to_hour1}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
                                <tr>
                                  <td><label><input type="checkbox" name="wk2" value="2" {if $var_biz.wk2}checked="checked"{/if} tabindex="17"  /> {l t='Tuesday'}</label>&nbsp; <input type="text" id="fromhour2" name="fromhour2" value="{if $var_biz.from_hour2}{$var_biz.from_hour2}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour2" name="tohour2" value="{if $var_biz.to_hour2}{$var_biz.to_hour2}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
                                <tr>
                                  <td><label><input type="checkbox" name="wk3" value="3" {if $var_biz.wk3}checked="checked"{/if} tabindex="18"  /> {l t='Wednesday'}</label>&nbsp; <input type="text" id="fromhour3" name="fromhour3" value="{if $var_biz.from_hour3}{$var_biz.from_hour3}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour3" name="tohour3" value="{if $var_biz.to_hour3}{$var_biz.to_hour3}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
                                <tr>
                                  <td><label><input type="checkbox" name="wk4" value="4"  {if $var_biz.wk4}checked="checked"{/if} tabindex="19" /> {l t='Thursday'}</label>&nbsp;  <input type="text" id="fromhour4" name="fromhour4" value="{if $var_biz.from_hour4}{$var_biz.from_hour4}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour4" name="tohour4" value="{if $var_biz.to_hour4}{$var_biz.to_hour4}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
                                <tr>
                                  <td><label><input type="checkbox" name="wk5" value="5" {if $var_biz.wk5}checked="checked"{/if} tabindex="20" /> {l t='Friday'}</label>&nbsp;  <input type="text" id="fromhour5" name="fromhour5" value="{if $var_biz.from_hour5}{$var_biz.from_hour5}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour5" name="tohour5" value="{if $var_biz.to_hour5}{$var_biz.to_hour5}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
                                <tr>
                                  <td><label><input type="checkbox" name="wk6" value="6" {if $var_biz.wk6}checked="checked"{/if} tabindex="21" /> {l t='Saturday'}</label>&nbsp; <input type="text" id="fromhour6" name="fromhour6" value="{if $var_biz.from_hour6}{$var_biz.from_hour6}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour6" name="tohour6" value="{if $var_biz.to_hour6}{$var_biz.to_hour6}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
                                <tr>
                                  <td><label><input type="checkbox" name="wk7" value="7" {if $var_biz.wk7}checked="checked"{/if} tabindex="22"/> {l t='Sunday'}</label>&nbsp; <input type="text" id="fromhour7" name="fromhour7" value="{if $var_biz.from_hour7}{$var_biz.from_hour7}{else}8:00 AM{/if}" style="width:70px;" tabindex="13" />
-                         - 
+                         -
                          <input type="text" id="tohour7" name="tohour7" value="{if $var_biz.to_hour7}{$var_biz.to_hour7}{else}6:00 PM{/if}" style="width:70px;" tabindex="14" /></td>
                                </tr>
-                               
+
                                  </table>
-                        
-                        
-                    
-                    
+
+
+
+
                     </td>
                     </tr>
                     {if $price_range}<tr id="price_range">{else}<tr id="price_range" style="display:none;">{/if}
@@ -315,16 +315,16 @@ function validate_permalink(permalink)
                     {if $var_cat_has_items}
                     <tr>
                         <th>{l t='Additional Info'}</th>
-                        <td> 
-                   
+                        <td>
 
-                    
+
+
                     <!--loop-->
-                    {assign var=k value=1} 
+                    {assign var=k value=1}
                     {foreach from=$var_bitems item=i}
-                    
+
                     {if (($k+1)%2==0)}
-                    <p><b>{l t=$i.title}</b>: 
+                    <p><b>{l t=$i.title}</b>:
                         {if $i.checkbox eq 0}
                              {l t=$i.value}
                         {else}
@@ -332,14 +332,14 @@ function validate_permalink(permalink)
                                 {if ($k2+1) eq $i.checkbox  }
                                  {l t=$j}
                                 {else}
-                                 {l t=$j},  
+                                 {l t=$j},
                                 {/if}
                             {/foreach}
-                            
+
                         {/if}
                     </p>
                     {else}
-                    <p><b>{l t=$i.title}</b>: 
+                    <p><b>{l t=$i.title}</b>:
                         {if $i.checkbox eq 0}
                              {l t=$i.value}
                         {else}
@@ -347,22 +347,22 @@ function validate_permalink(permalink)
                                 {if ($k2+1) eq $i.checkbox  }
                                  {l t=$j}
                                 {else}
-                                 {l t=$j},  
+                                 {l t=$j},
                                 {/if}
                             {/foreach}
-                            
+
                         {/if}
-                    
-                    
+
+
                     </p>
-                    {/if} 
+                    {/if}
                     {if $k++}{/if}
                     {/foreach}
                     <!--/loop-->
-                    
-                    
+
+
                          <a href="set_category_item.php?id={$var_biz.id}" onclick="if(confirm('You are going to Additional Info Editing Page without saving changes.\n\rSure to continue and abort changes?')==0) return false ;">{l t='Edit'}</a>
-                        
+
                         </td>
                     </tr>
                     {/if}
@@ -390,7 +390,7 @@ function validate_permalink(permalink)
  <!--Main End-->
  </div>
  <script>
- 
+
 		 $('#fromhour').ptTimeSelect();
 		 $('#tohour').ptTimeSelect();
 		 $('#fromhour1').ptTimeSelect();
