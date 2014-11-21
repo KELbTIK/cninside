@@ -2,28 +2,6 @@
 {include file="header.tpl"}
 {literal}
 
-<style type="text/css">
-<!--
-
-	.multipleSelectBoxControl span{	/* Labels above select boxes*/
-
-		font-size:11px;
-		font-weight:bold;
-	}
-	.multipleSelectBoxControl div select{	/* Select box layout */
-
-		height:100%;
-	}
-	.multipleSelectBoxControl input{	/* Small butons */
-		width:25px;
-	}
-	
-	.multipleSelectBoxControl div{
-		float:left;
-	}
-
--->
- </style>
 {/literal}
  <!--Main Start-->  
 <div id="main">
@@ -194,33 +172,36 @@
                             var parentDiv = document.createElement('DIV');
                             parentDiv.className='multipleSelectBoxControl';
                             parentDiv.id = 'selectBoxGroup' + selectBoxIndex;
-                            parentDiv.style.width = totalWidth + 'px';
-                            parentDiv.style.height = totalHeight + 'px';
+//                            parentDiv.style.width = totalWidth + 'px';
+//                            parentDiv.style.height = totalHeight + 'px';
                             parentEl.insertBefore(parentDiv,fromObj);
 
 
                             var subDiv = document.createElement('DIV');
-                            subDiv.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
-                            fromObj.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
+//                            subDiv.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
+//                            fromObj.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
 
                             var label = document.createElement('SPAN');
                             label.innerHTML = labelLeft;
                             subDiv.appendChild(label);
 
                             subDiv.appendChild(fromObj);
-                            subDiv.className = 'multipleSelectBoxDiv';
+                            subDiv.className = 'multipleSelectBoxDiv col-sm-5 col-xs-5';
                             parentDiv.appendChild(subDiv);
 
 
                             var buttonDiv = document.createElement('DIV');
+                            buttonDiv.className = 'col-sm-2 col-xs-2';
                             buttonDiv.style.verticalAlign = 'middle';
-                            buttonDiv.style.paddingTop = (totalHeight/2) - 50 + 'px';
-                            buttonDiv.style.width = '30px';
+                            buttonDiv.style.paddingTop = 33 + 'px';
+                            buttonDiv.style.paddingLeft = 0;
+                            buttonDiv.style.paddingRight = 0;
+//                            buttonDiv.style.width = '30px';
                             buttonDiv.style.textAlign = 'center';
                             parentDiv.appendChild(buttonDiv);
 
                             var buttonRight = document.createElement('INPUT');
-                            buttonRight.className = 'btn btn-warning';
+                            buttonRight.className = 'btn btn-warning btn-block';
                             buttonRight.type='button';
                             buttonRight.value = '>';
                             buttonRight.size = '30';
@@ -228,14 +209,14 @@
                             buttonRight.onclick = moveSingleElement;
 
                             var buttonAllRight = document.createElement('INPUT');
-                            buttonAllRight.className = 'btn btn-warning';
+                            buttonAllRight.className = 'btn btn-warning btn-block';
                             buttonAllRight.type='button';
                             buttonAllRight.value = '>>';
                             buttonAllRight.onclick = moveAllElements;
                             buttonDiv.appendChild(buttonAllRight);
 
                             var buttonLeft = document.createElement('INPUT');
-                            buttonLeft.className = 'btn btn-warning';
+                            buttonLeft.className = 'btn btn-warning btn-block';
                             buttonLeft.style.marginTop='10px';
                             buttonLeft.type='button';
                             buttonLeft.value = '<';
@@ -243,15 +224,16 @@
                             buttonDiv.appendChild(buttonLeft);
 
                             var buttonAllLeft = document.createElement('INPUT');
-                            buttonAllLeft.className = 'btn btn-warning';
+                            buttonAllLeft.className = 'btn btn-warning btn-block';
                             buttonAllLeft.type='button';
                             buttonAllLeft.value = '<<';
                             buttonAllLeft.onclick = moveAllElements;
                             buttonDiv.appendChild(buttonAllLeft);
 
                             var subDiv = document.createElement('DIV');
-                            subDiv.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
-                            toObj.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
+                            subDiv.className = 'col-sm-5 col-xs-5';
+//                            subDiv.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
+//                            toObj.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
 
                             var label = document.createElement('SPAN');
                             label.innerHTML = labelRight;
@@ -274,26 +256,25 @@
                     {/literal}
 
                 <form method="post" action="?f=submit&id={$var.id}" onsubmit="multipleSelectOnSubmit()">
-
-                    <select class="form-control" multiple name="fromBox" id="fromBox">
-                        {foreach from=$var_list item=i}
-                            <option value="{$i.id}">{$i.name}, {$i.location}</option>
-                        {/foreach}
-                    </select>
-
-                    <select class="form-control" multiple name="toBox[]" id="toBox">
-                        {foreach from=$var_listlist item=i}
-                            <option value="{$i.id}">{$i.name}, {$i.location}</option>
-                        {/foreach}
-                    </select>
-
-                    <script type="text/javascript">
-                        var t_yourbookmarks='{l t='Your Bookmarks'}';
-                        var t_listitems='{l t='List Items'}';
-                        createMovableOptions("fromBox","toBox",850,200,t_yourbookmarks,t_listitems);
-                    </script>
-
+                    <div class="row">
+                        <select class="form-control" multiple name="fromBox" id="fromBox">
+                            {foreach from=$var_list item=i}
+                                <option value="{$i.id}">{$i.name}, {$i.location}</option>
+                            {/foreach}
+                        </select>
+                        <select class="form-control" multiple name="toBox[]" id="toBox">
+                            {foreach from=$var_listlist item=i}
+                                <option value="{$i.id}">{$i.name}, {$i.location}</option>
+                            {/foreach}
+                        </select>
+                        <script type="text/javascript">
+                            var t_yourbookmarks='{l t='Your Bookmarks'}';
+                            var t_listitems='{l t='List Items'}';
+                            createMovableOptions("fromBox","toBox",850,200,t_yourbookmarks,t_listitems);
+                        </script>
+                    </div>
                     <div class="clearfix"></div>
+                        <br/>
                         <p>{l t='You move elements by clicking on the buttons or by double clicking on select box items'}</p>
                         <div align="center">
                             {*<input type="image" src="../../theme/{$get_theme}/images/btn_done.gif">*}
