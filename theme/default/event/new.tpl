@@ -2,48 +2,6 @@
 <script type="text/javascript" src="/theme/{$get_theme}/js/ajax.js"></script>
 <script type="text/javascript" src="/theme/{$get_theme}/js/login.js"></script>
 {literal}
-<style type="text/css">
-/* Auto complete */
-#relatedbiz_div ul li:hover {
-background:none repeat scroll 0 0 #C6DCEE;
-}
-#relatedbiz_div {
-background:none repeat scroll 0 0 #fff;
-border:1px solid #C9E1F3;
-display:none;
-float:left;
-position:absolute;
-width:304px;
-z-index:111;
-opacity:0.97;
-}
-
-#relatedbiz_div ul {
-float:left;
-margin:0;
-padding:0;
-width:100%;
-}
-#relatedbiz_div ul li {
-color:#666666;
-float:left;
-height:18px;
-overflow:hidden;
-padding-left:5%;
-width:95%;
-cursor:default;
-display:block;
-line-height:18px;
-}
-#relatedbiz_div p{
-margin:4px 0;
-padding-left:5px;
-font-weight:bold;
-}
-
-
--->
-</style>
 <script type="text/javascript" language="javascript">
 function myKeyDown()
 {
