@@ -1,7 +1,4 @@
 {include file="header.tpl"}
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/7521.css" />
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/my_gallery.css" />
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/jquery.galleria.classic.css" />
 
 <script>
 var bizid='{$var_user.user_id}';
@@ -45,7 +42,7 @@ function deletePhoto(photo_url)
 {
     var a=confirm(t_SureToDelete);
     if(a==0) return ;
-    
+
     $.post("./gallery-ajax.php?"+Math.random(), {
     f:'deletePhoto',
     v:photo_url
@@ -55,53 +52,50 @@ function deletePhoto(photo_url)
 
 </script>
 
-<style media="screen,projection" type="text/css"> 
-    .nav{padding:6px 0; margin:0; clear:both;letter-spacing:3px;text-transform:uppercase; text-align:center}
-    a.button{ padding:5px; font-size:12px; background:#61A2CC; color:#fff; -webkit-border-radius: 5px;-webkit-box-shadow:#666 0px 0px 4px;-moz-border-radius:5px;-moz-box-shadow:#666 0px 0px 4px;text-shadow:#000 0px 1px 1px;border: 1px solid #159; font-weight:bold;}
-    .button img{ vertical-align:middle}
-    a.button:hover{ text-decoration:none; background:#48A; }
-</style> 
 {/literal}
 
 
 <div id="main">
-<div class="content">
-<div class="con box">
-<span class="coner c1"></span>
-<span class="coner c2"></span>
-<span class="coner c3"></span>
-<span class="coner c4"></span>
-<h2>{l t='%s\'s Photos' r=$var_user.nameORemail}</h2>
+    <div class="content container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            {l t='%s\'s Photos' r=$var_user.nameORemail}
+                            <div id="btns" class="pull-right">
+                                <a href="./?id={$var_user.user_id}" class="button"><i class="fa fa-caret-left"></i> &nbsp;{l t='Back to Profile'}</a>
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
 
 
-<div id="btns" style=" position:absolute; right:10px; top:16px;">
-<a href="./?id={$var_user.user_id}" class="button"><img src="/theme/{$smarty.const._THEME_}/images/b_prevpage.png" border="0"/> &nbsp;{l t='Back to Profile'}</a>
+                        <div id="galleria">
+                            <!--loop-->
+                            {foreach from=$var_photos item=i}
+                                <img class="img-reasponsive" src="/images/business/b_{$i.photo_url}" alt="<a href='/{$smarty.const._BIZ_DIR_}/{$i.permalink}' target='new'>{$i.business_name}</a><br>{l t='Uploaded'} {$i.datetime}" />
+                            {/foreach}
+                            <!--/loop-->
+                        </div>
+                    </div>
+                </div>
 
+
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="galleria"> 
-<!--loop-->
-    {foreach from=$var_photos item=i}
+<script>
+// Load the classic theme
+Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');
+// Initialize Galleria
+$('#galleria').galleria();
+</script>
 
-    <img src="/images/business/b_{$i.photo_url}" alt="<a href='/{$smarty.const._BIZ_DIR_}/{$i.permalink}' target='new'>{$i.business_name}</a><br>{l t='Uploaded'} {$i.datetime}" /> 
-    
-    {/foreach}
-<!--/loop-->
-</div>
-</div>
-</div>
-
-
-</div>
-</div>
-
-    <script>
-    // Load the classic theme
-    Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');
-    // Initialize Galleria
-    $('#galleria').galleria();
-    </script>
-    
 
 <!--Main End-->
 {include file="footer.tpl"}

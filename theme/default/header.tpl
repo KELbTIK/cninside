@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="/theme/{$get_theme}/js/fancy/jquery.fancybox.css" media="screen" type="text/css" />
 <link href="/theme/{$get_theme}/css/style.css" rel="stylesheet" type="text/css" />
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
+<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/7521.css" />
+<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/my_gallery.css" />
+<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/jquery.galleria.classic.css" />
 
 <script src="/theme/{$get_theme}/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script src="/theme/{$get_theme}/js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
