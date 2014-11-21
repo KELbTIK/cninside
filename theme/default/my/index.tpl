@@ -302,7 +302,7 @@ $('#commenttext').css('backgroundColor','#FAA');
                     </div>
                 {/if}
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="{if $is=='home'}col-md-6 col-sm-6{else}col-md-9 col-sm-9{/if} col-xs-12">
                 <div class="">
                     <div class="pull-left">
                         <h1 style="color:#000000">{if $var_me.id==$var_user.id}{l t='My'} {/if}{if $is=='home'}{l t='Recent Reviews'}{else}{$var_page.disp}{/if}</h1>
@@ -338,7 +338,7 @@ $('#commenttext').css('backgroundColor','#FAA');
                     {/if}
 
                     {if $is=='list'}
-                        <div class="pull-right"><a href="list/new.php"><img src="../theme/{$get_theme}/images/pro_create_lists.gif" border="0" /></a></div>
+                        <div class="pull-right"><a class="btn btn-info" style="color: #fff" href="list/new.php">{l t='Create List'}</a></div>
                     {/if}
                 </div>
                 <div class="clearfix"></div>
@@ -365,7 +365,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left">{l t='Show'} {$var_listlists.limitfrom} {l t='to'} {$var_listlists.limitto} / {$var_listlists.itemsnum} {l t='items'}.</div>
                     {if !$var_listlists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                     {$var_listlists.pager}
                     {/if}
@@ -391,7 +395,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left">{l t='Show'} {$var_friendlists.limitfrom} {l t='to'} {$var_friendlists.limitto} / {$var_friendlists.itemsnum} {l t='items'}.</div>
                     {if !$var_friendlists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         {$var_friendlists.pager}
                     {/if}
@@ -445,7 +453,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left">{l t='Show'} {$var_eventlists.limitfrom} {l t='to'} {$var_eventlists.limitto} / {$var_eventlists.itemsnum} {l t='items'}.</div>
                     {if !$var_eventlists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         {$var_eventlists.pager}
                     {/if}
@@ -469,7 +481,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left">{l t='Show'} {$var_complimentlists.limitfrom} {l t='to'} {$var_complimentlists.limitto} / {$var_complimentlists.itemsnum} {l t='items'}.</div>
                     {if !$var_complimentlists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         {$var_complimentlists.pager}
                     {/if}
@@ -478,13 +494,17 @@ $('#commenttext').css('backgroundColor','#FAA');
 
                 {if $is=='payment'}
                     <!--loop-->
-                    <table class="listing1"><tr class="header">
-                        <th align="center">{l t='ID'}</th>
-                        <th align="center">{l t='Business ID'}</th>
-                        <th align="center">{l t='Description'}</th>
-                        <th align="center">{l t='Amount'}</th>
-                        <th align="center">{l t='Paid Date'}</th>
+                    <table class="listing1 table">
+                        <thead>
+                        <tr class="header">
+                            <th align="center">{l t='ID'}</th>
+                            <th align="center">{l t='Business ID'}</th>
+                            <th align="center">{l t='Description'}</th>
+                            <th align="center">{l t='Amount'}</th>
+                            <th align="center">{l t='Paid Date'}</th>
                         </tr>
+                        </thead>
+                        <tbody>
                         {foreach from=$var_paymentlist item=i}
                             <tr>
                                 <td>{$i.txn_txn_id}</td>
@@ -494,12 +514,17 @@ $('#commenttext').css('backgroundColor','#FAA');
                                 <td>{$i.txn_date}</td>
                             </tr>
                         {/foreach}
+                        </tbody>
                     </table>
                     <!--/loop-->
                     <div class="pull-left">{l t='Show'} {$var_paymentlists.limitfrom} {l t='to'} {$var_paymentlists.limitto} / {$var_paymentlists.itemsnum} {l t='items'}.</div>
                     {if !$var_paymentlists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         {$var_paymentlists.pager}
                     {/if}
@@ -532,7 +557,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left">{l t='Show'} {$var_bookmarklists.limitfrom} {l t='to'} {$var_bookmarklists.limitto} / {$var_bookmarklists.itemsnum} {l t='items'}.</div>
                     {if !$var_bookmarklists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         {$var_bookmarklists.pager}
                     {/if}
@@ -558,7 +587,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left">{l t='Show'} {$var_favoritelists.limitfrom} {l t='to'} {$var_favoritelists.limitto} / {$var_favoritelists.itemsnum} {l t='items'}.</div>
                     {if !$var_favoritelists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         {$var_favoritelists.pager}
                     {/if}
@@ -612,7 +645,11 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="pull-left page_number">{l t='Show'} {$var_reviewlists.limitfrom} {l t='to'} {$var_reviewlists.limitto} / {$var_reviewlists.itemsnum} {l t='items'}.</div>
                     {if !$var_reviewlists.found}
                         <div class="clearfix"></div>
-                        <div class="text-center">{l t='No result found'}.</div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">{l t='No result found'}.</div>
+                            </div>
+                        </div>
                     {else}
                         <div class="pull-right">{$var_reviewlists.pager}</div>
                     {/if}
