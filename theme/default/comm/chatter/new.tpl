@@ -40,7 +40,6 @@ return true;
                     </div>
                     <div class="panel-body">
                         <form class="form-horizontal" action="?f=submit" method="post" name="postform" onsubmit="return veri();" id="postform">
-
                             <div class="form-group">
                                 <label for="topic" class="col-md-3 col-sm-3 control-label">{l t='Topic'}</label>
                                 <div class="col-md-6 col-sm-9">
