@@ -228,17 +228,19 @@ else
                                 <li class="list-group-item">
                                     <div class="pic">
                                         <div class="pull-left" id="pv">
-                                            <img src="../theme/{$get_theme}/images/ico_map1.gif" width="14" height="10" title="Friends Number" alt="Friends Number" />{$i.friendsnum}
+                                            <i class="fa fa-male"></i> {$i.friendsnum}
                                             <br />
-                                            <img src="../theme/{$get_theme}/images/ico_map2.gif" width="11" height="11"  title="Reviews Number" alt="Reviews Number" /> {$i.reviewsnum}
+                                            <i class="fa fa-star"></i> {$i.reviewsnum}
                                         </div>
                                         <div class="photoBox pull-right">
                                             <img src="../images/photos/{$i.picurl}_40x40" width="40" height="40" />
                                         </div>
+                                        <div class="clearfix"></div>
                                     </div>
                                     <div class="t">
                                         <div class="pull-left">
                                             <a href="../my/?id={$i.userid}" target="_blank">{$i.username}</a> {l t='says'}:
+                                            <h4>{$i.message}</h4>
                                         </div>
                                         <div class="pull-right">
                                             {if $i.edit_btn}
@@ -251,8 +253,9 @@ else
                                             {/if}
                                             {$i.date}
                                         </div>
-                                        <h4>{$i.message}</h4>
+
                                     </div>
+                                    <div class="clearfix"></div>
                                 </li>
                             {/foreach}
                             <!--/loop-->
