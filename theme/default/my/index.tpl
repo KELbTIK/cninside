@@ -342,159 +342,185 @@ $('#commenttext').css('backgroundColor','#FAA');
                     {/if}
                 </div>
                 <div class="clearfix"></div>
+                <br/>
                 {if $is=='list'}
-                    <!--loop-->
-                    {foreach from=$var_listlist item=i}
-                        <div class="con">
-                            <div>
-                                <div class="pull-left">
-                                    <h3><a href="list/detail.php?id={$i.id}">{$i.name}</a> &nbsp; &nbsp; <em>{$i.itemnum} {l t='items'}</em></h3>
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_listlist item=i}
+                            <li class="list-group-item">
+                                <div>
+                                    <div class="pull-left">
+                                        <h3><a href="list/detail.php?id={$i.id}">{$i.name}</a> &nbsp; &nbsp; <em>{$i.itemnum} {l t='items'}</em></h3>
+                                    </div>
+                                    <div class="pull-right">
+                                        <h5>{l t='Established'}: {$i.date}</h5>
+                                    </div>
                                 </div>
-                                <div class="pull-right">
-                                    <h5>{l t='Established'}: {$i.date}</h5>
+                                <div class="clearfix"></div>
+                                <div>
+                                    {$i.desc}<br /><br />
+                                    [ <a href="list/detail.php?id={$i.id}">{l t='See Full List'}</a> ]  [ <a href="list/select.php?id={$i.id}">{l t='Edit This List'}</a> ]  [ <a href="list/del.php?id={$i.id}">{l t='Delete This List'}</a> ]
                                 </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div>
-                                {$i.desc}<br /><br />
-                                [ <a href="list/detail.php?id={$i.id}">{l t='See Full List'}</a> ]  [ <a href="list/select.php?id={$i.id}">{l t='Edit This List'}</a> ]  [ <a href="list/del.php?id={$i.id}">{l t='Delete This List'}</a> ]
-                            </div>
-                        </div>
-                    {/foreach}
+                            </li>
+                        {/foreach}
+                        <!--/loop-->
+                    </ul>
                     <!--/loop-->
-                    <div class="pull-left">{l t='Show'} {$var_listlists.limitfrom} {l t='to'} {$var_listlists.limitto} / {$var_listlists.itemsnum} {l t='items'}.</div>
-                    {if !$var_listlists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_listlists.limitfrom} {l t='to'} {$var_listlists.limitto} / {$var_listlists.itemsnum} {l t='items'}.</div>
+                        {if !$var_listlists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    {else}
-                    {$var_listlists.pager}
-                    {/if}
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_listlists.pager}</div>
+                        {/if}
+                    </div>
                 {/if}
                 {* -------- list end -- friend start -------*}
 
                 {if $is=='friend'}
-
-                    <!--loop-->
-                    {foreach from=$var_friendlist item=i}
-                        <div class="con" >
-                            <div>
-                                <div class="photoBox"><img src="../images/photos/{$i.picurl}_40x40"  width="40" height="40"/></div>
-                                <div class="pull-left"><h3><a href="./?id={$i.id}">{$i.name}</a> {if $i.pending==1}&nbsp;&nbsp;({l t='Pending'}){/if}</h3>{l t='City'}: {$i.location}<br />
-                                    [ <a href="./?id={$i.id}">{l t='See Detail'}</a> ] [ <a href="./msg.php?f=new&id={$i.id}">{l t='Send Message'}</a> ] [ <a href="./func.php?f=delfriend&id={$i.id}">{l t='Delete'}</a> ] [ <a href="./func.php?f=addfav&id={$i.id}">{l t='Add to Favorite'}</a> ]
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_friendlist item=i}
+                            <li class="list-group-item" >
+                                <div>
+                                    <div class="photoBox"><img src="../images/photos/{$i.picurl}_40x40"  width="40" height="40"/></div>
+                                    <div class="pull-left"><h3><a href="./?id={$i.id}">{$i.name}</a> {if $i.pending==1}&nbsp;&nbsp;({l t='Pending'}){/if}</h3>{l t='City'}: {$i.location}<br />
+                                        [ <a href="./?id={$i.id}">{l t='See Detail'}</a> ] [ <a href="./msg.php?f=new&id={$i.id}">{l t='Send Message'}</a> ] [ <a href="./func.php?f=delfriend&id={$i.id}">{l t='Delete'}</a> ] [ <a href="./func.php?f=addfav&id={$i.id}">{l t='Add to Favorite'}</a> ]
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        {/foreach}
+                        <!--/loop-->
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_friendlists.limitfrom} {l t='to'} {$var_friendlists.limitto} / {$var_friendlists.itemsnum} {l t='items'}.</div>
+                        {if !$var_friendlists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    {/foreach}
-                    <!--/loop-->
-
-                    <div class="pull-left">{l t='Show'} {$var_friendlists.limitfrom} {l t='to'} {$var_friendlists.limitto} / {$var_friendlists.itemsnum} {l t='items'}.</div>
-                    {if !$var_friendlists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
-                            </div>
-                        </div>
-                    {else}
-                        {$var_friendlists.pager}
-                    {/if}
-
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_friendlists.pager}</div>
+                        {/if}
+                    </div>
                 {/if}
                 {* -------- friend end -- event start -------*}
 
                 {if $is=='event'}
                     {$var_eventlists.selector}
                     {if $var_eventlists.a=='event_in'}
-                        <!--loop-->
-                        {foreach from=$var_eventlist item=i}
-                            <div class="con" >
-                                <div>
-                                    <div class="photoBox"><img src="../images/event/{$i.picurl}_40x40" width="40" height="40" /></div>
-                                    <div class="pull-left"><h3><a href="../event/detail.php?id={$i.id}" target="_blank">{$i.name} </a></h3>{$i.date}<br /><h5>[<a href="func.php?f=delin&id={$i.id}">{l t='Delete'}</a>]</h5></div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        {/foreach}
-                        <!--/loop-->
+                        <ul class="list-group">
+                            <!--loop-->
+                            {foreach from=$var_eventlist item=i}
+                                <li class="list-group-item" >
+                                    <div>
+                                        <div class="photoBox"><img src="../images/event/{$i.picurl}_40x40" width="40" height="40" /></div>
+                                        <div class="pull-left"><h3><a href="../event/detail.php?id={$i.id}" target="_blank">{$i.name} </a></h3>{$i.date}<br /><h5>[<a href="func.php?f=delin&id={$i.id}">{l t='Delete'}</a>]</h5></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            {/foreach}
+                            <!--/loop-->
+                        </ul>
                     {/if}
 
                     {if $var_eventlists.a=='event_cool'}
-                        <!--loop-->
-                        {foreach from=$var_eventlist item=i}
-                        <div class="con" >
-                            <div>
-                                <div class="photoBox"><img src="../images/event/{$i.picurl}_40x40" width="40" height="40" /></div>
-                                <div class="pull-left"><h3><a href="../event/detail.php?id={$i.id}" target="_blank">{$i.name} </a></h3>{$i.date}<br /><h5>[<a href="func.php?f=delcool&id={$i.id}">{l t='Delete'}</a>]</h5></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        {/foreach}
-                        <!--/loop-->
+                        <ul class="list-group">
+                            <!--loop-->
+                            {foreach from=$var_eventlist item=i}
+                                <li class="list-group-item" >
+                                    <div>
+                                        <div class="photoBox"><img src="../images/event/{$i.picurl}_40x40" width="40" height="40" /></div>
+                                        <div class="pull-left"><h3><a href="../event/detail.php?id={$i.id}" target="_blank">{$i.name} </a></h3>{$i.date}<br /><h5>[<a href="func.php?f=delcool&id={$i.id}">{l t='Delete'}</a>]</h5></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            {/foreach}
+                            <!--/loop-->
+                        </ul>
                     {/if}
 
                     {if $var_eventlists.a!='event_cool' && $var_eventlists.a!='event_in'}
-                        <!--loop-->
-                        {foreach from=$var_eventlist item=i}
-                            <div class="con" >
-                                <div>
-                                    <div class="photoBox"><img src="../images/event/{$i.picurl}_40x40" width="40" height="40" /></div>
-                                    <div class="pull-left"><h3><a href="../event/detail.php?id={$i.id}" target="_blank">{$i.name} </a></h3>{$i.datebrief}</div>
+                        <ul class="list-group">
+                            <!--loop-->
+                            {foreach from=$var_eventlist item=i}
+                                <li class="list-group-item" >
+                                    <div>
+                                        <div class="photoBox"><img src="../images/event/{$i.picurl}_40x40" width="40" height="40" /></div>
+                                        <div class="pull-left"><h3><a href="../event/detail.php?id={$i.id}" target="_blank">{$i.name} </a></h3>{$i.datebrief}</div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            {/foreach}
+                            <!--/loop-->
+                        </ul>
+                    {/if}
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_eventlists.limitfrom} {l t='to'} {$var_eventlists.limitto} / {$var_eventlists.itemsnum} {l t='items'}.</div>
+                        {if !$var_eventlists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
                                 </div>
-                                <div class="clearfix"></div>
                             </div>
-                        {/foreach}
-                        <!--/loop-->
-                    {/if}
-                    <div class="pull-left">{l t='Show'} {$var_eventlists.limitfrom} {l t='to'} {$var_eventlists.limitto} / {$var_eventlists.itemsnum} {l t='items'}.</div>
-                    {if !$var_eventlists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
-                            </div>
-                        </div>
-                    {else}
-                        {$var_eventlists.pager}
-                    {/if}
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_eventlists.pager}</div>
+                        {/if}
+                    </div>
                 {/if}
                 {* -------- event end -- compliment start -------*}
 
                 {if $is=='compliment'}
-                    <!--loop-->
-                    {foreach from=$var_complimentlist item=i}
-                        <div class="con" >
-                            <div>
-                                <div class="pull-left"><h3><a href="./?id={$i.id}" target="_blank">{$i.name}</a> {l t='gave me a'} {$i.type} {l t='compliment'}</h3></div>
-                                <div class="pull-right">
-                                    <h4><img src="../theme/{$get_theme}/images/thanks_plain.gif" /></h4>
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_complimentlist item=i}
+                            <li class="list-group-item" >
+                                <div>
+                                    <div class="pull-left"><h3><a href="./?id={$i.id}" target="_blank">{$i.name}</a> {l t='gave me a'} {$i.type} {l t='compliment'}</h3></div>
+                                    <div class="pull-right">
+                                        <h4><img src="../theme/{$get_theme}/images/thanks_plain.gif" /></h4>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        {/foreach}
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_complimentlists.limitfrom} {l t='to'} {$var_complimentlists.limitto} / {$var_complimentlists.itemsnum} {l t='items'}.</div>
+                        {if !$var_complimentlists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    {/foreach}
-                    <!--/loop-->
-                    <div class="pull-left">{l t='Show'} {$var_complimentlists.limitfrom} {l t='to'} {$var_complimentlists.limitto} / {$var_complimentlists.itemsnum} {l t='items'}.</div>
-                    {if !$var_complimentlists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
-                            </div>
-                        </div>
-                    {else}
-                        {$var_complimentlists.pager}
-                    {/if}
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_complimentlists.pager}</div>
+                        {/if}
+                    </div>
                 {/if}
                 {* -------- compliment end -- payment start -------*}
 
                 {if $is=='payment'}
                     <!--loop-->
-                    <table class="listing1 table">
+                    <table class="table table-striped table-hover">
                         <thead>
                         <tr class="header">
                             <th align="center">{l t='ID'}</th>
@@ -517,84 +543,101 @@ $('#commenttext').css('backgroundColor','#FAA');
                         </tbody>
                     </table>
                     <!--/loop-->
-                    <div class="pull-left">{l t='Show'} {$var_paymentlists.limitfrom} {l t='to'} {$var_paymentlists.limitto} / {$var_paymentlists.itemsnum} {l t='items'}.</div>
-                    {if !$var_paymentlists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_paymentlists.limitfrom} {l t='to'} {$var_paymentlists.limitto} / {$var_paymentlists.itemsnum} {l t='items'}.</div>
+                        {if !$var_paymentlists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    {else}
-                        {$var_paymentlists.pager}
-                    {/if}
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_paymentlists.pager}</div>
+                        {/if}
+                    </div>
                 {/if}
                 {* -------- payemnt end -- bookmark start -------*}
 
                 {if $is=='bookmark'}
-                    <!--loop-->
-                    {foreach from=$var_bookmarklist item=i}
-                    <div class="con" >
-                        <div>
-                            <div class="pull-left"><h2><a href="../{$smarty.const._BIZ_DIR_}/detail.php?id={$i.id}" target="_blank">{$i.name}</a></h2></div>
-                            <div class="pull-right">
-                                <h5><em>{l t='Business Rating'}:</em> <span style="color:red; font-size:14px; font-weight:bold;">{$i.rating}</span> &nbsp; <img src="../theme/{$get_theme}/images/star/stars_{$i.ratingmod}.gif" width="74" height="15" /></h5>
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_bookmarklist item=i}
+                            <li class="list-group-item" >
+                                <div>
+                                    <div class="pull-left"><h2><a href="../{$smarty.const._BIZ_DIR_}/detail.php?id={$i.id}" target="_blank">{$i.name}</a></h2></div>
+                                    <div class="pull-right">
+                                        <h5><em>{l t='Business Rating'}:</em> <span style="color:red; font-size:14px; font-weight:bold;">{$i.rating}</span> &nbsp; <img src="../theme/{$get_theme}/images/star/stars_{$i.ratingmod}.gif" width="74" height="15" /></h5>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <h5>{l t='Category'}: {$i.catname} / {$i.subcatname}</h5>
+                                    <h5>{l t='City'}: {$i.location}</h5>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="../{$smarty.const._BIZ_DIR_}/detail.php?id={$i.id}" target="_blank">{l t='See business detail'}</a> &nbsp;
+                                    <i class="fa fa-times"></i> <a href="./func.php?f=delbookmark&id={$i.id}">{l t='Remove'}</a>
+                                </div>
+                            </li>
+                        {/foreach}
+                        <!--/loop-->
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_bookmarklists.limitfrom} {l t='to'} {$var_bookmarklists.limitto} / {$var_bookmarklists.itemsnum} {l t='items'}.</div>
+                        {if !$var_bookmarklists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div>
-                            <h5>{l t='Category'}: {$i.catname} / {$i.subcatname}</h5>
-                            <h5>{l t='City'}: {$i.location}</h5>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div>
-                            <img height="8" src="../theme/{$get_theme}/images/icons/mail.gif" width="15" />
-                            <a href="../{$smarty.const._BIZ_DIR_}/detail.php?id={$i.id}" target="_blank">{l t='See business detail'}</a>    <img height="10" src="../theme/{$get_theme}/images/icons/remove.gif" width="10" /> <a href="./func.php?f=delbookmark&id={$i.id}">{l t='Remove'}</a>
-                        </div>
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_bookmarklists.pager}</div>
+                        {/if}
                     </div>
-                    {/foreach}
-                    <!--/loop-->
-                    <div class="pull-left">{l t='Show'} {$var_bookmarklists.limitfrom} {l t='to'} {$var_bookmarklists.limitto} / {$var_bookmarklists.itemsnum} {l t='items'}.</div>
-                    {if !$var_bookmarklists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
-                            </div>
-                        </div>
-                    {else}
-                        {$var_bookmarklists.pager}
-                    {/if}
                 {/if}
                 {* -------- bookmark end -- favorite start -------*}
 
                 {if $is=='favorite'}
-                    <!--loop-->
-                    {foreach from=$var_favoritelist item=i}
-                    <div class="con" >
-                        <div>
-                            <div class="photoBox"><img src="../images/photos/{$i.picurl}_40x40" width="40" height="40" /></div>
-                            <div class="pull-left">
-                                <h3><a href="./?id={$i.id}">{$i.name}</a></h3>
-                                {l t='City'}: {$i.location}<br />
-                                [ <a href="./?id={$i.id}">{l t='See Detail'}</a> ] [ <a href="./msg.php?f=new&id={$i.id}">{l t='Send Message'}</a> ] [ <a href="./func.php?f=delfav&id={$i.id}">{l t='Delete'}</a> ]
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_favoritelist item=i}
+                            <li class="list-group-item" >
+                                <div>
+                                    <div class="photoBox"><img src="../images/photos/{$i.picurl}_40x40" width="40" height="40" /></div>
+                                    <div class="pull-left">
+                                        <h3><a href="./?id={$i.id}">{$i.name}</a></h3>
+                                        {l t='City'}: {$i.location}<br />
+                                        [ <a href="./?id={$i.id}">{l t='See Detail'}</a> ] [ <a href="./msg.php?f=new&id={$i.id}">{l t='Send Message'}</a> ] [ <a href="./func.php?f=delfav&id={$i.id}">{l t='Delete'}</a> ]
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        {/foreach}
+                        <!--/loop-->
+                    </ul>
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_favoritelists.limitfrom} {l t='to'} {$var_favoritelists.limitto} / {$var_favoritelists.itemsnum} {l t='items'}.</div>
+                        {if !$var_favoritelists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="clearfix"></div>
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_favoritelists.pager}</div>
+                        {/if}
                     </div>
-                    {/foreach}
-                    <!--/loop-->
-                    <div class="pull-left">{l t='Show'} {$var_favoritelists.limitfrom} {l t='to'} {$var_favoritelists.limitto} / {$var_favoritelists.itemsnum} {l t='items'}.</div>
-                    {if !$var_favoritelists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
-                            </div>
-                        </div>
-                    {else}
-                        {$var_favoritelists.pager}
-                    {/if}
                 {/if}
                 {* -------- favorite end -- homepage/review start -------*}
 
@@ -641,18 +684,22 @@ $('#commenttext').css('backgroundColor','#FAA');
                             <!--/loop-->
                         </ul>
                     </div>
-
-                    <div class="pull-left page_number">{l t='Show'} {$var_reviewlists.limitfrom} {l t='to'} {$var_reviewlists.limitto} / {$var_reviewlists.itemsnum} {l t='items'}.</div>
-                    {if !$var_reviewlists.found}
-                        <div class="clearfix"></div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="text-center">{l t='No result found'}.</div>
+                    <!--/loop-->
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_reviewlists.limitfrom} {l t='to'} {$var_reviewlists.limitto} / {$var_reviewlists.itemsnum} {l t='items'}.</div>
+                        {if !$var_reviewlists.found}
+                            <div class="clearfix"></div>
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="text-center">{l t='No result found'}.</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    {else}
-                        <div class="pull-right">{$var_reviewlists.pager}</div>
-                    {/if}
+                        {else}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_reviewlists.pager}</div>
+                        {/if}
+                    </div>
                 {/if}
                 {* --------- homepage/review end -------*}
             </div>

@@ -9,7 +9,10 @@
             <div class="con_left col-md-8 col-sm-8 col-xs-12">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{l t='Hot Listings'} <em>{l t='Hottest in one month, based on bookmarks'}</em></h3>
+                        <h3 class="panel-title pull-left">
+                            {l t='Hot Listings'} &nbsp;
+                        </h3>
+                        <div  class="business-heading"><em>{l t='Hottest in one month, based on bookmarks'}</em></div>
                     </div>
                     <div class="panel-body">
                         {if $var_hotbusiness}
@@ -278,14 +281,13 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">{l t='New Special Offers'}</h3>
                     </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                {if $var_newoffers}
-                                    <!--loop-->
-                                    {foreach from=$var_newoffers item=i}
-                                        <div class="special_offer">
-                                            <h3><a href="/{$smarty.const._BIZ_DIR_}/{$i.permalink}">{$i.business_name}</a><span><img src="/theme/{$smarty.const._THEME_}/images/star/stars_{$i.ratingmod}.gif" /></span></h3>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        {if $var_newoffers}
+                            <!--loop-->
+                            {foreach from=$var_newoffers item=i}
+                                <li class="special_offer list-group-item">
+                                    <h3><a href="/{$smarty.const._BIZ_DIR_}/{$i.permalink}">{$i.business_name}</a><span><img src="/theme/{$smarty.const._THEME_}/images/star/stars_{$i.ratingmod}.gif" /></span></h3>
                                             <span class="preview_offer">
                                                 {$i.offer_description}
                                                 {if $i.offer_url}
@@ -296,61 +298,51 @@
                                                 {/if}
                                                 <br /><em>{$i.offer_submit_time}</em>
                                             </span>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    {/foreach}
-                                    <!--/loop-->
-                                    <div class="btn">
-                                        <a href="/offer/" class="btn button-blue" style="">{l t='Browse more special offers'}</a>
-                                    </div>
-                                {/if}
-                            </div>
-                        </div>
-                    </div>
+                                </li>
+                            {/foreach}
+                            <!--/loop-->
+                            <li class="list-group-item">
+                                <a href="/offer/" class="btn button-blue" style="">{l t='Browse more special offers'}</a>
+                            </li>
+                        {/if}
+                    </ul>
                 </div>
                 <div class="panel panel-default new_lists">
                     <div class="panel-heading">
                         <h3 class="panel-title">{l t='New Lists'}</h3>
                     </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <!--loop-->
-                                {foreach from=$var_newlists item=i}
-                                    <div class="">
-                                        <div class="pic"><a href="/my/list/detail.php?id={$i.id}"><img border=0 src="/images/photos/p_{$i.picurl}_40x40" width=40 height=40 /></a></div>
-                                        <div class="t">
-                                            <h3><a href="/my/list/detail.php?id={$i.id}">{$i.name}</a></h3>
-                                            {$i.desc}
-                                        </div>
-                                    </div>
-                                {/foreach}
-                                <!--/loop-->
-                            </div>
-                        </div>
-                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_newlists item=i}
+                            <li class="list-group-item">
+                                <div class="pic"><a href="/my/list/detail.php?id={$i.id}"><img border=0 src="/images/photos/p_{$i.picurl}_40x40" width=40 height=40 /></a></div>
+                                <div class="t">
+                                    <h3><a href="/my/list/detail.php?id={$i.id}">{$i.name}</a></h3>
+                                    {$i.desc}
+                                </div>
+                            </li>
+                        {/foreach}
+                        <!--/loop-->
+                    </ul>
                 </div>
                 <div class="panel panel-default new_chatters">
                     <div class="panel-heading">
                         <h3 class="panel-title">{l t='New Chatters'}</h3>
                     </div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <!--loop-->
-                                {foreach from=$var_newchatters item=i}
-                                    <div class="clearfix"></div>
-                                    <div class="">
-                                        <div class="pic"><img src="images/photos/p_{$i.picurl}_20x20" width="20" height="20" title="{$i.uname}" /></div>
-                                        <div class="t"><h3><a href="comm/?f=Chatter&aid={$i.tid}">{$i.tname}</a></h3></div>
-                                        <div class="info"><img src="theme/{$get_theme}/images/icons/time.gif" width="12" height="13" />{$i.replytime}</div>
-                                    </div>
-                                {/foreach}
-                                <!--/loop-->
-                                <div class="text-center"><a href="comm/?f=Chatter" class="btn button-blue">{l t='More'}</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        <!--loop-->
+                        {foreach from=$var_newchatters item=i}
+                            <li class="list-group-item">
+                                <div class="pic"><img src="images/photos/p_{$i.picurl}_20x20" width="20" height="20" title="{$i.uname}" /></div>
+                                <div class="t"><h3><a href="comm/?f=Chatter&aid={$i.tid}">{$i.tname}</a></h3></div>
+                                <div class="info"><i class="fa fa-times-circle-o"></i></i> {$i.replytime}</div>
+                            </li>
+                        {/foreach}
+                        <!--/loop-->
+                        <li class="list-group-item text-center"><a href="comm/?f=Chatter" class="btn button-blue">{l t='More'}</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
