@@ -201,12 +201,12 @@
                             <!--/loop-->
                         </div>
                     </div>
-                <div class="con" style="text-align:center; border:0;">
+                <div class="text-center hidden-xs">
                     <p align="center">
                         {$ads->getAdCode(9)}
                     </p>
                 </div>
-                <div id="clear"></div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

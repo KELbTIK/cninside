@@ -7,43 +7,59 @@
     <div class="content container">
         <div class="row">
             <div class="con_left col-md-8 col-sm-8 col-xs-12">
-                <div class="hot_business">
-                    <div class="alert alert-info">
-                        <h1>{l t='Hot Listings'}<em>{l t='Hottest in one month, based on bookmarks'}</em></h1>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{l t='Hot Listings'} <em>{l t='Hottest in one month, based on bookmarks'}</em></h3>
                     </div>
-                       {if $var_hotbusiness}
-                            <div class="best">
-                                              <div class="pic" ><div class="photoBox"><a href="{$smarty.const._BIZ_DIR_}/{$var_hotbusiness.bizurl}"><img src="images/business/{$var_hotbusiness.picurl}_100x100" border="0"  /></a></div></div>
-                                                    <div class="t">
-                                                      <h2><a href="{$smarty.const._BIZ_DIR_}/{$var_hotbusiness.bizurl}" style="color:#000000">{$var_hotbusiness.bizname}</a>{$var_hotbusiness.starbiz}<br />
-                                                      <img src="theme/{$get_theme}/images/star/stars_{$var_hotbusiness.ratingmod}.gif" width="74" height="15" /></h2>
-                                                      <h5><strong>{l t='Category'}: </strong><br />
-                <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.catpermalink}/">{$var_hotbusiness.catname}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.catpermalink}/{$var_hotbusiness.subcatpermalink}/">{$var_hotbusiness.subcatname}</a><br />
+                    <div class="panel-body">
+                        {if $var_hotbusiness}
+                            <div class="row">
+                                <div class="best col-sm-8">
+                                    <div class="pic col-sm-3" >
+                                        <div class="photoBox">
+                                            <a href="{$smarty.const._BIZ_DIR_}/{$var_hotbusiness.bizurl}">
+                                                <img class="img-responsive img-thumbnail" src="images/business/{$var_hotbusiness.picurl}_100x100" border="0"  />
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="t col-sm-9">
+                                        <h2>
+                                            <a href="{$smarty.const._BIZ_DIR_}/{$var_hotbusiness.bizurl}" style="color:#000000">{$var_hotbusiness.bizname}</a>
+                                            {$var_hotbusiness.starbiz}<br />
+                                            <img src="theme/{$get_theme}/images/star/stars_{$var_hotbusiness.ratingmod}.gif" width="74" height="15" />
+                                        </h2>
+                                        <h5>
+                                            <strong>{l t='Category'}: </strong><br />
+                                            <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.catpermalink}/">{$var_hotbusiness.catname}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.catpermalink}/{$var_hotbusiness.subcatpermalink}/">{$var_hotbusiness.subcatname}</a><br />
 
-                {if $var_hotbusiness.catid2 != '0'}
-                <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat2permalink}/">{$var_hotbusiness.catname2}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat2permalink}/{$var_hotbusiness.subcat2permalink}/">{$var_hotbusiness.subcatname2}</a><br />
-                {/if}
+                                            {if $var_hotbusiness.catid2 != '0'}
+                                                <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat2permalink}/">{$var_hotbusiness.catname2}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat2permalink}/{$var_hotbusiness.subcat2permalink}/">{$var_hotbusiness.subcatname2}</a><br />
+                                            {/if}
 
-                {if $var_hotbusiness.catid3 != '0'}
-                <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat3permalink}/">{$var_hotbusiness.catname3}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat3permalink}/{$var_hotbusiness.subcat3permalink}/">{$var_hotbusiness.subcatname3}</a><br />
-                {/if}
+                                            {if $var_hotbusiness.catid3 != '0'}
+                                                <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat3permalink}/">{$var_hotbusiness.catname3}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_hotbusiness.cat3permalink}/{$var_hotbusiness.subcat3permalink}/">{$var_hotbusiness.subcatname3}</a><br />
+                                            {/if}
 
-                {$var_hotbusiness.add1} {$var_hotbusiness.add2}
-                <br />
-                {$var_hotbusiness.phone}</h5></div>
-                                      </div>
-                                    <div class="more">
-                                            <h3>{l t='More Hot Local Picks'}</h3>
-                                            <ol>
-                                                {$var_hotbusiness.otherhotbusiness_li}
-                                          </ol>
-                              </div>
-                              {/if}
+                                            {$var_hotbusiness.add1} {$var_hotbusiness.add2}
+                                            <br />
+                                            {$var_hotbusiness.phone}
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="more col-sm-4">
+                                    <h3>{l t='More Hot Local Picks'}</h3>
+                                    <ol>
+                                        {$var_hotbusiness.otherhotbusiness_li}
+                                    </ol>
+                                </div>
+                            </div>
+                        {/if}
+                    </div>
                 </div>
                 <div class="category">
                     <div class="row">
                         <div class="col-md-7 col-sm-7 col-xs-12">
-                            <div class="items">
+                            <div class="">
                                 <div class="alert alert-grey"><p>{l t='BEST OF'}</p></div>
                                     <!--loop-->
                                     <div class="row">
@@ -90,7 +106,7 @@
                     <ul class="list-group">
                         <!--loop-->
                         {foreach from=$var_topevents item=i}
-                            <li class="items list-group-item">
+                            <li class="list-group-item">
                                 <div class="pic"><a href="event/detail.php?id={$i.id}"><img src="images/event/e_{$i.picurl}_40x40" width="40" height="40" border="0" /></a></div>
                                 <div class="t">
                                     <h3><a href="event/detail.php?id={$i.id}">{$i.name}</a></h3>
@@ -109,7 +125,7 @@
                     <ul class="list-group">
                         <!--loop-->
                         {foreach from=$var_popevents item=i}
-                            <li class="items list-group-item">
+                            <li class="list-group-item">
                                 <div class="pic"><a href="event/detail.php?id={$i.id}"><img src="images/event/e_{$i.picurl}_40x40" width="40" height="40" border="0" /></a></div>
                                 <div class="t">
                                     <h3><a href="event/detail.php?id={$i.id}">{$i.name}</a></h3>
@@ -132,7 +148,7 @@
                     <!--loop-->
                     <ul class="list-group">
                     {foreach from=$var_newreviews item=i}
-                        <li class="list-group-item items">
+                        <li class="list-group-item">
                             <div class="pic pull-left"><a href="{$smarty.const._BIZ_DIR_}/{$i.url}"><img src="images/business/{$i.picurl}_40x40" width="40" height="40" border="0" /></a></div>
                             <div class="t">
                                 <h3>
@@ -159,7 +175,7 @@
             <div class="con_right col-md-4 col-sm-4 col-xs-12">
                 {if !empty($var_social)}
                     <div class="social">
-                        <div class="items">
+                        <div class="">
                             <div class="get_social">
                             {l t='Get Social'}
 
@@ -184,7 +200,7 @@
                         <div class="row">
                             <!--loop-->
                             {foreach from=$var_lastreviewer item=i}
-                                <div class="items">
+                                <div class="">
                                     <div class="pic col-md-4 col-sm-4 col-xs-4">
                                         <div class="photoBox">
                                             <a href="my/?id={$i.uid}">
@@ -226,7 +242,7 @@
                             <div class="clearfix"></div>
                             <!--no loop-->
                             {if $var_hotbiz.bizname}
-                                <div class="items">
+                                <div class="">
                                     <div class="pic col-md-4 col-sm-4 col-xs-4">
                                         <div class="photoBox">
                                             <a href="{$smarty.const._BIZ_DIR_}/{$var_hotbiz.bizurl}">
@@ -301,7 +317,7 @@
                             <div class="col-xs-12">
                                 <!--loop-->
                                 {foreach from=$var_newlists item=i}
-                                    <div class="items">
+                                    <div class="">
                                         <div class="pic"><a href="/my/list/detail.php?id={$i.id}"><img border=0 src="/images/photos/p_{$i.picurl}_40x40" width=40 height=40 /></a></div>
                                         <div class="t">
                                             <h3><a href="/my/list/detail.php?id={$i.id}">{$i.name}</a></h3>
@@ -324,7 +340,7 @@
                                 <!--loop-->
                                 {foreach from=$var_newchatters item=i}
                                     <div class="clearfix"></div>
-                                    <div class="items">
+                                    <div class="">
                                         <div class="pic"><img src="images/photos/p_{$i.picurl}_20x20" width="20" height="20" title="{$i.uname}" /></div>
                                         <div class="t"><h3><a href="comm/?f=Chatter&aid={$i.tid}">{$i.tname}</a></h3></div>
                                         <div class="info"><img src="theme/{$get_theme}/images/icons/time.gif" width="12" height="13" />{$i.replytime}</div>
