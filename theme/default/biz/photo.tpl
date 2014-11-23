@@ -22,14 +22,13 @@ $(document).ready(function() {
 		'onProgress':  function(){$('#upload_btn').fadeOut();},
 		'fileDesc': 'Please select picture file - jpg, gif, png',
 		'fileExt': '*.jpg;*.gif;*.png',
-        {/literal} 
+        {/literal}
         'sizeLimit': {$smarty.const._MAX_SIZE_},
         {literal}
 		'cancelImg': '/theme/'+theme_dir+'/js/uploadify/cancel.png',
         'onComplete': function(event, ID, fileObj, response, data){if(response!=1){alert(response);}else{alert('Upload finished');window.location.reload();}},
 		'onSelectOnce': function(){$('#upload_btn').fadeIn();}
 	});
-
 
 });
 
@@ -39,12 +38,12 @@ $(document).ready(function() {
 <!--
 #main {height:auto;}
 img{ border:0}
-a.button{ padding:5px; font-size:12px; background:#61A2CC; color:#fff; -webkit-border-radius: 5px;-webkit-box-shadow:#666 0px 0px 4px;-moz-border-radius:5px;-moz-box-shadow:#666 0px 0px 4px;text-shadow:#000 0px 1px 1px;border: 1px solid #159; font-weight:bold;
-	float:right;margin-top:-5px;
+a.button{  font-size:12px; background:#61A2CC; color:#fff; -webkit-border-radius: 5px;-webkit-box-shadow:#666 0px 0px 4px;-moz-border-radius:5px;-moz-box-shadow:#666 0px 0px 4px;text-shadow:#000 0px 1px 1px;border: 1px solid #159; font-weight:bold;
+
 	}
 .button img{ vertical-align:middle}
 a.button:hover{ text-decoration:none; background:#48A; }
-.uploaddiv{ width:96%;padding:1%; margin:0 1%; background:#FFC; display:none; border:1px #ccc solid;}
+.uploaddiv{ display:none;}
 .uploaddiv h2{ margin:8px; float:left;}
 .uploaddiv .uploadifyQueue{ float:left; margin:9px;}
 .uploaddiv .cancel{ float:right; margin:0 10px;}
@@ -55,65 +54,99 @@ a.button:hover{ text-decoration:none; background:#48A; }
  </style>
 {/literal}
 
- <!--Main Start-->  
- <div id="main">
- <h1 style="padding:10px 20px; border-bottom:1px #ccc solid; margin:5px 10px;">{l t='Photos for %s' r=$var_biz.bizname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
- <a href="/{$smarty.const._BIZ_DIR_}/{$var_biz.permalink}" class="Bbtn">{l t='Return to %s' r=$var_biz.bizname}</a>
- 
- 
- 
- {if $var_me.user_id}
- 	<a href="javascript:void(0)" onclick="$('.uploaddiv').slideDown()" class="button">{l t='Upload photo for %s' r=$var_biz.bizname} &dArr;</a>
- 	{if $smarty.get.f == 'addphoto'}
- 	<script>
- 	{literal}
- 	$(document).ready(function() {
- 		setTimeout("$('.uploaddiv').slideDown()",500);
- 	});
- 	{/literal}
- 	</script>
- 	{/if}
- {else}
- 	<a href="/my/login.php" class="button">{l t='Login to upload photo &raquo;'}</a>
- 	{if $smarty.get.f == 'addphoto'}
- 	<script>
- 	{literal}
- 		location="/my/login.php";
- 	{/literal}
- 	</script>
- 	{/if}
- {/if}
- 
-   
- </h1>
- 
- <div class="uploaddiv">
- <h2>{l t='Attach Picture'}: </h2>
- <input type="file" name="file" id="file" />
- <a href="javascript:$('#file').uploadifyUpload()" id="upload_btn"><img src="/theme/{$smarty.const._THEME_}/js/uploadify/upload_btn.gif" /></a>
- </div>
- 
- 
- 
-<div id="galleria"> 
-		<!--loop-->
-	    {foreach from=$var_pic item=i}
-	    	<img src="../images/business/{$i.picurl}" /> 
-	    {/foreach}
-		<!--/loop-->
-</div> 
- 
- 
- 
- </div>
- 
- 
-    <script>
+<!--Main Start-->
+<div id="main">
+    <div class="container">
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{l t='Photos for %s' r=$var_biz.bizname}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <a href="/{$smarty.const._BIZ_DIR_}/{$var_biz.permalink}" class="btn button-blue">{l t='Return to %s' r=$var_biz.bizname}</a>
+                </div>
+                <div class="visible-xs col-xs-12">
+                    &nbsp;
+                </div>
+
+                {if $var_me.user_id}
+                        <div class="col-md-6 col-sm-6 col-xs-12 profile-rating text-right" >
+                            <a href="javascript:void(0)" onclick="$('.uploaddiv').slideDown()" class="button btn ">{l t='Upload photo for %s' r=$var_biz.bizname} &dArr;</a>
+                        </div>
+
+                {if $smarty.get.f == 'addphoto'}
+                    <script>
+                        {literal}
+                        $(document).ready(function() {
+                            setTimeout("$('.uploaddiv').slideDown()",500);
+                        });
+                        {/literal}
+                    </script>
+                {/if}
+
+                {else}
+
+                    <a href="/my/login.php" class="button">{l t='Login to upload photo &raquo;'}</a>
+                {if $smarty.get.f == 'addphoto'}
+                    <script>
+                        {literal}
+                        location="/my/login.php";
+                        {/literal}
+                    </script>
+                {/if}
+                {/if}
+
+                <div class="visible-xs">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+                <div class="clearfix"></div>
+                <br/>
+                    <div class="col-xs-12">
+                        <div class="uploaddiv alert alert-warning">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <h2>{l t='Attach Picture'}: </h2>
+                            </div>
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input  type="file" name="file" id="file" />
+                            </div>
+
+                            <div class="col-md-3 col-sm-3 col-xs-12 for_padding_button">
+                                <a class="btn button-blue btn-block" href="javascript:$('#file').uploadifyUpload()" id="upload_btn">
+                                    {l t='Start upload'}
+                                </a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+
+                <div class="clearfix"></div>
+                <br/>
+                <div id="galleria">
+                    <!--loop-->
+                    {foreach from=$var_pic item=i}
+                        <img src="../images/business/{$i.picurl}" />
+                    {/foreach}
+                    <!--/loop-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
     // Load the classic theme
     Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');
     // Initialize Galleria
     $('#galleria').galleria();
-    </script>
- 
- <!--Main End-->
- {include file="footer.tpl"}
+</script>
+
+<!--Main End-->
+{include file="footer.tpl"}

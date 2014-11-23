@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
- <!--Main Start-->  
+ <!--Main Start-->
  <div id="main">
  <h1 style="padding:10px 20px; border-bottom:1px #ccc solid; margin:5px 10px;">{l t='Upload photo for %s' r=$var_biz.bizname}</h1>
    <form action="?f=submit&id={$var_biz.id}" method="post" name="frm" id="frm" enctype="multipart/form-data">

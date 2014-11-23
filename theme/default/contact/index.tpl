@@ -86,7 +86,7 @@
                 </div>
 
                 {else}
-                    <div class="col-md-6 col-sm-6 text-center" >
+                    <div class="col-md-6 col-sm-6  text-center" >
                         <h1>&nbsp;</h1>
                         <h1>&nbsp;</h1>
                         <h1>&nbsp;</h1>
@@ -100,7 +100,7 @@
                     </div>
                 {/if}
 
-                <div class="col-lg-3 col-md-2 col-sm-2 text-center" >
+                <div class="col-lg-3 col-md-2 col-sm-6 hidden-xs text-center" >
                     {$ads->getAdCode(10)}
                 </div>
             </div>
