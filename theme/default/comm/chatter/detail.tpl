@@ -1,4 +1,4 @@
-             <div style="margin-top:12px; position:relative;">          
+             <div style="margin-top:12px; position:relative;">
              <h2><a href="javascript:;" onclick="get(determinCatOrSub(),WCurPage,0);"><span style="color:#900">&lt;&lt; {l t='Back to List'}</span></a></h2>
                <h1>{$var_topic.name}</h1>
                <div style="float:left">
@@ -12,7 +12,7 @@
                                    		  <div style="float:left" id="pv"><img src="../theme/{$get_theme}/images/ico_map1.gif" width="14" height="10" title="{l t='Friends Number'}" alt="{l t='Friends Number'}" />{$var_author.friendsnum}<br />
                                           <img src="../theme/{$get_theme}/images/ico_map2.gif" width="11" height="11" title="{l t='Reviews Number'}" alt="{l t='Reviews Number'}" /> {$var_author.reviewsnum}</div>
                                           <div class="photoBox" style="float:right; margin-right:5px;"><img src="../images/photos/{$var_author.picurl}_40x40" width="40" height="40" /></div>
-                                		</div>	
+                                		</div>
                                         <div class="t">
                                         			<div style="float:left"><a href="../my/?id={$var_author.id}">{$var_author.name}</a> {l t='says'}:</div>
                                			  			<div style="float:right">{$var_topic.date}</div>
@@ -28,7 +28,7 @@
 
                                           <a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=0" class="iframe"><img src="../theme/{$get_theme}/images/btn/flag_button.gif" width="65" height="21" border="0"  style="float:right;"/></a></div>
        		   </div>
-        
+
 <!--loop-->
 {foreach from=$var_reply item=i}
                <div class="con" style="width:98%">
@@ -37,7 +37,7 @@
                                           <img src="../theme/{$get_theme}/images/ico_map2.gif" width="11" height="11"  title="{l t='Reviews Number'}" alt="{l t='Reviews Number'}" /> {$i.reviewsnum}</div>
                    <div class="photoBox" style="float:right; margin-right:5px;"><img src="../images/photos/{$i.picurl}_40x40" width="40" height="40" /></div>
 
-           		 </div>	
+           		 </div>
                                         <div class="tR">
                                         			<div style="float:left"><a href="../my/?id={$i.userid}">{$i.username}</a> {l t='says'}:</div>
                                			  			<div style="float:right">{$i.date}</div>

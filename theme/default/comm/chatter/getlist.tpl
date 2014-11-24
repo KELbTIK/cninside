@@ -1,18 +1,19 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr class="header">
-        <th colspan="2">{l t='Author'}</th>
+            <th class="hidden-xs" colspan="2">{l t='Author'}</th>
+            <th class="visible-xs">{l t='Author'}</th>
         <th>{l t='Topic'}</th>
         <th class="aligncent">{l t='Category'}</th>
-        <th class="aligncent">{l t='Replies'}</th>
+        <th class="aligncent hidden-xs">{l t='Replies'}</th>
         <th class="aligncent">{l t='Latest Reply'}</th>
         </tr>
     </thead>
     <tbody>
         <!--loop-->
         {foreach from=$var_list item=i}
-            <tr valign="middle">
-                <td>
+            <tr>
+                <td class="hidden-xs">
                     <div class="clearStyles photoBox" >
                         <a href="../my/?id={$i.userid}">
                             <img src="../images/photos/{$i.picurl}_40x40" alt="user photo" border="0" style="height:40px;width:40px;" />
@@ -28,7 +29,7 @@
                 <td class="nonwrapping aligncent">
                     <a href="javascript:;" onclick="sele_item('',{$i.catid});">{$i.catname}</a>
                 </td>
-                <td class="nonwrapping aligncent">{$i.replynum}</td>
+                <td class="nonwrapping aligncent hidden-xs">{$i.replynum}</td>
                 <td class="nonwrapping aligncent">{$i.replytime}</td>
             </tr>
         {/foreach}

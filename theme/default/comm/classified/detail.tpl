@@ -12,7 +12,7 @@
                                    		  <div style="float:left" id="pv"><img src="../theme/{$get_theme}/images/ico_map1.gif" width="14" height="10" title="Friends Number" alt="Friends Number" /> {$var_author.friendsnum}<br />
                                           <img src="../theme/{$get_theme}/images/ico_map2.gif" width="11" height="11" title="Reviews Number" alt="Reviews Number" /> {$var_author.reviewsnum}</div>
                                           <div class="photoBox" style="float:right; margin-right:5px;"><img src="../images/photos/{$var_author.picurl}_40x40" width="40" height="40" /></div>
-    
+
     {if $var_topic.photo_url}
     <h3 id="clear" style="padding:10px 0;">{l t='Classfied Photo'}</h3>
     <a href="/images/upload/{$var_topic.photo_url}" class="fancypic"><img src="/images/upload/100x100_{$var_topic.photo_url}" /></a>
@@ -20,7 +20,7 @@
     <img src="/images/upload/{$var_topic.photo_url}" />
     </div>
     {/if}
-    </div>	
+    </div>
                                         <div class="t">
                                         			<div style="float:left"><a href="../my/?id={$var_author.id}">{$var_author.name}</a> says:</div>
                                			  			<div style="float:right">
@@ -61,7 +61,7 @@
           <img src="../theme/{$get_theme}/images/ico_map2.gif" width="11" height="11"  title="Reviews Number" alt="Reviews Number" /> {$i.reviewsnum}</div>
        <div class="photoBox" style="float:right; margin-right:5px;"><img src="../images/photos/{$i.picurl}_40x40" width="40" height="40" /></div>
 
-     </div>	
+     </div>
           <div class="tR">
             <div style="float:left"><a href="../my/?id={$i.userid}">{$i.username}</a> says:</div>
             <div style="float:right">
@@ -70,7 +70,7 @@
 <a href="javascript:del('deals_reply','id','{$i.id}')" class="ctlbtn"><img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="{l t='Delete'}" title="{l t='Delete'}" border="0" align="top" /></a>
             {/if}
             {$i.date}</div>
-            <h4 id="clear" style="padding-top:10px;">{$i.message}</h4> <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=1" class="iframe"><img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/></a>     
+            <h4 id="clear" style="padding-top:10px;">{$i.message}</h4> <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=1" class="iframe"><img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/></a>
       </div>
    </div>
 {/foreach}
@@ -80,7 +80,7 @@
                </div>
 
 {$var_lists.pager}
-					
+
 <form action="javascript:get({$var_topic.id},1,3);" name="reply" method="post">
         <div class="con" style="width:98%; border:0; border-top:1px #ccc solid;">
           <table width="98%" border="0" align="right">

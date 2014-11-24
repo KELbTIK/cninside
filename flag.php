@@ -45,44 +45,53 @@ echo "<script>parent.$.fn.fancybox.close(); alert('Successful Reported!');</scri
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/theme/<?=_THEME_?>/mgt/body/css/common.css" rel="stylesheet" />
+<link href="/theme/<?=_THEME_?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body id="popup">
 
-            <form name="flag" action="flag.php" method="post">
-<TABLE cellSpacing=1 cellPadding=4 width="100%"  border=0>
-  <TBODY>
-  <TR class="td_title">
-    <TD  colSpan=2>Flag Request</TD></TR>
-  <TR bgColor=#ffffff>
-  <td colspan="2">Are you sure you want to flag this item? An alert will be sent to us</td>
-  </tr>
-  <TR bgColor=#ffffff>
-     <TD width="30%"  align="center" class="td_th">Reason</TD>
-  <td width="70%">
-    <input type="hidden" name="topicid" id="topicid" value="<?=$_REQUEST[topicid]?>" />
-    <input type="hidden"  name="replyid" id="replyid" value="<?=$_REQUEST[replyid]?>"/>
-    <input type="hidden" name="zone" id="zone" value="<?=$_REQUEST[zone]?>" /> 
-    <select name="reason" id="reason">
-    <option>Offensive Comment</option>
-    <option>Personal Attack</option>
-    <option>Personal Information</option>
-    <option>Illegal Activity</option>
-    <option>Spam</option>
-    <option>Other</option>
-            </select></td>
-            
-  </tr>
-  <TR bgColor=#ffffff>
-     <TD align="center" class="td_th">Comment</TD>
-  <td>
-<textarea name="comment" rows="4" style="width:300px; height:200px;"></textarea></td>
-  </tr>
-  <TR bgColor=#ffffff>
-  <td> </td>
-  <td><input name="btn" type="submit" id="btn" value="   Submit   "   />
-    <input type="button" value="X" onClick="parent.$.fn.fancybox.close(); "  style="width:20px;"/></td>
-  </tr>
-</table></form>
-         </body>
+
+<form name="flag" action="flag.php" method="post">
+    <TABLE cellSpacing=1 cellPadding=4 width="100%"  border=0 class="table">
+        <TBODY>
+            <TR class="td_title">
+                <TD  colSpan=2>Flag Request</TD>
+            </TR>
+            <TR bgColor=#ffffff>
+                <td colspan="2">Are you sure you want to flag this item? An alert will be sent to us</td>
+            </tr>
+            <TR bgColor=#ffffff>
+                <TD width="30%"  align="center" class="td_th">Reason</TD>
+                <td width="70%">
+                    <input type="hidden" name="topicid" id="topicid" value="<?=$_REQUEST[topicid]?>" />
+                    <input type="hidden"  name="replyid" id="replyid" value="<?=$_REQUEST[replyid]?>"/>
+                    <input type="hidden" name="zone" id="zone" value="<?=$_REQUEST[zone]?>" />
+                    <select class="form-control" name="reason" id="reason">
+                    <option>Offensive Comment</option>
+                    <option>Personal Attack</option>
+                    <option>Personal Information</option>
+                    <option>Illegal Activity</option>
+                    <option>Spam</option>
+                    <option>Other</option>
+                    </select>
+                </td>
+            </tr>
+            <TR bgColor=#ffffff>
+                <TD align="center" class="td_th">Comment</TD>
+                <td>
+                    <textarea name="comment" class="form-control" rows="5"></textarea>
+                </td>
+            </tr>
+            <TR bgColor=#ffffff>
+                <td> </td>
+                <td>
+                    <input name="btn" type="submit" id="btn" class="btn btn-primary" value="   Submit   "   />
+                    <input type="button" value="X" onClick="parent.$.fn.fancybox.close(); " class="btn btn-danger"/>
+                </td>
+            </tr>
+        </TBODY>
+    </table>
+</form>
+
+</body>
 </html>

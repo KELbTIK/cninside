@@ -41,15 +41,7 @@ document.postform.btn.disabled=true;
 return true;
 }
 </script>
-<style type="text/css">
-<!--
-#main .form-group input{margin-top: 1px;}
-.for_padding{padding-top: 7px;}
 
-#main .content .con ul{list-style:none; padding:0; margin:0; margin-left:5px; margin-right:5px;}
-#main .content .con ul li {float:left; width:260px;}
--->
- </style>
 {/literal}
 
 <div id="main">

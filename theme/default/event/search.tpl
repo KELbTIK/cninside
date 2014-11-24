@@ -129,18 +129,17 @@
                 <div class="clearfix"></div>
                 <div>
                     <div class="panel panel-default">
-                        <div class="panel-body">
+                        <!-- List group -->
+                        <ul class="list-group">
                             <!--loop-->
                             {foreach from=$var_list item=i}
-                                <div class="incon">
-                                    <div style="padding-top:8px; float:left; width:21%;">
-                                        <div class="photoBox" style=" overflow:hidden; width:84px; height:84px; text-align:center;">
-                                <span class="photoBox" style=" overflow:hidden; width:84px; height:84px; text-align:center;">
-                                    <img src="../images/event/{$i.picurl}_80x80" />
-                                </span>
+                                <li class="list-group-item">
+                                    <div class="col-xs-4 col-sm-2">
+                                        <div class="photoBox">
+                                            <img class="img-responsive" src="../images/event/{$i.picurl}_80x80" />
                                         </div>
                                     </div>
-                                    <div style="float:left; width:78%;">
+                                    <div class="col-xs-8 col-sm-10">
                                         <h3><a href="detail.php?id={$i.id}">{$i.name}</a></h3>
                                         {$i.date}<br />{$i.catname}<br />{$i.where}<br />
                                         <h4>{$i.whatwhy}</h4>
@@ -153,17 +152,32 @@
                                             </em>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="clearfix"></div>
+                                </li>
                             {/foreach}
                             <!--/loop-->
-                            {if $var_lists.found==''}
-                                <div class="text-center"><br/><br/><br/><br/><span ><strong >{l t='No result found'}</strong></span><br/><br/><br/><br/>
+                        </ul>
+                        {if $var_lists.found==''}
+                            <br/>
+                            <div class="panel panel-default">
+                                <div class="panel-body text-center">
+                                    {l t='No result found'}
                                 </div>
-                            {else}
-                                <div style=" float:left; padding-top:20px; padding-left:20px;">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
-                                {$var_lists.pager}
-                            {/if}
-                        </div>
+                            </div>
+                        {else}
+                            <br/>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="page_number">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="text-right text-xs-right">
+                                        {$var_lists.pager}
+                                    </div>
+                                </div>
+                            </div>
+                        {/if}
+                        <div class="clearfix"></div>
                     </div>
                     <div>
                         <br/>
@@ -172,7 +186,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3" >
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
                             <a href="new.php" class="btn button-blue">{l t='Add Event'}</a>

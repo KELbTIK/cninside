@@ -15,12 +15,30 @@
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/jquery.galleria.classic.css" />
 
 <script src="/theme/{$get_theme}/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+{literal}
+    <script type="text/javascript">
+        jQuery.browser = {};
+        (function () {
+            jQuery.browser.msie = false;
+            jQuery.browser.version = 0;
+            if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                jQuery.browser.msie = true;
+                jQuery.browser.version = RegExp.$1;
+            }
+        })();
+    </script>
+{/literal}
+<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
+<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script>
 <script src="/theme/{$get_theme}/js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
 <script src="/theme/{$get_theme}/js/jquery.localscroll-1.2.5.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/js/jquery.serialScroll-1.2.1.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/js/jquery.cookies.1.4.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/js/common.js" type="text/javascript" ></script>
+<script src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 var t_AllCities="{l t='All Cities'}";
 </script>
@@ -42,9 +60,8 @@ background-image:url({$smarty.const._LOGO_URL_});
 <meta name="description" content="{$page_description}" />
 <meta name="keywords" content="{$page_keywords}" />
 <title> {if $page_title_cat} {$page_title_cat} {else} {$page_title}{/if}</title>
-{literal}
 
- {/literal}
+
 </head>
 
 <body>

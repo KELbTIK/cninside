@@ -17,7 +17,7 @@ margin:10px;
 #sr .td_title, #popup .td_title{background-color:#034982;text-shadow:0 1px 0 #000; font-weight:bold;}
 #sr .td_title td, #popup .td_title td{ color:#fff;}
 #sr .td_th, #popup .td_th{ background:#eee;}
-#sr table, #popup table{ background:#bbb;}
+/*#sr table, #popup table{ background:#bbb;}*/
 
 #m .toggles{ display:block; overflow:hidden; clear:both;}
 
@@ -71,7 +71,7 @@ padding:20px 30px 0 50px; text-align:center;
 display:none;
 }
 #popup{ font-size:12px; margin:0; padding:0; width:100%;}
-#popup table{ margin:0; width:100%;}
+/*#popup table{ margin:0; width:100%;}*/
 a.fakebtn{  padding:5px 10px; display:block; float:left; margin:0 10px; text-align:center; text-decoration:none; color:white; background-color:#034982;  text-shadow:0 1px 0 #000; font-weight:bold;
 -moz-border-radius:4px;
 -moz-box-shadow:0 3px 6px #C8C8C8;

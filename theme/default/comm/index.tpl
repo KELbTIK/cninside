@@ -1,10 +1,4 @@
- {include file="header.tpl"}
-
-
- <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script>
-<link rel="stylesheet" href="/theme/{$get_theme}/js/fancy/jquery.fancybox.css" media="screen" type="text/css" />
+{include file="header.tpl"}
 <script>
 //===========common
 ajax_menu_div_name="sr_menu";
@@ -132,7 +126,9 @@ function sele_item(a,catid){
             document.getElementsByTagName("a")[i].parentNode.className='item';
 		}
 	}
-    a.parentNode.className='active';
+    if (a.parentNode != undefined){
+        a.parentNode.className='active';
+    }
 	get(catid,1,0);
 }
 
@@ -165,33 +161,32 @@ var tempval=document.getElementById(theField);
 
 
 </script>
-
 <script>
-function fancybox()
-{
-	$(".iframe").fancybox({
-	 'overlayShow'    : true,
-	 'zoomSpeedIn'    : 600,
-	 'frameWidth' : 600,
-	 'frameHeight': 400,
-	 'callbackOnShow' : function(){$('object').css('display','block')},
-	 'callbackOnClose' : function(){$('object').css('display','none')},
-	 'zoomSpeedOut'    : 500,
-	 'easingIn'    : 'easeOutBack',
-	 'easingOut'    : 'easeInBack',
-	 'padding': 0
-	 });
-	 $(".fancypic").fancybox({
-	 'overlayShow'    : true,
-	 'zoomSpeedIn'    : 600,
-	 'zoomSpeedOut'    : 500,
-	 'easingIn'    : 'easeOutBack',
-	 'easingOut'    : 'easeInBack',
-	 'padding': 0
-	 });
-}
+    function fancybox()
+    {
+        $(".iframe").fancybox({
+         'overlayShow'    : true,
+         'zoomSpeedIn'    : 600,
+         'frameWidth' : 600,
+         'frameHeight': 400,
+         'callbackOnShow' : function(){$('object').css('display','block')},
+         'callbackOnClose' : function(){$('object').css('display','none')},
+         'zoomSpeedOut'    : 500,
+         'easingIn'    : 'easeOutBack',
+         'easingOut'    : 'easeInBack',
+         'padding': 0
+         });
+         $(".fancypic").fancybox({
+         'overlayShow'    : true,
+         'zoomSpeedIn'    : 600,
+         'zoomSpeedOut'    : 500,
+         'easingIn'    : 'easeOutBack',
+         'easingOut'    : 'easeInBack',
+         'padding': 0
+         });
+    }
 
-get(0,0,1);
+    get(0,0,1);
 </script>
 
 {/literal}

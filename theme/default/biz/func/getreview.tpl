@@ -84,7 +84,12 @@
 </ul>
 <!--/loop-->
 {if $var_lists.found==''}
-    <div class="con text-center">{l t='No review found'}.</div>
+    <div class="clearfix"></div>
+    <div class="panel panel-default">
+        <div class="panel-body text-center">
+            {l t='No review found'}.
+        </div>
+    </div>
 {else}
     <div class="text-right">
         {$var_lists.pager}
