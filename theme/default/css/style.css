@@ -2,7 +2,12 @@
     margin-top: 2px;
 }
 
-/*for biz/photo.tpl*/
+/*for biz/photo.tpl */
 .for_padding_button{
     padding-top: 6px;
+}
+
+/*for classified/detail.tpl and chatter/detail.tpl */
+.red_link{
+    color: #FFF!important;
 }

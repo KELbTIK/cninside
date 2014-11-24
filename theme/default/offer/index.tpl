@@ -81,7 +81,7 @@ function sele_item(a,catid){
 }
 
 
-</script> 
+</script>
 <script type="text/javascript" language="javascript">
 function determinCatOrSub(){
     if(WCurCat<0) return WCurSubcat;
