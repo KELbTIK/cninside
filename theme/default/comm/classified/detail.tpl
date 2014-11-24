@@ -102,11 +102,32 @@
                                 </div>
                             </div>
 
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">{l t='Flag Request'}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <iframe src="/flag.php" width="100%" height="300" frameborder="0"></iframe>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-md-2 col-sm-6 col-xs-12 pull-right">
-                                <a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=1" class="iframe btn button-blue pull-right col-xs-12">
-                                    Flag this
+                                <button type="button" class="btn button-blue" data-toggle="modal" data-target="#myModal">
+                                    {l t='Flag this'}
+                                </button>
+                                {*<a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=1" class="iframe btn button-blue pull-right col-xs-12">*}
+                                    {*{l t='Flag this'}*}
                                     {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" width="65" height="21" border="0" />*}
-                                </a>
+                                {*</a>*}
                                 <div class="visible-xs">
                                     <br/><br/><br/>
                                 </div>
@@ -154,7 +175,7 @@
                                             <h4 class="col-xs-12">{$i.message}</h4>
 
                                         <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=1" class="iframe">
-                                            <input type="button" class="btn button-blue pull-right" value="Flag this">
+                                            <input type="button" class="btn button-blue pull-right" value="{l t='Flag this'}">
                                             {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/>*}
                                         </a>
                                         <div class="clearfix"></div>

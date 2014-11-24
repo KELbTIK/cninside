@@ -36,27 +36,26 @@ $comment=nl2br(strip_tags(trim($comment)));
 
 $query="insert into `flag` (`topicid`,`replyid`,`comment`,`zone`) values ('$topicid','$replyid','$comment','$zone')";
 $rc=mysql_query($query) or die('ERROR!');
-echo "<script>parent.$.fn.fancybox.close(); alert('Successful Reported!');</script>";
+echo "<script type=\"text/javascript\">alert('Successful Reported!');</script>";
 }
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/theme/<?=_THEME_?>/mgt/body/css/common.css" rel="stylesheet" />
 <link href="/theme/<?=_THEME_?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<script src="/theme/<?=_THEME_?>/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/theme/<?=_THEME_?>/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 </head>
 
-<body id="popup">
-
+<body >
 
 <form name="flag" action="flag.php" method="post">
-    <TABLE cellSpacing=1 cellPadding=4 width="100%"  border=0 class="table">
+    <TABLE cellSpacing=1 cellPadding=4 width="100%"  border=0 class="table table-bordered">
         <TBODY>
-            <TR class="td_title">
-                <TD  colSpan=2>Flag Request</TD>
-            </TR>
             <TR bgColor=#ffffff>
                 <td colspan="2">Are you sure you want to flag this item? An alert will be sent to us</td>
             </tr>
@@ -85,13 +84,12 @@ echo "<script>parent.$.fn.fancybox.close(); alert('Successful Reported!');</scri
             <TR bgColor=#ffffff>
                 <td> </td>
                 <td>
-                    <input name="btn" type="submit" id="btn" class="btn btn-primary" value="   Submit   "   />
-                    <input type="button" value="X" onClick="parent.$.fn.fancybox.close(); " class="btn btn-danger"/>
+                    <input name="btn" type="submit" id="btn" class="btn btn-primary" value="   Submit   "   data-dismiss="modal" />
+<!--                    <input type="button" value="X" onClick="parent.$.fn.fancybox.close(); " class="btn btn-danger"/>-->
                 </td>
             </tr>
         </TBODY>
     </table>
 </form>
-
 </body>
 </html>

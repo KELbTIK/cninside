@@ -29,6 +29,7 @@
         })();
     </script>
 {/literal}
+
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script>
 <script src="/theme/{$get_theme}/js/jquery.scrollTo-1.3.3.js" type="text/javascript"></script>
@@ -60,8 +61,6 @@ background-image:url({$smarty.const._LOGO_URL_});
 <meta name="description" content="{$page_description}" />
 <meta name="keywords" content="{$page_keywords}" />
 <title> {if $page_title_cat} {$page_title_cat} {else} {$page_title}{/if}</title>
-
-
 </head>
 
 <body>
