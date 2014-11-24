@@ -1,14 +1,9 @@
 {include file="header.tpl"}
-{literal}
-<style type="text/css">
-<!--
-#main {height:auto;}
--->
- </style>
- {/literal}
  <!--Main Start-->  
  <div id="main">
-{$var_html}
+     <div class="content container">
+         {$var_html}
+     </div>
  </div>
  <!--Main End-->
 {include file="footer.tpl"}
