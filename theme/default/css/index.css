@@ -121,14 +121,14 @@ width:50px;}
 /*#main .content .con_right .new_chatters .btn { width:100%; float:left;clear:both; text-align:center; margin-top:5px;}*/
 /*#main .content { margin-top:10px;}*/
 
-.special_offer {
-float:left;
-border-bottom:1px dotted #CCCCCC;
-padding:10px;
-width:263px;
-margin-right:20px;
-display:block;
-}
+/*.special_offer {*/
+/*float:left;*/
+/*border-bottom:1px dotted #CCCCCC;*/
+/*padding:10px;*/
+/*width:263px;*/
+/*margin-right:20px;*/
+/*display:block;*/
+/*}*/
 .special_offer h3 span{ float:right}
 .special_offer em{ text-align:right; display:block;}
 .new_offer .btn, .random_rat .btn{ text-align:center; margin-top:10px;}

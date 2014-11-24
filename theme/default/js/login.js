@@ -156,8 +156,9 @@ if (e==false)
 
 function tabclick(who,number)
 {
-	$('.tab').removeClass('ctab');
-	$(who).addClass('ctab');
-	if(number==1) $('.formdisp').animate({'left':'0px'},250);
-	else if(number==2) $('.formdisp').animate({'left':'-360px'},250);
+    $(who).removeAttr('href');
+	$('.nav-tabs li').removeClass('active');
+	$(who).parent().addClass('active');
+//	if(number==1) $('.formdisp').animate({'left':'0px'},250);
+//	else if(number==2) $('.formdisp').animate({'left':'-360px'},250);
 }

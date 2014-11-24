@@ -108,7 +108,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                 <div class="other pull-right">
                                     <div class="photoBox">
                                         <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}">
-                                            <img src="/images/business/{$var_biz.picurl}_195x180" border="0" />
+                                            <img class="img-responsive" src="/images/business/{$var_biz.picurl}_195x180" border="0" />
                                         </a>
                                         <br />
                                         <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}">
@@ -216,9 +216,10 @@ var t_owner="{l t='You are not allowed to review your own business'}";
 
                                 <!--Special Offer Start-->
                                 {if $var_biz.edit_btn} {* if isOwner, offer is modify-able *}
-                                    <div class="special_offer" id="special_offer_edit">
+                                    <div class="special_offer alert alert-warning pull-left" id="special_offer_edit">
                                         {* if hasOffer, edit *}
-                                        <span class="preview_offer" onclick="$('.edit_offer_div').slideDown(); $(this).slideUp();" style="display:{if !$var_biz.offer_id}none{/if}">
+                                        <div class="preview_offer text-right" onclick="$('.edit_offer_div').slideDown(); $(this).slideUp();" style="display:{if !$var_biz.offer_id}none{/if}">
+                                            <i class="fa fa-pencil-square-o"></i>
                                             {if $var_biz.title} <b>{$var_biz.title}</b>  <br> {/if}
                                             {$var_biz.offer_description}
 
@@ -229,58 +230,76 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                                 <br />{l t='Tel'}: {$var_biz.offer_phone}
                                             {/if}
                                             <br /><em>{$var_biz.offer_submit_time}</em>
-                                        </span>
+                                        </div>
 
 
                                         <!--Edit zone-->
                                         <div class="edit_offer_div">
-                                            <label>
-                                                <strong>{l t='Title'}:</strong><br />
+                                            <div class="form-group">
+                                                <label>{l t='Title'}:</label>
                                                 <input value="{$var_biz.title}" id="offer_update_title" class="form-control"/>
-                                            </label>
-                                            <label>
-                                                {l t='Description'}:<br />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>{l t='Description'}:</label>
                                                 <textarea id="offer_update_desc" class="form-control">{$var_biz.offer_descriptionNoTag}</textarea>
-                                            </label>
-                                            <label>
-                                                {l t='URL'}:<br />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>{l t='URL'}:</label>
                                                 <input value="{$var_biz.offer_url}" id="offer_update_url" class="form-control"/>
-                                            </label>
-                                            <label>
-                                                {l t='Phone'}:<br />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>{l t='Phone'}:</label>
                                                 <input value="{$var_biz.offer_phone}" id="offer_update_phone" class="form-control"/>
-                                            </label>
-                                            <span class="offer_button edit_post_offer" onclick="offerUpdate(currentOfferId,'{$var_biz.id}')">{l t='Edit Special Offer'}</span>
+                                            </div>
+                                            <span class="offer_button edit_post_offer btn btn-default" onclick="offerUpdate(currentOfferId,'{$var_biz.id}')">
+                                                <i class="fa fa-pencil-square-o"></i>
+                                                {l t='Edit Special Offer'}
+                                            </span>
                                         </div>
-                                        <span class="offer_button delete_offer" onclick="offerDelete(currentOfferId,'{$var_biz.id}')" style="display:{if !$var_biz.offer_id}none{/if}">{l t='Delete This Special Offer'}</span>
+                                        <span class="offer_button delete_offer btn btn-danger" onclick="offerDelete(currentOfferId,'{$var_biz.id}')" style="display:{if !$var_biz.offer_id}none{/if}">
+                                            <i class="fa fa-times"></i>
+                                            {l t='Delete This Special Offer'}
+                                        </span>
 
-                                        <span class="offer_button create_offer" onclick="$('.create_offer').hide();$('.create_offer_div').slideDown();$('.preview_offer').slideUp();$('.delete_offer').hide(); $('.edit_offer_div').slideUp();">{l t='Create New Special Offer'}</span>
+                                        <span class="offer_button create_offer btn btn-default"
+                                              onclick="$('.create_offer').hide();
+                                               $('.create_offer_div').slideDown();
+                                               $('.preview_offer').slideUp();
+                                               $('.delete_offer').hide();
+                                               $('.edit_offer_div').slideUp();
+                                                ">
+                                            <i class="fa fa-plus-square"></i>
+                                            {l t='Create New Special Offer'}
+                                        </span>
 
                                         <!--Create zone-->
                                         <div class="create_offer_div">
-
-                                            <label>
-                                                <strong>{l t='Title'}:</strong><br />
-                                                <input value="" id="offer_insert_title" />
-                                            </label>
-                                            <label>
-                                                <strong>{l t='Description'}:</strong>({l t='Required'})<br />
+                                            <div class="form-group">
+                                                <label>{l t='Title'}:</label>
+                                                <input value="" id="offer_insert_title" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>{l t='Description'}:</strong>({l t='Required'})</label>
                                                 <textarea id="offer_insert_desc" class="form-control"></textarea>
-                                            </label>
-                                            <label>
-                                                {l t='URL'}:<br />
-                                                <input value="http://" id="offer_insert_url" />
-                                            </label>
-                                            <label>
-                                                {l t='Phone'}:<br />
+                                            </div>
+                                            <div class="form-group">
+                                                <label>{l t='URL'}:</label>
+                                                <input value="http://" id="offer_insert_url"  class="form-control"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>{l t='Phone'}:</label>
                                                 <input value="" id="offer_insert_phone" class="form-control"/>
-                                            </label>
+                                            </div>
                                             <em>{l t='The previous special offer will be archived.'}</em>
-                                            <span class="offer_button create_post_offer"  onclick="offerInsert('{$var_biz.id}')">{l t='Create Special Offer'}</span>
+                                            <br/>
+                                            <span class="offer_button create_post_offer btn btn-default"  onclick="offerInsert('{$var_biz.id}')">
+                                                <i class="fa fa-check"></i>
+                                                {l t='Create Special Offer'}
+                                            </span>
                                         </div>
 
                                     </div>
-
+                                    <div class="clearfix"></div>
                                     {else} {* notOwner, offer is read-only*}
 
                                     {if $var_biz.offer_id} {* if hasOffer *}

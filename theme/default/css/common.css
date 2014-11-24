@@ -573,16 +573,16 @@ h2.active {
 
 .offer_item em{ text-align:right; display:block;}
 
-.special_offer {
-    float:left;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    border:1px solid #CCCCCC;
-    padding:10px;
-    width:260px;
-    margin-right:20px;
-    display:block;
-}
+/*.special_offer {*/
+    /*float:left;*/
+    /*-moz-border-radius:10px;*/
+    /*-webkit-border-radius:10px;*/
+    /*border:1px solid #CCCCCC;*/
+    /*padding:10px;*/
+    /*width:260px;*/
+    /*margin-right:20px;*/
+    /*display:block;*/
+/*}*/
 .nav a{
     cursor: pointer;
 }

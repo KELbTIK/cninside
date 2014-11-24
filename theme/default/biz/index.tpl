@@ -1,6 +1,5 @@
 {include file="header.tpl"}
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_index.css" />
- <!--Main Start-->  
+ <!--Main Start-->
  
  <div id="main">
 

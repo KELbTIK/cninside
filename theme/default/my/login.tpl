@@ -238,9 +238,9 @@
                 <h2 style="font-size:16px; margin:16px 0 40px;">{l t='Already a %s Member?' r=$get_sitename} </h2>
                 <div>
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href=""><span class="tab mp ctab" onclick="tabclick(this,1)">{$get_sitename}</span></a></li>
+                        <li class="active"><a href="#" onclick="tabclick(this,1)"><span class="tab mp ctab">{$get_sitename}</span></a></li>
                         {if $smarty.const._FB_ENABLE_}
-                            <li><a href=""><span class="tab fb" onclick="tabclick(this,2)">{l t='Facebook Connect'}</span></a></li>
+                            <li><a href="#" onclick="tabclick(this,2)"><span class="tab fb">{l t='Facebook Connect'}</span></a></li>
                         {/if}
                     </ul>
                     <div class="panel panel-default">

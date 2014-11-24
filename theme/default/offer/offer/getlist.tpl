@@ -40,11 +40,13 @@
 {/foreach}
 <!--/loop--> 
 {/if}
-                
+
 {if !$var_lists.found}
     <div class="clearfix"></div>
     <div class="text-center">{l t='No result found'}.</div>
 {else}
-<div class="pull-left" style="margin-top:20px;">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
-    {$var_lists.pager}
+    <div class="row">
+        <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
+        <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
+    </div>
 {/if}
