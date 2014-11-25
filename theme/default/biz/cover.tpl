@@ -35,52 +35,53 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
 {/literal}
 <body style="background:none;">
 <div id="container">
- <!--Main Start-->  
-  <div class="detail blue">
+    <!--Main Start-->
+    <div class="detail blue">
         <h1>Cover/Image Management for {$var_biz.bizname} <span style="float:right"><a href="business_edit.php?id={$var_biz.id}">&laquo; Back</a></span></h1>
         {if $msg}
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center><h3>{$msg}</h3></center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center>[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><center><h3>{$msg}</h3></center></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><center>[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</center></p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
         {else}
-                <table width="100%" cellspacing="0" border="0" cellpadding="0">
+            <table width="100%" cellspacing="0" border="0" cellpadding="0">
                 <!--loop-->
-                    {foreach from=$var_pic item=i}
+                {foreach from=$var_pic item=i}
                     <tr>
-                	  <th width="23%">
-                      {if $var_biz.picurl!=$i.url}
-                      <a href="?id={$smarty.get.id}" onclick="parent.update('business','photo_url','{$i.url}','business_id','{$smarty.get.id}')" class="ctlbtn"><img src="/theme/{$smarty.const._THEME_}/mgt/body/images/s_theme.png" alt="Cover" title="Cover" border="0" align="top" />Set as cover</a>
-                      {else}
-                      Current Biz Cover
-                      {/if}
-                      <a href="?id={$smarty.get.id}" onclick="parent.del('business_photo','id','{$i.id}')" class="ctlbtn"><img src="/theme/{$smarty.const._THEME_}/mgt/body/images/b_del.png" alt="Delete" title="Delete" border="0" align="top" />Delete image</a>
-                      </th>
-                	  <td width="35%"><img src="/images/business/b_{$i.url}_195x180" /></td>
-                      <td><b>Upload Date:</b><br />&nbsp; &nbsp; &nbsp; &nbsp; {$i.date}<br /><br />
-                      			<b>Uploader Name/ID:</b><br />&nbsp; &nbsp; &nbsp; &nbsp;  {$i.user_name}  ({$i.user_id})<br /><br />
-                                <b>Uploader Login Email:</b><br />&nbsp; &nbsp; &nbsp; &nbsp;  {$i.user_email}
-                      </td>
-              	    </tr>
-                   {/foreach}
-              <!--/loop-->
-               	</table>
-          {/if}
+                        <th width="23%">
+                            {if $var_biz.picurl!=$i.url}
+                                <a href="?id={$smarty.get.id}" onclick="parent.update('business','photo_url','{$i.url}','business_id','{$smarty.get.id}')" class="ctlbtn"><img src="/theme/{$smarty.const._THEME_}/mgt/body/images/s_theme.png" alt="Cover" title="Cover" border="0" align="top" />Set as cover</a>
+                            {else}
+                                Current Biz Cover
+                            {/if}
+                            <a href="?id={$smarty.get.id}" onclick="parent.del('business_photo','id','{$i.id}')" class="ctlbtn">
+                                <img src="/theme/{$smarty.const._THEME_}/mgt/body/images/b_del.png" alt="Delete" title="Delete" border="0" align="top" />Delete image</a>
+                        </th>
+                        <td width="35%"><img src="/images/business/b_{$i.url}_195x180" /></td>
+                        <td><b>Upload Date:</b><br />&nbsp; &nbsp; &nbsp; &nbsp; {$i.date}<br /><br />
+                      		<b>Uploader Name/ID:</b><br />&nbsp; &nbsp; &nbsp; &nbsp;  {$i.user_name}  ({$i.user_id})<br /><br />
+                            <b>Uploader Login Email:</b><br />&nbsp; &nbsp; &nbsp; &nbsp;  {$i.user_email}
+                        </td>
+                    </tr>
+                {/foreach}
+                <!--/loop-->
+            </table>
+        {/if}
         </div><!-- End .content .detail -->
- <!--Main End-->
- </div>
- </body>
- </html>
+    <!--Main End-->
+</div>
+</body>
+</html>
