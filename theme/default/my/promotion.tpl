@@ -3,55 +3,50 @@
 <div id="container">
  <!--Main Start-->  
  
-  <div id="main">
-     <div class="content">
-            
-                      <div class="con" style="height:25px;">
-                                 <div style="float:left">
-                                   <h3>{l t='Claim Credit Points for'} {$var_user.fullname}</h3>
-                              </div>
-                              <div style=" float:right">
-                                          
-             <h5>[ <a href="account.php">&laquo; {l t='Back to Account'}</a> ]</h5> 
-           
-                              </div>
-                     </div>
-                     <div class="con">
-                              <div >
-                              
-     {if $msg} {$msg}
-     {else}
-                <form action="/my/promotion.php" method="post" class="form">
-
-
-                                <table width="100%" border="0">
-
-                                  <tr>
-                             <td height="20"><b>{l t='Member'}</b></td> <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                             <td height="20">{$var_user.fullname} ({$var_user.email})</td>
-                           </tr>
-                           <tr>
-                             <td height="20"><b>{l t='Promotional Code'}</b></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-                             <td height="20"><input type="text" name="code" id="code" /></td>
-                           </tr>
-                            
-                            <tr>
-                                    <td height="30">&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
-                                    <td>
-                                       <br /><br /> <input type="submit" name="button" id="button" class="trialBbtn" value="{l t='Claim Now'}" />                                      
-                                       </td>
-                                  </tr>
-                                </table>
-                              
-                                </form> {/if}
-                              </div>
-             
+<div id="main">
+    <div class="content container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title pull-left">{l t='Claim Credit Points for'} {$var_user.fullname}</h3>
+                        <div class="pull-right">
+                            <h5>[ <a href="account.php">&laquo; {l t='Back to Account'}</a> ]</h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            {if $msg}
+                                {$msg}
+                            {else}
+                                <form action="/my/promotion.php" method="post" class="form form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">{l t='Member'}</label>
+                                        <div class="col-sm-8">
+                                            {$var_user.fullname} ({$var_user.email})
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">{l t='Promotional Code'}</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="code" id="code" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <input type="submit" name="button" id="button" class="trialBbtn btn button-blue" value="{l t='Claim Now'}" />
+                                        </div>
+                                    </div>
+                                </form>
+                            {/if}
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
+        </div>
     </div>
- </div>
- 
- <br /> <br />  <br />  <br /> 
- 
- {include file="footer.tpl"}
+</div>
+
+</div>
+{include file="footer.tpl"}

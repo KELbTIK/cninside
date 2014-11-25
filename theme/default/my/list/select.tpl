@@ -1,12 +1,7 @@
-
 {include file="header.tpl"}
-{literal}
-
-{/literal}
  <!--Main Start-->  
 <div id="main">
-    <div class="container">
-        <br/>
+    <div class="content container">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">{l t='Edit Your List'}</h3>
@@ -172,14 +167,10 @@
                             var parentDiv = document.createElement('DIV');
                             parentDiv.className='multipleSelectBoxControl';
                             parentDiv.id = 'selectBoxGroup' + selectBoxIndex;
-//                            parentDiv.style.width = totalWidth + 'px';
-//                            parentDiv.style.height = totalHeight + 'px';
                             parentEl.insertBefore(parentDiv,fromObj);
 
 
                             var subDiv = document.createElement('DIV');
-//                            subDiv.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
-//                            fromObj.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
 
                             var label = document.createElement('SPAN');
                             label.innerHTML = labelLeft;
@@ -196,7 +187,6 @@
                             buttonDiv.style.paddingTop = 33 + 'px';
                             buttonDiv.style.paddingLeft = 0;
                             buttonDiv.style.paddingRight = 0;
-//                            buttonDiv.style.width = '30px';
                             buttonDiv.style.textAlign = 'center';
                             parentDiv.appendChild(buttonDiv);
 
@@ -232,8 +222,6 @@
 
                             var subDiv = document.createElement('DIV');
                             subDiv.className = 'col-sm-5 col-xs-5';
-//                            subDiv.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
-//                            toObj.style.width = (Math.floor(totalWidth/2) - 15) + 'px';
 
                             var label = document.createElement('SPAN');
                             label.innerHTML = labelRight;
@@ -249,8 +237,6 @@
                             selectBoxIndex++;
 
                         }
-
-
 
                         </script>
                     {/literal}

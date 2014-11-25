@@ -60,7 +60,7 @@ if($_POST){
    $total=mysql_num_rows($result);
 
    if($total>0){
-       $msg = l('Sorry, you already used this promotional code') . '<input action="action" type="button" onclick="history.go(-1);" value="Back" />';
+       $msg = l('Sorry, you already used this promotional code  &nbsp;&nbsp;') . '<input action="action" type="button" class="btn btn-danger" onclick="history.go(-1);" value="Back" />';
    }else{  // not use yet
        // check to see if the code is valid
        $today = date('Y-m-d'); 
@@ -97,7 +97,7 @@ if($_POST){
             
             $msg= l("Congratulations!") . ' ' . $amount . ' ' . l("credit points have been added to your account");  
        }else{
-           $msg= l("Sorry, invalid promotional code!") . '<input action="action" type="button" onclick="history.go(-1);" value="Back" />';
+           $msg= l("Sorry, invalid promotional code! &nbsp;&nbsp;") . '<input action="action" type="button" class="btn btn-danger" onclick="history.go(-1);" value="Back" />';
        }
    } 
 }

@@ -18,21 +18,6 @@ var t_PhotoDeleted="{l t='Photo Deleted'}";
 <style type="text/css">
 <!--
 #galleria{height:400px;}
-
-#main {height:auto;}
-img{ border:0}
-a.button{ padding:5px; font-size:12px; background:#61A2CC; color:#fff; -webkit-border-radius: 5px;-webkit-box-shadow:#666 0px 0px 4px;-moz-border-radius:5px;-moz-box-shadow:#666 0px 0px 4px;text-shadow:#000 0px 1px 1px;border: 1px solid #159; font-weight:bold;
-    float:right;margin-top:-5px;
-    }
-.button img{ vertical-align:middle}
-a.button:hover{ text-decoration:none; background:#48A; }
-.uploaddiv{ width:96%;padding:1%; margin:0 1%; background:#FFF; border:1px #ccc solid;}
-.uploaddiv h3{ margin:8px; float:left;}
-.uploaddiv .uploadifyQueue{ float:left; margin:9px;}
-.uploaddiv .cancel{ float:left; margin:0 10px;}
-.uploaddiv .percentage{ color:blue;font-weight: bold;text-transform: uppercase;}
-#upload_btn{ display:none;}
-#galleria{height:500px;}
 -->
 </style>
 <script>

@@ -115,11 +115,11 @@
             {/if}
         </div>
 
-        <div class="right col-md-3 hidden-sm hidden-xs" >
-            <div style="text-align:center;">
-            <p align="center">
-                {$ads->getAdCode(3)}
-            </p>
+        <div class="col-md-3 hidden-sm hidden-xs text-center" >
+            <div>
+                <p align="center">
+                    {$ads->getAdCode(3)}
+                </p>
             </div>
         </div>
     </div>

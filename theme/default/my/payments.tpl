@@ -51,7 +51,7 @@ location='?page='+page;
                         {if $var_paymentlists.found}
                             <form id="form1" name="form1">
                                 <input name="page" type="hidden" id="page" value="1" />
-                                <table class="listing1">
+                                <table class="table table-striped table-hover">
                                     <tr class="header">
                                         <th align="center">{l t='ID'}</th>
                                         <th align="center">{l t='Description'}</th>
@@ -69,13 +69,13 @@ location='?page='+page;
                                 </table>
                             </form>
                             <!--/loop-->
-                            <div class="pull-left">{l t='Show'} {$var_paymentlists.limitfrom} {l t='to'} {$var_paymentlists.limitto} / {$var_paymentlists.itemsnum} {l t='items'}.</div>
+                            <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_paymentlists.limitfrom} {l t='to'} {$var_paymentlists.limitto} / {$var_paymentlists.itemsnum} {l t='items'}.</div>
                         {/if}
                         {if !$var_paymentlists.found}
                             <div class="clearfix"></div>
                             <div class="text-center">{l t='No result found'}</div>
                         {else}
-                            {$var_paymentlists.pager}
+                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_paymentlists.pager}</div>
                         {/if}
                     </div>
                 </div>

@@ -1,21 +1,12 @@
 {include file="header.tpl"}
 
- {if $is=='home'}
- {literal}
-     <style>
-        /*#main .content .mid { margin-left:0px; float:left;  width:425px; padding-right:10px;}*/
-    </style>
-{/literal}
-{/if}
-
-
  <script>
- //basic infos
- var id='{$var_user.id}';
- var pagetext='{$var_page.pagetext}';
+     //basic infos
+     var id='{$var_user.id}';
+     var pagetext='{$var_page.pagetext}';
  </script>
  {literal}
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
 function sele_item(a,orderby){
     for(var i=0;i<document.getElementsByTagName("button").length;i++){
     if(document.getElementsByTagName("button")[i].id=="itemid"){
@@ -714,8 +705,7 @@ $('#commenttext').css('backgroundColor','#FAA');
                             <div class="text-center">
                                 <!--loop-->
                                 {foreach from=$var_friend item=i}
-                                    <div class="clearfix"></div>
-                                    <dt>
+                                    <div>
                                         <div class="photoBox pull-left"><img src="../images/photos/{$i.picurl}_16x16" width="16" height="16" /></div>
                                         <div class="pull-left">
                                             <a href="./?id={$i.id}">{$i.name}</a>
@@ -725,22 +715,23 @@ $('#commenttext').css('backgroundColor','#FAA');
                                                 &nbsp;&nbsp;[ <a href="/my/func.php?f=verifyfriend&code={$i.verifycode}".$code">Approve</a> ]
                                             {/if}
                                         </div>
-                                    </dt>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 {/foreach}
                                 <!--/loop-->
                                 {if !$var_friends.found}
-                                    <dt>
-                                        <img src="../theme/{$get_theme}/images/empty_network.gif" width="70" height="70" />
+                                    <div>
+                                        <img class="img-responsive" src="../theme/{$get_theme}/images/empty_network.gif" width="70" height="70" />
                                         <br />
                                         {l t='No Friend'}
-                                    </dt>
+                                    </div>
                                 {else}
                                     {if $var_get.id==''}
                                         <div class="clearfix"></div>
-                                        <dt>
+                                        <div>
                                             <br>
                                             <a href="./?f=Friends&id={$var_get.id}">{l t='All Friends'}...</a>
-                                        </dt>
+                                        </div>
                                     {/if}
                                 {/if}
 
@@ -762,8 +753,7 @@ $('#commenttext').css('backgroundColor','#FAA');
                             <div class="text-center">
                                 <!--loop-->
                                 {foreach from=$var_compliment item=i}
-                                    <div class="clearfix"></div>
-                                    <dt>
+                                    <div>
                                         <div class="photoBox pull-left">
                                             <img src="../images/photos/{$i.picurl}_16x16" width="16" height="16" />
                                         </div>
@@ -771,21 +761,22 @@ $('#commenttext').css('backgroundColor','#FAA');
                                             <a href="./?id={$i.id}" target="_blank">{$i.name}</a><br />
                                             {l t='gave %s compliment' r=$i.type}
                                         </div>
-                                    </dt>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 {/foreach}
                                 <!--/loop-->
                                 {if !$var_compliments.found}
-                                    <dt>
-                                        <img src="../theme/{$get_theme}/images/empty_thanks.gif" /><br />
+                                    <div>
+                                        <img class="img-responsive" src="../theme/{$get_theme}/images/empty_thanks.gif" /><br />
                                         {l t='No Compliment'}
-                                    </dt>
+                                    </div>
                                 {else}
                                     {if $var_get.id==''}
                                         <div class="clearfix"></div>
-                                        <dt>
+                                        <div>
                                             <br>
                                             <a href="./?f=Compliments&id={$var_get.id}">{l t='All Compliments'}...</a>
-                                        </dt>
+                                        </div>
                                     {/if}
                                 {/if}
                             </div>
@@ -799,24 +790,22 @@ $('#commenttext').css('backgroundColor','#FAA');
                             <div class="text-center">
                                 <!--loop-->
                                 {foreach from=$var_sidelist item=i}
+                                    <div class="pull-left text-left">
+                                        <h3><a  href="list/detail.php?id={$i.id}">{$i.name}</a></h3>
+                                        {$i.desc}
+                                    </div>
                                     <div class="clearfix"></div>
-                                    <dt>
-                                        <div class="pull-left text-left">
-                                            <h3><a  href="list/detail.php?id={$i.id}">{$i.name}</a></h3>
-                                            {$i.desc}
-                                        </div>
-                                    </dt>
                                 {/foreach}
                                 <!--/loop-->
                                 {if !$var_sidelists.found}
-                                    <dt>
-                                        <img src="../theme/{$get_theme}/images/empty_lists.gif" /><br />
+                                    <div>
+                                        <img class="img-responsive" src="../theme/{$get_theme}/images/empty_lists.gif" /><br />
                                         {l t='No List'}
-                                    </dt>
+                                    </div>
                                 {else}
                                     {if $var_get.id==''}
                                         <div class="clearfix"></div>
-                                        <dt><br><a href="./?f=Lists&id={$var_get.id}">{l t='All Lists'}...</a></dt>
+                                        <div><a href="./?f=Lists&id={$var_get.id}">{l t='All Lists'}...</a></div>
                                     {/if}
                                 {/if}
                             </div>

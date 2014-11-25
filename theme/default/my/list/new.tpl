@@ -1,36 +1,32 @@
 {include file="header.tpl"}
 
 <script>
-var t_listnamecannotbeempty='{l t='List name cannot be empty!'}';
+    var t_listnamecannotbeempty='{l t='List name cannot be empty!'}';
 </script>
 
 {literal}
 
- <script type="text/javascript" language="javascript">
-function fillform(n,s){
-var d=document.postform;
-d.list_name.value=n;
-d.list_desc.value=s;
-d.btn.focus();
-}
-
-function veri(){
-var d=document.postform;
-d.list_name.value=d.list_name.value.replace(/(^\s*)|(\s*$)/g, "");
-if(d.list_name.value) d.submit();
-else{
-alert(t_listnamecannotbeempty);
-d.btn.disabled=false;
-}
-
-}
+<script type="text/javascript">
+    function fillform(n,s){
+        var d=document.postform;
+        d.list_name.value=n;
+        d.list_desc.value=s;
+        d.btn.focus();
+    }
+    function veri(){
+        var d=document.postform;
+        d.list_name.value=d.list_name.value.replace(/(^\s*)|(\s*$)/g, "");
+        if(d.list_name.value) d.submit();
+        else{
+            alert(t_listnamecannotbeempty);
+            d.btn.disabled=false;
+        }
+    }
 </script>
 {/literal}
  <!--Main Start-->
-
 <div id="main">
-        <div class="container">
-            <br/>
+        <div class="content container">
             <div class="row">
                 <div class="col-md-8 col-sm-6">
                     <div class="panel panel-default">
@@ -89,5 +85,5 @@ d.btn.disabled=false;
             </div>
         </div>
  </div>
- <!--Main End-->
-  {include file="footer.tpl"}
+<!--Main End-->
+{include file="footer.tpl"}

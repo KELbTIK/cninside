@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Generator" content="MeePlace {$smarty.const._VERSION_}" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/theme/{$get_theme}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="/theme/{$get_theme}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="/theme/{$get_theme}/css/index.css" rel="stylesheet" type="text/css" />

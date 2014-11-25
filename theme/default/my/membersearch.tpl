@@ -1,14 +1,8 @@
 {include file="header.tpl"}
 <script type="text/javascript">
-var rank='{$rank}';
+    var rank='{$rank}';
 </script>
 <script type="text/javascript" src="/theme/{$get_theme}/js/membersearch.js"></script>
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/7521.css" />
-{literal}
-<style type="text/css">
-#sr .con{ border-bottom:1px #ccc dotted;}
-</style>
-{/literal}
  <!--Main Start-->
 
  <div id="main">
@@ -58,7 +52,7 @@ var rank='{$rank}';
                  </div>
              </div>
 
-             <div class="col-md-3 col-sm-3 col-xs-12" style="text-align:center;">
+             <div class="col-md-3 col-sm-3 hidden-xs text-center">
                  <p align="center">
                      {$ads->getAdCode(3)}
                  </p>
@@ -69,7 +63,6 @@ var rank='{$rank}';
 
  <!--Main End-->
  <script>
- get('','1');
-
+    get('','1');
  </script>
-  {include file="footer.tpl"}
+{include file="footer.tpl"}

@@ -1,7 +1,6 @@
 {include file="header.tpl"}
-
 {literal}
-    <script type="text/javascript" language="javascript">
+    <script type="text/javascript">
         function fillform(n,s){
         var d=document.postform;
         d.list_name.value=n;

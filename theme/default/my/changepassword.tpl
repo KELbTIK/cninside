@@ -1,8 +1,5 @@
 {include file="header.tpl"}
-
-
 <!--Main Start-->
-
 <div id="main">
 <div class="content container">
     <div class="row">
