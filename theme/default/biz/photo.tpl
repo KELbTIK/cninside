@@ -87,7 +87,7 @@ a.button:hover{ text-decoration:none; background:#48A; }
 
                 {else}
 
-                    <a href="/my/login.php" class="button">{l t='Login to upload photo &raquo;'}</a>
+                    <a href="/my/login.php" class="btn button-blue">{l t='Login to upload photo &raquo;'}</a>
                 {if $smarty.get.f == 'addphoto'}
                     <script>
                         {literal}
