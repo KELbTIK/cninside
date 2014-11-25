@@ -11,6 +11,7 @@
     <script src="/theme/{$get_theme}/js/jquery.serialScroll-1.2.1.js" type="text/javascript" ></script>
     <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
     <link href="/theme/{$get_theme}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/theme/{$get_theme}/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 {literal}
 <style type="text/css">
@@ -44,18 +45,16 @@
 {/literal}
 
 <body class="container">
-    <div class="row">
         {if $smarty.const._PAYPAL_ENABLE_ && $paypal_pricing}
             <div id="header">
                 <h1><a href="/" id="headerlogolink"></a><br /><br /></h1>
             </div>
         {/if}
-
         <div class="panel panel-info">
             <div class="panel-heading text-center">
                 <h3 class="panel-title">{l t='Apply StarBiz'} {$var_biz.bizname}</h3>
             </div>
-            <div class="panel-body" id="container">
+            <div id="container">
                 <!--Main Start-->
                 {if $smarty.const._PAYPAL_ENABLE_ && $method == 'paypal'}
                     {if $smarty.const._PAYPAL_TESTMODE_}
@@ -77,7 +76,7 @@
 
                             <input type="hidden" name="return" value="http://{$smarty.const._DOMAIN_}/{$smarty.const._BIZ_DIR_}/{$var_biz.bizurl}" />
 
-                            <table class="table table-bordered" width="99%" cellspacing="0" border="0" cellpadding="0">
+                            <table class="table table_margin_bottom" width="99%" cellspacing="0" border="0" cellpadding="0">
                                 <tr>
                                     <td colspan="2" align="center"><img class="img-responsive" src="/theme/{$smarty.const._THEME_}/images/apply_starbiz.png" /></td>
                                 </tr>
@@ -123,7 +122,7 @@
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p><center><input action="action" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></center></p>
+                            <p><center><input action="action" class="btn btn-primary" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></center></p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
@@ -143,7 +142,7 @@
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p><center><input action="action" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></center></p>
+                            <p><center><input action="action" class="btn btn-primary" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></center></p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
@@ -153,9 +152,7 @@
                         {/if}
                         <!-- End .content .detail -->
                 <!--Main End-->
-
             </div>
         </div>
-    </div>
 </body>
 </html>

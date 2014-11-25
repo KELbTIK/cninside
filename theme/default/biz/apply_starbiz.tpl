@@ -11,6 +11,7 @@
     <script src="/theme/{$get_theme}/js/jquery.serialScroll-1.2.1.js" type="text/javascript" ></script>
     <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
     <link href="/theme/{$get_theme}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/theme/{$get_theme}/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 {literal}
@@ -54,8 +55,7 @@
             <div class="panel-heading text-center">
                 <h3 class="panel-title">{l t='Apply StarBiz'} {$var_biz.bizname}</h3>
             </div>
-            <div class="panel-body" id="container">
-                <div class="row">
+                <div id="container">
                     <div class="detail">
                         {if $msg}
                             <p>&nbsp;</p>
@@ -94,7 +94,7 @@
                                 <input type="hidden" name="lc" value="US">
                                 <input type="hidden" name="bn" value="PP-BuyNowBF">
                                 <input type="hidden" name="return" value="http://{$smarty.const._DOMAIN_}/{$smarty.const._BIZ_DIR_}/{$var_biz.bizurl}" />
-                                <table class="table table-bordered"  width="99%" cellspacing="0" border="0" cellpadding="0">
+                                <table class="table table_margin_bottom"  width="99%" cellspacing="0" border="0" cellpadding="0">
                                     <tr>
                                         <td colspan="2" align="center">
                                             <img class="img-responsive" src="/theme/{$smarty.const._THEME_}/images/apply_starbiz.png" alt="Image" />
@@ -124,7 +124,7 @@
 
                             {else}
                             <form action="apply_starbiz.php?id={$smarty.get.id}" method="post">
-                                <table class="table table-bordered" width="99%" cellspacing="0" border="0" cellpadding="0">
+                                <table class="table table_margin_bottom" width="99%" cellspacing="0" border="0" cellpadding="0">
                                     <tr>
                                         <td colspan="2" align="center">
                                             <img class="img-responsive" src="/theme/{$smarty.const._THEME_}/images/apply_starbiz.png" alt="Image" /></td>
@@ -159,7 +159,7 @@
                     </div>
                     <!-- End .content .detail -->
                 </div>
-            </div>
+
         </div>
         <!--Main End-->
     </div>
