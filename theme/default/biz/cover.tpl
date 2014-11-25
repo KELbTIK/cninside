@@ -28,16 +28,6 @@ font-weight:normal;
 padding:0 0 10px 10px;
 }
 
-.change{ background:url(../images/box-bg.gif) repeat-x #EBEBEB; }
-
-
-.coner{ position:absolute; height:5px; width:5px; display:block;}
-
- .c1{ background:url(../images/left-top-corner.gif) no-repeat; top:-1px; left:-1px;}
- .c2{ background:url(../images/right-top-corner.gif) no-repeat; top:-1px; right:-1px;}
- .c3{ background:url(../images/left-bot-corner.gif) no-repeat; bottom:-1px; _bottom:-12px;  left:-1px;}
- .c4{ background:url(../images/right-bot-corner.gif) no-repeat; bottom:-1px; _bottom:-12px;  right:-1px; _right:-2px;}
-.blue { margin:0; width:99.6%; padding:0}
 .blue h1{ margin:0 }
 th{ background:#f0f7fe}
 td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
@@ -47,10 +37,6 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
 <div id="container">
  <!--Main Start-->  
   <div class="detail blue">
-         <span class="coner c1b"></span>
-        <span class="coner c2b"></span>
-        <span class="coner c3b"></span>
-        <span class="coner c4b"></span>
         <h1>Cover/Image Management for {$var_biz.bizname} <span style="float:right"><a href="business_edit.php?id={$var_biz.id}">&laquo; Back</a></span></h1>
         {if $msg}
          <p>&nbsp;</p>
