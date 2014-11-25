@@ -10,6 +10,7 @@
 <script src="/theme/{$get_theme}/js/jquery.localscroll-1.2.5.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/js/jquery.serialScroll-1.2.1.js" type="text/javascript" ></script>
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
+<link href="/theme/{$get_theme}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 </head>
 {literal}
 <style type="text/css">
@@ -54,18 +55,15 @@ background-position: center top;
 <body style="background:none;">
 
 {if $smarty.const._PAYPAL_ENABLE_ && $paypal_pricing}
-            
+
 <div id="header">
     <h1><a href="/" id="headerlogolink"></a><br /><br /></h1>
 </div>
 {/if}
 <div id="container">
- <!--Main Start-->  
+ <!--Main Start-->
   <div class="detail blue">
-         <span class="coner c1b"></span>
-        <span class="coner c2b"></span>
-        <span class="coner c3b"></span>
-        <span class="coner c4b"></span>
+
         <center><h1>{l t='Apply StarBiz'} {$var_biz.bizname}</h1></center>
         {if $msg}
          <p>&nbsp;</p>
@@ -86,13 +84,13 @@ background-position: center top;
          <p>&nbsp;</p>
          <p>&nbsp;</p>
         {else}
-        
+
             {if $smarty.const._PAYPAL_ENABLE_ && $paypal_pricing}
 
                 {if $smarty.const._PAYPAL_TESTMODE_}
                 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" class="form">
                 {else}
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="form"> 
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="form">
                 {/if}
                 <input type="hidden" name="cmd" value="_xclick">
                 <input type="hidden" name="business" value="{$smarty.const._PAYPAL_EMAIL_}">
@@ -105,7 +103,7 @@ background-position: center top;
                 <input type="hidden" name="lc" value="US">
                 <input type="hidden" name="bn" value="PP-BuyNowBF">
                 <input type="hidden" name="return" value="http://{$smarty.const._DOMAIN_}/{$smarty.const._BIZ_DIR_}/{$var_biz.bizurl}" />
-                <table width="99%" cellspacing="0" border="0" cellpadding="0">
+                <table class="table table-bordered"  width="99%" cellspacing="0" border="0" cellpadding="0">
                         <tr>
                           <td colspan="2" align="center"><img src="/theme/{$smarty.const._THEME_}/images/apply_starbiz.png" /></td>
                          </tr>
@@ -121,21 +119,22 @@ background-position: center top;
                             <th>{l t='Price'}</th>
                             <td>{$paypal_pricing}</td>
                         </tr>
-                        
-                       
                         <tr>
                             <th>&nbsp;</th>
-                            <td><input class="Bbtn" type="button" value="  {l t='Apply StarBiz'}  " onclick="this.disabled=true; form.submit()" /></td>
+                            <td>
+                                <input class="btn btn-primary" type="button" value="  {l t='Apply StarBiz'}  " onclick="this.disabled=true; form.submit()" />
+                            </td>
                         </tr>
                     </table>
 
                 </form>
-        
+
             {else}
                 <form action="apply_starbiz.php?id={$smarty.get.id}" method="post">
                     <table width="99%" cellspacing="0" border="0" cellpadding="0">
                 	    <tr>
-                	      <td colspan="2" align="center"><img src="/theme/{$smarty.const._THEME_}/images/apply_starbiz.png" /></td>
+                	      <td colspan="2" align="center">
+                              <img src="/theme/{$smarty.const._THEME_}/images/apply_starbiz.png" /></td>
                	      </tr>
                 	    <tr>
 	                	    <th width="30%">{l t='Business name'}</th>
@@ -153,8 +152,8 @@ background-position: center top;
 	                	    <th>{l t='Your email'}</th>
                             <td><input name="contact_email" type="text" id="contact_email" style="width:100%;" value="{$var_owner.email}" /></td>
                         </tr>
-                        
-                        
+
+
                         <tr>
 	                	    <th>&nbsp;</th>
                             <td><input class="Bbtn" type="button" value="  {l t='Apply StarBiz'}  " onclick="this.disabled=true; form.submit()" /></td>

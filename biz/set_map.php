@@ -31,20 +31,20 @@ if($row['user_id']!=get_user_data('user_id')) {
 
 
 if($_POST)
-{	
+{
 	 ///get
 	 $sheet='business'; // database sheet
 	 $where='business_id'; // where
 	 $equal=$_POST[id]; // where `$where`='$equal'
 	 /// database
-	
+
 	//
 	$query="update `$sheet` set `x`='$_POST[x]',`y`='$_POST[y]',`mapx`='$_POST[mapx]',`mapy`='$_POST[mapy]',`zoom`='$_POST[zoom]'
 	where `$where`='$equal'";
 	$result=mysql_query($query) or die("ERROR! $query");
 	echo "<script>alert('Map Updated!');parent.$.fn.fancybox.close();</script>";
 	exit;
-	
+
 }
 
 
@@ -73,8 +73,8 @@ em
 -->
 </style>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
- <script type="text/javascript">    
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+ <script type="text/javascript">
  function initialize() {
      var tmp='<?=$zoom?>';
 if(tmp=='0')
@@ -82,8 +82,8 @@ if(tmp=='0')
     document.getElementById("map_canvas").innerHTML="<br /><br /><br /><br /><br /><center>No Map<br><a href=javascript:create()>Create?</a></center>";
 }
 else
-{          
-     
+{
+
    // geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(<?=$mapy?>, <?=$mapx?>);
     var myOptions = {
@@ -92,34 +92,34 @@ else
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    
+
     var markerlatlng = new google.maps.LatLng(<?=$y?>, <?=$x?>);
     var marker = new google.maps.Marker({
     map: map,
-    draggable : true, 
+    draggable : true,
     position: markerlatlng
     });
 
 
 google.maps.event.addListener(marker, "dragend", function() {
-    
+
         var mylatlng = String(marker.getPosition());
         mylatlng = mylatlng.replace("(","");
         mylatlng = mylatlng.replace(")","");
         var mylatlng_array = mylatlng.split(",");
-        
+
           document.getElementById('x').value=mylatlng_array[1];
           document.getElementById('y').value=mylatlng_array[0];
           document.getElementById('zoom').value=map.getZoom();
           }
 );
 google.maps.event.addListener(map,"dragend", function() {
-    
+
         var maplatlng = String(map.getCenter());
         maplatlng = maplatlng.replace("(","");
         maplatlng = maplatlng.replace(")","");
         var maplatlng_array = maplatlng.split(",");
-        
+
         document.getElementById('mapx').value=maplatlng_array[1];
         document.getElementById('mapy').value=maplatlng_array[0];
         document.getElementById('zoom').value=map.getZoom();
@@ -127,9 +127,9 @@ google.maps.event.addListener(map,"dragend", function() {
 
     }
  }
-    
-    
-    
+
+
+
 function create()
 {
          var latlng = new google.maps.LatLng(0, 0);
@@ -139,11 +139,11 @@ function create()
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    
+
     var markerlatlng = new google.maps.LatLng(<?=$y?>, <?=$x?>);
     var marker = new google.maps.Marker({
     map: map,
-    draggable : true, 
+    draggable : true,
     position: markerlatlng
     });
 
@@ -151,24 +151,24 @@ google.maps.event.addListener(marker, "dragstart", function()
 {  map.closeInfoWindow();  }
 );
 google.maps.event.addListener(marker, "dragend", function() {
-    
+
         var mylatlng = String(marker.getPosition());
         mylatlng = mylatlng.replace("(","");
         mylatlng = mylatlng.replace(")","");
         var mylatlng_array = mylatlng.split(",");
-        
+
           document.getElementById('x').value=mylatlng_array[1];
           document.getElementById('y').value=mylatlng_array[0];
           document.getElementById('zoom').value=map.getZoom();
           }
 );
 google.maps.event.addListener(map,"dragend", function() {
-    
+
         var maplatlng = String(map.getCenter());
         maplatlng = maplatlng.replace("(","");
         maplatlng = maplatlng.replace(")","");
         var maplatlng_array = maplatlng.split(",");
-        
+
         document.getElementById('mapx').value=maplatlng_array[1];
         document.getElementById('mapy').value=maplatlng_array[0];
         document.getElementById('zoom').value=map.getZoom();
@@ -176,7 +176,7 @@ google.maps.event.addListener(map,"dragend", function() {
 }
     </script>
 
- 
+
 
     <link href="/theme/<?=_THEME_?>/mgt/body/css/common.css" rel="stylesheet" />
 
