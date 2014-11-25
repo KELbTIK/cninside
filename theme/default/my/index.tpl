@@ -1,11 +1,10 @@
 {include file="header.tpl"}
-<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/my.css" />
 
  {if $is=='home'}
  {literal}
- <style>
-#main .content .mid { margin-left:0px; float:left;  width:425px; padding-right:10px;}
-</style>
+     <style>
+        /*#main .content .mid { margin-left:0px; float:left;  width:425px; padding-right:10px;}*/
+    </style>
 {/literal}
 {/if}
 
@@ -31,7 +30,7 @@ function sele_item(a,orderby){
 function set(field,Pvalue)
 {
     document.form1.order.value=Pvalue;
-nav();
+    nav();
 }
 ///////////////////////////////
 function get(nothing,page,opt)
@@ -54,14 +53,14 @@ function get(nothing,page,opt)
 ///////////////////////////////
 function nav()
 {
-var d=document.form1;
-var searchtext=d.searchtext.value;
-var page=d.page.value;
-var order=d.order.value;
-var f=d.f.value;
-var id=d.id.value;
+    var d=document.form1;
+    var searchtext=d.searchtext.value;
+    var page=d.page.value;
+    var order=d.order.value;
+    var f=d.f.value;
+    var id=d.id.value;
 
-location='?searchtext='+searchtext+'&order='+order+'&page='+page+'&f='+f+'&id='+id;
+    location='?searchtext='+searchtext+'&order='+order+'&page='+page+'&f='+f+'&id='+id;
 }
 
 /////////////////////////////
@@ -147,7 +146,6 @@ $('#commenttext').css('backgroundColor','#FAA');
  <!--Main Start-->  
  
 <div id="main">
-
     <div class="content container">
         <div class="row">
             {if $var_get.id==''}

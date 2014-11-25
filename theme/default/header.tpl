@@ -137,10 +137,10 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                             </li>
                                                             <li><a href="/my/login.php">{l t='Create new account'}</a></li>
                                                             <li><a href="/my/resetpsw.php">{l t='Lost password'}?</a></li>
-                                                            {if $smarty.const._FB_ENABLE_}
-                                                                <a href="/my/loginfb.php"><img src="/theme/{$get_theme}/images/fb_connect_small.gif" alt="Connect with Facebook" style="vertical-align:middle; margin-right:5px;" border="0" /></a>
-                                                            {/if}
                                                         </ol>
+                                                        {if $smarty.const._FB_ENABLE_}
+                                                            <a href="/my/loginfb.php" class="btn button-blue btn-xs"><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
+                                                        {/if}
                                                     </div>
                                                     <div class="clearfix"></div>
                                                 </div>

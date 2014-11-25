@@ -140,10 +140,7 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p class="text-center"><h3>{$msg}</h3></p>
+                    <h3 class="text-center">{$msg}</h3>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
@@ -151,25 +148,28 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
                     <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
                 {else}
-                    <div id="map_canvas" class="col-sm-8 col-xs-8" style="height:363px;"></div>
+                    <div id="map_canvas" class="col-sm-7 col-xs-7" style="height:363px;"></div>
 
-                    <div class="col-sm-4 col-xs-4">
-                        <select id="mode" onchange="calcRoute();" class="form-control">
-                            <option value="DRIVING">{l t='Driving'}</option>
-                            <option value="WALKING">{l t='Walking'}</option>
-                            <option value="BICYCLING">{l t='Bicycling'}</option>
-                        </select>
+                    <div class="col-sm-5 col-xs-5">
+                        <div class="form-group">
+                            <select id="mode" onchange="calcRoute();" class="form-control">
+                                <option value="DRIVING">{l t='Driving'}</option>
+                                <option value="WALKING">{l t='Walking'}</option>
+                                <option value="BICYCLING">{l t='Bicycling'}</option>
+                            </select>
+                        </div>
 
                         <div>{l t='Usage: Drag the blue marker to generate directions'}.</div>
                         <div id="directionsPanel" style="height:333px">
                             <div id="addressinputdiv">
                                 <br /><br /><br />
                                 {l t='Or type in your target address to generate the destination'}.
-                                <br /><br /><input type="text" name='addressinput' id='addressinput' class="form-control" />
-                                <input type="button" value="{l t='Go'}" onclick="calcRoute()" class="btn button-blue"/>
+                                <br /><br />
+                                <div class="form-group">
+                                    <input type="text" name='addressinput' id='addressinput' class="form-control" />
+                                </div>
+                                <input type="button" value="{l t='Go'}" onclick="calcRoute()" class="btn btn-success"/>
                             </div>
                         </div>
                     </div>

@@ -285,20 +285,10 @@
                                     </div><!--/div.form-->
                                     {if $smarty.const._FB_ENABLE_}
                                         <div class="form">
-                                            <form id="loginfb" name="loginfb" method="post" action="?f=login&referer={$referer}">
-                                                <table width="100%" border="0">
-                                                    <tr>
-                                                        <td height="80" align="center">
-                                                            <strong>Use your Facebook account to login now!</strong><br />
-                                                            We have partnered with Facebook to offer integrated account support via Facebook Connect. Safe, secure and easy!
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="40" align="center">
-                                                            <a href="/my/loginfb.php"><img src="/theme/{$get_theme}/images/fb_connect.png" alt="Connect with Facebook" border="0" /></a>
-                                                        </td>
-                                                    </tr>
-                                                </table>
+                                            <form id="loginfb" name="loginfb" method="post" action="?f=login&referer={$referer}" class="text-center">
+                                                <p><strong>Use your Facebook account to login now!</strong></p>
+                                                <p>We have partnered with Facebook to offer integrated account support via Facebook Connect. Safe, secure and easy!</p>
+                                                <a href="/my/loginfb.php" class="btn button-blue" ><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
                                             </form>
                                         </div><!--/div.form-->
                                     {/if}
@@ -308,7 +298,7 @@
                     </div>
 
                 </div>
-                <div class="con" style=" padding-left:10px; text-align:center; border-bottom:0;">
+                <div class="text-center hidden-xs">
                     {$ads->getAdCode(2)}
                 </div>
             </div>
