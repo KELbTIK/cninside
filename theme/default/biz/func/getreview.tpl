@@ -42,8 +42,12 @@
                     </div>
                     <div>
                         {if $i.edit_btn}
-                            <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox iframe ctlbtn"><img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="{l t='Edit'}" title="{l t='Edit'}" border="0" align="top" /></a>
-                            <a href="javascript:del_bizreview('{$i.reviewid}')" class="ctlbtn"><img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="{l t='Delete'}" title="{l t='Delete'}" border="0" align="top" /></a>
+                            <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox iframe ctlbtn">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </a>
+                            <a href="javascript:del_bizreview('{$i.reviewid}')" class="ctlbtn">
+                                <i class="fa fa-times"></i>
+                            </a>
                         {/if}
                         {$i.date}
                     </div>

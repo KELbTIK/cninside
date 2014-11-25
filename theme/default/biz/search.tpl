@@ -129,7 +129,7 @@ function nav()
                                         {/if}
                                         <address>
                                             {$i.add1}  <br />{$i.add2}<br />
-                                            {$i.location},  {$i.state} {$i.zip}  {if $admin_type}<a href="javascript:del_business('{$i.id}')"><img src="/theme/{$get_theme}/images/b_del.png" border="0" /></a>{/if}
+                                            {$i.location},  {$i.state} {$i.zip}  {if $admin_type}<a href="javascript:del_business('{$i.id}')"><i class="fa fa-times"></i></a>{/if}
                                         </address>
                                     </div>
                                     {if $i.type==2 && $i.extra}
@@ -184,7 +184,7 @@ function nav()
                             <li><a href="/search?cityname={$smarty.get.cityname}&searchtext={$var_search.searchtext}">{l t='All Categories'}</a></li>
                             {$var_cat.catlist}
                         </ul>
-                        <div>
+                        <div class="text-center  hidden-xs">
                             <!-- START 160x600 Code -->
                             <p align="center">
                                 {$ads->getAdCode(5)}

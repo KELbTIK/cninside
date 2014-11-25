@@ -6,6 +6,7 @@
 <script src="/theme/{$get_theme}/js/jquery-1.3.2.min.js" type="text/javascript"></script>
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
 <link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/doc/styles/main.css" media="screen" />
+<link href="/theme/{$get_theme}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 <link href="http://code.google.com/apis/maps/documentation/javascript/examples/standard.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -127,59 +128,55 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
 
 </head>
 <body onload="initialize()" style="background:none;">
-<div id="container">
- <!--Main Start-->  
-  <div class="detail blue">
-         <span class="coner c1b"></span>
-        <span class="coner c2b"></span>
-        <span class="coner c3b"></span>
-        <span class="coner c4b"></span>
-        <h1>{l t='Get Directions for'} {$var_biz.business_name}</h1>
-        {if $msg}
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center><h3>{$msg}</h3></center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center>[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-        {else}
-                <table width="100%" cellspacing="0" border="0" cellpadding="0">
-                		<tr>
-	                		<td>
-	                		<div id="map_canvas" style="float:left;width:350px; height:363px; margin-right:10px;"></div>
-	                		<div style="position:absolute; bottom:7px; left:275px;">
-<select id="mode" onchange="calcRoute();">
-  <option value="DRIVING">{l t='Driving'}</option>
-  <option value="WALKING">{l t='Walking'}</option>
-  <option value="BICYCLING">{l t='Bicycling'}</option>
-</select></div>
-	                		<div style="height:20px;">{l t='Usage: Drag the blue marker to generate directions'}.</div>
-	                		<div id="directionsPanel" style="overflow:scroll; overflow-x:hidden; height:333px">
-		                <div id="addressinputdiv">
-		                		<br /><br /><br />
-		                		{l t='Or type in your target address to generate the destination'}.
-		                		<br /><br /><input type="text" name='addressinput' id='addressinput' />
-		                		<input type="button" value="{l t='Go'}" onclick="calcRoute()" />
-		                	</div>
-	                		</div>
-	                		</td>
-                		</tr>
-                </table>
-          {/if}
-        </div>
+    <div id="container">
+        <!--Main Start-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{l t='Get Directions for'} {$var_biz.business_name}</h3>
+            </div>
+            <div class="panel-body">
+                {if $msg}
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p class="text-center"><h3>{$msg}</h3></p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p class="text-center">[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                {else}
+                    <div id="map_canvas" class="col-sm-8 col-xs-8" style="height:363px;"></div>
 
- <!--Main End-->
- </div>
- </body>
- </html>
+                    <div class="col-sm-4 col-xs-4">
+                        <select id="mode" onchange="calcRoute();" class="form-control">
+                            <option value="DRIVING">{l t='Driving'}</option>
+                            <option value="WALKING">{l t='Walking'}</option>
+                            <option value="BICYCLING">{l t='Bicycling'}</option>
+                        </select>
+
+                        <div>{l t='Usage: Drag the blue marker to generate directions'}.</div>
+                        <div id="directionsPanel" style="height:333px">
+                            <div id="addressinputdiv">
+                                <br /><br /><br />
+                                {l t='Or type in your target address to generate the destination'}.
+                                <br /><br /><input type="text" name='addressinput' id='addressinput' class="form-control" />
+                                <input type="button" value="{l t='Go'}" onclick="calcRoute()" class="btn button-blue"/>
+                            </div>
+                        </div>
+                    </div>
+                {/if}
+            </div>
+        </div>
+        <!--Main End-->
+        </div>
+    </body>
+</html>
