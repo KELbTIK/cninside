@@ -1,11 +1,4 @@
 {include file="header.tpl"}
-{literal}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".fancybox").fancybox();
-        });
-    </script>
-{/literal}
 <script type="text/javascript">
 //program global values
 var googleMapEnabled='{$smarty.const._GOOGLE_MAP_ENABLED_}';
@@ -580,7 +573,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div>
+                    <div class="hidden-xs">
                         {$ads->getAdCode(6)}
                     </div>
                     <div class="clearfix"></div>
