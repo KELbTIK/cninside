@@ -243,10 +243,10 @@ else
                                         <div class="pull-right">
                                             {if $i.edit_btn}
                                                 <a href="/mgt/func/select.php?sheet=event_discuss&where=event_discuss_id&equal={$i.comment_id}&field=event_discuss_id,event_id,user_id,event_desc,reply_date&text=Review ID,Event ID,Reviewer ID,Review Content,Review Date(YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">
-                                                    <img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="Edit" title="Edit" border="0" align="top" />
+                                                    <i class="fa fa-pencil-square-o"></i>
                                                 </a>
                                                 <a href="javascript:del('event_discuss','event_discuss_id','{$i.comment_id}')" class="ctlbtn">
-                                                    <img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="Delete" title="Delete" border="0" align="top" />
+                                                    <i class="fa fa-times"></i>
                                                 </a>
                                             {/if}
                                             {$i.date}

@@ -63,7 +63,7 @@
                             <textarea id="ownerreplytext_{$i.reviewid}" class="hidden">{$i.owner_reply}</textarea>
                             <input type="button" id="ownerreplybtn_{$i.reviewid}" class="hidden" value="Reply" onclick="submitreply('{$i.bizid}','{$i.reviewid}')" />
                             {if $i.owner_reply}
-                                <a id="ownerreplylink_{$i.reviewid}" href="javascript:showreply('{$i.reviewid}')"><img src="/theme/{$get_theme}/images/pencil.png" border="0" /> {l t='Edit Reply'}</a> &nbsp;
+                                <a id="ownerreplylink_{$i.reviewid}" href="javascript:showreply('{$i.reviewid}')"><i class="fa fa-pencil-square-o"></i> {l t='Edit Reply'}</a> &nbsp;
                             {else}
                                 <a id="ownerreplylink_{$i.reviewid}" href="javascript:showreply('{$i.reviewid}')"><img src="/theme/{$get_theme}/images/alarm_clock.gif" border="0" /> {l t='Owner Reply'}</a> &nbsp;
                             {/if}

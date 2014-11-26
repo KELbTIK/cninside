@@ -84,7 +84,7 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
                       {else}
                       Current Biz Cover
                       {/if}
-                      <a href="?id={$smarty.get.id}" onclick="del('business_photo','id','{$i.id}')" class="ctlbtn"><img src="/theme/{$smarty.const._THEME_}/mgt/body/images/b_del.png" alt="Delete" title="Delete" border="0" align="top" />Delete image</a>
+                      <a href="?id={$smarty.get.id}" onclick="del('business_photo','id','{$i.id}')" class="ctlbtn"><i class="fa fa-times"></i> Delete image</a>
                       </th>
                 	  <td width="35%"><img src="/images/business/b_{$i.url}_195x180" /></td>
                       <td><b>Upload Date:</b><br />&nbsp; &nbsp; &nbsp; &nbsp; {$i.date}<br /><br />

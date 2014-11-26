@@ -35,8 +35,8 @@
         {$i.city_name}
         {/if}
         <br />
-        <a href="manage/editoffer.php?id={$i.offer_id}" class="fancybox fancybox.iframe"><img src="/theme/{$smarty.const._THEME_}/images/pencil.png" border=0 /> Edit</a>
-        <a href="manage/deloffer.php?id={$i.offer_id}" class="fancybox fancybox.iframe"><img src="/theme/{$smarty.const._THEME_}/images/b_del.png" border=0 /> Delete</a>
+        <a href="manage/editoffer.php?id={$i.offer_id}" class="fancybox fancybox.iframe"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a href="manage/deloffer.php?id={$i.offer_id}" class="fancybox fancybox.iframe"><i class="fa fa-times"></i> Delete</a>
         
     </div>
     <div class="clearfix"></div>

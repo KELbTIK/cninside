@@ -32,8 +32,8 @@
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                             {*{if $var_topic.edit_btn}*}
                                 {*<a href="/mgt/func/select.php?sheet=deals&where=id&equal={$var_topic.id}&field=id,title,cat_id,subcat_id,user_id,location,content,reply_num,topic_date,reply_time&text=ID,,Category ID,SubcategoryID,Submitter ID,City ID,,Reply Number,Topic Date (YYYYMMDDHHIISS),Last reply time (YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">*}
-                                    {*<img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="Edit" title="Edit" border="0" align="top" /></a>*}
-                                {*<a href="javascript:del('deals','id','{$var_topic.id}')" class="ctlbtn"><img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="Delete" title="Delete" border="0" align="top" /></a>*}
+                                    {*<i class="fa fa-pencil-square-o"></i></a>*}
+                                {*<a href="javascript:del('deals','id','{$var_topic.id}')" class="ctlbtn"><i class="fa fa-times"></i></a>*}
                             {*{/if}*}
                             {$var_topic.date}
                         </div>
@@ -124,9 +124,9 @@
                                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                             {*{if $i.edit_btn}*}
                                                 {*<a href="/mgt/func/select.php?sheet=deals_reply&where=id&equal={$i.id}&field=id,content,user_id,topic_id,reply_date&text=ID,,Submitter ID,Topic ID,Reply date (YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">*}
-                                                    {*<img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="Edit" title="Edit" border="0" align="top" /></a>*}
+                                                    {*<i class="fa fa-pencil-square-o"></i></a>*}
                                                 {*<a href="javascript:del('deals_reply','id','{$i.id}')" class="ctlbtn">*}
-                                                    {*<img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="{l t='Delete'}" title="{l t='Delete'}" border="0" align="top" />*}
+                                                    {*<i class="fa fa-times"></i>*}
                                                 {*</a>*}
                                             {*{/if}*}
                                             {$i.date}
