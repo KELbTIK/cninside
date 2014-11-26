@@ -19,7 +19,6 @@ body,td,th {	font-family: Arial, Helvetica, sans-serif; font-size: 12px;	color: 
 body {margin:0; padding:0; }
 
 
-.box{ float:left; padding:0; border:1px #ccc solid; position:relative;}
 .box  h2 {
 border-bottom:1px solid #CCCCCC;
 display:block;

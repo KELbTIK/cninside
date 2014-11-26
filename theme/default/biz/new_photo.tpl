@@ -1,26 +1,28 @@
 {include file="header.tpl"}
-
 <!--Main Start-->
 <div id="main">
-    <h1 style="padding:10px 20px; border-bottom:1px #ccc solid; margin:5px 10px;">{l t='Upload photo for %s' r=$var_biz.bizname}</h1>
-    <form action="?f=submit&id={$var_biz.id}" method="post" name="frm" id="frm" enctype="multipart/form-data">
-        <table class="table" width="100%" border="0" cellspacing="0">
-            <tr>
-                <td width="40%" height="100" align="center"><h3>{l t='Attach Picture'}</h3></td>
-                <td><input type="file" name="file" id="file" />
-                    (Type: JPEG GIF)
-                </td>
-            </tr>
-            <tr>
-                <td width="40%" height="80" align="center">&nbsp;</td>
-                <td>
-                    <label>
-                        <input type="button" name="button" id="button" value="{l t='Upload'}"  style="height:40px; width:180px;" onclick="this.disabled=true;submit()"/>
-                    </label>
-                </td>
-            </tr>
-        </table>
-    </form>
+    <div class="container">
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{l t='Upload photo for %s' r=$var_biz.bizname}</h3>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" action="?f=submit&id={$var_biz.id}" method="post" name="frm" id="frm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file" class="col-md-5 col-sm-5 col-xs-12 control-label">{l t='Attach Picture'}</label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <input type="file" name="file" id="file" >
+                            <p class="help-block">(Type: JPEG GIF)</p>
+                            <label>
+                                <input type="button" name="button" id="button" value="{l t='Upload'}"  class="btn button-blue" onclick="this.disabled=true;submit()"/>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <!--Main End-->
 {include file="footer.tpl"}

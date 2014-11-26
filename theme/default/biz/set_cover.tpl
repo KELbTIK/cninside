@@ -20,8 +20,6 @@
 body,td,th {	font-family: Arial, Helvetica, sans-serif; font-size: 12px;	color: #000000;}
 body {margin:0; padding:0; }
 
-
-.box{ float:left; padding:0; border:1px #ccc solid; position:relative;}
 .box  h2 {
 border-bottom:1px solid #CCCCCC;
 display:block;
@@ -88,3 +86,42 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

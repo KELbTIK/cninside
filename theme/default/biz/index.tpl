@@ -1,15 +1,11 @@
+
 {include file="header.tpl"}
 <!--Main Start-->
- 
 <div id="main">
-    <div class="content">
-        <div class="left" style="padding-left:10px;">
-            <div id="clear"></div>
+    <br/>
+    <div class="container">
+        <div class="col-md-6 col-xs-12">
             <div class="items">
-                <span class="coner c1"></span>
-                <span class="coner c2"></span>
-                <span class="coner c3"></span>
-                <span class="coner c4"></span>
                 <!--loop-->
                 {foreach from=$var_bestof item=i}
                     <div class="per">
@@ -25,29 +21,26 @@
                 {/foreach}
                 <!--/loop-->
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">{l t='Browse by Category'}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="search.php">{l t='All Categories'}</a></li>
+                            {$var_category_li}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="right">
-            <div class="box catbox rightbox change">
-                <span class="coner c1"></span>
-                <span class="coner c2"></span>
-                <span class="coner c3"></span>
-                <span class="coner c4"></span>
-                <h2>{l t='Browse by Category'}</h2>
-                <ul>
-                    <li><a href="search.php">{l t='All Categories'}</a></li>
-                    {$var_category_li}
-                </ul>
-            </div>
-
-            <div class="box rightbox">
-                <span class="coner c1"></span>
-                <span class="coner c2"></span>
-                <span class="coner c3"></span>
-                <span class="coner c4"></span>
-                {$ads->getAdCode(4)}
-            </div>
+        <div class="col-md-6 col-xs-12 text-center">
+            {$ads->getAdCode(4)}
         </div>
     </div>
 </div>
 <!--Main End-->
 {include file="footer.tpl"}
+
+
