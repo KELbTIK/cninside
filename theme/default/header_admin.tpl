@@ -40,7 +40,7 @@ background-image:url({$smarty.const._LOGO_URL_});
 {if $global_msg}
 <div style="background:#ffe; text-align:center; font-size:12px; padding:5px; border-bottom:1px #ccc solid">{$global_msg}</div>
 {/if}
-<div id="container">
+<div id="container" class="content container">
 <h1>{l t='Admin Area'}</h1>
 <a href="/index.php">{l t='Go to Front End Area'}</a>
 

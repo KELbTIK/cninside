@@ -1,8 +1,5 @@
  {include file="header.tpl"}
 
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
- 
 <script>
 //===========common
 var biz_id="{$smarty.get.id}";

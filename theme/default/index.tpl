@@ -1,7 +1,5 @@
 {include file="header.tpl"}
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script> 
+<script type="text/javascript" src="/theme/{$get_theme}/js/frontend.js"></script>
  <!--Main Start-->
 <div id="main">
     <div class="content container">
@@ -156,7 +154,7 @@
                             <div class="t">
                                 <h3>
                                     {if $i.edit_btn}
-                                        <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox iframe ctlbtn"><i class="fa fa-pencil-square-o"></i></a>
+                                        <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox fancybox.iframe ctlbtn"><i class="fa fa-pencil-square-o"></i></a>
                                         <a href="javascript:del_bizreview('{$i.reviewid}')" class="ctlbtn"><i class="fa fa-times"></i></a>
 
                                     {/if}

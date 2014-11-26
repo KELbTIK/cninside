@@ -42,7 +42,7 @@
                     </div>
                     <div>
                         {if $i.edit_btn}
-                            <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox iframe ctlbtn">
+                            <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox fancybox.iframe ctlbtn">
                                 <i class="fa fa-pencil-square-o"></i>
                             </a>
                             <a href="javascript:del_bizreview('{$i.reviewid}')" class="ctlbtn">
@@ -68,7 +68,7 @@
                                 <a id="ownerreplylink_{$i.reviewid}" href="javascript:showreply('{$i.reviewid}')"><img src="/theme/{$get_theme}/images/alarm_clock.gif" border="0" /> {l t='Owner Reply'}</a> &nbsp;
                             {/if}
                         {/if}
-                        <a href="/flag.php?topicid={$i.bizid}&replyid={$i.reviewid}&zone=2" class="iframe"><i class="fa fa-flag"></i> {l t='Flag as inappropriate'}</a>
+                        <a href="/flag.php?topicid={$i.bizid}&replyid={$i.reviewid}&zone=2" class="fancybox fancybox.iframe"><i class="fa fa-flag"></i> {l t='Flag as inappropriate'}</a>
                     </div>
                     <!--Vote-->
                     <span class="vote{$i.reviewid}">

@@ -28,7 +28,7 @@ include_once(dirname(__FILE__)."/../../inc/func/get_sth_admin.php");
   			<img src="<?=_LOGO_URL_?>" /> [ <a href="javascript:void(0)" onclick="$('#uploadlogo').show(); $('#currentlogo').hide()">Change</a> ]
   		</div>
   		<div id="uploadlogo" style="display:none">
-  			Filename: /images/<input id="_LOGO_URL_" value="<?=_LOGO_URL_ORIGINAL_?>" style=" width:100px" /> <a href="/mgt/new_photo.php?url=_LOGO_URL_&folder=images&max_width=310&max_height=76" class="fancybox iframe" id="uploadbtn">[ Upload ]</a> 
+  			Filename: /images/<input id="_LOGO_URL_" value="<?=_LOGO_URL_ORIGINAL_?>" style=" width:100px" /> <a href="/mgt/new_photo.php?url=_LOGO_URL_&folder=images&max_width=310&max_height=76" class="fancybox fancybox.iframe" id="uploadbtn">[ Upload ]</a>
         		<span id="uploaded" style="display:none; color:green"> Image uploaded, please click "Apply Settings" on the bottom</span>
   			<br /><em>Leave blank to restore default. Max-width: 310px, Max-height: 76px</em>
   		</div>

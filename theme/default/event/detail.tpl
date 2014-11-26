@@ -1,7 +1,5 @@
 {include file="header.tpl"}
 
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/default/js/star.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/default/js/link.js"></script>
 
@@ -90,7 +88,7 @@ else
                             {l t='Event detail for'} {$var_biz.bizname}
                             {if $var_biz.edit_btn}
                             <span class="pull-right">
-                                <a href="/mgt/body/event_edit.php?id={$var_biz.id}" class="iframe btn button-blue">{l t='Edit'}</a>
+                                <a href="/mgt/body/event_edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue">{l t='Edit'}</a>
                                 &nbsp;&nbsp;
                                 <a href="javascript:del_event('eventm', 'id',{$var_biz.id})" class="btn button-blue">{l t='Delete'}</a>
                             </span>
@@ -244,7 +242,7 @@ else
                                         </div>
                                         <div class="pull-right">
                                             {if $i.edit_btn}
-                                                <a href="/mgt/func/select.php?sheet=event_discuss&where=event_discuss_id&equal={$i.comment_id}&field=event_discuss_id,event_id,user_id,event_desc,reply_date&text=Review ID,Event ID,Reviewer ID,Review Content,Review Date(YYYYMMDDHHIISS)" class="fancybox iframe ctlbtn">
+                                                <a href="/mgt/func/select.php?sheet=event_discuss&where=event_discuss_id&equal={$i.comment_id}&field=event_discuss_id,event_id,user_id,event_desc,reply_date&text=Review ID,Event ID,Reviewer ID,Review Content,Review Date(YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">
                                                     <img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="Edit" title="Edit" border="0" align="top" />
                                                 </a>
                                                 <a href="javascript:del('event_discuss','event_discuss_id','{$i.comment_id}')" class="ctlbtn">
@@ -353,7 +351,7 @@ else
                                             <a href="?id={$i.id}">{$i.name}</a>
                                             {if $i.edit_btn}
                                                 &nbsp;
-                                                <a href="/mgt/body/event_edit.php?id={$i.id}" class="fancybox iframe ctlbtn">
+                                                <a href="/mgt/body/event_edit.php?id={$i.id}" class="fancybox fancybox.iframe ctlbtn">
                                                     <i class="fa fa-pencil-square-o"></i>
                                                 </a>
                                             {/if}

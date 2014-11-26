@@ -85,9 +85,9 @@ if (_PAYPAL_ENABLE_){
              while($row=mysql_fetch_array($result)){
                  
                  if ($i == 0){
-                    $paypal_pricing .=  "  <input type=\"radio\" checked=\"checked\" name=\"amount\" value=\"".$row['price']."\"> ".$row['title']."<br/>"; 
+                    $paypal_pricing .=  " <div class=\"radio\"> <label> <input type=\"radio\" checked=\"checked\" name=\"amount\" value=\"".$row['price']."\"> ".$row['title']."</label></div>";
                  }else{
-                    $paypal_pricing .=  "  <input type=\"radio\" name=\"amount\" value=\"".$row['price']."\"> ".$row['title']."<br/>"; 
+                    $paypal_pricing .=  " <div class=\"radio\"> <label> <input type=\"radio\" name=\"amount\" value=\"".$row['price']."\"> ".$row['title']."</label></div>";
                  }
                  $i++;
              }

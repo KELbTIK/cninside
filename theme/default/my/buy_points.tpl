@@ -41,12 +41,16 @@
                                             <label class="control-label">{$var_user.fullname} ({$var_user.email})</label>
                                         </div>
                                     </div>
+                                    {if $paypal_pricing}
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">{l t='Amount'}</label>
-                                        <div class="col-sm-8">
-                                            {if $paypal_pricing}
-                                                <label class="control-label">{$paypal_pricing} &nbsp;</label>
-                                            {/if}
+                                        <div class="col-sm-8 register">
+                                            {$paypal_pricing}
+                                        </div>
+                                    </div>
+                                    {/if}
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-4 col-sm-8">
                                             <input type="submit" name="button" id="button" class="trialBbtn btn button-blue" value="{l t='Pay Now'}" />
                                         </div>
                                     </div>

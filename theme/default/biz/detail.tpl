@@ -1,5 +1,11 @@
 {include file="header.tpl"}
-
+{literal}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+    </script>
+{/literal}
 <script type="text/javascript">
 //program global values
 var googleMapEnabled='{$smarty.const._GOOGLE_MAP_ENABLED_}';
@@ -15,8 +21,6 @@ var y='{$var_biz.y}';
 var x='{$var_biz.x}';
 var currentOfferId='{$var_biz.offer_id}';
 </script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
-<script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/jquery.fancybox-1.2.1.pack.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/star.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/link.js"></script>
 <script language="javascript" type="text/javascript" src="/theme/{$get_theme}/js/biz_detail.js"></script>
@@ -38,6 +42,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
  <!--Main Start-->
 <div id="main">
     <div class="content container">
+    {*<a class="fancybox" rel="group" href="http://4.bp.blogspot.com/_be29zjTcK5I/TS8sVSU-GCI/AAAAAAAAJ5Y/p3n_q42BqrI/s1600/Scarlett_Johansson_41.jpg"><img src="http://4.bp.blogspot.com/_be29zjTcK5I/TS8sVSU-GCI/AAAAAAAAJ5Y/p3n_q42BqrI/s1600/Scarlett_Johansson_41.jpg" alt="" /></a>*}
         <div class="row">
             <div class="col-xs-12">
                 <div class="panel panel-info">
@@ -373,7 +378,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                     </div>
                                     {if $var_biz.video_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="#testube" id="videobox" class="iframe btn button-blue btn-block">{l t='View Video'}</a>
+                                            <a href="#testube" id="videobox" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='View Video'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.applystarbiz_btn}
@@ -381,13 +386,13 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                             {if $smarty.const._PAYPAL_ENABLE_}
                                                 <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="btn button-blue btn-block">{l t='Apply StarBiz'}</a>
                                             {else}
-                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="iframe btn button-blue btn-block">{l t='Apply StarBiz'}</a>
+                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Apply StarBiz'}</a>
                                             {/if}
                                         </div>
                                     {/if}
                                     {if $var_biz.claim_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/{$smarty.const._BIZ_DIR_}/claim.php?id={$var_biz.id}" class="iframe btn button-blue btn-block">{l t='Claim Listing'}</a>
+                                            <a href="/{$smarty.const._BIZ_DIR_}/claim.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Claim Listing'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.logintoclaim_btn}
@@ -397,12 +402,12 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                     {/if}
                                     {if $admin_type}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/mgt/body/business_edit.php?id={$var_biz.id}" class="iframe btn button-blue btn-block">{l t='Edit Details'}</a>
+                                            <a href="/mgt/body/business_edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Edit Details'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.edit_btn AND $admin_type==''}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/{$smarty.const._BIZ_DIR_}/edit.php?id={$var_biz.id}" class="iframe btn button-blue btn-block">{l t='Edit Details'}</a>
+                                            <a href="/{$smarty.const._BIZ_DIR_}/edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Edit Details'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.edit_btn}
@@ -423,7 +428,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                     <div class="map well">
                                         <div id="map_canvas" style="height: 340px;">{l t='Loading Map'}...</div>
                                         <br />
-                                        <a href="/{$smarty.const._BIZ_DIR_}/directions.php?id={$var_biz.id}" class="iframe btn button-blue" id="map_direction_btn" style="display:none">{l t='Get Directions'}</a>
+                                        <a href="/{$smarty.const._BIZ_DIR_}/directions.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue" id="map_direction_btn" style="display:none">{l t='Get Directions'}</a>
                                         <div class="clearfix"></div>
                                     </div><!-- End .content .detail .map -->
                                 {else}
@@ -567,9 +572,9 @@ var t_owner="{l t='You are not allowed to review your own business'}";
 
                 <div id="testube" style="display: none; overflow:hidden">
                     <object width="853" height="505" style="display:none">
-                        <param name="movie" value="{$var_biz.video_url}"></param>
-                        <param name="allowFullScreen" value="true"></param>
-                        <param name="allowscriptaccess" value="always"></param>
+                        <param name="movie" value="{$var_biz.video_url}">
+                        <param name="allowFullScreen" value="true">
+                        <param name="allowscriptaccess" value="always">
                         <embed src="{$var_biz.video_url}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="853" height="505"></embed>
                     </object>
                 </div>
@@ -590,7 +595,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                     <div class="t">
                                         <h3>
                                             {if $admin_type}
-                                                <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox iframe ctlbtn">
+                                                <a href="/mgt/func/select.php?sheet=business_reviews&where=review_id&equal={$i.reviewid}&field=review_id,review_desc,review_date,user_id,business_id,rating,cat_id,city_id&text=ID,Review content,Review date (YYYYMMDDHHIISS),Submitter,Business ID,Conmment Rating,Category ID,City ID" class="fancybox fancybox.iframe ctlbtn">
                                                     <i class="fa fa-pencil-square-o"></i>
                                                 </a>
                                                 <a href="javascript:del_bizreview('{$i.reviewid}')" class="ctlbtn">

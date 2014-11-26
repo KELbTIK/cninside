@@ -2,8 +2,9 @@ $(document).ready(function() {
     fancybox();
     $("#topBtn").click(function() {
         $("html, body").animate({ scrollTop: 0 }, "slow");
-    return false;
+        return false;
     });
+
 });
 
 //////

@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                             {*{if $var_topic.edit_btn}*}
-                                {*<a href="/mgt/func/select.php?sheet=deals&where=id&equal={$var_topic.id}&field=id,title,cat_id,subcat_id,user_id,location,content,reply_num,topic_date,reply_time&text=ID,,Category ID,SubcategoryID,Submitter ID,City ID,,Reply Number,Topic Date (YYYYMMDDHHIISS),Last reply time (YYYYMMDDHHIISS)" class="fancybox iframe ctlbtn">*}
+                                {*<a href="/mgt/func/select.php?sheet=deals&where=id&equal={$var_topic.id}&field=id,title,cat_id,subcat_id,user_id,location,content,reply_num,topic_date,reply_time&text=ID,,Category ID,SubcategoryID,Submitter ID,City ID,,Reply Number,Topic Date (YYYYMMDDHHIISS),Last reply time (YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">*}
                                     {*<img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="Edit" title="Edit" border="0" align="top" /></a>*}
                                 {*<a href="javascript:del('deals','id','{$var_topic.id}')" class="ctlbtn"><img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="Delete" title="Delete" border="0" align="top" /></a>*}
                             {*{/if}*}
@@ -85,7 +85,7 @@
                                 <button type="button" class="btn button-blue" data-toggle="modal" data-target="#myModal">
                                     {l t='Flag this'}
                                 </button>
-                                {*<a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=0" class="iframe btn button-blue pull-right col-xs-12">*}
+                                {*<a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=0" class="fancybox fancybox.iframe btn button-blue pull-right col-xs-12">*}
                                     {*{l t='Flag this'}*}
                                     {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" width="65" height="21" border="0" />*}
                                 {*</a>*}
@@ -123,7 +123,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6 text-right">
                                             {*{if $i.edit_btn}*}
-                                                {*<a href="/mgt/func/select.php?sheet=deals_reply&where=id&equal={$i.id}&field=id,content,user_id,topic_id,reply_date&text=ID,,Submitter ID,Topic ID,Reply date (YYYYMMDDHHIISS)" class="fancybox iframe ctlbtn">*}
+                                                {*<a href="/mgt/func/select.php?sheet=deals_reply&where=id&equal={$i.id}&field=id,content,user_id,topic_id,reply_date&text=ID,,Submitter ID,Topic ID,Reply date (YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">*}
                                                     {*<img src="/theme/{$get_theme}/mgt/body/images/b_edit.png" alt="Edit" title="Edit" border="0" align="top" /></a>*}
                                                 {*<a href="javascript:del('deals_reply','id','{$i.id}')" class="ctlbtn">*}
                                                     {*<img src="/theme/{$get_theme}/mgt/body/images/b_del.png" alt="{l t='Delete'}" title="{l t='Delete'}" border="0" align="top" />*}
@@ -132,7 +132,7 @@
                                             {$i.date}
                                         </div>
                                         <h4 class="col-xs-12">{$i.message}</h4>
-                                        <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=0" class="iframe">
+                                        <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=0" class="fancybox fancybox.iframe">
                                             <input type="button" class="btn button-blue pull-right" value="{l t='Flag this'}">
                                             {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/>*}
                                         </a>
