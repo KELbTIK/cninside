@@ -15,6 +15,7 @@
 <style type="text/css">
     <!--
     #galleria{height:400px;}
+    .galleria-images{left:0!important}
     -->
 </style>
 <script>

@@ -72,7 +72,7 @@
                                                 </div>
                                                 <div class="panel-body text-center">
                                                     <div>{$i.reviewnum} {l t='reviews'}</div>
-                                                    <div class="photoBox"><a href="/{$smarty.const._CAT_DIR_}/{$i.catpermalink}/" ><img class="img-responsive center-block img-thumbnail" src="http://cninsider.com/images/business/{$i.picurl}_150x95" /></a></div>
+                                                    <div class="photoBox"><a href="/{$smarty.const._CAT_DIR_}/{$i.catpermalink}/" ><img class="img-responsive center-block img-thumbnail" src="/images/business/{$i.picurl}_150x95" /></a></div>
                                                     <ol class="best-list">
                                                         {$i.bizli}
                                                     </ol>
@@ -247,7 +247,7 @@
                                     <div class="pic col-md-4 col-sm-4 col-xs-4">
                                         <div class="photoBox">
                                             <a href="{$smarty.const._BIZ_DIR_}/{$var_hotbiz.bizurl}">
-                                                <img class="img-responsive" src="http://cninsider.com/images/business/{$var_hotbiz.picurl}_100x100" />
+                                                <img class="img-responsive" src="/images/business/{$var_hotbiz.picurl}_100x100" />
                                             </a>
                                         </div>
                                     </div>

@@ -71,7 +71,7 @@ $(document).ready(function() {
                         <li class="list-group-item">
                             <div>
                                 <div class="photoBox pull-left">
-                                    <a href="/{$smarty.const._BIZ_DIR_}/{$i.bizurl}"><img src="http://cninsider.com/images/business/{$i.picurl}_80x80" /></a>
+                                    <a href="/{$smarty.const._BIZ_DIR_}/{$i.bizurl}"><img src="/images/business/{$i.picurl}_80x80" /></a>
                                 </div>
                             </div>
                             <div>
