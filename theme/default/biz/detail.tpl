@@ -377,7 +377,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                     {if $var_biz.applystarbiz_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
                                             {if $smarty.const._PAYPAL_ENABLE_}
-                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="btn button-blue btn-block">{l t='Apply StarBiz'}</a>
+                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Apply StarBiz'}</a>
                                             {else}
                                                 <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Apply StarBiz'}</a>
                                             {/if}

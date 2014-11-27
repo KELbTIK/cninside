@@ -78,15 +78,15 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
                     </tr>
                     <tr>
                         <th>{l t='Your name'}</th>
-                        <td><input name="name" type="text" id="name" style="width:100%;" value="{$var_me.fullname}" /></td>
+                        <td><input class="form-control" name="name" type="text" id="name" style="width:100%;" value="{$var_me.fullname}" /></td>
                     </tr>
                     <tr>
                         <th>{l t='Your phone number'}</th>
-                        <td><input name="phone" type="text" id="phone" style="width:100%;" value="{$var_biz.phone}" /></td>
+                        <td><input class="form-control" name="phone" type="text" id="phone" style="width:100%;" value="{$var_biz.phone}" /></td>
                     </tr>
                     <tr>
                         <th>{l t='Your email'}</th>
-                        <td><input name="email" type="text" id="email" style="width:100%;" value="{$var_me.email}" /></td>
+                        <td><input class="form-control" name="email" type="text" id="email" style="width:100%;" value="{$var_me.email}" /></td>
                     </tr>
                     <tr>
                         <th>{l t='Are you the owner?'}</th>
@@ -95,7 +95,7 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
                     </tr>
                     <tr>
                         <th>{l t='Claim testimony'}</th>
-                        <td><textarea name="information" id="information" style="width:100%; height:100px;"></textarea></td>
+                        <td><textarea class="form-control" name="information" id="information" style="width:100%; height:100px;"></textarea></td>
                     </tr>
                     <tr>
                         <th>&nbsp;</th>
