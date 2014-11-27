@@ -18,6 +18,7 @@
     <link href="/theme/{$get_theme}/css/style.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" language="JavaScript" src="/theme/{$get_theme}/js/pt/src/jquery.ptTimeSelect.js"></script>
 </head>
+
 {literal}
 <style type="text/css">
 th{ background:#f0f7fe}
@@ -46,17 +47,16 @@ function validate_permalink(permalink)
 </script>
 
 {/literal}
-<body style="background:none;">
+<body>
 <div id="container">
  <!--Main Start-->
  <div class="panel panel-info">
      <div class="panel-heading">
          <div class="panel-title text-center">
-                 Еdit business {$var_biz.bizname}
+             {l t='Еdit business '}{$var_biz.bizname}
          </div>
      </div>
      <div class="detail">
-
      {if $msg}
          <p>&nbsp;</p>
          <p>&nbsp;</p>
@@ -443,7 +443,7 @@ function validate_permalink(permalink)
          </tr>
          <tr>
              <th>{l t='Business Cover Image'}</th>
-             <td><img class="img-responsive" src="/images/business/{$var_biz.picurl}_100x100" style="vertical-align:middle" /> &nbsp; &nbsp;<a href="business_cover.php?id={$var_biz.id}" onclick="if(confirm('You are going to Business Images Management Page without saving changes.\n\rSure to continue and abort changes?')==0) return false ;">{l t='Change Cover Image / Manage Images'}</a></td>
+             <td><img class="img-responsive" src="/images/business/{$var_biz.picurl}_100x100" style="vertical-align:middle" /><a href="business_cover.php?id={$var_biz.id}" onclick="if(confirm('You are going to Business Images Management Page without saving changes.\n\rSure to continue and abort changes?')==0) return false ;">{l t='Change Cover Image / Manage Images'}</a></td>
          </tr>
          <tr>
              <th>{l t='Map Position'}</th>
