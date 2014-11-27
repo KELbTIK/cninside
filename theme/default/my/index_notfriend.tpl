@@ -87,8 +87,8 @@ function commentclick(who){
 function commentblur(who){
                                 if(who.value=='')
                                 {
-                                if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-                                $('#commentbtn').attr('disabled','disabled');
+//                                if (!( $.browser.msie && parseInt($.browser.version)==6 ))
+//                                $('#commentbtn').attr('disabled','disabled');
                                 who.value=cmttext;
                                 who.style.color='#999';
                                 }}
@@ -212,9 +212,9 @@ $('#commenttext').css('backgroundColor','#FAA');
                     <div class="panel-heading">
                         <h3 class="panel-title">{l t='Latest Comment'}</h3>
                     </div>
+                    <ul id="cmt" class="list-group list-comment"></ul>
                     <div class="panel-body">
                         <div class="row">
-                            <div id="cmt" class="form-group"></div>
                             <div class="col-md-8 col-sm-12 col-xs-12">
                                 <input class="form-control" type="text" name="comment" id="commenttext" value="{l t='Click to comment'}" onfocus="commentclick(this)" onblur="commentblur(this)">
                             </div>

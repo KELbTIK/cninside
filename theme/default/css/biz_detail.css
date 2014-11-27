@@ -53,7 +53,7 @@ padding:5px;
 
 h1#current_text{ background:none; font-weight:bold; font-size:14px;}
 
-#tips{position:absolute; width:240px; height:35px; background:#fff url(../images/tips-bg.png) 0 -15px repeat-x; top:570px; left:270px; border:#999 solid 2px; z-index:99999;
+#tips{position:absolute; width:240px; height:57px; background:#fff url(../images/tips-bg.png) 0 -15px repeat-x; top:570px; left:270px; border:#999 solid 2px; z-index:99999;
 padding:20px 30px 0 50px; text-align:center;
 -moz-border-radius:6px;
 -moz-box-shadow:0 4px 18px #C8C8C8;

@@ -684,3 +684,10 @@ ul.navigation li {	font-family:Arial, Helvetica, sans-serif;    display: inline;
 }
 /*end business*/
 
+/*start gallery*/
+.galleria-images{left:0!important}
+/*end gallery*/
+
+.list-comment #digg{
+    margin-bottom: 0;
+}

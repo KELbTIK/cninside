@@ -94,8 +94,8 @@ function submitreply(id,reviewid)
 			  alert("Please input your reply!");
 			  return;
 		   }
-		   if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-			$('#sr').css('opacity',0.3);
+//		   if (!( $.browser.msie && parseInt($.browser.version)==6 ))
+//			$('#sr').css('opacity',0.3);
 			$.post("/biz/func/getreview.php?"+Math.random(), {
 			id:id,
 			reviewid:reviewid,
@@ -161,8 +161,8 @@ $('#wait').show();
 				alert("Please Login!");
 				return;
 			}
-			if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-			$('#reviewTitle').ScrollTo(30);
+//			if (!( $.browser.msie && parseInt($.browser.version)==6 ))
+//			$('#reviewTitle').ScrollTo(30);
 			$('#sr').css('opacity',0.3);
 			$('#review').val('');
 			if (has_ratings == 1){
@@ -200,8 +200,8 @@ $('#wait').show();
                 alert("Please Login!");
                 return;
             }
-            if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-            $('#reviewTitle').ScrollTo(30);
+//            if (!( $.browser.msie && parseInt($.browser.version)==6 ))
+//            $('#reviewTitle').ScrollTo(30);
             $('#sr').css('opacity',0.3);
             $('#review').val('');
 
@@ -218,8 +218,8 @@ $('#wait').show();
 
  }else //not review
   {
-	  if (!( $.browser.msie && parseInt($.browser.version)==6 ))
-	  	$('#sr').css('opacity',0.3);
+//	  if (!( $.browser.msie && parseInt($.browser.version)==6 ))
+//	  	$('#sr').css('opacity',0.3);
 	  var order=$('#sortby').val();
 	  var searchtext = $('#searchreviewtext').val();
 	  if(!searchtext||searchtext==t_defaultsearchtext) searchtext='';
@@ -237,7 +237,7 @@ $('#wait').show();
 function nav(data)
 {
 	$('#sr').html(data);
-	if (!( $.browser.msie && parseInt($.browser.version)==6 ))
+//	if (!( $.browser.msie && parseInt($.browser.version)==6 ))
 	$('#sr').css('opacity',1);
 	/*
 	$('#sr').show();

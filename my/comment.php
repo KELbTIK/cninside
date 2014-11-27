@@ -103,22 +103,23 @@ while($row=mysql_fetch_array($rc))
 {
 $found="yes";
 ?>
-<div style="font-family:Arial; line-height:20px; float:left; width:100%; padding-top:5px;" class="comment_item" onmouseover="item_hover(this)" onmouseout="item_out()" onclick="item_click('<?=get_user_data(nameORemail,$row[user_id])?>')">
+<li class="list-group-item comment_item" onmouseover="item_hover(this)" onmouseout="item_out()" onclick="item_click('<?=get_user_data(nameORemail,$row[user_id])?>')">
 <div style="float:left; overflow:hidden;">
-	<div class="photoBox" style="margin-right:5px;">
-    	<img src="../images/photos/p_<?=get_user_data(photo_url,$row[user_id])?>_16x16" width="16" height="16"  />
+	<div class="photoBox">
+    	<img class="img-responsive" src="../images/photos/p_<?=get_user_data(photo_url,$row[user_id])?>_16x16" width="16" height="16"  />
      </div>
     <a href="./?id=<?=$row[user_id]?>"><?=get_user_data(nameORemail,$row[user_id])?></a> <?=l('says')?>:
 </div>
-<div style="float:right; white-space: nowrap; font-size:10px"><?=turn_date($row[reply_date],ftimeordate)?></div>
+<div class="pull-right"><?=turn_date($row[reply_date],ftimeordate)?></div>
 <div class="clearfix"></div>
-<div style="padding-left:15px; padding-bottom:5px; padding-top:5px; border-bottom:1px #ccc dashed;">
-<?=$row[comment]?></div>
+<div>
+    <?=$row[comment]?>
 </div>
+</li>
 <?php
 }
 if($found)
-echo get_page_list($_GET[page],$rows,5,',\'cmt\''); //($CurPage,$TotalItem,$PageSize)
+echo "<li class=\"list-group-item text-center\">".get_page_list($_GET[page],$rows,5,',\'cmt\'')."</li>"; //($CurPage,$TotalItem,$PageSize)
 else
 echo "<div class=\"text-center\"><br/>".l("No Comment")."<br/>&nbsp;</div>";
 ?>

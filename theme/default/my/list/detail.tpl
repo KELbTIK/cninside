@@ -1,23 +1,20 @@
 {include file="header.tpl"}
 <script>
-var id={$var.id};
+    var id={$var.id};
 </script>
 {literal}
-
-<script type="text/javascript">
-function get(nothing,page)
-{
-    location='?page='+page+'&id='+id;
-}
-</script>
+    <script type="text/javascript">
+        function get(nothing,page){
+            location='?page='+page+'&id='+id;
+        }
+    </script>
 {/literal}
 
  <!--Main Start-->
 
  <div id="main">
-    <div class="container">
+    <div class="content container">
         <div class="row">
-            <br/>
             <div class="col-md-9 col-sm-8 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -59,7 +56,7 @@ function get(nothing,page)
                             {if !$var_lists.found}
                                 <div class="col-xs-12">
                                     <div class="clearfix"></div>
-                                    <div class="text-center"><{l t='No result found'}.</div>
+                                    <div class="text-center">{l t='No result found'}.</div>
                                 </div>
                             {else}
                                 <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>

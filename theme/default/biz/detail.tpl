@@ -216,7 +216,8 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                 {if $var_biz.edit_btn} {* if isOwner, offer is modify-able *}
                                     <div class="special_offer alert alert-warning pull-left" id="special_offer_edit">
                                         {* if hasOffer, edit *}
-                                        <div class="preview_offer text-right" onclick="$('.edit_offer_div').slideDown(); $(this).slideUp();" style="display:{if !$var_biz.offer_id}none{/if}">
+                                        <div class="preview_offer text-right" onclick="$('.edit_offer_div').slideDown(); $(this).slideUp();" style="
+                                                display:{if !$var_biz.offer_id}none{/if}">
                                             <i class="fa fa-pencil-square-o"></i>
                                             {if $var_biz.title} <b>{$var_biz.title}</b>  <br> {/if}
                                             {$var_biz.offer_description}

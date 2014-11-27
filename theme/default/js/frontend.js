@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    $(".fancybox").fancybox();
+    $(".fancybox").fancybox({
+        minHeight: 300
+    });
     fancybox();
     $("#topBtn").click(function() {
         $("html, body").animate({ scrollTop: 0 }, "slow");
