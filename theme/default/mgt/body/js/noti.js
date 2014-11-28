@@ -157,7 +157,7 @@ function save_page_edit()
     if(data){
        alert(data); 
     }
-    parent.jQuery.fancybox.close();
+    parent.$.fn.fancybox.close();
 
     });
 }

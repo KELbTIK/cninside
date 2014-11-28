@@ -198,7 +198,7 @@ function judge_finish(id)
 	where:'id',
 	equal:id
 	},function(data){
-        jQuery.fancybox.close();
+		$.fn.fancybox.close();
 		tips('Claim Judged.');
 	});	
 }
