@@ -363,6 +363,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                         </div>
                                     </div>
                                 </div><!-- End .content .detail .info .weather -->
+                                <div class="clearfix"></div>
                                 <div class="btns row">
                                     <div class="col-md-4 col-sm-4 col-xs-12 form-group">
                                         <a href="/my/func.php?f=addbookmark&id={$var_biz.id}" class="btn button-blue btn-block">{l t='Bookmark Listing'}</a>

@@ -179,54 +179,67 @@ google.maps.event.addListener(map,"dragend", function() {
 
 
     <link href="/theme/<?=_THEME_?>/mgt/body/css/common.css" rel="stylesheet" />
+    <link href="/theme/<?=_THEME_?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
 </head>
 
 <body id="popup">
-   <form action="?id=<?=$equal?>" method="post">
-   <TABLE cellSpacing=1 cellPadding=4 width="100%"  border=0>
-  <TBODY>
-  <TR class="td_title">
-    <TD colspan="2">Map Adjustment</TD>
-</TR>
-<TR bgColor=#ffffff>
-  <TD align="center" bgColor=#FFFFFF>
-    <div id="map_canvas" style="width: 333px; height: 338px; overflow:hidden; border:1px #ccc solid; margin:0 auto;"><center>Please wait...</center>
-    </div></TD>
-    <td><table border="0" cellpadding="0">
-<tr bgColor=#ffffff>
-  <td width="40%" align="right"> Marker X</td>
-<td> <input name="x" type="text" id="x" value="<?=$x?>" /></td>
-</tr>
-<tr bgColor=#ffffff>
-  <td width="40%" align="right">Marker Y</td>
-  <td>  <input name="y" type="text" id="y" value="<?=$y?>" /> </td>
-</tr>
-<tr bgColor=#ffffff>
-  <td width="40%" align="right">Zoom</td>
-  <td> <input name="zoom" type="text" id="zoom" value="<?=$zoom?>" />      </td>
-</tr>
-<tr bgColor=#ffffff>
-  <td width="40%" align="right">Map X</td>
-  <td><input name="mapx" type="text" id="mapx" value="<?=$mapx?>" /></td>
-</tr>
-<tr bgColor=#ffffff>
-  <td width="40%" align="right">Map Y</td>
-  <td>
-      <input name="mapy" type="text" id="mapy" value="<?=$mapx?>" /></td>
-</tr>
-    </table></td>
-</TR>
-<tr bgColor=#ffffff>
-  <td colspan="2" align="center">If you want to make a "No Map" item, <br />
-    please delete the value in ZOOM field.
-<input name="id" type="hidden" id="id" value="<?=$equal?>" /></td>
-</tr>
-<tr bgColor=#ffffff>
-  <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Update" /></td>
-</tr>
-</TBODY></TABLE></TD></TR></TABLE></form>
+<form action="?id=<?=$equal?>" method="post" class="form-horizontal">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">Map Adjustment</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-sm-6 col-xs-12">
+                <div id="map_canvas" style="height: 338px; overflow:hidden; border:1px #ccc solid; margin:0 auto;">
+                    <div class="text-center">Please wait...</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Marker X</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" name="x" type="text" id="x" value="<?=$x?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Marker Y</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" name="y" type="text" id="y" value="<?=$y?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Zoom</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" name="zoom" type="text" id="zoom" value="<?=$zoom?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Map X</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" name="mapx" type="text" id="mapx" value="<?=$mapx?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Map Y</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" name="mapy" type="text" id="mapy" value="<?=$mapx?>" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 text-center">
+                <br/>
+                <div class="small">
+                    If you want to make a "No Map" item, <br />
+                    please delete the value in ZOOM field.
+                    <input name="id" type="hidden" id="id" value="<?=$equal?>" />
+                </div>
+                <input class="btn btn-primary" type="submit" name="button" id="button" value="Update" />
+            </div>
+        </div>
+    </div>
+</form>
 
 <script>setTimeout("initialize()",500);</script>
-                                        </body>
+</body>
 </html>
