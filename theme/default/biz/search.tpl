@@ -154,11 +154,7 @@ function nav()
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <div class="page_number">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
                         </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="pull-right">
-                                {$var_lists.pager}
-                            </div>
-                        </div>
+                        <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
                     </div>
                 {/if}
                 <div class="clearfix"></div>

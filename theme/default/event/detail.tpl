@@ -267,7 +267,7 @@ else
                             </div>
                         </div>
                     {else}
-                        {$var_lists.pager}
+                        <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
                     {/if}
 
                     <div class="clearfix"></div>

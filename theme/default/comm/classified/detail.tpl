@@ -204,7 +204,7 @@
     <a name="bottom"></a>
 </div>
 
-{$var_lists.pager}
+<div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
 <div class="clearfix"></div>
 
 <form action="javascript:get({$var_topic.id},1,3);" name="reply" method="post">
