@@ -16,3 +16,8 @@
 .table_margin_bottom{
     margin-bottom: 0;
 }
+
+.clear-padding{
+    padding-left: 0;
+    padding-right: 0;
+}
