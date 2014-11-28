@@ -1,10 +1,5 @@
 {include file="header.tpl"}
 {literal}
-<style type="text/css">
-<!--
-#main {height:auto;}
--->
- </style>
  <script type="text/javascript" language="javascript">
 
 function getHTTPObject() {
@@ -35,21 +30,26 @@ http.send(null);
 </script>
 {/literal}
  <!--Main Start-->  
- <div id="main">
- <h1 style="padding:10px 20px; border-bottom:1px #ccc solid; margin:5px 10px;">{l t='Photos for %s' r=$var_biz.bizname}</h1><table width="100%" border="0" cellspacing="0">
-  <tr>
-    <td width="100%" height="400" align="center">
- 	<div id="photo"><img src="../images/event/{$var_biz.picurl}" /></div></td>
-  </tr>
-</table>
-<h3 style="text-align:right;"><a href="new_photo.php?id={$var_biz.bizid}">{l t='Upload photo for %s' r=$var_biz.bizname}...</a>&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-<!--loop-->
- {foreach from=$var_pic item=i}
-    <div class="photoBox" style="padding:10px;"><a href="javascript:get('../images/event/{$i.picurl}')"><img src="../images/event/{$i.picurl}_100x100" border="0" /></a>
+<div id="main">
+    <div class="content container">
+        <div class="row">
+            <h1>{l t='Photos for %s' r=$var_biz.bizname}</h1>
+            <div id="photo"><img class="img-responsive" src="../images/event/{$var_biz.picurl}" /></div>
+
+            <h3 class="text-right"><a href="new_photo.php?id={$var_biz.bizid}">{l t='Upload photo for %s' r=$var_biz.bizname}...</a></h3>
+            <!--loop-->
+            <ul class="list-group">
+                {foreach from=$var_pic item=i}
+                    <li class="list-group-item">
+                        <div class="photoBox">
+                            <a href="javascript:get('../images/event/{$i.picurl}')"><img class="img-responsive" src="../images/event/{$i.picurl}_100x100" border="0" /></a>
+                        </div>
+                    </li>
+                {/foreach}
+                <!--/loop-->
+            </ul>
+        </div>
     </div>
-{/foreach}
-<!--/loop-->
- 	</div>
- </div>
- <!--Main End-->
- {include file="footer.tpl"}
+</div>
+<!--Main End-->
+{include file="footer.tpl"}
