@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Generator" content="MeePlace {$smarty.const._VERSION_}" />
-<script src="/theme/{$get_theme}/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="/theme/{$get_theme}/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
 
     <link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/doc/styles/main.css" media="screen" />
@@ -11,96 +11,74 @@
 	<link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/example/ui.core.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/example/ui.theme.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/example/css/timecntr/jquery-ui-1.7.1.custom.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/src/jquery.ptTimeSelect.css" media="screen" />
+    <link href="/theme/{$get_theme}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="/theme/{$get_theme}/js/pt/src/jquery.ptTimeSelect.css" media="screen" />
 	<script type="text/javascript" language="JavaScript" src="/theme/{$get_theme}/js/pt/src/jquery.ptTimeSelect.js"></script>
 	<script src="/theme/{$get_theme}/js/ajax.js?100510" type="text/javascript"></script>
 	<script type="text/javascript" language="JavaScript" src="/theme/{$get_theme}/js/biz_new.js"></script>
 </head>
-{literal}
-<style type="text/css">
-* { margin:0; padding:0; }
-body,td,th {	font-family: Arial, Helvetica, sans-serif; font-size: 12px;	color: #000000;}
-body {margin:0; padding:0; }
 
-
-.box{ float:left; padding:0; border:1px #ccc solid; position:relative;}
-.box  h2 {
-border-bottom:1px solid #CCCCCC;
-display:block;
-font-size:18px;
-font-weight:normal;
-padding:0 0 10px 10px;
-}
-
-.change{ background:url(../images/box-bg.gif) repeat-x #EBEBEB; }
-
-
-.coner{ position:absolute; height:5px; width:5px; display:block;}
-
- .c1{ background:url(../images/left-top-corner.gif) no-repeat; top:-1px; left:-1px;}
- .c2{ background:url(../images/right-top-corner.gif) no-repeat; top:-1px; right:-1px;}
- .c3{ background:url(../images/left-bot-corner.gif) no-repeat; bottom:-1px; _bottom:-12px;  left:-1px;}
- .c4{ background:url(../images/right-bot-corner.gif) no-repeat; bottom:-1px; _bottom:-12px;  right:-1px; _right:-2px;}
-.blue { margin:0; width:99.6%; padding:0}
-.blue h1{ margin:0 }
-th{ background:#f0f7fe}
-td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
-</style>
-
-{/literal}
-<body style="background:none;">
-<div id="container">
- <!--Main Start-->  
-  <div class="detail blue">
-         <span class="coner c1b"></span>
-        <span class="coner c2b"></span>
-        <span class="coner c3b"></span>
-        <span class="coner c4b"></span>
-        <h1>{l t='Edit deal'}</h1>
-        {if $msg}
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center><h3>{$msg}</h3></center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center>[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-        {else}
-        <form action="editoffer.php?id={$smarty.get.id}" method="post">
-                <table width="100%" cellspacing="0" border="0" cellpadding="0">
-                	
-                    <tr>
-	                	  <th>{l t='Description'}</th>
-                      <td><textarea name="description" style="width:95%; height:120px;">{$var_offer.offer_description}</textarea></td>
-                    </tr>
-                    <tr>
-                      <th>{l t='URL'}</th>
-                      <td><input name="url" type="text" value="{$var_offer.offer_url}" /></td>
-                    </tr>
-                    <tr>
-                      <th>{l t='Phone'}</th>
-                      <td><input name="phone" type="text" value="{$var_offer.offer_phone}" /></td>
-                    </tr>
-                    <tr>
-	                	<th>&nbsp;</th>
-                        <td><input type="button" value="  {l t='Submit Changes'}  " onclick="this.disabled=true; form.submit()" /></td>
-                    </tr>
-                </table>
-</form>
-          {/if}
-        </div><!-- End .content .detail -->
-
- <!--Main End-->
- </div>
+<body>
+    <div id="container" class="content container">
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{l t='Edit deal'}</h3>
+                </div>
+                    {if $msg}
+                        <div class="panel-body">
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <h3 class="text-center">{$msg}</h3>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p class="text-center">[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                        </div>
+                    {else}
+                        <form action="editoffer.php?id={$smarty.get.id}" method="post" class="form-horizontal list-group">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <label class="col-sm-3 control-label">{l t='Description'}</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="description" class="form-control" rows="3">{$var_offer.offer_description}</textarea>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <label class="col-sm-3 control-label">{l t='URL'}</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" name="url" type="text" value="{$var_offer.offer_url}" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <label class="col-sm-3 control-label">{l t='Phone'}</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" name="phone" type="text" value="{$var_offer.offer_phone}" />
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <input type="button" class="btn btn-primary" value="  {l t='Submit Changes'}  " onclick="this.disabled=true; form.submit()" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    {/if}
+            </div>
+        </div>
+    <!--Main End-->
+    </div>
  </body>
+
  </html>

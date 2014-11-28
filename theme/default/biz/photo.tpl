@@ -56,8 +56,7 @@ a.button:hover{ text-decoration:none; background:#48A; }
 
 <!--Main Start-->
 <div id="main">
-    <div class="container">
-        <br/>
+    <div class="content container">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">{l t='Photos for %s' r=$var_biz.bizname}</h3>
