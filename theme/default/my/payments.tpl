@@ -75,8 +75,9 @@ location='?page='+page;
                             <div class="clearfix"></div>
                             <div class="text-center">{l t='No result found'}</div>
                         {else}
-                            <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_paymentlists.pager}</div>
+                            <div class="col-xs-12 text-right text-xs-right">{$var_paymentlists.pager}</div>
                         {/if}
+                        <div class="clearfix"></div>
                     </div>
                 </div>
 

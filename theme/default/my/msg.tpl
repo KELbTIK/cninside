@@ -106,8 +106,9 @@
                                         <div class="text-center">{l t='No message found'}.</div>
                                     </div>
                                 {else}
-                                    <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
+                                    <div class="col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
                                 {/if}
+                                <div class="clearfix"></div>
                             </form>
                          </div>
                      {/if}
