@@ -55,7 +55,7 @@ location='?page='+page+'&id='+id;
 var tmp=zoom;
 if(tmp=='0')
 {
-	document.getElementById("map_canvas").innerHTML="<br /><br /><br /><br /><br /><center>No Map</center>";
+	document.getElementById("map_canvas").innerHTML="<br /><br /><br /><br /><br /><div class='text-center'>No Map</div>";
 }
 else
 {

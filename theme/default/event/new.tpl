@@ -427,7 +427,7 @@ var t_CannotGeo="{l t='Sorry, we were unable to geocode that address'}";
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">{l t='Map'}</label>
                                     <div class="col-sm-9">
-                                        <div id="map_canvas" style="height: 260px; overflow:hidden; border:1px #ccc solid"><center>{l t='Please wait'}...</center></div>
+                                        <div id="map_canvas" style="height: 260px; overflow:hidden; border:1px #ccc solid"><p class="text-center">{l t='Please wait'}...</p></div>
                                         <br />
                                         <span id="address">{l t='Try to convert address to map via clicking the button below.'}</span>
                                         <br />

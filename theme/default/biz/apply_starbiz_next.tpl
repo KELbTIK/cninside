@@ -122,7 +122,7 @@
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p><center><input action="action" class="btn btn-primary" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></center></p>
+                            <p class="text-center"><input action="action" class="btn btn-primary" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
@@ -142,7 +142,7 @@
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p><center><input action="action" class="btn btn-primary" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></center></p>
+                            <p class="text-center"><input action="action" class="btn btn-primary" type="button" onclick="history.go(-1);" value=" {l t='Back'}" /></p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
