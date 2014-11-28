@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="Generator" content="MeePlace {$smarty.const._VERSION_}" />
-<script src="/theme/{$get_theme}/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="/theme/{$get_theme}/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/mgt/body/css/common.css" />
 </head>
@@ -59,7 +59,7 @@ td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
          <p>&nbsp;</p>
          <p>&nbsp;</p>
          <p>&nbsp;</p>
-         <p class="text-center">[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</p>
+         <p class="text-center">[ <a href="javascript:parent.jQuery.fancybox.close();">OK</a> ]</p>
          <p>&nbsp;</p>
          <p>&nbsp;</p>
          <p>&nbsp;</p>

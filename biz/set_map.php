@@ -42,7 +42,7 @@ if($_POST)
 	$query="update `$sheet` set `x`='$_POST[x]',`y`='$_POST[y]',`mapx`='$_POST[mapx]',`mapy`='$_POST[mapy]',`zoom`='$_POST[zoom]'
 	where `$where`='$equal'";
 	$result=mysql_query($query) or die("ERROR! $query");
-	echo "<script>alert('Map Updated!');parent.$.fn.fancybox.close();</script>";
+	echo "<script>alert('Map Updated!');parent.jQuery.fancybox.close();</script>";
 	exit;
 
 }

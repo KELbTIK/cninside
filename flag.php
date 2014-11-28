@@ -85,7 +85,7 @@ echo "<script type=\"text/javascript\">alert('Successful Reported!');</script>";
                 <td> </td>
                 <td>
                     <input name="btn" type="submit" id="btn" class="btn btn-primary" value="   Submit   "   data-dismiss="modal" />
-<!--                    <input type="button" value="X" onClick="parent.$.fn.fancybox.close(); " class="btn btn-danger"/>-->
+<!--                    <input type="button" value="X" onClick="parent.jQuery.fancybox.close(); " class="btn btn-danger"/>-->
                 </td>
             </tr>
         </TBODY>

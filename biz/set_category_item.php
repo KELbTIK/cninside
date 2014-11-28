@@ -130,7 +130,7 @@ if($_POST)
         if($msg){
             echo "<script>alert('".$msg."');</script>";    
         }else{
-            echo "<script>alert('Info Updated!');parent.$.fn.fancybox.close();</script>";
+            echo "<script>alert('Info Updated!');parent.jQuery.fancybox.close();</script>";
         exit;
         }
 }
