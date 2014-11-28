@@ -1,8 +1,7 @@
 {include file="header.tpl"}
 <!--Main Start-->
 <div id="main">
-    <div class="container">
-        <br/>
+    <div class="content container">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">{l t='Write a Review'}</h3>

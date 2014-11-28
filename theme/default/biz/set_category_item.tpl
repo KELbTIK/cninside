@@ -14,24 +14,6 @@
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/biz_detail.css" />
 </head>
 {literal}
-<style type="text/css">
-* { margin:0; padding:0; }
-body,td,th {	font-family: Arial, Helvetica, sans-serif; font-size: 12px;	color: #000000;}
-body {margin:0; padding:0; }
-
-
-.box  h2 {
-border-bottom:1px solid #CCCCCC;
-display:block;
-font-size:18px;
-font-weight:normal;
-padding:0 0 10px 10px;
-}
-
-.blue h1{ margin:0 }
-th{ background:#f0f7fe}
-td, th{ border-top:1px  #BEE3FE solid; padding:5px;}
-</style>
 
 <script language="JavaScript">
 <!--
@@ -103,77 +85,90 @@ function formCheck(formobj){
 
 {/literal}
 <body>
-<div id="container">
- <!--Main Start-->
-  <div class="detail blue">
-      <h1>{l t='Additional Info'} : {$var_bizname}</h1>
-        {if $msg}
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <h3 class="text-center">{$msg}</h3>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p><center>[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</center></p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-         <p>&nbsp;</p>
-        {else}
+<div id="container container">
+    <div class="row">
+        <!--Main Start-->
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">{l t='Additional Info'} : {$var_bizname}</h3>
+            </div>
 
-      <form id="fbusiness" method="post" action="" onsubmit="return formCheck(this)">
-          <table class="table" style="width:100%; padding:0; margin:0; background:#f0f7fe;border:1px  #BEE3FE solid;" cellspacing="5px" id="features">
-              {foreach from=$var_items item=i}
-                  <tr>
-                      <td align="right"><b>{l t=$i.title}{if $i.required == '1'}*{/if}</b>:</td>
-                      <td>
-                          {if $i.type eq 'radio'}
-                              {foreach from=$i.value_array item=j}
-                                  {if $j eq $i.chosen}
-                                      <input type="radio" checked="checked" name="iii_{$i.id}" value="{$j}" />{l t=$j} &nbsp;&nbsp;
-                                  {else}
-                                      <input type="radio" name="iii_{$i.id}" value="{$j}" />{l t=$j}&nbsp;&nbsp;
-                                  {/if}
-                              {/foreach}
+                {if $msg}
+                    <div class="panel-body">
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <h3 class="text-center">{$msg}</h3>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p class="text-center">[ <a href="#" onclick="parent.$.fn.fancybox.close(); return false">OK</a> ]</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                    </div>
+                {else}
+                    <form id="fbusiness" method="post" action="" onsubmit="return formCheck(this)" class="form-horizontal list-group">
+                        <ul class="list-group" style="margin-bottom: 0" id="features">
+                            {foreach from=$var_items item=i}
+                                <li class="list-group-item-info">
+                                    <div align="right"><b>{l t=$i.title}{if $i.required == '1'}*{/if}</b>:</div>
+                                    <div>
+                                        {if $i.type eq 'radio'}
+                                            {foreach from=$i.value_array item=j}
+                                                <div class="radio">
+                                                    {if $j eq $i.chosen}
+                                                        <label><input type="radio" checked="checked" name="iii_{$i.id}" value="{$j}" />{l t=$j}</label>
+                                                    {else}
+                                                        <label><input type="radio" name="iii_{$i.id}" value="{$j}" />{l t=$j}</label>
+                                                    {/if}
+                                                </div>
+                                            {/foreach}
 
-                          {elseif $i.type eq 'checkbox'}
-                              {foreach from=$i.value_array item=j}
-                                  {foreach from=$i.chosen item=m}
-                                      {if $j eq $m}
-                                          {assign var='checked' value='checked=\"checked\"'}
+                                        {elseif $i.type eq 'checkbox'}
+                                            {foreach from=$i.value_array item=j}
+                                                {foreach from=$i.chosen item=m}
+                                                    {if $j eq $m}
+                                                        {assign var='checked' value='checked=\"checked\"'}
 
-                                          {/if}
-                                  {/foreach}
-                                  <input type="checkbox" {$checked} name="ch_{$i.id}_{$j}" value="{$j}" />{l t=$j} &nbsp;&nbsp;
-                                  {assign var='checked' value=''}
-                              {/foreach}
-                              <input type="hidden" name="ch_{$i.id}" value="" />
-                          {else}
-                              <input type="text" name="t_{$i.id}" value="{$i.chosen}" />
-                          {/if}
-                      </td>
-                  </tr>
-              {/foreach}
+                                                    {/if}
+                                                {/foreach}
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" {$checked} name="ch_{$i.id}_{$j}" value="{$j}" />{l t=$j}
+                                                    </label>
+                                                    {assign var='checked' value=''}
+                                                </div>
+                                            {/foreach}
+                                            <input type="hidden" name="ch_{$i.id}" value="" />
+                                        {else}
+                                            <input class="form-control" type="text" name="t_{$i.id}" value="{$i.chosen}" />
+                                        {/if}
+                                    </div>
+                                </li>
+                            {/foreach}
 
-              <tr>
-                  <td colspan="2" align="center">
-                      <input type="hidden" value="{$var_biz_id}" name="business_id" />
-                      <div id="tssip" style="display:none"></div>
-                      <input type="submit" value="{l t='Submit'}" id="business_feature_submit" class="btn btn-primary" />
-                  </td>
-              </tr>
-          </table>
-      </form>
-      {l t='* Required Fields'}
-         {/if}
-  </div>
-    <!-- End .content .detail -->
+                            <li class="list-group-item">
+                                <div class="text-center">
+                                    <input type="hidden" value="{$var_biz_id}" name="business_id" />
+                                    <div id="tssip" style="display:none"></div>
+                                    <input type="submit" value="{l t='Submit'}" id="business_feature_submit" class="btn btn-primary" />
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                    {l t='* Required Fields'}
+                {/if}
+
+        </div>
+        <!-- End .content .detail -->
+    </div>
     <!--Main End-->
 </div>
 </body>
