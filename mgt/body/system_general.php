@@ -76,11 +76,11 @@ include_once(dirname(__FILE__)."/../../inc/func/get_sth_admin.php");
     <TD align="center" class="td_th">Time Zone</TD>
     <TD colspan="2"><select id="timezone" name="timezone">
   <?php
-$timezone_list=array();  
+$timezone_list=array();
 $timezone_list['Africa']=array("Africa/Abidjan","Africa/Accra","Africa/Addis_Ababa","Africa/Algiers","Africa/Asmara","Africa/Asmera","Africa/Bamako","Africa/Bangui","Africa/Banjul","Africa/Bissau","Africa/Blantyre","Africa/Brazzaville","Africa/Bujumbura","Africa/Cairo","Africa/Casablanca","Africa/Ceuta","Africa/Conakry","Africa/Dakar","Africa/Dar_es_Salaam","Africa/Djibouti","Africa/Douala","Africa/El_Aaiun","Africa/Freetown","Africa/Gaborone","Africa/Harare","Africa/Johannesburg","Africa/Kampala","Africa/Khartoum","Africa/Kigali","Africa/Kinshasa","Africa/Lagos","Africa/Libreville","Africa/Lome","Africa/Luanda","Africa/Lubumbashi","Africa/Lusaka","Africa/Malabo","Africa/Maputo","Africa/Maseru","Africa/Mbabane","Africa/Mogadishu","Africa/Monrovia","Africa/Nairobi","Africa/Ndjamena","Africa/Niamey","Africa/Nouakchott","Africa/Ouagadougou","Africa/Porto-Novo","Africa/Sao_Tome","Africa/Timbuktu","Africa/Tripoli","Africa/Tunis","Africa/Windhoek");
 
 $timezone_list['America']=array("America/Adak","America/Anchorage","America/Anguilla","America/Antigua","America/Araguaina","America/Argentina/Buenos_Aires","America/Argentina/Catamarca","America/Argentina/ComodRivadavia","America/Argentina/Cordoba","America/Argentina/Jujuy","America/Argentina/La_Rioja","America/Argentina/Mendoza","America/Argentina/Rio_Gallegos","America/Argentina/Salta","America/Argentina/San_Juan","America/Argentina/San_Luis","America/Argentina/Tucuman","America/Argentina/Ushuaia","America/Aruba","America/Asuncion","America/Atikokan","America/Atka","America/Bahia","America/Barbados","America/Belem","America/Belize","America/Blanc-Sablon","America/Boa_Vista","America/Bogota","America/Boise","America/Buenos_Aires","America/Cambridge_Bay","America/Campo_Grande","America/Cancun","America/Caracas","America/Catamarca","America/Cayenne","America/Cayman","America/Chicago","America/Chihuahua","America/Coral_Harbour","America/Cordoba","America/Costa_Rica","America/Cuiaba","America/Curacao","America/Danmarkshavn","America/Dawson","America/Dawson_Creek","America/Denver","America/Detroit","America/Dominica","America/Edmonton","America/Eirunepe","America/El_Salvador","America/Ensenada","America/Fortaleza","America/Fort_Wayne","America/Glace_Bay","America/Godthab","America/Goose_Bay","America/Grand_Turk","America/Grenada","America/Guadeloupe","America/Guatemala","America/Guayaquil","America/Guyana","America/Halifax","America/Havana","America/Hermosillo","America/Indiana/Indianapolis","America/Indiana/Knox","America/Indiana/Marengo","America/Indiana/Petersburg","America/Indiana/Tell_City","America/Indiana/Vevay","America/Indiana/Vincennes","America/Indiana/Winamac","America/Indianapolis","America/Inuvik","America/Iqaluit","America/Jamaica","America/Jujuy","America/Juneau","America/Kentucky/Louisville","America/Kentucky/Monticello","America/Knox_IN","America/La_Paz","America/Lima","America/Los_Angeles","America/Louisville","America/Maceio","America/Managua","America/Manaus","America/Marigot","America/Martinique","America/Mazatlan","America/Mendoza","America/Menominee","America/Merida","America/Mexico_City","America/Miquelon","America/Moncton","America/Monterrey","America/Montevideo","America/Montreal","America/Montserrat","America/Nassau","America/New_York","America/Nipigon","America/Nome","America/Noronha","America/North_Dakota/Center","America/North_Dakota/New_Salem","America/Panama","America/Pangnirtung","America/Paramaribo","America/Phoenix","America/Port-au-Prince","America/Porto_Acre","America/Port_of_Spain","America/Porto_Velho","America/Puerto_Rico","America/Rainy_River","America/Rankin_Inlet","America/Recife","America/Regina","America/Resolute","America/Rio_Branco","America/Rosario","America/Santarem","America/Santiago","America/Santo_Domingo","America/Sao_Paulo","America/Scoresbysund","America/Shiprock","America/St_Barthelemy","America/St_Johns","America/St_Kitts","America/St_Lucia","America/St_Thomas","America/St_Vincent","America/Swift_Current","America/Tegucigalpa","America/Thule","America/Thunder_Bay","America/Tijuana","America/Toronto","America/Tortola","America/Vancouver","America/Virgin","America/Whitehorse","America/Winnipeg","America/Yakutat","America/Yellowknife");
-								
+
 $timezone_list['Antarctica']=array("Antarctica/Casey","Antarctica/Davis","Antarctica/DumontDUrville","Antarctica/Mawson","Antarctica/McMurdo","Antarctica/Palmer","Antarctica/Rothera","Antarctica/South_Pole","Antarctica/Syowa","Antarctica/Vostok");
 
 $timezone_list['Asia']=array("Asia/Aden","Asia/Almaty","Asia/Amman","Asia/Anadyr","Asia/Aqtau","Asia/Aqtobe","Asia/Ashgabat","Asia/Ashkhabad","Asia/Baghdad","Asia/Bahrain","Asia/Baku","Asia/Bangkok","Asia/Beirut","Asia/Bishkek","Asia/Brunei","Asia/Calcutta","Asia/Choibalsan","Asia/Chongqing","Asia/Chungking","Asia/Colombo","Asia/Dacca","Asia/Damascus","Asia/Dhaka","Asia/Dili","Asia/Dubai","Asia/Dushanbe","Asia/Gaza","Asia/Harbin","Asia/Ho_Chi_Minh","Asia/Hong_Kong","Asia/Hovd","Asia/Irkutsk","Asia/Istanbul","Asia/Jakarta","Asia/Jayapura","Asia/Jerusalem","Asia/Kabul","Asia/Kamchatka","Asia/Karachi","Asia/Kashgar","Asia/Kathmandu","Asia/Katmandu","Asia/Kolkata","Asia/Krasnoyarsk","Asia/Kuala_Lumpur","Asia/Kuching","Asia/Kuwait","Asia/Macao","Asia/Macau","Asia/Magadan","Asia/Makassar","Asia/Manila","Asia/Muscat","Asia/Nicosia","Asia/Novosibirsk","Asia/Omsk","Asia/Oral","Asia/Phnom_Penh","Asia/Pontianak","Asia/Pyongyang","Asia/Qatar","Asia/Qyzylorda","Asia/Rangoon","Asia/Riyadh","Asia/Saigon","Asia/Sakhalin","Asia/Samarkand","Asia/Seoul","Asia/Shanghai","Asia/Singapore","Asia/Taipei","Asia/Tashkent","Asia/Tbilisi","Asia/Tehran","Asia/Tel_Aviv","Asia/Thimbu","Asia/Thimphu","Asia/Tokyo","Asia/Ujung_Pandang","Asia/Ulaanbaatar","Asia/Ulan_Bator","Asia/Urumqi","Asia/Vientiane","Asia/Vladivostok","Asia/Yakutsk","Asia/Yekaterinburg","Asia/Yerevan");
@@ -100,7 +100,7 @@ $timezone_list['Pacific']=array("Pacific/Apia","Pacific/Auckland","Pacific/Chath
 
 $timezone_list['Etc']=array("Etc/GMT+12","Etc/GMT+11","Etc/GMT+10","Etc/GMT+9","Etc/GMT+8","Etc/GMT+7","Etc/GMT+6","Etc/GMT+5","Etc/GMT+4","Etc/GMT+3","Etc/GMT+2","Etc/GMT+1","Etc/UTC","Etc/GMT-1","Etc/GMT-2","Etc/GMT-3","Etc/GMT-4","Etc/GMT-5","Etc/GMT-6","Etc/GMT-7","Etc/GMT-8","Etc/GMT-9","Etc/GMT-10","Etc/GMT-11","Etc/GMT-12","Etc/GMT-13","Etc/GMT-14");
 
-foreach ($timezone_list as $key => $value) 
+foreach ($timezone_list as $key => $value)
 {
 	echo "<optgroup label='$key'>\n";
 	foreach($value as $key => $value)
@@ -119,7 +119,7 @@ foreach ($timezone_list as $key => $value)
     <TD colspan="2"> <?=date(_DATE_FORMAT_)?>&nbsp; &nbsp; &nbsp; <?=date(_TIME_FORMAT_)?></TD>
   </TR>
   <TR bgColor=#ffffff>
-    <TD align="center" class="td_th">Business CAPTCHA Needed</TD> 
+    <TD align="center" class="td_th">Business CAPTCHA Needed</TD>
     <TD width="52%"><label><input type="checkbox" id="captchabizenable" <?=_CAPTCHA_BIZ_ENABLE_==1?"checked=\"checked\"":""?> />
 Enable Word Verification when submitting new business.</label></TD>
     <TD width="27%" rowspan="2"><a href="#" onclick="sele_item(this,'body/system_captcha.php'); return false;" class="ctlbtn">CAPTCHA Style Settings &raquo;</a></TD>
@@ -135,25 +135,25 @@ Enable Word Verification when submitting new business.</label></TD>
     <TD colspan="2"><label><input type="checkbox" id="newbizapprovalneed" <?=_NEW_BIZ_APPROVAL_NEED_==1?"checked=\"checked\"":""?> />
     Yes, new businesses need to be approved by admin before which can be shown.</label></TD>
   </TR>
-  
+
   <TR bgColor=#ffffff>
     <TD align="center" class="td_th">Review Approval Needed</TD>
     <TD colspan="2"><label><input type="checkbox" id="newbizreviewapprovalneed" <?=_NEW_BIZ_REVIEW_APPROVAL_NEED_==1?"checked=\"checked\"":""?> />
     Yes, new business reviews need to be approved by admin before which can be shown.</label></TD>
   </TR>
-  
+
   <TR bgColor=#ffffff>
     <TD align="center" class="td_th">Events Approval Needed</TD>
     <TD colspan="2"><label><input type="checkbox" id="neweventapprovalneed" <?=_NEW_EVENT_APPROVAL_NEED_==1?"checked=\"checked\"":""?> />
     Yes, new events need to be approved by admin before which can be shown.</label></TD>
   </TR>
-  
+
   <TR bgColor=#ffffff>
     <TD align="center" class="td_th">Weather Widgets</TD>
     <TD colspan="2"><label><input type="checkbox" id="_WEATHER_WIDGET_ENABLED_" <?=_WEATHER_WIDGET_ENABLED_==1?"checked=\"checked\"":""?> />
     Enable Weather Widget in business detail page when business has zipcode.</label></TD>
   </TR>
-  
+
     <TR bgColor=#ffffff>
     <TD align="center" class="td_th">Google Analytics</TD>
     <TD colspan="2">
@@ -164,7 +164,7 @@ Enable Google Analytics script in footer.</label></td>
             </tr>
         	<tr>
         	  <td width="7%">&nbsp;</td>
-        	  <td width="93%">Google Analytics UA: 
+        	  <td width="93%">Google Analytics UA:
         	    <input type="text" id="tracker_googleanalyticsua" value="<?=_TRACKER_GOOGLE_ANALYTICS_UA_?>" <?php if(!_TRACKER_GOOGLE_ANALYTICS_UA_){?>disabled="disabled"<?php }?> /> <em>e.g.  UA-8521236-1</em></td>
    	      </tr>
       </table></TD>
@@ -178,8 +178,8 @@ Enable debug mode. Show Smarty debug window and PHP errors.</label></TD>
   </TR>
   <TR class="td_title">
     <TD  colSpan=3>SEO Settings</TD></TR>
-    
-  
+
+
   <TR bgColor=#ffffff>
     <TD align="center" class="td_th">Parent Folders</TD>
     <TD colspan="2">
@@ -196,7 +196,7 @@ Enable debug mode. Show Smarty debug window and PHP errors.</label></TD>
 	<?php
     else:
 	?>
-   Business: http://<?=_DOMAIN_?>/ <input type="text" id="_BIZ_DIR_" style=" width:100px" value="<?=_BIZ_DIR_?>" /> 
+   Business: http://<?=_DOMAIN_?>/ <input type="text" id="_BIZ_DIR_" style=" width:100px" value="<?=_BIZ_DIR_?>" />
    /business-permalink/<br />
    Category: http://<?=_DOMAIN_?>/ <input type="text" id="_CAT_DIR_" style=" width:100px" value="<?=_CAT_DIR_?>" /> /catname/<br />
 <em>Note:  Please do not use a system folder as business parent folder. The system folders are: <strong>ad, biz, comm, compile, contact, event, images, inc, invite, languages, mgt, my, theme.</strong></em>
@@ -251,7 +251,7 @@ endif;
         </table>
     </TD>
   </TR>
-  
+
     <TR bgColor=#ffffff>
     <TD align="center" class="td_th">Page Title</TD>
     <TD colspan="2"><input type="text" id="page_title_cat" style=" width:550px" value="<?=_PAGE_TITLE_CAT_?>" /></TD>
@@ -301,7 +301,7 @@ endif;
        	  </tr>
             </table></TD>
     </TR>
-  
+
   <TR bgColor=#ffffff>
     <TD align="center" class="td_th">&nbsp;</TD>
     <TD colspan="2"><input value=" Apply Settings " type="button" onclick="this.disabled=true; this.value='Saving Changes...'; save_basic()"  id="savebutton" /></TD>
