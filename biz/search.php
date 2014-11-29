@@ -105,9 +105,9 @@ function get_biz_cat_list($path)
 			$displayName=l($row[cat_name]);
 			//no need   $urlSubcatname="&subcatname=".$_GET['subcatname'];
 			if($_GET['searchtext']||$_GET['cityname'])
-	 		$t.= "<li><i class=\"fa fa-".$row[cat_image]."\"></i> <a href='/search?".$urlCatename.$urlCityname.$urlSearchtext."'>".l($displayName)."</a></li>";
+	 		$t.= "<li><a href='/search?".$urlCatename.$urlCityname.$urlSearchtext."'><i class=\"fa fa-".$row[cat_image]."\"></i> ".l($displayName)."</a></li>";
 			else
-			$t.= "<li><i class=\"fa fa-".$row[cat_image]."\"></i> <a href='/"._CAT_DIR_."/".get_biz_cat_permalink($row[cat_id])."/'>".l($displayName)."</a></li>";
+			$t.= "<li><a href='/"._CAT_DIR_."/".get_biz_cat_permalink($row[cat_id])."/'><i class=\"fa fa-".$row[cat_image]."\"></i> ".l($displayName)."</a></li>";
 		}
 		return $t;
 }

@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col-md-7 col-sm-7 col-xs-12">
                             <div class="">
-                                <div class="alert alert-grey"><p>{l t='BEST OF'}</p></div>
+                                <div class="alert alert-grey"><h1><b>{l t='BEST OF'}</b></h1></div>
                                     <!--loop-->
                                     <div class="row">
                                     {foreach from=$var_bestof item=i}
@@ -86,11 +86,15 @@
                             </div>
                         </div>
                         <div class="col-md-5 col-sm-5 col-xs-12">
-                            <div class="lists">
-                                <h2>{l t='Browse by Category'}</h2>
-                                <ul>
-                                    {$var_category_li}
-                                </ul>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{l t='Browse by Category'}</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        {$var_category_li}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -46,23 +46,53 @@ function nav()
     <div class="content container biz">
         <div class="row">
             <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            {if $var_search.searchtext}
-                                {l t='Narrow by Category'}
-                            {else}
-                                {l t='Browse by Category'}
-                            {/if}
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li><a href="/search?cityname={$smarty.get.cityname}&searchtext={$var_search.searchtext}">{l t='All Categories'}</a></li>
-                            {$var_cat.catlist}
-                        </ul>
-                    </div>
-                </div>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header collapse-category-header">
+                            <div class="panel-title navbar-brand">
+                                <b>
+                                    {if $var_search.searchtext}
+                                        {l t='Narrow by Category'}
+                                    {else}
+                                        {l t='Browse by Category'}
+                                    {/if}
+                                </b>
+                            </div>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#category-menu">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse collapse-category" id="category-menu">
+                            {*<div class="panel-body">*}
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/search?cityname={$smarty.get.cityname}&searchtext={$var_search.searchtext}">{l t='All Categories'}</a></li>
+                                    {$var_cat.catlist}
+                                </ul>
+                            {*</div>*}
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </nav>
+                {*<div class="panel panel-default">*}
+                    {*<div class="panel-heading">*}
+                        {*<h3 class="panel-title">*}
+                            {*{if $var_search.searchtext}*}
+                                {*{l t='Narrow by Category'}*}
+                            {*{else}*}
+                                {*{l t='Browse by Category'}*}
+                            {*{/if}*}
+                        {*</h3>*}
+                    {*</div>*}
+                    {*<div class="panel-body">*}
+                        {*<ul class="list-unstyled">*}
+                            {*<li><a href="/search?cityname={$smarty.get.cityname}&searchtext={$var_search.searchtext}">{l t='All Categories'}</a></li>*}
+                            {*{$var_cat.catlist}*}
+                        {*</ul>*}
+                    {*</div>*}
+                {*</div>*}
                 <div class="text-center  hidden-xs">
                     <!-- START 160x600 Code -->
                     <p align="center">
