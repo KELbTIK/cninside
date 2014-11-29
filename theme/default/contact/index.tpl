@@ -74,7 +74,7 @@
                                     <p id="submit-paragraph">
                                         <div class="text-center">
 
-                                                <input type="submit" class="btn button-blue" name="button" id="button" value="{l t='Submit'}" onclick="this.disabled=true;form.submit();">
+                                                <input type="submit" class="btn btn-primary" name="button" id="button" value="{l t='Submit'}" onclick="this.disabled=true;form.submit();">
 
                                         </div>
                                         <br />

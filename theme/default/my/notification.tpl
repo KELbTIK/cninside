@@ -43,7 +43,7 @@
                                 </label>
                             </div>
                             <br/>
-                            <input type="submit" class="btn button-blue" name="button" id="button" value="    {l t='Update'}    " onclick="verify()" />
+                            <input type="submit" class="btn btn-primary" name="button" id="button" value="    {l t='Update'}    " onclick="verify()" />
                         </form>
                     </div>
                 </div>

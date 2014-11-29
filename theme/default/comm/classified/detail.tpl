@@ -83,25 +83,32 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <div class="row col-md-2 col-sm-3 col-xs-12">
-                                <label for="link" class="for_padding_button pull-left">{l t='Direct Link'}:</label>
-                            </div>
-                            <div class="col-md-5 col-sm-9 col-xs-12">
-                                <div class="row">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-3 col-xs-12">
+                                    <label for="link" class="for_padding_button pull-left">{l t='Direct Link'}:</label>
+                                </div>
+                                <div class="col-md-5 col-sm-9 col-xs-12">
                                     <input name="link" class="form-control" id="link" value="{$var_topic.directlink}"/>
                                     <div class="visible-sm visible-xs">
                                         <br/>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-xs-12">
-                                <input type="button" class="btn button-blue col-md-12 col-sm-6 col-xs-12" onclick="javascript:copyToClipboard('link');" value="Copy" >
-                                <div class="visible-xs">
-                                    <br/><br/><br/>
+                                <div class="col-md-2 col-sm-6 col-xs-12">
+                                    <input type="button" class="btn btn-primary col-md-12 col-sm-6 col-xs-12" onclick="javascript:copyToClipboard('link');" value="Copy" >
+                                    <div class="visible-xs">
+                                        <br/><br/><br/>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-sm-6 col-xs-12 pull-right">
+                                    <button type="button" class="btn red_link btn-danger col-xs-12" data-toggle="modal" data-target="#myModal">
+                                        {l t='Flag this'}
+                                    </button>
+                                    {*<a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=1" class="fancybox fancybox.iframe btn btn-primary pull-right col-xs-12">*}
+                                    {*{l t='Flag this'}*}
+                                    {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" width="65" height="21" border="0" />*}
+                                    {*</a>*}
                                 </div>
                             </div>
-
                             <!-- Modal -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -119,72 +126,55 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right">
-                                <button type="button" class="btn red_link btn-danger col-xs-12" data-toggle="modal" data-target="#myModal">
-                                    {l t='Flag this'}
-                                </button>
-                                {*<a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=1" class="fancybox fancybox.iframe btn button-blue pull-right col-xs-12">*}
-                                    {*{l t='Flag this'}*}
-                                    {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" width="65" height="21" border="0" />*}
-                                {*</a>*}
-                                <div class="visible-xs">
-                                    <br/><br/><br/>
-                                </div>
-                            </div>
-
-                            <div class="visible-sm">
-                                <br/><br/><br/>
-                            </div>
                         </div>
-                        <br/>
-                        <br/>
                     </div>
                     <div class="clearfix"></div>
 
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <ul class="list-group">
-                                <!--loop-->
-                                {foreach from=$var_reply item=i}
-                                    <li class="list-group-item">
-                                        <div class="col-md-12">
-                                            <div class="pull-left" id="pv">
-                                                <i class="fa fa-users"></i>&nbsp;{$i.friendsnum}&nbsp;<br />
-                                                <i class="fa fa-star"></i>&nbsp;{$i.reviewsnum}
+                    {if $var_reply}
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <ul class="list-group">
+                                    <!--loop-->
+                                    {foreach from=$var_reply item=i}
+                                        <li class="list-group-item">
+                                            <div class="col-md-12">
+                                                <div class="pull-left" id="pv">
+                                                    <i class="fa fa-users"></i>&nbsp;{$i.friendsnum}&nbsp;<br />
+                                                    <i class="fa fa-star"></i>&nbsp;{$i.reviewsnum}
+                                                </div>
+                                                <div class="pull-right" >
+                                                    <img class="img-responsive" src="../images/photos/{$var_author.picurl}_40x40" width="40" height="40" />
+                                                </div>
                                             </div>
-                                            <div class="pull-right" >
-                                                <img class="img-responsive" src="../images/photos/{$var_author.picurl}_40x40" width="40" height="40" />
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                <a href="../my/?id={$i.userid}">{$i.username}</a>{l t=' says'}:
                                             </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <a href="../my/?id={$i.userid}">{$i.username}</a>{l t=' says'}:
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                                            {if $i.edit_btn}
-                                                <a href="/mgt/func/select.php?sheet=deals_reply&where=id&equal={$i.id}&field=id,content,user_id,topic_id,reply_date&text=ID,,Submitter ID,Topic ID,Reply date (YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                </a>
-                                                <a href="javascript:del('deals_reply','id','{$i.id}')" class="ctlbtn">
-                                                    <i class="fa fa-times"></i>
-                                                </a>
-                                            {/if}
-                                            {$i.date}
-                                        </div>
-                                            <h4 class="col-xs-12">{$i.message}</h4>
+                                            <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                                                {if $i.edit_btn}
+                                                    <a href="/mgt/func/select.php?sheet=deals_reply&where=id&equal={$i.id}&field=id,content,user_id,topic_id,reply_date&text=ID,,Submitter ID,Topic ID,Reply date (YYYYMMDDHHIISS)" class="fancybox fancybox.iframe ctlbtn">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <a href="javascript:del('deals_reply','id','{$i.id}')" class="ctlbtn">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                {/if}
+                                                {$i.date}
+                                            </div>
+                                                <h4 class="col-xs-12">{$i.message}</h4>
 
-                                        <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=1" class="fancybox fancybox.iframe ">
-                                            <input type="button" class="btn red_link btn-danger col-sm-5 col-xs-12" value="{l t='Flag this'}">
-                                            {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/>*}
-                                        </a>
-                                        <div class="clearfix"></div>
-                                    </li>
-                                {/foreach}
-                                <!--/loop-->
-                            </ul>
+                                            <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=1" class="fancybox fancybox.iframe ">
+                                                <input type="button" class="btn red_link btn-danger col-sm-5 col-xs-12" value="{l t='Flag this'}">
+                                                {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/>*}
+                                            </a>
+                                            <div class="clearfix"></div>
+                                        </li>
+                                    {/foreach}
+                                    <!--/loop-->
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    {/if}
                 </div>
             </div>
         </div>
@@ -217,12 +207,12 @@
                 <textarea class="form-control" rows="5" name="review" ></textarea>
             </div>
             <p class="pull-right"><a href="#top">{l t='Page Top'} &uArr;</a></p>
-            <input type="submit" class="btn button-blue col-md-3 col-sm-5 col-xs-12" name="button2"  id="button2" value="  {l t='Submit'} »  " >
+            <input type="submit" class="btn btn-primary col-md-3 col-sm-5 col-xs-12" name="button2"  id="button2" value="  {l t='Submit'} »  " >
         </div>
     </div>
 </form>
 
-<h2>
+<h2 class="col-xs-12">
     <a href="javascript:;" onclick="get(determinCatOrSub(),WCurPage,0);" class="btn btn-danger col-md-3 col-sm-5 col-xs-12 red_link">
         <i class="fa fa-reply"></i><span>{l t=' Back to List'}</span></a>
 </h2>

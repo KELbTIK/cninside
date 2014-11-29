@@ -21,7 +21,7 @@ ajax_list_url='"chatter/getlist.php?cat="+cat+"&page="+pg+"&st="+searchtext';
 ajax_sublist_url=ajax_list_url;
 ajax_article_url='"chatter/detail.php?id="+artid+"&page="+pg';
 ajax_comment_url='"chatter/detail.php?id="+artid+"&page=1&comment="+comment';
-new_button="<a href='chatter/new.php' class='btn button-blue pull-right col-md-3 col-sm-6 col-xs-12'>{l t='Start Conversation'}</a>";
+new_button="<a href='chatter/new.php' class='btn btn-primary pull-right col-md-3 col-sm-6 col-xs-12'>{l t='Start Conversation'}</a>";
 
 {elseif $zone_name=="Classified"}
 ajax_menu_url='"classified/getmenu.php?cat="+cat';
@@ -29,7 +29,7 @@ ajax_list_url='"classified/getlist.php?cat="+cat+"&page="+pg+"&st="+searchtext';
 ajax_sublist_url='"classified/getlist.php?subcat="+cat+"&page="+pg+"&st="+searchtext';
 ajax_article_url='"classified/detail.php?id="+artid+"&page="+pg';
 ajax_comment_url='"classified/detail.php?id="+artid+"&page=1&comment="+comment';
-new_button="<a href='classified/new.php' class='btn button-blue pull-right col-md-3 col-sm-6 col-xs-12'>{l t='Post a classified'}</a>";
+new_button="<a href='classified/new.php' class='btn btn-primary pull-right col-md-3 col-sm-6 col-xs-12'>{l t='Post a classified'}</a>";
 
 {/if}
 </script>

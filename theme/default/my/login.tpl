@@ -7,7 +7,75 @@
 <div id="main">
     <div class="content container">
         <div class="row">
-            <div class="left col-md-7 col-sm-7 col-xs-12" >
+            <div class="col-md-5 col-sm-5 col-xs-12 login">
+                <h2 style="font-size:16px; margin:16px 0 40px;">{l t='Already a %s Member?' r=$get_sitename} </h2>
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#" onclick="tabclick(this,1)"><span class="tab mp ctab">{$get_sitename}</span></a></li>
+                        {if $smarty.const._FB_ENABLE_}
+                            <li><a href="#" onclick="tabclick(this,2)"><span class="tab fb">{l t='Facebook Connect'}</span></a></li>
+                        {/if}
+                    </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="forms">
+                                <div class="formdisp">
+                                    <div class="form">
+                                        {if $loginfail==1}
+                                            <div class="alert alert-danger"><h3>{l t='Invalid Email address or Password'}</h3></div>
+                                        {/if}
+                                        <form id="login" name="login" method="post" action="?f=login&referer={$referer}" class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">{l t='Email Address'}</label>
+                                                <div class="col-sm-7">
+                                                    <input name="email" class="form-control" type="text" id="email" value="{$smarty.post.email}" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">{l t='Password'}</label>
+                                                <div class="col-sm-7">
+                                                    <input class="form-control" type="password" name="password" id="password" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">{l t='Password'}</label>
+                                                <div class="col-sm-7">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="remember" id="remember" /> {l t='Remember me'} | <a href="resetpsw.php">{l t='Forget password'}?</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label"></label>
+                                                <div class="col-sm-7">
+                                                    <input type="submit" value="{l t='Login now'}" class="btn btn-primary"/>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div><!--/div.form-->
+                                    {if $smarty.const._FB_ENABLE_}
+                                        <div class="form">
+                                            <form id="loginfb" name="loginfb" method="post" action="?f=login&referer={$referer}" class="text-center">
+                                                <p><strong>Use your Facebook account to login now!</strong></p>
+                                                <p>We have partnered with Facebook to offer integrated account support via Facebook Connect. Safe, secure and easy!</p>
+                                                <a href="/my/loginfb.php" class="btn btn-primary" ><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
+                                            </form>
+                                        </div><!--/div.form-->
+                                    {/if}
+                                </div><!--/div.formdisp-->
+                            </div><!--/div.forms-->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center hidden-xs">
+                    {$ads->getAdCode(2)}
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12" >
                 <div class="register" id="login_regdiv">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -225,7 +293,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label hidden-xs">&nbsp;</label>
                                     <div class="col-sm-7 text-right col-xs-10">
-                                        <label><a href="javascript:restore();verify()" class="btn btn-block button-blue">{l t='Sign Up'}</a></label>
+                                        <label><a href="javascript:restore();verify()" class="btn btn-block btn-primary">{l t='Sign Up'}</a></label>
                                     </div>
                                 </div>
 
@@ -234,74 +302,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5 col-sm-5 col-xs-12 login">
-                <h2 style="font-size:16px; margin:16px 0 40px;">{l t='Already a %s Member?' r=$get_sitename} </h2>
-                <div>
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#" onclick="tabclick(this,1)"><span class="tab mp ctab">{$get_sitename}</span></a></li>
-                        {if $smarty.const._FB_ENABLE_}
-                            <li><a href="#" onclick="tabclick(this,2)"><span class="tab fb">{l t='Facebook Connect'}</span></a></li>
-                        {/if}
-                    </ul>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="forms">
-                                <div class="formdisp">
-                                    <div class="form">
-                                        {if $loginfail==1}
-                                            <div class="alert alert-danger"><h3>{l t='Invalid Email address or Password'}</h3></div>
-                                        {/if}
-                                        <form id="login" name="login" method="post" action="?f=login&referer={$referer}" class="form-horizontal">
-                                            <div class="form-group">
-                                                <label class="col-sm-4 control-label">{l t='Email Address'}</label>
-                                                <div class="col-sm-7">
-                                                    <input name="email" class="form-control" type="text" id="email" value="{$smarty.post.email}" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-4 control-label">{l t='Password'}</label>
-                                                <div class="col-sm-7">
-                                                    <input class="form-control" type="password" name="password" id="password" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-4 control-label">{l t='Password'}</label>
-                                                <div class="col-sm-7">
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox" name="remember" id="remember" /> {l t='Remember me'} | <a href="resetpsw.php">{l t='Forget password'}?</a>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-4 control-label"></label>
-                                                <div class="col-sm-7">
-                                                    <input type="submit" value="{l t='Login now'}" class="btn button-blue"/>
 
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div><!--/div.form-->
-                                    {if $smarty.const._FB_ENABLE_}
-                                        <div class="form">
-                                            <form id="loginfb" name="loginfb" method="post" action="?f=login&referer={$referer}" class="text-center">
-                                                <p><strong>Use your Facebook account to login now!</strong></p>
-                                                <p>We have partnered with Facebook to offer integrated account support via Facebook Connect. Safe, secure and easy!</p>
-                                                <a href="/my/loginfb.php" class="btn button-blue" ><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
-                                            </form>
-                                        </div><!--/div.form-->
-                                    {/if}
-                                </div><!--/div.formdisp-->
-                            </div><!--/div.forms-->
-                        </div>
-                    </div>
-
-                </div>
-                <div class="text-center hidden-xs">
-                    {$ads->getAdCode(2)}
-                </div>
-            </div>
         </div>
         <script type="text/javascript" language="javascript">restore();</script>
     </div>

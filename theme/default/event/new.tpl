@@ -218,7 +218,7 @@ var t_CannotGeo="{l t='Sorry, we were unable to geocode that address'}";
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">{l t='When'}</label>
                                 <div class="col-sm-9">
-                                        <h5 id="eth"><a href="javascript:;" onClick="showendtime()"><div class="form-group"><div class="container-fluid"><span class="btn button-blue">{l t='Add End Time'} &raquo;</span></div></div></a></h5>
+                                        <h5 id="eth"><a href="javascript:;" onClick="showendtime()"><div class="form-group"><div class="container-fluid"><span class="btn btn-primary">{l t='Add End Time'} &raquo;</span></div></div></a></h5>
                                         <div id="ets1" style="display:none"><label class="control-label">{l t='From'}:</label></div>
                                         <div class="form-group">
                                             <div class="col-md-4 col-sm-4 col-xs-4">
@@ -442,7 +442,7 @@ var t_CannotGeo="{l t='Sorry, we were unable to geocode that address'}";
                                         <br />
                                         {l t='Or search a place:'} <input type="text" id="search_add" name="search_add" class="form-control" onKeyDown="if (event.keyCode==13) showLocation() " />
                                         <br />
-                                        <input type="button" class="btn button-blue" value="{l t='Convert Address to Map'}" onclick="showLocation()" />
+                                        <input type="button" class="btn btn-primary" value="{l t='Convert Address to Map'}" onclick="showLocation()" />
                                         <br />
                                         <br />
                                         {l t='Note: Please adjust the map position and zoom, at the same time, please drag the pink marker to the accurate position of this business.'}<br>
@@ -459,7 +459,7 @@ var t_CannotGeo="{l t='Sorry, we were unable to geocode that address'}";
                             <div class="form-group">
                                 <label class="col-sm-3 control-label"></label>
                                 <div class="col-sm-offset-3 col-sm-9 text-center">
-                                    <input type="submit" name="btn" class="btn button-blue" id="btn" value="   {l t='Submit'}  " />
+                                    <input type="submit" name="btn" class="btn btn-primary" id="btn" value="   {l t='Submit'}  " />
                                 </div>
                             </div>
                         </form>

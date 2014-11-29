@@ -15,7 +15,7 @@
                             <input type="file" name="file" id="file" >
                             <p class="help-block">(Type: JPEG GIF)</p>
                             <label>
-                                <input type="button" name="button" id="button" value="{l t='Upload'}"  class="btn button-blue" onclick="this.disabled=true;submit()"/>
+                                <input type="button" name="button" id="button" value="{l t='Upload'}"  class="btn btn-primary" onclick="this.disabled=true;submit()"/>
                             </label>
                         </div>
                     </div>

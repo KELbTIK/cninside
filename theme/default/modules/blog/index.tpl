@@ -17,7 +17,7 @@
             <div class="col-sm-4 col-xs-12" >
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <a href="new.php" class="btn button-blue">{l t='Add New Blog'}</a>
+                        <a href="new.php" class="btn btn-primary">{l t='Add New Blog'}</a>
                     </div>
                 </div>
                 <div class="text-center hidden-xs">

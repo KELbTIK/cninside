@@ -67,7 +67,7 @@ return true;
                             </div>
 
                             <div class="form-group text-center">
-                                <input class="btn button-blue " type="submit" name="btn" id="btn" value="   {l t='Submit'} " />
+                                <input class="btn btn-primary " type="submit" name="btn" id="btn" value="   {l t='Submit'} " />
                             </div>
                         </form>
                     </div>

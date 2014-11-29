@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-4 col-sm-8">
-                                            <input type="submit" name="button" id="button" class="trialBbtn btn button-blue" value="{l t='Claim Now'}" />
+                                            <input type="submit" name="button" id="button" class="trialBbtn btn btn-primary" value="{l t='Claim Now'}" />
                                         </div>
                                     </div>
                                 </form>

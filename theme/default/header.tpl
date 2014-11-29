@@ -79,7 +79,7 @@ background-image:url({$smarty.const._LOGO_URL_});
 
         <!--Heaer Start-->
         <div id="header" class="header">
-            <h1 class="pull-left col-md-6 col-sm-4 col-xs-12"><a href="/" id="headerlogolink">{$page_title}</a></h1>
+            <h1 class="pull-left col-md-6 col-sm-4 col-xs-12 logo"><a href="/" id="headerlogolink">{$page_title}</a></h1>
 
             {if !($smarty.const._MULTILANGUAGE_HIDE_MENU_ == 1  || $smarty.const._MULTILANGUAGE_ENABLE_==2 ) }
                 <ul class="language_selector" onmouseover="show_language_bar()" onmouseout="hide_language_bar()">
@@ -93,7 +93,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                 <div class="row">
                     <!-- Nav tabs -->
                     <div class="visible-xs col-xs-12">
-                        <a href="/my/login.php" class="btn button-blue btn-block">Sign in</a>
+                        <a href="/my/login.php" class="btn btn-primary btn-block">Sign in</a>
                         <br/>
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-4 pull-right">
@@ -147,7 +147,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                             <li><a href="/my/resetpsw.php">{l t='Lost password'}?</a></li>
                                                         </ol>
                                                         {if $smarty.const._FB_ENABLE_}
-                                                            <a href="/my/loginfb.php" class="btn button-blue btn-xs"><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
+                                                            <a href="/my/loginfb.php" class="btn btn-primary btn-xs"><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
                                                         {/if}
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -191,7 +191,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                 <div class="col-md-3 col-xs-12 col-sm-4">
                                                     <label class="hidden-xs">&nbsp;</label>
                                                     <div class="form-group">
-                                                        <a class="btn btn-block button-blue" onclick="header_search.submit()" href="javascript:void(0)">{l t='Search'}</a>
+                                                        <a class="btn btn-block btn-primary" onclick="header_search.submit()" href="javascript:void(0)">{l t='Search'}</a>
                                                     </div>
                                                 </div>
                                             </form>

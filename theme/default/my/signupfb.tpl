@@ -32,7 +32,7 @@
                         {*</div>*}
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
-                                <input type="submit" name="button" id="button" class="btn button-blue" value="   {l t='Next'} &gt;&gt;   " onclick="this.disabled=true; form.submit()" />
+                                <input type="submit" name="button" id="button" class="btn btn-primary" value="   {l t='Next'} &gt;&gt;   " onclick="this.disabled=true; form.submit()" />
                             </div>
                         </div>
                     </form>

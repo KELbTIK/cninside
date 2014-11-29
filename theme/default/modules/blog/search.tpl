@@ -93,12 +93,12 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
                                             <strong>
                                                 <span style="color:#900">{$var_search.catname}</span>
                                             </strong>
-                                            <a href="javascript:;" class="btn button-blue" onclick="openCat()">{l t='Change'} &dArr;</a>
+                                            <a href="javascript:;" class="btn btn-primary" onclick="openCat()">{l t='Change'} &dArr;</a>
                                         </span>
                                     </td>
                                     <td width="97" align="center">
                                         <em>
-                                            <input type="submit" class="btn button-blue" onclick="nav()" value="{l t='Search'}" name="Submit" />
+                                            <input type="submit" class="btn btn-primary" onclick="nav()" value="{l t='Search'}" name="Submit" />
                                         </em>
                                     </td>
                                 </tr>
@@ -167,14 +167,14 @@ location='?searchtext='+searchtext+'&cat='+cat+'&city='+city+'&page='+page+'&tim
                             <div class="col-sm-6 col-xs-12 page_number">{l t='Show'} {$var_lists.limitfrom} {l t='to'} {$var_lists.limitto} / {$var_lists.itemsnum} {l t='items'}.</div>
                             <div class="col-sm-6 col-xs-12 text-right text-xs-right">{$var_lists.pager}</div>
                         {/if}
-                        <div><a href="new.php" class="btn button-blue">{l t='Add Event'}</a></div>
+                        <div><a href="new.php" class="btn btn-primary">{l t='Add Event'}</a></div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-8 col-xs-12" >
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <a href="new.php" class="btn button-blue">{l t='Add Event'}</a>
+                        <a href="new.php" class="btn btn-primary">{l t='Add Event'}</a>
                     </div>
                 </div>
                 <div class="panel panel-default">

@@ -220,7 +220,7 @@ $('#commenttext').css('backgroundColor','#FAA');
                             </div>
                             <div class="clearfix form-group visible-sm visible-xs"></div>
                             <div class="col-md-4 col-sm-12 col-xs-4">
-                                <input class="btn button-blue" type="button" id="commentbtn" value="{l t='Send'}" disabled="disabled" onclick="CommentSend()" />
+                                <input class="btn btn-primary" type="button" id="commentbtn" value="{l t='Send'}" disabled="disabled" onclick="CommentSend()" />
                             </div>
                             <script type="text/javascript">CommentInit();</script>
                         </div>

@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <input class="btn button-blue" type="button" name="button" id="button" value=" {l t='Change'} " onclick="verify()" />
+                                    <input class="btn btn-primary" type="button" name="button" id="button" value=" {l t='Change'} " onclick="verify()" />
                                 </div>
                             </div>
                             <script type="text/javascript" language="javascript">

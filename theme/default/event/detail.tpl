@@ -88,9 +88,9 @@ else
                             {l t='Event detail for'} {$var_biz.bizname}
                             {if $var_biz.edit_btn}
                             <span class="pull-right">
-                                <a href="/mgt/body/event_edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue">{l t='Edit'}</a>
+                                <a href="/mgt/body/event_edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary">{l t='Edit'}</a>
                                 &nbsp;&nbsp;
-                                <a href="javascript:del_event('eventm', 'id',{$var_biz.id})" class="btn button-blue">{l t='Delete'}</a>
+                                <a href="javascript:del_event('eventm', 'id',{$var_biz.id})" class="btn btn-primary">{l t='Delete'}</a>
                             </span>
                             {/if}
                             <div class="clearfix"></div>
@@ -186,7 +186,7 @@ else
                                         <tr>
                                             <td>{l t='Reviews:'}</td>
                                             <td>{$var_biz.reviewnum}</td>
-                                            <td>&nbsp;&nbsp;<a href="#reply" id="replyBtn" class="btn button-blue">{l t='Write a Review'}</a></td>
+                                            <td>&nbsp;&nbsp;<a href="#reply" id="replyBtn" class="btn btn-primary">{l t='Write a Review'}</a></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -282,7 +282,7 @@ else
                                     <textarea class="form-control" rows="5" name="event_desc" id="event_desc" onfocus="check_login(this)" ></textarea>
                                 </div>
                                 <h3 class="pull-right"><a href="#top" id="topBtn">{l t='Page Top'} &uArr;</a></h3>
-                                <input type="submit" class="btn button-blue" name="button2"  id="button2" value="  {l t='Submit'} »  " onClick="this.disabled=true; submit()"/>
+                                <input type="submit" class="btn btn-primary" name="button2"  id="button2" value="  {l t='Submit'} »  " onClick="this.disabled=true; submit()"/>
                             </div>
                         </div>
                     </form>
@@ -308,9 +308,9 @@ else
                         </div>
                         <div class="panel-body">
                             <div class="text-center">
-                                <a href="../my/func.php?f=addin&amp;id={$var_biz.id}" class="btn button-blue">{l t="I'm In"}</a>
+                                <a href="../my/func.php?f=addin&amp;id={$var_biz.id}" class="btn btn-primary">{l t="I'm In"}</a>
                                 &nbsp;
-                                <a href="../my/func.php?f=addcool&amp;id={$var_biz.id}" class="btn button-blue">{l t='Sounds Cool'}</a>
+                                <a href="../my/func.php?f=addcool&amp;id={$var_biz.id}" class="btn btn-primary">{l t='Sounds Cool'}</a>
                             </div>
                         </div>
                     </div>

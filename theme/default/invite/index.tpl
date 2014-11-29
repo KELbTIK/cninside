@@ -85,7 +85,7 @@
                                                         <div class="row">
                                                             <label class="col-md-4 col-sm-3 col-xs-4">
                                                                 <br/>
-                                                                <input type="submit" class="btn button-blue" value="{l t='Send Invite'}" onclick="this.disabled=true;form.submit();" />
+                                                                <input type="submit" class="btn btn-primary" value="{l t='Send Invite'}" onclick="this.disabled=true;form.submit();" />
                                                             </label>
                                                         </div>
                                                     </div>

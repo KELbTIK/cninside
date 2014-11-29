@@ -63,7 +63,7 @@ a.button:hover{ text-decoration:none; background:#48A; }
             </div>
             <div class="panel-body">
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                <a href="/{$smarty.const._BIZ_DIR_}/{$var_biz.permalink}" class="btn button-blue">{l t='Return to %s' r=$var_biz.bizname}</a>
+                <a href="/{$smarty.const._BIZ_DIR_}/{$var_biz.permalink}" class="btn btn-primary">{l t='Return to %s' r=$var_biz.bizname}</a>
                 </div>
                 <div class="visible-xs col-xs-12">
                     &nbsp;
@@ -86,7 +86,7 @@ a.button:hover{ text-decoration:none; background:#48A; }
 
                 {else}
 
-                    <a href="/my/login.php" class="btn button-blue">{l t='Login to upload photo &raquo;'}</a>
+                    <a href="/my/login.php" class="btn btn-primary">{l t='Login to upload photo &raquo;'}</a>
                 {if $smarty.get.f == 'addphoto'}
                     <script>
                         {literal}
@@ -116,7 +116,7 @@ a.button:hover{ text-decoration:none; background:#48A; }
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-12 for_padding_button">
-                                <a class="btn button-blue btn-block" href="javascript:$('#file').uploadifyUpload()" id="upload_btn">
+                                <a class="btn btn-primary btn-block" href="javascript:$('#file').uploadifyUpload()" id="upload_btn">
                                     {l t='Start upload'}
                                 </a>
                             </div>

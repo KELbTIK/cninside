@@ -71,7 +71,7 @@ function nav()
                                 <div id="searchcity_div2" class="searchbarlist"></div>
                                 <input type="hidden" name="page" id="page" value="1" />
                                 <input type="hidden" name="sort_by" id="_sort_by" value="1" />
-                                <input class="btn button-blue btn-block" type="submit" value="{l t='Search'}" />
+                                <input class="btn btn-primary btn-block" type="submit" value="{l t='Search'}" />
                             </div>
                         </form>
                     </div>
@@ -160,7 +160,7 @@ function nav()
                 <div class="clearfix"></div>
                 <div class="alert alert-warning" role="alert">
                     <h2 class="pull-left">{l t='The business you\'re looking for isn\'t here?'}</h2>
-                    <div class="pull-right"><a href="/{$smarty.const._BIZ_DIR_}/new.php" class="btn button-blue">{l t='Add Business'}</a></div>
+                    <div class="pull-right"><a href="/{$smarty.const._BIZ_DIR_}/new.php" class="btn btn-primary">{l t='Add Business'}</a></div>
                     <div class="clearfix"></div>
                 </div>
             </div>

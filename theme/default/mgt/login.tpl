@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-4 col-sm-8">
                                     <a href="resetpsw.php" style="font-size: 11px;">Forgot admin password?</a> &nbsp;
-                                    <input type="submit" name="button" class="btn button-blue" id="button" value="    {l t='Log in'}    " />
+                                    <input type="submit" name="button" class="btn btn-primary" id="button" value="    {l t='Log in'}    " />
                                 </div>
                             </div>
                         </form>

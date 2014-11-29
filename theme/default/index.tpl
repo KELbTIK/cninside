@@ -76,7 +76,7 @@
                                                     <ol class="best-list">
                                                         {$i.bizli}
                                                     </ol>
-                                                    <div class="pull-right"><a href="/{$smarty.const._CAT_DIR_}/{$i.catpermalink}/" class="btn button-blue">{l t='More'}</a></div>
+                                                    <div class="pull-right"><a href="/{$smarty.const._CAT_DIR_}/{$i.catpermalink}/" class="btn btn-primary">{l t='More'}</a></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading">
                         <h2 class="pull-left">{l t='Top Events'}</h2>
-                        <div class="pull-right"><a href="event/search.php" class="btn btn-block button-blue">{l t='Browse all events'}</a></div>
+                        <div class="pull-right"><a href="event/search.php" class="btn btn-block btn-primary">{l t='Browse all events'}</a></div>
                         <div class="clearfix"></div>
                     </div>
                     <!-- List group -->
@@ -142,7 +142,7 @@
                     <!-- Default panel contents -->
                     <div class="panel-heading">
                         <h2 class="pull-left">{l t='Recent Reviews'}</h2>
-                        <div class="pull-right"><a href="{$smarty.const._BIZ_DIR_}/search.php" class="btn btn-block button-blue">{l t='More'}</a></div>
+                        <div class="pull-right"><a href="{$smarty.const._BIZ_DIR_}/search.php" class="btn btn-block btn-primary">{l t='More'}</a></div>
                         <div class="clearfix"></div>
                     </div>
 
@@ -218,7 +218,7 @@
                                                 {$i.location}<br />
                                             {/if}
                                             <strong>{l t='Member Since'}:</strong><br />{$i.regdate}
-                                            <p><a href="my/?id={$i.uid}" class="btn button-blue">{l t='View Profile'}</a></p>
+                                            <p><a href="my/?id={$i.uid}" class="btn btn-primary">{l t='View Profile'}</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -226,8 +226,8 @@
                             {/foreach}
                             <!--/loop-->
                             <div class="text-center">
-                                <a href="/my/membersearch.php?rank=reviews_num" class="btn  button-blue">{l t='See Top Reviewers'}</a> &nbsp; &nbsp;
-                                <a href="/my/membersearch.php" class="btn  button-blue">{l t='See New Users'}</a>
+                                <a href="/my/membersearch.php?rank=reviews_num" class="btn  btn-primary">{l t='See Top Reviewers'}</a> &nbsp; &nbsp;
+                                <a href="/my/membersearch.php" class="btn  btn-primary">{l t='See New Users'}</a>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="exp col-md-8 col-sm-7 col-xs-8"><em>{l t='Rank by reviews in past 7 days'}!</em></div>
-                            <div class="pull-right col-md-4 col-sm-5 col-xs-4"><a href="{$smarty.const._BIZ_DIR_}/search.php" class="btn btn-block button-blue">{l t='More'}</a></div>
+                            <div class="pull-right col-md-4 col-sm-5 col-xs-4"><a href="{$smarty.const._BIZ_DIR_}/search.php" class="btn btn-block btn-primary">{l t='More'}</a></div>
                             <div class="clearfix"></div>
                             <!--no loop-->
                             {if $var_hotbiz.bizname}
@@ -300,7 +300,7 @@
                             {/foreach}
                             <!--/loop-->
                             <li class="list-group-item">
-                                <a href="/offer/" class="btn button-blue" style="">{l t='Browse more special offers'}</a>
+                                <a href="/offer/" class="btn btn-primary" style="">{l t='Browse more special offers'}</a>
                             </li>
                         {/if}
                     </ul>
@@ -339,7 +339,7 @@
                             </li>
                         {/foreach}
                         <!--/loop-->
-                        <li class="list-group-item text-center"><a href="comm/?f=Chatter" class="btn button-blue">{l t='More'}</a></li>
+                        <li class="list-group-item text-center"><a href="comm/?f=Chatter" class="btn btn-primary">{l t='More'}</a></li>
                     </ul>
                 </div>
             </div>

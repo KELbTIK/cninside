@@ -38,7 +38,7 @@
                                 <div class="col-md-3">
                                 </div>
                                 <div class="col-md-9">
-                                    <input type="button" class="btn button-blue col-md-2" name="btn" id="btn" value=" {l t='Create'} " onclick="this.disabled=true;form.submit()" >
+                                    <input type="button" class="btn btn-primary col-md-2" name="btn" id="btn" value=" {l t='Create'} " onclick="this.disabled=true;form.submit()" >
                                 </div>
                             </div>
                         </form>

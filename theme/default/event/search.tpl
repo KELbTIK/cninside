@@ -93,7 +93,7 @@
 
 
                                     <div class="col-md-2 col-sm-2 col-xs-12 text-right">
-                                        <input type="submit" class="btn button-blue" onclick="nav()" value="{l t='Search'}" name="Submit" /><br/>
+                                        <input type="submit" class="btn btn-primary" onclick="nav()" value="{l t='Search'}" name="Submit" /><br/>
                                     </div>
 
                                 </form>
@@ -181,7 +181,7 @@
                     </div>
                     <div>
                         <br/>
-                        <a href="new.php" class="btn button-blue hidden-xs hidden-sm ">{l t='Add Event'}</a>
+                        <a href="new.php" class="btn btn-primary hidden-xs hidden-sm ">{l t='Add Event'}</a>
                     </div>
                 </div>
             </div>
@@ -189,7 +189,7 @@
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
-                            <a href="new.php" class="btn button-blue">{l t='Add Event'}</a>
+                            <a href="new.php" class="btn btn-primary">{l t='Add Event'}</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>

@@ -606,7 +606,7 @@ if($keyword =='' && !$city){
 
     if ($cat_list_checkbox){
 
-        $reset = "<center><input class=\"btn button-blue\" type=\"button\" value=\"".l('Reset Filter')."\" name=\"Submit\"  onClick=\"window.location='$querystring_reset'; return true;\" /></center>";
+        $reset = "<center><input class=\"btn btn-primary\" type=\"button\" value=\"".l('Reset Filter')."\" name=\"Submit\"  onClick=\"window.location='$querystring_reset'; return true;\" /></center>";
 
         $categories .= $cat_list_checkbox;
     }

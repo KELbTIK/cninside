@@ -214,7 +214,7 @@ return true;
                             <div class="form-group">
                                 <label for="btn" class="col-md-2 col-sm-2 control-label"></label>
                                 <div class="col-md-10 col-sm-6">
-                                    <input type="submit" class="btn button-blue col-md-2 col-sm-5 col-xs-6" name="btn" id="btn" value="{l t='Submit'}" >
+                                    <input type="submit" class="btn btn-primary col-md-2 col-sm-5 col-xs-6" name="btn" id="btn" value="{l t='Submit'}" >
                                 </div>
                             </div>
 

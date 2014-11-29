@@ -66,7 +66,7 @@
                                             {if $var_me.state}
                                                 , {$var_me.state}
                                             {/if}
-                                            <a href="javascript:void(0);" onclick="$('#ccity').hide();$('#changecity').show();" class="btn button-blue">{l t='Change'}</a>
+                                            <a href="javascript:void(0);" onclick="$('#ccity').hide();$('#changecity').show();" class="btn btn-primary">{l t='Change'}</a>
                                         </span>
                                         <div id="changecity" style="display:none" class="row">
                                             <div class="col-sm-4">
@@ -291,7 +291,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">&nbsp;</label>
                                     <div class="col-sm-8 text-right">
-                                        <input type="button" class="btn button-blue" name="button" id="button" value="  {l t='Update'}" onclick="restore(); verify();" />
+                                        <input type="button" class="btn btn-primary" name="button" id="button" value="  {l t='Update'}" onclick="restore(); verify();" />
                                     </div>
                                 </div>
                             </div>

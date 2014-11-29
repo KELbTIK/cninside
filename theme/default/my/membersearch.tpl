@@ -23,7 +23,7 @@
                                  </div>
                                  <div class="col-md-6 text-center">
                                      <br/>
-                                     <input type="button" class="btn button-blue" onClick="get('','1')"  value="{l t='Search'}" name="Submit" />
+                                     <input type="button" class="btn btn-primary" onClick="get('','1')"  value="{l t='Search'}" name="Submit" />
                                  </div>
                              </form>
                          </div>

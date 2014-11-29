@@ -38,7 +38,9 @@
                             <div class="col-md-5 col-sm-5"></div>
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-2 col-xs-4">
-                                    <button type="submit " name="button" id="button" class="btn btn-default btn-block button-blue" value="   {l t='Send'} &gt;&gt;   " onclick="this.disabled=true; form.submit()" />Send</button>
+                                    <button type="submit" name="button" id="button" class="btn btn-default btn-block btn-primary"  value="{l t='Send'} &gt;&gt; " onclick="this.disabled=true; form.submit()">
+                                        {l t='Send'}
+                                    </button>
                                 </div>
                             </div>
 

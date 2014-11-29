@@ -18,7 +18,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
-                                <input type="button" name="button" id="button" value="{l t='Upload'}"  class="btn button-blue" onclick="this.disabled=true;submit()"/>
+                                <input type="button" name="button" id="button" value="{l t='Upload'}"  class="btn btn-primary" onclick="this.disabled=true;submit()"/>
                             </div>
                         </div>
                     </form>

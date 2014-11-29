@@ -264,7 +264,7 @@
                         <p>{l t='You move elements by clicking on the buttons or by double clicking on select box items'}</p>
                         <div align="center">
                             {*<input type="image" src="../../theme/{$get_theme}/images/btn_done.gif">*}
-                            <button type="submit" class="btn button-blue" >
+                            <button type="submit" class="btn btn-primary" >
                                 {l t='Done'}
                             </button>
                         </div>

@@ -50,7 +50,7 @@ body,td,th {	font-family: Arial, Helvetica, sans-serif; font-size: 12px;	color: 
 body {margin:0; padding:0; background: url(../images/header-bg.png) repeat-x center top;}
 input, select{font-family:Arial, Helvetica, sans-serif; font-size:12px; }
 a{ outline:none;}
-a:link, a:visited {	color: #034D80;	text-decoration: none;}
+a:link, a:visited {	text-decoration: none;}
 a:hover, a:active { text-decoration: underline;	color: #555;}
 form {margin:0px auto;padding:0;}
 h1 {font-size:16px; font-weight:bold;margin:5px 0px; color:#000000;}
@@ -691,3 +691,11 @@ ul.navigation li {	font-family:Arial, Helvetica, sans-serif;    display: inline;
 .list-comment #digg{
     margin-bottom: 0;
 }
+
+/*start header*/
+@media (max-width: 767px){
+    .logo{
+        background-position: center!important;
+    }
+}
+/*end header*/

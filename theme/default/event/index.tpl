@@ -180,7 +180,7 @@
                         <br/>
                         <script src="../theme/{$get_theme}/js/coda-slider.js" type="text/javascript" ></script>
                         <div class="col-xs-12">
-                            <div class="pull-left"><a href="new.php" class="btn btn-block button-blue">{l t='Add Event'}</a></div>
+                            <div class="pull-left"><a href="new.php" class="btn btn-block btn-primary">{l t='Add Event'}</a></div>
                             <div class="pull-right" style="padding-top: 20px;">&raquo; <a href="search.php">{l t='See More Events'}...</a></div>
                         </div>
                     </div>
@@ -189,7 +189,7 @@
             <div class="col-md-4 col-sm-4 col-xs-12" >
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
-                        <a href="new.php" class="btn button-blue">{l t='Add Event'}</a>
+                        <a href="new.php" class="btn btn-primary">{l t='Add Event'}</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>

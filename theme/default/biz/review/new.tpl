@@ -39,7 +39,7 @@
                             <div class="clearfix"></div>
                             <br/>
                             <label>
-                                <input class="btn button-blue" type="submit" value="     {l t='Look it Up'}      " name="Submit" />
+                                <input class="btn btn-primary" type="submit" value="     {l t='Look it Up'}      " name="Submit" />
                             </label>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="panel-body text-center">
                 <h3>{l t='A business which isn\'t listed'} ?</h3>
-                <a href="../new.php" class="btn button-blue">{l t='Add Business'}</a>
+                <a href="../new.php" class="btn btn-primary">{l t='Add Business'}</a>
             </div>
         </div>
     </div>

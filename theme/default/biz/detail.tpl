@@ -369,54 +369,54 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                 <div class="clearfix"></div>
                                 <div class="btns row">
                                     <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                        <a href="/my/func.php?f=addbookmark&id={$var_biz.id}" class="btn button-blue btn-block">{l t='Bookmark Listing'}</a>
+                                        <a href="/my/func.php?f=addbookmark&id={$var_biz.id}" class="btn btn-primary btn-block">{l t='Bookmark Listing'}</a>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                        <a href="#reply" id="replyBtn" class="btn button-blue btn-block">{l t='Write a Review'}</a>
+                                        <a href="#reply" id="replyBtn" class="btn btn-primary btn-block">{l t='Write a Review'}</a>
                                     </div>
                                     {if $var_biz.video_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="#testube" id="videobox" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='View Video'}</a>
+                                            <a href="#testube" id="videobox" class="fancybox fancybox.iframe btn btn-primary btn-block">{l t='View Video'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.applystarbiz_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
                                             {if $smarty.const._PAYPAL_ENABLE_}
-                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Apply StarBiz'}</a>
+                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary btn-block">{l t='Apply StarBiz'}</a>
                                             {else}
-                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Apply StarBiz'}</a>
+                                                <a href="/{$smarty.const._BIZ_DIR_}/apply_starbiz.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary btn-block">{l t='Apply StarBiz'}</a>
                                             {/if}
                                         </div>
                                     {/if}
                                     {if $var_biz.claim_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/{$smarty.const._BIZ_DIR_}/claim.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Claim Listing'}</a>
+                                            <a href="/{$smarty.const._BIZ_DIR_}/claim.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary btn-block">{l t='Claim Listing'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.logintoclaim_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/my/login.php" class="btn button-blue btn-block">{l t='Claim Listing'}</a>
+                                            <a href="/my/login.php" class="btn btn-primary btn-block">{l t='Claim Listing'}</a>
                                         </div>
                                     {/if}
                                     {if $admin_type}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/mgt/body/business_edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Edit Details'}</a>
+                                            <a href="/mgt/body/business_edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary btn-block">{l t='Edit Details'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.edit_btn AND $admin_type==''}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/{$smarty.const._BIZ_DIR_}/edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue btn-block">{l t='Edit Details'}</a>
+                                            <a href="/{$smarty.const._BIZ_DIR_}/edit.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary btn-block">{l t='Edit Details'}</a>
                                         </div>
                                     {/if}
                                     {if $var_biz.edit_btn}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="/offer/manage.php?id={$var_biz.id}" class="btn button-blue btn-block">{l t='Manage Deals'}</a>
+                                            <a href="/offer/manage.php?id={$var_biz.id}" class="btn btn-primary btn-block">{l t='Manage Deals'}</a>
                                         </div>
                                     {/if}
 
                                     {if $admin_type}
                                         <div class="col-md-4 col-sm-4 col-xs-12 form-group">
-                                            <a href="javascript:del_business_detail('{$var_biz.id}')" class="btn button-blue btn-block">{l t='DELETE Listing'}</a>
+                                            <a href="javascript:del_business_detail('{$var_biz.id}')" class="btn btn-primary btn-block">{l t='DELETE Listing'}</a>
                                         </div>
                                     {/if}
                                 </div><!-- End .content .detail .info .btns -->
@@ -426,7 +426,7 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                     <div class="map well">
                                         <div id="map_canvas" style="height: 340px;">{l t='Loading Map'}...</div>
                                         <br />
-                                        <a href="/{$smarty.const._BIZ_DIR_}/directions.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn button-blue" id="map_direction_btn" style="display:none">{l t='Get Directions'}</a>
+                                        <a href="/{$smarty.const._BIZ_DIR_}/directions.php?id={$var_biz.id}" class="fancybox fancybox.iframe btn btn-primary" id="map_direction_btn" style="display:none">{l t='Get Directions'}</a>
                                         <div class="clearfix"></div>
                                     </div><!-- End .content .detail .map -->
                                 {else}
@@ -555,9 +555,9 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             {if $has_ratingitems == 0}
-                                                <input class="btn button-blue" type="button" name="button"  id="button" value="  {l t='Submit'}" onclick="get(biz_id,1,'review')" />
+                                                <input class="btn btn-primary" type="button" name="button"  id="button" value="  {l t='Submit'}" onclick="get(biz_id,1,'review')" />
                                             {else}
-                                                <input class="btn button-blue" type="button" name="button"  id="button" value="  {l t='Submit'}" onclick="get(biz_id,1,'reviewrating')" />
+                                                <input class="btn btn-primary" type="button" name="button"  id="button" value="  {l t='Submit'}" onclick="get(biz_id,1,'reviewrating')" />
                                             {/if}
                                             <a href="#top" id="topBtn" class="pull-right">{l t='Top'} <i class="fa fa-long-arrow-up"></i></a>
                                         </div>

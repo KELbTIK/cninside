@@ -425,7 +425,7 @@ var t_CannotGeo="{l t='Sorry, we were unable to geocode that address'}";
                                         <br />
                                         {l t='Or search a place:'} <input type="text" class="form-control" id="search_add" name="search_add" onKeyDown="if (event.keyCode==13) showLocation() " />
                                         <br />
-                                        <input type="button" class="btn button-blue" value="{l t='Convert Address to Map'}" onclick="showLocation()" />
+                                        <input type="button" class="btn btn-primary" value="{l t='Convert Address to Map'}" onclick="showLocation()" />
                                         <br />
                                         <br />
                                         {l t='Note: Please adjust the map position and zoom, at the same time, please drag the pink marker to the accurate position of this business.'}<br>
@@ -522,7 +522,7 @@ var t_CannotGeo="{l t='Sorry, we were unable to geocode that address'}";
                             </div>
                         </div>
                     </div>
-                    <input type="button" class="btn button-blue" name="button" onClick="restore();verify();" id="button" value="    {l t='Submit'} " />
+                    <input type="button" class="btn btn-primary" name="button" onClick="restore();verify();" id="button" value="    {l t='Submit'} " />
                 </div>
             </form>
             <div class="col-sm-3 hidden-xs" >

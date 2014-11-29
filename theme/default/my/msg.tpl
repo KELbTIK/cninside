@@ -65,7 +65,7 @@
                                             <textarea name="message" id="message" class="form-control"></textarea>
                                         </div>
                                         <div class="col-sm-3">
-                                            <input type="button" name="button" id="button" class="btn button-blue" value="{l t='Send'}" onclick="veri();" />
+                                            <input type="button" name="button" id="button" class="btn btn-primary" value="{l t='Send'}" onclick="veri();" />
                                         </div>
                                      </div>
                                  </form>
@@ -150,7 +150,7 @@
                                          <div class="col-md-10">
                                              <textarea name="message" id="message" class="form-control" rows="7" cols="45"></textarea>
                                              <br/>
-                                             <input type="button" name="button2" id="button2" class="btn button-blue col-md-4 col-sm-6 col-xs-12" onclick="submitsend()" value="{l t='Send'}   " />
+                                             <input type="button" name="button2" id="button2" class="btn btn-primary col-md-4 col-sm-6 col-xs-12" onclick="submitsend()" value="{l t='Send'}   " />
                                          </div>
                                      </div>
                                  </form>

@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-8">
-                                <input class="btn button-blue" type="submit" name="button" id="button" value=" {l t='Change'} " />
+                                <input class="btn btn-primary" type="submit" name="button" id="button" value=" {l t='Change'} " />
                             </div>
                         </div>
                     </form>
