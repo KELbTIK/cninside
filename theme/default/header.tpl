@@ -78,12 +78,14 @@ background-image:url({$smarty.const._LOGO_URL_});
             <div class="col-md-6 col-sm-8 col-xs-12 header-menu">
                 <div class="row">
                     <!-- Nav tabs -->
-                    {if !$info.logged}
                     <div class="visible-xs col-xs-12">
-                        <a href="/my/login.php" class="btn btn-primary btn-block">Sign in</a>
-                        <br/>
+                        {if !$info.logged}
+                            <a href="/my/login.php" class="btn btn-primary btn-block">Sign in</a>
+                            <br/>
+                        {else}
+                            <div class="logtext">{$info.logas}<br />{if $is_admin}<a href="/mgt/">{l t='Admin Area'}</a> | {/if}<a href="/my/membersearch.php">{l t='Member Search'}</a> {$info.logtext}</div>
+                        {/if}
                     </div>
-                    {/if}
                     <div class="col-md-2 col-sm-2 col-xs-4 pull-right">
                         <ul class="nav nav-pills nav-stacked" role="tablist">
                             <li role="presentation" class="hidden-xs active"><a href="#sign_in" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-sign-in"></i></a></li>
