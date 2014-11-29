@@ -17,20 +17,6 @@
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/js/fancybox/helpers/jquery.fancybox-buttons.css" />
 
 <script src="/theme/{$get_theme}/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-
-{literal}
-    <script type="text/javascript">
-//        jQuery.browser = {};
-//        (function () {
-//            jQuery.browser.msie = false;
-//            jQuery.browser.version = 0;
-//            if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
-//                jQuery.browser.msie = true;
-//                jQuery.browser.version = RegExp.$1;
-//            }
-//        })();
-    </script>
-{/literal}
 <script src="/theme/{$get_theme}/js/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="/theme/{$get_theme}/js/jquery.easing.1.3.js"></script>
@@ -75,7 +61,7 @@ background-image:url({$smarty.const._LOGO_URL_});
 
 <div id="container" class="container">
     <div class="row">
-        <div id="searchcity_div" class="searchbarlist"></div>
+
 
         <!--Heaer Start-->
         <div id="header" class="header">
@@ -187,6 +173,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                     <div class="form-group">
                                                         <input name="city" class="form-control" type="text" id="Hsearchcity" autocomplete="off" placeholder="{l t='All Cities'}" class="commentColor cityname" />
                                                     </div>
+                                                    <div id="searchcity_div" class="searchbarlist"></div>
                                                 </div>
                                                 <div class="col-md-3 col-xs-12 col-sm-4">
                                                     <label class="hidden-xs">&nbsp;</label>

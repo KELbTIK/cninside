@@ -45,6 +45,33 @@ function nav()
 <div id="main">
     <div class="content container biz">
         <div class="row">
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            {if $var_search.searchtext}
+                                {l t='Narrow by Category'}
+                            {else}
+                                {l t='Browse by Category'}
+                            {/if}
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                            <li><a href="/search?cityname={$smarty.get.cityname}&searchtext={$var_search.searchtext}">{l t='All Categories'}</a></li>
+                            {$var_cat.catlist}
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center  hidden-xs">
+                    <!-- START 160x600 Code -->
+                    <p align="center">
+                        {$ads->getAdCode(5)}
+                    </p>
+                    <!-- END Code -->
+                </div>
+            </div>
+
             <div class="col-md-9 col-sm-8 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -164,32 +191,7 @@ function nav()
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            {if $var_search.searchtext}
-                                {l t='Narrow by Category'}
-                            {else}
-                                {l t='Browse by Category'}
-                            {/if}
-                        </h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-unstyled">
-                            <li><a href="/search?cityname={$smarty.get.cityname}&searchtext={$var_search.searchtext}">{l t='All Categories'}</a></li>
-                            {$var_cat.catlist}
-                        </ul>
-                        <div class="text-center  hidden-xs">
-                            <!-- START 160x600 Code -->
-                            <p align="center">
-                                {$ads->getAdCode(5)}
-                            </p>
-                            <!-- END Code -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
