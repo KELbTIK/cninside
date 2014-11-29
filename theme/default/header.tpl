@@ -78,16 +78,17 @@ background-image:url({$smarty.const._LOGO_URL_});
             <div class="col-md-6 col-sm-8 col-xs-12 header-menu">
                 <div class="row">
                     <!-- Nav tabs -->
+                    {if !$info.logged}
                     <div class="visible-xs col-xs-12">
                         <a href="/my/login.php" class="btn btn-primary btn-block">Sign in</a>
                         <br/>
                     </div>
+                    {/if}
                     <div class="col-md-2 col-sm-2 col-xs-4 pull-right">
                         <ul class="nav nav-pills nav-stacked" role="tablist">
                             <li role="presentation" class="hidden-xs active"><a href="#sign_in" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-sign-in"></i></a></li>
                             <li role="presentation"><a href="#search" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-search"></i></a></li>
                         </ul>
-
                     </div>
 
                     <!-- Tab panes -->
