@@ -92,18 +92,22 @@ background-image:url({$smarty.const._LOGO_URL_});
             <div class="col-md-6 col-sm-8 col-xs-12 header-menu">
                 <div class="row">
                     <!-- Nav tabs -->
+                    <div class="visible-xs col-xs-12">
+                        <a href="/my/login.php" class="btn button-blue btn-block">Sign in</a>
+                        <br/>
+                    </div>
                     <div class="col-md-2 col-sm-2 col-xs-4 pull-right">
                         <ul class="nav nav-pills nav-stacked" role="tablist">
-                            <li role="presentation" class="active"><a href="#sign_in" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-sign-in"></i></a></li>
+                            <li role="presentation" class="hidden-xs active"><a href="#sign_in" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-sign-in"></i></a></li>
                             <li role="presentation"><a href="#search" class="text-center" role="tab" data-toggle="tab"><i class="fa fa-search"></i></a></li>
                         </ul>
 
                     </div>
 
                     <!-- Tab panes -->
-                    <div class="col-md-10 col-sm-10 col-xs-8">
+                    <div class="col-md-10 col-sm-10 col-xs-12">
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="sign_in">
+                            <div role="tabpanel" class="hidden-xs tab-pane active" id="sign_in">
                                 {if !$info.logged}
                                     <div class="logtext">
                                         <div class="row">
@@ -122,7 +126,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                     </div>
                                                     <div class="col-md-3 col-sm-4 col-xs-12">
                                                         <div class="form-group">
-                                                            <a  id="login_btn" class="btn btn-block button-grey" onclick="header_login.submit()" href="javascript:void(0)">{l t='Sign in'}</a>
+                                                            <a id="login_btn" class="btn btn-block button-grey" onclick="header_login.submit()" href="javascript:void(0)">{l t='Sign in'}</a>
                                                         </div>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -164,7 +168,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                 <input class="form-control" name="page" type="hidden" id="page" value="1" />
                                                 <input class="form-control" type="hidden" name="sort_by" id="_sort_by" value="1" />
                                                 <div class="col-md-1 visible-md"></div>
-                                                <div class="col-md-4 col-xs-12 col-sm-4">
+                                                <div class="col-md-4 col-sm-4 col-xs-12">
                                                     <label>
                                                         {if $smarty.const._MULTI_SEARCH_ENABLE_}
                                                             {l t='Search'}
