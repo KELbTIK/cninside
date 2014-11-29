@@ -1,6 +1,6 @@
 <div>
     <h2>
-        <a href="javascript:;" onclick="get(determinCatOrSub(),WCurPage,0);" class="btn btn-danger red_link">
+        <a href="javascript:;" onclick="get(determinCatOrSub(),WCurPage,0);" class="btn btn-danger col-md-3 col-sm-5 col-xs-12 red_link">
             <i class="fa fa-reply"></i><span>{l t=' Back to List'}</span>
         </a>
         <br/><br/>
@@ -81,8 +81,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-2 col-sm-6 col-xs-12 pull-right">
-                                <button type="button" class="btn button-blue" data-toggle="modal" data-target="#myModal">
+                            <div class="col-md-2 col-sm-4 col-xs-12 pull-right">
+                                <button type="button" class="btn red_link btn-danger col-xs-12" data-toggle="modal" data-target="#myModal">
                                     {l t='Flag this'}
                                 </button>
                                 {*<a href="/flag.php?topicid={$var_topic.id}&replyid=0&zone=0" class="fancybox fancybox.iframe btn button-blue pull-right col-xs-12">*}
@@ -133,7 +133,7 @@
                                         </div>
                                         <h4 class="col-xs-12">{$i.message}</h4>
                                         <a href="/flag.php?topicid={$var_topic.id}&replyid={$i.id}&zone=0" class="fancybox fancybox.iframe">
-                                            <input type="button" class="btn button-blue pull-right" value="{l t='Flag this'}">
+                                            <input type="button" class="btn red_link btn-danger col-md-2 col-sm-3 col-xs-12 pull-right" value="{l t='Flag this'}">
                                             {*<img src="../theme/{$get_theme}/images/btn/flag_button.gif" alt="" width="65" height="21" border="0"  style="float:right;"/>*}
                                         </a>
                                         <div class="clearfix"></div>
@@ -169,13 +169,13 @@
                 <textarea class="form-control" rows="5" name="review" ></textarea>
             </div>
             <p class="pull-right"><a href="#top">{l t='Page Top'} &uArr;</a></p>
-            <input type="submit" class="btn button-blue" name="button2"  id="button2" value="  {l t='Submit'} »  ">
+            <input type="submit" class="btn button-blue col-md-3 col-sm-5 col-xs-12" name="button2"  id="button2" value="  {l t='Submit'} »  ">
         </div>
     </div>
 </form>
 
 <h2>
-    <a href="javascript:;" onclick="get(determinCatOrSub(),WCurPage,0);" class="btn btn-danger red_link">
+    <a href="javascript:;" onclick="get(determinCatOrSub(),WCurPage,0);" class="btn btn-danger col-md-3 col-sm-5 col-xs-12 red_link">
         <i class="fa fa-reply"></i><span>{l t=' Back to List'}</span></a>
 </h2>
 
