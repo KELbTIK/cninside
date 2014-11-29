@@ -45,80 +45,83 @@ var t_owner="{l t='You are not allowed to review your own business'}";
                     <div class="panel-body">
                         <div class="row">
                             <div class="info col-md-8 col-sm-8 col-xs-12">
-                                <div class="first pull-left">
-                                    <div class="title">
-                                        <div class="hreview-aggregate">
+                                <div class="row">
+                                    <div class="first col-md-8 col-sm-8 col-xs-12">
+                                        <div class="title">
+                                            <div class="hreview-aggregate">
                                             <span class="item">
                                                 <span class="fn">{$var_biz.bizname}</span>
                                                 {$var_biz.starbiz}
                                                 <br>
                                                 <img src="/theme/{$get_theme}/images/star/stars_{$var_biz.ratingmod}.gif" width="74" height="15" style="vertical-align:sub" class="photo" />
                                             </span>
-                                            {l t='Rating'}:
-                                            <span class="rating">{$var_biz.rating}</span>
-                                            <br>
-                                            {l t='based on'} <a href="#reviews" id="reviewBtn"><span class="votes">{$var_biz.reviewnum}</span> {l t='reviews'}</a>
+                                                {l t='Rating'}:
+                                                <span class="rating">{$var_biz.rating}</span>
+                                                <br>
+                                                {l t='based on'} <a href="#reviews" id="reviewBtn"><span class="votes">{$var_biz.reviewnum}</span> {l t='reviews'}</a>
+                                                <br />
+                                                {l t='%s clicks on this business' r=$var_biz.click}<br /><br />
+                                            </div>
+                                            <dt>{l t='Share Listing'}:</dt>
+                                            <!-- AddThis Button BEGIN -->
+                                            <div class="addthis_toolbox addthis_default_style">
+                                                <a class="addthis_button_facebook"></a>
+                                                <a class="addthis_button_twitter"></a>
+                                                <a class="addthis_button_myspace"></a>
+                                                <a class="addthis_button_stumbleupon"></a>
+                                                <a class="addthis_button_bebo"></a>
+                                                <a class="addthis_button_digg"></a>
+                                                <a class="addthis_button_mixx"></a>
+                                                <a class="addthis_button_delicious"></a>
+                                            </div>
+
+                                            <!-- AddThis Button END -->
                                             <br />
-                                            {l t='%s clicks on this business' r=$var_biz.click}<br /><br />
-                                        </div>
-                                        <dt>{l t='Share Listing'}:</dt>
-                                        <!-- AddThis Button BEGIN -->
-                                        <div class="addthis_toolbox addthis_default_style">
-                                            <a class="addthis_button_facebook"></a>
-                                            <a class="addthis_button_twitter"></a>
-                                            <a class="addthis_button_myspace"></a>
-                                            <a class="addthis_button_stumbleupon"></a>
-                                            <a class="addthis_button_bebo"></a>
-                                            <a class="addthis_button_digg"></a>
-                                            <a class="addthis_button_mixx"></a>
-                                            <a class="addthis_button_delicious"></a>
-                                        </div>
+                                            <dt>{l t='Categories'}:<br>
+                                                <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.catpermalink}/">{$var_biz.catname}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.catpermalink}/{$var_biz.subcatpermalink}/">{$var_biz.subcatname}</a><br />
+                                                {if $var_biz.catid2 != '0'}
+                                                    <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat2permalink}/">{$var_biz.catname2}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat2permalink}/{$var_biz.subcat2permalink}/">{$var_biz.subcatname2}</a><br />
+                                                {/if}
+                                                {if $var_biz.catid3 != '0'}
+                                                    <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat3permalink}/">{$var_biz.catname3}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat3permalink}/{$var_biz.subcat3permalink}/">{$var_biz.subcatname3}</a><br />
+                                                {/if}
+                                            </dt>
+                                            <br>
+                                            <address>
+                                                {$var_biz.add1}  <br />{$var_biz.add2}
+                                                {if $var_biz.location}
+                                                    {$var_biz.location}, {$var_biz.province}
+                                                {/if}
+                                                {if $var_biz.zip}
+                                                    , {$var_biz.zip}
+                                                {/if}
 
-                                        <!-- AddThis Button END -->
-                                        <br />
-                                        <dt>{l t='Categories'}:<br>
-                                            <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.catpermalink}/">{$var_biz.catname}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.catpermalink}/{$var_biz.subcatpermalink}/">{$var_biz.subcatname}</a><br />
-                                            {if $var_biz.catid2 != '0'}
-                                                <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat2permalink}/">{$var_biz.catname2}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat2permalink}/{$var_biz.subcat2permalink}/">{$var_biz.subcatname2}</a><br />
-                                            {/if}
-                                            {if $var_biz.catid3 != '0'}
-                                                <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat3permalink}/">{$var_biz.catname3}</a> / <a href="/{$smarty.const._CAT_DIR_}/{$var_biz.cat3permalink}/{$var_biz.subcat3permalink}/">{$var_biz.subcatname3}</a><br />
-                                            {/if}
-                                        </dt>
-                                        <br>
-                                        <address>
-                                            {$var_biz.add1}  <br />{$var_biz.add2}
-                                            {if $var_biz.location}
-                                                {$var_biz.location}, {$var_biz.province}
-                                            {/if}
-                                            {if $var_biz.zip}
-                                                , {$var_biz.zip}
-                                            {/if}
-
-                                            {if $var_biz.country && $var_biz.country != $var_biz.province}
-                                                , {$var_biz.country}
-                                            {/if}
-                                        </address>
-                                        <span id="bizPhone">{$var_biz.phone}</span>
-                                        <div id="bizUrl"><a href="{$var_biz.web}" target="_blank" rel="external nofollow">{$var_biz.web}</a> </div><br>
-                                    </div>
-                                </div><!-- End .content .detail .info .first -->
-                                <div class="other pull-right">
-                                    <div class="photoBox">
-                                        <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}">
-                                            <img class="img-responsive" src="/images/business/{$var_biz.picurl}_195x180" border="0" />
-                                        </a>
-                                        <br />
-                                        <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}">
-                                            {l t='Browse more'} ({$var_ps} {l t='pics'})...
-                                        </a>
-                                        <br />
-                                        <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}&f=addphoto">
-                                            {l t='Add a photo'}...
-                                        </a>
-                                        <br />
-                                    </div>
-                                </div><!-- End .content .detail .info .other -->
+                                                {if $var_biz.country && $var_biz.country != $var_biz.province}
+                                                    , {$var_biz.country}
+                                                {/if}
+                                            </address>
+                                            <span id="bizPhone">{$var_biz.phone}</span>
+                                            <div id="bizUrl"><a href="{$var_biz.web}" target="_blank" rel="external nofollow">{$var_biz.web}</a> </div><br>
+                                        </div>
+                                    </div><!-- End .content .detail .info .first -->
+                                    <div class="other col-md-4 col-sm-4 col-xs-12">
+                                        <div class="photoBox text_center_xs">
+                                            <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}">
+                                                <img class="img-responsive img_center" src="/images/business/{$var_biz.picurl}_195x180" border="0" />
+                                            </a>
+                                            <br />
+                                            <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}">
+                                                {l t='Browse more'} ({$var_ps} {l t='pics'})...
+                                            </a>
+                                            <br />
+                                            <a href="/{$smarty.const._BIZ_DIR_}/photo.php?id={$var_biz.id}&f=addphoto">
+                                                {l t='Add a photo'}...
+                                            </a>
+                                            <br />
+                                            <br />
+                                        </div>
+                                    </div><!-- End .content .detail .info .other -->
+                                </div>
                                 <div class="detaildata">
                                     <table width="97%" border="0" align="center">
                                         {if $var_biz.weeks} {* Regular Hours *}
