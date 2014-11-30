@@ -49,8 +49,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-sm-4 control-label"></label>
-                                                <div class="col-sm-7">
-                                                    <input type="submit" value="{l t='Login now'}" class="btn btn-primary"/>
+                                                <div class="col-sm-5 col-md-4">
+                                                    <input type="submit" value="{l t='Login now'}" class="btn btn-primary btn-block"/>
 
                                                 </div>
                                             </div>
@@ -61,7 +61,13 @@
                                             <form id="loginfb" name="loginfb" method="post" action="?f=login&referer={$referer}" class="text-center">
                                                 <p><strong>Use your Facebook account to login now!</strong></p>
                                                 <p>We have partnered with Facebook to offer integrated account support via Facebook Connect. Safe, secure and easy!</p>
-                                                <a href="/my/loginfb.php" class="btn btn-primary" ><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
+                                                <div class="row">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-sm-12 col-md-8">
+                                                        <a href="/my/loginfb.php" class="btn btn-primary btn-block" ><i class="fa fa-facebook"></i> &nbsp;{l t='Connect with Facebook'}</a>
+                                                    </div>
+                                                    <div class="col-md-2"></div>
+                                                </div>
                                             </form>
                                         </div><!--/div.form-->
                                     {/if}
@@ -84,8 +90,11 @@
                         <div class="panel-body">
                             <form action="?f=reg&referer={$referer}" method="post" name="form1" class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Email Address'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">
+                                        {l t='Email Address'}
+                                        <span style="color:red;">*</span>
+                                    </label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input name="email" type="text" id="email" class="form-control" onClick="this.style.backgroundColor='#fff'" value="{$form.email}"/>
 
                                         <div class="clearfix"></div>
@@ -94,77 +103,85 @@
                                             <div class="alert alert-danger">{l t='This Email address has already been registered'}!</div>
                                         {/if}
                                     </div>
-                                    <div class="col-sm-1 col-xs-2" style="color:red;">*</div>
+
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Nickname'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">
+                                        {l t='Nickname'}
+                                        <span style="color:red;">*</span>
+                                    </label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input name="nickname" type="text" id="nickname" class="form-control" value="{$form.nickname}" />
                                         <div class="clearfix"></div>
                                         {if $loginfail==3}
                                             <div class="alert alert-danger">{l t='This nickname has already  been registered'}!</div>
                                         {/if}
                                     </div>
-                                    <div class="col-sm-1 col-xs-2" style="color:red;">*</div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Create Password'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">
+                                        {l t='Create Password'}
+                                        <span style="color:red;">*</span>
+                                    </label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input type="password" name="password" class="form-control" id="password" onClick="this.style.backgroundColor='#fff'" value="{$smarty.post.password}"  />
                                         <div class="clearfix"></div>
                                         <div class="alert alert-danger" id="err3" style="display:none">{l t='Please input your password'}</div>
                                     </div>
-                                    <div class="col-sm-1 col-xs-2" style="color:red;">*</div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Retype Password'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">
+                                        {l t='Retype Password'}
+                                        <span style="color:red;">*</span>
+                                    </label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input type="password" name="rpassword" id="rpassword" class="form-control" onClick="this.style.backgroundColor='#fff'" value="{$smarty.post.rpassword}"  />
                                         <div class="clearfix"></div>
                                         <div class="alert alert-danger" id="err4" style="display:none">{l t='Two times should be the same'}</div>
                                     </div>
-                                    <div class="col-sm-1 col-xs-2" style="color:red;">*</div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='First Name'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">
+                                        {l t='First Name'}
+                                        <span style="color:red;">*</span>
+                                    </label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input name="firstname" type="text" id="firstname" class="form-control" onClick="this.style.backgroundColor='#fff'" value="{$form.firstname}" />
                                         <div class="clearfix"></div>
                                         <div class="alert alert-danger" id="err1" style="display:none">{l t='Your first name is necessary'}</div>
                                     </div>
-                                    <div class="col-sm-1 col-xs-2" style="color:red;">*</div>
                                 </div>
                                 <div class="form-group reg_lastname">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Last Name'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">{l t='Last Name'}</label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input name="lastname" type="text" id="lastname" class="form-control" onClick="this.style.backgroundColor='#fff'" value="{$form.lastname}" />
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Zip Code'}</label>
-                                    <div class="col-sm-7 col-xs-10">
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">{l t='Zip Code'}</label>
+                                    <div class="col-sm-7 col-xs-12">
                                         <input name="zip" type="text" id="zip" class="form-control" onClick="this.style.backgroundColor='#fff'" value="{$form.zip}" />
                                         <div class="clearfix"></div>
                                         <div class="alert alert-danger" id="err5" style="display:none">{l t='Wrong Zip Code'}.</div>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='City'}</label>
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">{l t='City'}</label>
                                     <div class="col-sm-7">
                                         <div class="row">
-                                            <div class="col-md-4 col-sm-4 col-xs-10">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <select id="country" class="form-control" name="country" onChange="getCountry(this,'state')">
                                                     <option value="">{l t='Select Country'}</option>
                                                     {$var_country}
                                                 </select>
                                             </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-10">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <select id="state" class="form-control" name="state" onChange="getCat(this,'city')">
                                                     <option value="">{l t='Select State'}</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-10">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <select class="form-control" name="city" id="city">
                                                     <option value="">{l t='Select City'}</option>
                                                 </select>
@@ -173,7 +190,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label">{l t='Gender'}</label>
+                                    <label class="col-sm-5 col-md-4 control-label">{l t='Gender'}</label>
                                     <div class="col-sm-7">
                                         <label class="radio-inline" for="male">
                                             <input name="gender" type="radio"  id="male"  style="border:0;" value="1" checked="checked"/>
@@ -186,10 +203,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label">{l t='Birthdate'}</label>
+                                    <label class="col-sm-5 col-md-4 control-label">{l t='Birthdate'}</label>
                                     <div class="col-sm-7">
                                         <div class="row">
-                                            <div class="col-md-4 col-sm-4 col-xs-10">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <select name="month" class="reg_month form-control" onchange="this.style.backgroundColor='#fff'" >
                                                     <option value="00" selected="selected">Month</option>
                                                     <option value="01" {if $smarty.post.month=='01'}selected="selected"{/if}>{l t='Jan'}</option>
@@ -206,7 +223,7 @@
                                                     <option value="12" {if $smarty.post.month=='12'}selected="selected"{/if}>{l t='Dec'}</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-10">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <select name="day" class="reg_day form-control"  onchange="this.style.backgroundColor='#fff'" >
                                                     <option value="00" selected="selected">Day</option>
                                                     <option value="01" {if $smarty.post.day=='01'}selected="selected"{/if}>1</option>
@@ -243,7 +260,7 @@
                                                 </select>
                                                 {*<span class="reg_day">{l t='Day'} </span>*}
                                             </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-10">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
                                                 <select name="year" class="reg_year form-control"  onchange="this.style.backgroundColor='#fff'" >
                                                     <option value="0000" selected="selected">Year</option>
                                                     {php}
@@ -264,7 +281,7 @@
                                 </div>
                                 {if $smarty.const._CAPTCHA_REG_ENABLE_}
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label col-xs-12">{l t='Word Verification'}</label>
+                                    <label class="col-sm-5 col-md-4 control-label col-xs-12">{l t='Word Verification'}</label>
                                     {l t='Type the code shown below'}
                                     <div class="col-sm-7">
                                         <img id="siimage" class="pull-left" style="padding-right: 5px; border: 0" src="/inc/captcha/securimage_show.php?sid={$smarty.now}" />
@@ -291,9 +308,9 @@
                                 </div>
                                 {/if}
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label hidden-xs">&nbsp;</label>
-                                    <div class="col-sm-7 text-right col-xs-10">
-                                        <label><a href="javascript:restore();verify()" class="btn btn-block btn-primary">{l t='Sign Up'}</a></label>
+                                    <label class="col-sm-5 col-md-4 control-label hidden-xs">&nbsp;</label>
+                                    <div class="col-sm-4 col-md-3 text-right col-xs-12">
+                                        <a href="javascript:restore();verify()" class="btn btn-block btn-primary">{l t='Sign Up'}</a>
                                     </div>
                                 </div>
 
