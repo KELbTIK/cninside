@@ -7,9 +7,27 @@ $(document).ready(function() {
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
     });
+    if ($(window).width() < 751){
+        $('#login-block' ).insertBefore("#register-block");
+    }else{
+        $('#register-block' ).insertBefore("#login-block");
+    }
 
 });
-
+$(window).load(function(){
+    $('#signin-btn').click(function(){
+        $('html, body').animate({
+            scrollTop: $("#login-block").offset().top
+        }, 1000);
+    })
+})
+$( window ).resize(function() {
+    if ($(window).width() < 751){
+        $('#login-block' ).insertBefore("#register-block");
+    }else{
+        $('#register-block' ).insertBefore("#login-block");
+    }
+});
 //////
  function fancybox()
  { 

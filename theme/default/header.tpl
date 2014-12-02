@@ -186,7 +186,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                             </div>
                                             <div class="visible-xs col-xs-9">
                                                 {if !$info.logged}
-                                                    <a href="/my/login.php" class="btn btn-primary btn-block">Sign in</a>
+                                                    <a href="/my/login.php#login-block" class="btn btn-primary btn-block" id="signin-btn">{l t='Sign in'}</a>
                                                     <br/>
                                                 {else}
                                                     <div class="logtext">{$info.logas}<br />{if $is_admin}<a href="/mgt/">{l t='Admin Area'}</a> | {/if}<a href="/my/membersearch.php">{l t='Member Search'}</a> {$info.logtext}</div>
