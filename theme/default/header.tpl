@@ -207,7 +207,7 @@ background-image:url({$smarty.const._LOGO_URL_});
                                                                 </label>
                                                             </div>
                                                         </li>
-                                                        <li><a href="/my/login.php">{l t='Create new account'}</a></li>
+                                                        <li><a href="/my/login.php#register-block" id="signup-btn">{l t='Create new account'}</a></li>
                                                         <li><a href="/my/resetpsw.php">{l t='Lost password'}?</a></li>
                                                     </ol>
                                                     {if $smarty.const._FB_ENABLE_}

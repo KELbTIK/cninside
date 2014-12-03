@@ -20,6 +20,11 @@ $(window).load(function(){
             scrollTop: $("#login-block").offset().top
         }, 1000);
     })
+    $('#signup-btn').click(function(){
+        $('html, body').animate({
+            scrollTop: $("#register-block").offset().top
+        }, 1000);
+    })
 })
 $( window ).resize(function() {
     if ($(window).width() < 751){
