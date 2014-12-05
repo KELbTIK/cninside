@@ -64,13 +64,13 @@ function setAvatar(photo_url)
                         <div class="clearfix"></div>
                     </div>
                     <div class="panel-body">
-                        <div id="galleria">
+                        <ul id="galleria" class="bxslider">
                             <!--loop-->
                             {foreach from=$var_photos item=i}
-                                <img class="img-responsive" src="/images/photos/p_{$i.photo_url}" />
+                                <li><img class="img-responsive" src="/images/photos/p_{$i.photo_url}" /></li>
                             {/foreach}
                             <!--/loop-->
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -85,11 +85,18 @@ function setAvatar(photo_url)
     </div>
 </div>
 
+    {*<script>*}
+    {*// Load the classic theme*}
+    {*Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');*}
+    {*// Initialize Galleria*}
+    {*$('#galleria').galleria();*}
+    {*</script>*}
+{literal}
     <script>
-    // Load the classic theme
-    Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');
-    // Initialize Galleria
-    $('#galleria').galleria();
+        $('.bxslider').bxSlider({
+            mode: 'fade'
+        });
     </script>
+{/literal}
 <!--Main End-->
 {include file="footer.tpl"}

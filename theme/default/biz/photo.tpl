@@ -36,20 +36,13 @@ $(document).ready(function() {
 
 <style type="text/css">
 <!--
-#main {height:auto;}
-img{ border:0}
-a.button{  font-size:12px; background:#61A2CC; color:#fff; -webkit-border-radius: 5px;-webkit-box-shadow:#666 0px 0px 4px;-moz-border-radius:5px;-moz-box-shadow:#666 0px 0px 4px;text-shadow:#000 0px 1px 1px;border: 1px solid #159; font-weight:bold;
-
-	}
-.button img{ vertical-align:middle}
-a.button:hover{ text-decoration:none; background:#48A; }
 .uploaddiv{ display:none;}
 .uploaddiv h2{ margin:8px; float:left;}
 .uploaddiv .uploadifyQueue{ float:left; margin:9px;}
 .uploaddiv .cancel{ float:right; margin:0 10px;}
 .uploaddiv .percentage{ color:red;}
 #upload_btn{ display:none;}
-#galleria{height:500px;}
+#galleria{min-height:100px;}
 -->
  </style>
 {/literal}
@@ -62,46 +55,42 @@ a.button:hover{ text-decoration:none; background:#48A; }
                 <h3 class="panel-title">{l t='Photos for %s' r=$var_biz.bizname}</h3>
             </div>
             <div class="panel-body">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                <a href="/{$smarty.const._BIZ_DIR_}/{$var_biz.permalink}" class="btn btn-primary">{l t='Return to %s' r=$var_biz.bizname}</a>
-                </div>
-                <div class="visible-xs col-xs-12">
-                    &nbsp;
-                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <a href="/{$smarty.const._BIZ_DIR_}/{$var_biz.permalink}" class="btn btn-primary btn-block">{l t='Return to %s' r=$var_biz.bizname}</a>
+                    </div>
+                    <div class="visible-xs col-xs-12">
+                        &nbsp;
+                    </div>
 
-                {if $var_me.user_id}
-                        <div class="col-md-6 col-sm-6 col-xs-12 profile-rating text-right" >
-                            <a href="javascript:void(0)" onclick="$('.uploaddiv').slideDown()" class="button btn ">{l t='Upload photo for %s' r=$var_biz.bizname} &dArr;</a>
+                    {if $var_me.user_id}
+                            <div class="col-md-offset-6 col-sm-offset-4 col-md-3 col-sm-4 col-xs-12 profile-rating text-right" >
+                                <a href="javascript:void(0)" onclick="$('.uploaddiv').slideDown()" class="button btn btn-block btn-primary">{l t='Upload photo for %s' r=$var_biz.bizname} &dArr;</a>
+                            </div>
+
+                    {if $smarty.get.f == 'addphoto'}
+                        <script>
+                            {literal}
+                            $(document).ready(function() {
+                                setTimeout("$('.uploaddiv').slideDown()",500);
+                            });
+                            {/literal}
+                        </script>
+                    {/if}
+
+                    {else}
+
+                        <div class="col-md-offset-6 col-sm-offset-4 col-md-3 col-sm-4 col-xs-12">
+                            <a href="/my/login.php" class="btn btn-primary btn-block">{l t='Login to upload photo &raquo;'}</a>
                         </div>
-
-                {if $smarty.get.f == 'addphoto'}
-                    <script>
-                        {literal}
-                        $(document).ready(function() {
-                            setTimeout("$('.uploaddiv').slideDown()",500);
-                        });
-                        {/literal}
-                    </script>
-                {/if}
-
-                {else}
-
-                    <a href="/my/login.php" class="btn btn-primary">{l t='Login to upload photo &raquo;'}</a>
-                {if $smarty.get.f == 'addphoto'}
-                    <script>
-                        {literal}
-                        location="/my/login.php";
-                        {/literal}
-                    </script>
-                {/if}
-                {/if}
-
-                <div class="visible-xs">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                        {if $smarty.get.f == 'addphoto'}
+                            <script>
+                                {literal}
+                                location="/my/login.php";
+                                {/literal}
+                            </script>
+                        {/if}
+                    {/if}
                 </div>
                 <div class="clearfix"></div>
                 <br/>
@@ -126,12 +115,15 @@ a.button:hover{ text-decoration:none; background:#48A; }
 
                 <div class="clearfix"></div>
                 <br/>
-                <div id="galleria">
-                    <!--loop-->
-                    {foreach from=$var_pic item=i}
-                        <img src="../images/business/{$i.picurl}" />
-                    {/foreach}
-                    <!--/loop-->
+                <div >
+
+                    <ul id="galleria" class="bxslider">
+                        <!--loop-->
+                        {foreach from=$var_pic item=i}
+                            <li><img src="../images/business/{$i.picurl}" /></li>
+                        {/foreach}
+                        <!--/loop-->
+                    </ul>
                 </div>
 
             </div>
@@ -142,10 +134,16 @@ a.button:hover{ text-decoration:none; background:#48A; }
 
 <script>
     // Load the classic theme
-    Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');
+    {*Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');*}
     // Initialize Galleria
-    $('#galleria').galleria();
+//    $('#galleria').galleria();
 </script>
-
+{literal}
+<script>
+    $('.bxslider').bxSlider({
+        mode: 'fade'
+    });
+</script>
+{/literal}
 <!--Main End-->
 {include file="footer.tpl"}

@@ -13,6 +13,7 @@
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/7521.css" />
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/my_gallery.css" />
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/jquery.galleria.classic.css" />
+<link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/css/jquery.bxslider.css" />
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/js/fancybox/jquery.fancybox.css" />
 <link type="text/css" rel="stylesheet" href="/theme/{$get_theme}/js/fancybox/helpers/jquery.fancybox-buttons.css" />
 
@@ -28,6 +29,7 @@
 <script src="/theme/{$get_theme}/js/common.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/js/jquery.fancybox.pack.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/js/fancybox/helpers/jquery.fancybox-buttons.js" type="text/javascript" ></script>
+<script src="/theme/{$get_theme}/js/jquery.bxslider.min.js" type="text/javascript" ></script>
 <script src="/theme/{$get_theme}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">

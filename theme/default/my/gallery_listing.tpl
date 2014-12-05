@@ -59,13 +59,22 @@ function deletePhoto(photo_url)
                     <div class="panel-body">
 
 
-                        <div id="galleria">
+                        {*<div id="galleria">*}
+                            {*<!--loop-->*}
+                            {*{foreach from=$var_photos item=i}*}
+                                {*<img class="img-responsive" src="/images/business/b_{$i.photo_url}" alt="<a href='/{$smarty.const._BIZ_DIR_}/{$i.permalink}' target='new'>{$i.business_name}</a><br>{l t='Uploaded'} {$i.datetime}" />*}
+                            {*{/foreach}*}
+                            {*<!--/loop-->*}
+                        {*</div>*}
+                        <ul id="galleria" class="bxslider">
                             <!--loop-->
                             {foreach from=$var_photos item=i}
-                                <img class="img-reasponsive" src="/images/business/b_{$i.photo_url}" alt="<a href='/{$smarty.const._BIZ_DIR_}/{$i.permalink}' target='new'>{$i.business_name}</a><br>{l t='Uploaded'} {$i.datetime}" />
+                                <li>
+                                    <img class="img-responsive" src="/images/business/b_{$i.photo_url}" alt="<a href='/{$smarty.const._BIZ_DIR_}/{$i.permalink}' target='new'>{$i.business_name}</a><br>{l t='Uploaded'} {$i.datetime}" />
+                                </li>
                             {/foreach}
                             <!--/loop-->
-                        </div>
+                        </ul>
                     </div>
                 </div>
 
@@ -75,13 +84,19 @@ function deletePhoto(photo_url)
     </div>
 </div>
 
-<script>
-// Load the classic theme
-Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');
-// Initialize Galleria
-$('#galleria').galleria();
-</script>
+{*<script>*}
+{*// Load the classic theme*}
+{*Galleria.loadTheme('/theme/{$smarty.const._THEME_}/js/jquery.galleria.classic.js');*}
+{*// Initialize Galleria*}
+{*$('#galleria').galleria();*}
+{*</script>*}
 
-
+{literal}
+    <script>
+        $('.bxslider').bxSlider({
+            mode: 'fade'
+        });
+    </script>
+{/literal}
 <!--Main End-->
 {include file="footer.tpl"}
